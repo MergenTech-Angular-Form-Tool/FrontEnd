@@ -140,6 +140,7 @@ import {ConfigService} from './demo/service/app.config.service';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { AnasayfaComponent } from './proje/anasayfa/anasayfa.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -275,7 +276,8 @@ FullCalendarModule.registerPlugins([
         AppTimelineDemoComponent,
         AppAccessdeniedComponent,
         BlocksComponent,
-        BlockViewer
+        BlockViewer,
+        AnasayfaComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
