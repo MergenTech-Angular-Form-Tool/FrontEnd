@@ -1,0 +1,21 @@
+<div class="login-body">
+    <div class="login-wrapper">
+        <div class="login-panel">
+            <a [routerLink]="['/']" class="logo">
+                <img class="mergen-logo" src="assets/layout/images/mergentechLogo.png" alt="freya-layout"/>
+            </a>
+
+            <input #email pInputText id="email" placeholder="Email"/>
+            <input #pass pPassword id="password" placeholder="Password" type="password"/>
+            <button pButton pRipple label="LOGIN" type="button" class="login"
+                    (click)="login(email.value, pass.value)"></button>
+
+            <a href="#">forget password?</a>
+            <p>Don’t you have an account, <span (click)="gotoHome()" class="register-a">sign up</span>!</p>
+        </div>
+        <div class="login-footer">
+            <h4>Mergen</h4>
+            <h6>Copyright 2022 Ⓒ Mergen Yazılım</h6>
+        </div>
+    </div>
+</div>

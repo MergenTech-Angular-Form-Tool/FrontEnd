@@ -1,0 +1,24 @@
+<div class="login-body">
+    <div class="login-wrapper">
+        <div class="login-panel">
+            <a [routerLink]="['/']" class="logo">
+                <img class="mergen-logo" src="../../../assets/layout/images/mergentechLogo.png" alt="freya-layout"/>
+            </a>
+
+            <input #name pInputText id="name" placeholder="Name"/>
+            <input #surname pInputText id="surname" placeholder="Surname"/>
+            <input #email pInputText id="email" placeholder="Email"/>
+            <input #pass pPassword id="password" placeholder="Password"/>
+            <input #passConfirm pPassword id="password-verify" placeholder="Password Confirm"/>
+            <button pButton pRipple label="REGISTER" type="button" class="register"
+                    (click)="register(name.value, surname.value, email.value, pass.value, passConfirm.value)"></button>
+
+        </div>
+
+        <div class="login-footer">
+            <h4>Mergen</h4>
+            <h6>Copyright 2022 Ⓒ Mergen Yazılım</h6>
+        </div>
+
+    </div>
+</div>
