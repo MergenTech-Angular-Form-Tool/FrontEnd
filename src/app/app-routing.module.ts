@@ -4,8 +4,9 @@ import {AppMainComponent} from './app.main.component';
 import {AppNotfoundComponent} from './pages/app.notfound.component';
 import {AppErrorComponent} from './pages/app.error.component';
 import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
-import {AppLoginComponent} from './pages/app.login.component';
 import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
+import {LoginComponent} from './proje/login/login.component';
+import {RegisterComponent} from './proje/register/register.component';
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
             {path: 'error', component: AppErrorComponent},
             {path: 'access', component: AppAccessdeniedComponent},
             {path: 'notfound', component: AppNotfoundComponent},
-            {path: 'login', component: AppLoginComponent},
+            {path: 'login', component: LoginComponent},
+            {path: 'register', component: RegisterComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
     ],
