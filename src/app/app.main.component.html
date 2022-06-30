@@ -1,19 +1,11 @@
-<div class="layout-wrapper" [ngClass]="{
-    'layout-sidebar': app.menuMode === 'sidebar',
-    'layout-static': app.menuMode === 'sidebar' && sidebarStatic,
-    'layout-horizontal': app.menuMode === 'horizontal',
-    'layout-rightpanel-active': rightPanelActive,
-    'layout-slim': app.menuMode === 'slim',
-    'layout-mobile-active': staticMenuMobileActive,
-    'p-input-filled': app.inputStyle === 'filled', 'p-ripple-disabled': !app.ripple}"
-     [class]="'layout-menu-'+ app.menuTheme+ ' layout-topbar-'+ app.topbarTheme"
-     (click)="onLayoutClick()">
 
-    <app-topbar></app-topbar>
 
-    <app-rightpanel></app-rightpanel>
+<app-splash-screen></app-splash-screen>
+<app-navbar></app-navbar>
 
-    <app-config></app-config>
+
+
+
 
     <div class="layout-main">
          <div class="layout-content">
@@ -23,4 +15,4 @@
      </div>
 
     <div class="layout-mask modal-in"></div>
-</div>
+
