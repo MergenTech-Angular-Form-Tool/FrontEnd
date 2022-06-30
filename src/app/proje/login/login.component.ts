@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Singleton} from '../../utilities/singleton';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private messageService: MessageService) {
     }
 
     ngOnInit(): void {
@@ -18,20 +19,19 @@ export class LoginComponent implements OnInit {
     login(email: string, pass: string) {
 
         if (email === '' || pass === '') {
-            alert('Some fields are empty!');
+            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Some fields are empty!'});
             return;
         }
 
         if (!Singleton.validateEmail(email)) {
-            alert('Invalid email!');
+            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Invalid email!'});
             return;
         }
 
-        alert('Login successful!');
-
+        this.messageService.add({severity: 'success', summary: 'Login Successful', detail: 'Welcome to the system!'});
     }
 
-    gotoHome(){
+    gotoHome() {
         this.router.navigate(['/register']);  // define your component where you want to go
     }
 

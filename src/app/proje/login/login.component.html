@@ -5,8 +5,9 @@
                 <img class="mergen-logo" src="assets/layout/images/mergentechLogo.png" alt="freya-layout"/>
             </a>
 
-            <input #email pInputText id="email" placeholder="Email"/>
-            <input #pass pPassword id="password" placeholder="Password" type="password"/>
+            <input #email class="form-control" pInputText placeholder="Email"/>
+            <p-password #pass inputStyleClass="pass" placeholder="Password" [toggleMask]="true"></p-password>
+
             <button pButton pRipple label="LOGIN" type="button" class="login"
                     (click)="login(email.value, pass.value)"></button>
 
@@ -19,3 +20,5 @@
         </div>
     </div>
 </div>
+
+<p-toast position="top-right"></p-toast>

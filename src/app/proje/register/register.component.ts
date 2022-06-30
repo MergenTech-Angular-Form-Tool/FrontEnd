@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Singleton} from '../../utilities/singleton';
+import {MessageService} from 'primeng/api';
 
 @Component({
     selector: 'app-register',
@@ -8,7 +9,7 @@ import {Singleton} from '../../utilities/singleton';
 })
 export class RegisterComponent implements OnInit {
 
-    constructor() {
+    constructor(private messageService: MessageService) {
     }
 
     ngOnInit(): void {
@@ -17,24 +18,23 @@ export class RegisterComponent implements OnInit {
     register(name: string, surname: string, email: string, pass: string, passConfirm: string) {
 
         if (name === '' || surname === '' || email === '' || pass === '' || passConfirm === '') {
-            alert('Please fill all fields');
+            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Some fields are empty!'});
             return;
         }
 
         if (pass !== passConfirm) {
-            alert('Passwords do not match');
+            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Passwords are not match!'});
             return;
         }
 
         if (!Singleton.validateEmail(email)) {
-            alert('Please enter a valid email');
+            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Please enter a valid email!'});
             return;
         }
 
-        alert('Registration successful');
+        this.messageService.add({severity: 'success', summary: 'Registration Successfully', detail: 'Welcome to our website!'});
+
         // go to home page
-
-
-        return;
+        setTimeout(() => window.location.href = '/', 1200);
     }
 }

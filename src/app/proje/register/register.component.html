@@ -5,11 +5,11 @@
                 <img class="mergen-logo" src="../../../assets/layout/images/mergentechLogo.png" alt="freya-layout"/>
             </a>
 
-            <input #name pInputText id="name" placeholder="Name"/>
-            <input #surname pInputText id="surname" placeholder="Surname"/>
-            <input #email pInputText id="email" placeholder="Email"/>
-            <input #pass pPassword id="password" placeholder="Password"/>
-            <input #passConfirm pPassword id="password-verify" placeholder="Password Confirm"/>
+            <input #name pInputText placeholder="Name"/>
+            <input #surname pInputText placeholder="Surname"/>
+            <input #email pInputText placeholder="Email"/>
+            <p-password #pass inputStyleClass="pass" placeholder="Password" [toggleMask]="true"></p-password>
+            <p-password #passConfirm inputStyleClass="pass" placeholder="Password Confirm" [toggleMask]="true"></p-password>
             <button pButton pRipple label="REGISTER" type="button" class="register"
                     (click)="register(name.value, surname.value, email.value, pass.value, passConfirm.value)"></button>
 
@@ -22,3 +22,5 @@
 
     </div>
 </div>
+
+<p-toast position="top-right"></p-toast>

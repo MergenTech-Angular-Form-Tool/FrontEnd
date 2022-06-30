@@ -14,3 +14,14 @@ button.register {
 button.register:hover{
     background: #0f75ab !important;
 }
+
+:host ::ng-deep .pass {
+    width: 247px !important;
+    margin-bottom: 10px;
+    background-color: #F6F7F7;
+    border: 1.2px solid #D4D6D9;
+    color: #515C66;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+}
