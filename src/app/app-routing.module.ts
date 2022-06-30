@@ -7,6 +7,7 @@ import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
+import {SidebarComponent} from './proje/sidebar/sidebar.component';
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import {RegisterComponent} from './proje/register/register.component';
             {path: 'notfound', component: AppNotfoundComponent},
             {path: 'login', component: LoginComponent},
             {path: 'register', component: RegisterComponent},
+            {path: 'sidebar', component: SidebarComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
     ],
