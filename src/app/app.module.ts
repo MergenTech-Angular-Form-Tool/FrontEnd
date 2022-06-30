@@ -151,6 +151,8 @@ import {SplashScreenComponent} from './proje/splash-screen/splash-screen.compone
 import {DragDropModule} from 'primeng/dragdrop';
 import {PopupsComponent} from './proje/popups/popups.component';
 import {ContentComponent} from './proje/content.component';
+import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
+import {FormElementService} from './demo/service/formElementService';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -296,13 +298,14 @@ FullCalendarModule.registerPlugins([
         NavbarComponent,
         PopupsComponent,
         ContentComponent,
-        SplashScreenComponent
+        SplashScreenComponent,
+        DragdropComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
-        MessageService
+        MessageService, FormElementService
     ],
     bootstrap: [AppComponent]
 })

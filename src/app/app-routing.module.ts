@@ -7,10 +7,9 @@ import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
-import {SidebarComponent} from './proje/sidebar/sidebar.component';
 import {PopupsComponent} from './proje/popups/popups.component';
 import {ContentComponent} from './proje/content.component';
-
+import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
 
 @NgModule({
     imports: [
@@ -26,7 +25,7 @@ import {ContentComponent} from './proje/content.component';
             {path: 'notfound', component: AppNotfoundComponent},
             {path: 'login', component: LoginComponent},
             {path: 'register', component: RegisterComponent},
-            {path: 'sidebar', component: SidebarComponent},
+            {path: 'dragdrop', component: DragdropComponent},
             {path: 'popups', component: PopupsComponent},
             {path: 'content', component: ContentComponent},
             {path: '**', redirectTo: '/notfound'},

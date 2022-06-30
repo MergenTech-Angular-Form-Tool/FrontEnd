@@ -5,6 +5,8 @@
     display:block;
     background-color: #f8fafc;
     overflow: hidden;
+    z-index: 99;
+    box-shadow: 0 0 1rem 0 #9caeb7;
 }
 
 .topnav a {
@@ -55,10 +57,10 @@
 
 }
 .topnav img.logo{
-    margin-top: -9px;
+    margin-top: -18px;
     margin-left: 0px;
-    width:100px;
-    height:50px;
+    width:150px;
+    height:75px;
 }
 
 

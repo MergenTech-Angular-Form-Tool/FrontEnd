@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Text Field",
+        "class": "bi bi-card-text"
+    },
+    {
+        "name": "Checkbox",
+        "class": "bi bi-check2-square"
+    },
+    {
+        "name": "Date",
+        "class": "bi bi-calendar-date"
+    },
+    {
+        "name": "Date with time",
+        "class": "bi bi-calendar-day"
+    },
+    {
+        "name": "Email",
+        "class": "bi bi-envelope"
+    },
+    {
+        "name": "File",
+        "class": "bi bi-file-earmark-text"
+    },
+    {
+        "name": "Number",
+        "class": "bi bi-123"
+    },
+    {
+        "name": "Password",
+        "class": "bi bi-asterisk"
+    },
+    {
+        "name": "Range",
+        "class": "bi bi-view-list"
+    }
+]
