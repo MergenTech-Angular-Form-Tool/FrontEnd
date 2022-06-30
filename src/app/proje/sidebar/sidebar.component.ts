@@ -14,7 +14,6 @@ interface SidenavToggle {
 })
 
 export class SidebarComponent implements OnInit {
-
     @Output() onToggleSidenav: EventEmitter<SidenavToggle> = new EventEmitter();
     collapsed = false;
     screenWidth = 0;
@@ -29,13 +28,13 @@ export class SidebarComponent implements OnInit {
         }
     }
 
-    closeSidenav(): void {
-        this.collapsed = false;
+    toggleCollopsed(): void {
+        this.collapsed = !this.collapsed;
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
 
-    toggleCollopsed(): void {
-        this.collapsed = !this.collapsed;
+    closeSidenav(): void {
+        this.collapsed = false;
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
 

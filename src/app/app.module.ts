@@ -143,6 +143,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { AnasayfaComponent } from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
+import {SidebarComponent} from './proje/sidebar/sidebar.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -236,7 +237,8 @@ FullCalendarModule.registerPlugins([
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
-        AppCodeModule
+        AppCodeModule,
+        SidebarModule
     ],
     declarations: [
         AppComponent,
@@ -281,7 +283,8 @@ FullCalendarModule.registerPlugins([
         BlockViewer,
         AnasayfaComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        SidebarComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
