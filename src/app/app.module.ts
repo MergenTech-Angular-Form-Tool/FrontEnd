@@ -150,6 +150,7 @@ import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
 import {FormElementService} from './demo/service/formElementService';
 import {NavbarComponent} from './proje/navbar/navbar.component';
 import {SplashScreenComponent} from './proje/splash-screen/splash-screen.component';
+import {DragDropModule} from 'primeng/dragdrop';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -244,7 +245,8 @@ FullCalendarModule.registerPlugins([
         TreeTableModule,
         VirtualScrollerModule,
         AppCodeModule,
-        SidebarModule
+        SidebarModule,
+        DragDropModule
     ],
     declarations: [
         AppComponent,
