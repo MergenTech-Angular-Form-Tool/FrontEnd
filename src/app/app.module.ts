@@ -140,10 +140,16 @@ import {ConfigService} from './demo/service/app.config.service';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { AnasayfaComponent } from './proje/anasayfa/anasayfa.component';
+
+import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
 import {SidebarComponent} from './proje/sidebar/sidebar.component';
+import {MessageService} from 'primeng/api';
+import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
+import {FormElementService} from './demo/service/formElementService';
+import {NavbarComponent} from './proje/navbar/navbar.component';
+import {SplashScreenComponent} from './proje/splash-screen/splash-screen.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -284,12 +290,16 @@ FullCalendarModule.registerPlugins([
         AnasayfaComponent,
         LoginComponent,
         RegisterComponent,
-        SidebarComponent
+        SidebarComponent,
+        DragdropComponent,
+        NavbarComponent,
+        SplashScreenComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService, AppMainComponent, ConfigService
+        PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
+        MessageService, FormElementService
     ],
     bootstrap: [AppComponent]
 })
