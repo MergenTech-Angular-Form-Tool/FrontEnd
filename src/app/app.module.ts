@@ -149,7 +149,6 @@ import {MessageService} from 'primeng/api';
 import {NavbarComponent} from './proje/navbar/navbar.component';
 import {SplashScreenComponent} from './proje/splash-screen/splash-screen.component';
 import {DragDropModule} from 'primeng/dragdrop';
-import {ContentComponent} from './proje/content.component';
 import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
 import {FormElementService} from './demo/service/formElementService';
 
@@ -295,7 +294,6 @@ FullCalendarModule.registerPlugins([
         RegisterComponent,
         SidebarComponent,
         NavbarComponent,
-        ContentComponent,
         SplashScreenComponent,
         DragdropComponent
     ],
