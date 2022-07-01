@@ -31,7 +31,7 @@
 }
 
 .app-logo {
-    background-image: url("~src/assets/layout/images/screenLogo.png");
+    background-image: url("~src/assets/layout/images/logoGif.gif");
     background-repeat: no-repeat;
     animation-delay: ceil(1);
     max-width: 100%;
@@ -47,7 +47,7 @@
 
     @keyframes scale {
         to {
-            transform: scale(2)
+            transform: scale(1.5)
         }
     }
 
