@@ -1,4 +1,9 @@
-<mat-form-field>
-    <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
-    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-</mat-form-field>
+<div class="d-flex flex-column">
+    <label class="fw-bold mb-1">Enter title of date field : </label>
+    <input type="text" pInputText name="date_title">
+</div>
+
+<div class="d-flex flex-column mt-3">
+    <label class="fw-bold mb-1">Choose date format : </label>
+    <p-dropdown styleClass="w-100" [options]="dateFormats" [(ngModel)]="selected" optionLabel="format" optionValue="value" placeholder="dd-mm-yy"></p-dropdown>
+</div>

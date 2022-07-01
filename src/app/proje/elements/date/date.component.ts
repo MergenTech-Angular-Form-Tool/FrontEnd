@@ -1,5 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
+interface Date {
+    format: string;
+    value: string;
+}
+
 @Component({
     selector: 'app-date',
     templateUrl: './date.component.html',
@@ -9,11 +14,21 @@ export class DateComponent implements OnInit {
 
     hide: boolean;
     passwordInput: string;
+    date2: any;
+    dateFormats: Date[];
+    selected: string;
 
     constructor() {
     }
 
     ngOnInit(): void {
+        this.dateFormats = [
+            {format: 'dd.mm.yy', value: 'dd.mm.yy'},
+            {format: 'dd-mm-yy', value: 'dd-mm-yy'},
+            {format: 'dd/mm/yy', value: 'dd/mm/yy'},
+            {format: 'mm.dd.yy', value: 'mm.dd.yy'},
+            {format: 'mm-dd-yy', value: 'mm-dd-yy'},
+            {format: 'mm/dd/yy', value: 'dd/mm/yy'}];
     }
 
 }
