@@ -8,8 +8,7 @@ import {PopupsComponent} from './popups/popups.component';
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent implements OnInit {
-    category: string;
-    data: string;
+
   constructor() { }
 
   ngOnInit(): void {
