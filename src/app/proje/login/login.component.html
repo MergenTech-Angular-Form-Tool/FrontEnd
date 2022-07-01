@@ -5,11 +5,23 @@
                 <img class="mergen-logo" src="assets/layout/images/mergentechLogo.png" alt="freya-layout"/>
             </a>
 
-            <input #email class="form-control" pInputText placeholder="Email"/>
-            <p-password #pass inputStyleClass="pass" placeholder="Password" [toggleMask]="true"></p-password>
+            <form [formGroup]="formGroup" class="form d-flex flex-column">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input #email matInput formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </form>
 
             <button pButton pRipple label="LOGIN" type="button" class="login"
-                    (click)="login(email.value, pass.value)"></button>
+                    (click)="login(email.value, pass.value)">
+            </button>
 
             <a href="#">forget password?</a>
             <p>Don’t you have an account, <span (click)="gotoHome()" class="register-a">sign up</span>!</p>

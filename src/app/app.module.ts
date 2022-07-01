@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -153,6 +153,8 @@ import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
 import {FormElementService} from './demo/service/formElementService';
 import { RightbarComponent } from './proje/rightbar/rightbar.component';
 import {AdressComponent} from './adress/adress.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -248,7 +250,10 @@ FullCalendarModule.registerPlugins([
         VirtualScrollerModule,
         AppCodeModule,
         SidebarModule,
-        DragDropModule
+        DragDropModule,
+        MatIconModule,
+        MatInputModule,
+        ReactiveFormsModule
     ],
     declarations: [
         AppComponent,
@@ -299,7 +304,8 @@ FullCalendarModule.registerPlugins([
         SplashScreenComponent,
         DragdropComponent,
         RightbarComponent,
-        AdressComponent
+        AdressComponent,
+        DateComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

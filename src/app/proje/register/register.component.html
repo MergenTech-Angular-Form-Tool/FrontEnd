@@ -5,13 +5,38 @@
                 <img class="mergen-logo" src="../../../assets/layout/images/mergentechLogo.png" alt="freya-layout"/>
             </a>
 
-            <input #name pInputText placeholder="Name"/>
-            <input #surname pInputText placeholder="Surname"/>
-            <input #email pInputText placeholder="Email"/>
-            <p-password #pass inputStyleClass="pass" placeholder="Password" [toggleMask]="true"></p-password>
-            <p-password #passConfirm inputStyleClass="pass" placeholder="Password Confirm" [toggleMask]="true"></p-password>
+            <form [formGroup]="formGroup" class="d-flex flex-column">
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input #name matInput formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Surname</mat-label>
+                    <input #surname matInput formControlName="surname">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input #email matInput formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Confirm Password</mat-label>
+                    <input #passConfirm matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </form>
+
             <button pButton pRipple label="REGISTER" type="button" class="register"
-                    (click)="register(name.value, surname.value, email.value, pass.value, passConfirm.value)"></button>
+                    (click)="register(name.value, surname.value, email.value, pass.value, passConfirm.value)">
+            </button>
 
         </div>
 

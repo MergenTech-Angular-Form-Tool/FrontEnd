@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Singleton} from '../../utilities/singleton';
 import {Router} from '@angular/router';
 import {MessageService} from 'primeng/api';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
     selector: 'app-login',
@@ -10,10 +11,17 @@ import {MessageService} from 'primeng/api';
 })
 export class LoginComponent implements OnInit {
 
+    formGroup: FormGroup;
+    hide = true;
+
     constructor(private router: Router, private messageService: MessageService) {
     }
 
     ngOnInit(): void {
+        this.formGroup = new FormGroup({
+            password: new FormControl('', [Validators.required]),
+            email: new FormControl('', [Validators.required])
+        });
     }
 
     login(email: string, pass: string) {

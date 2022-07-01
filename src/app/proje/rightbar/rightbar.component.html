@@ -10,15 +10,9 @@
     </div>
     <div [className]="!collapsed ? 'p-4 d-none' : 'p-4 d-block'">
 
-        <div class="field">
-            <label for="username1" class="block fw-bold">Question Text :</label>
-            <input #questionText id="username1" type="username" aria-describedby="username1-help"
-                   class="form-control" pInputText/>
-            <small id="username1-help" class="block">Type your question.</small>
-        </div>
+        <app-date></app-date>
 
         <div class="d-flex justify-content-end">
-            <button class="btn btn-success" (click)="alert(questionText)">Submit</button>
         </div>
 
     </div>
