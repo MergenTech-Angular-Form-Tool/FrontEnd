@@ -1,0 +1,33 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <span class="p-float-label">
+    <label>Soru Metni</label>
+    <input id="soru" type="text" pInputText>
+</span>
+</div>
+<div class="container">
+    <div class="p-inputswitch">
+        <label for="zorunlu">Zorunlu</label>
+        <p-inputSwitch id="zorunlu" [(ngModel)]="checked"></p-inputSwitch>
+    </div>
+</div>
+<div class="container-md">
+    <h4>Seçenek İçerikleri</h4>
+    <span class="p-float-label">
+<textarea id="float-input" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+    <label for="float-input">Seçenekler</label>
+</span>
+</div>
+<div class="container d-flex">
+    <div class="field col-12 md:col-2">
+    <label for="dagit">Sütunlara Dağıt</label>
+    <p-inputSwitch id="dagit" [(ngModel)]="detail"></p-inputSwitch>
+    </div>
+    <div class="field col-12 md:col-2">
+        <p-inputNumber [(ngModel)]="value" mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="1" [max]="100">
+        </p-inputNumber>
+    </div>
+</div>
+<div class="container">
+    <button pButton pRipple type="button" icon="pi pi-clone" class="p-button-rounded p-button-help"></button>
+    <small id="comment2-help" class="block">Bu alanın tüm kayıtlı ayarlarını koruyarak klonlaması yapılır.</small>
+</div>

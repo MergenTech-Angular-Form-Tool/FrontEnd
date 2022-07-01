@@ -1,7 +1,7 @@
 <div [className]="!collapsed ? 'sidenav-short' : 'sidenav'" [ngClass]="collapsed ? 'sidenav-collapsed': '' ">
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapsed()">
-            <i class="bi bi-magic designer-logo"></i>
+            <i class="bi bi-brush-fill designer-logo"></i>
         </button>
         <div class="logo-text" *ngIf="collapsed">Form Designer</div>
         <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">

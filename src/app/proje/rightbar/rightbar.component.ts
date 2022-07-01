@@ -47,7 +47,7 @@ export class RightbarComponent implements OnInit {
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
 
-    alert(q: string) {
+    alert(q: HTMLInputElement) {
         console.log(this.questionText);
         alert(this.questionText);
     }

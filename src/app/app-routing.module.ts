@@ -8,7 +8,8 @@ import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
 import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
-import {AdressComponent} from './adress/adress.component';
+import {AdressComponent} from './proje/elements/adress/adress.component';
+import {CheckboxComponent} from './proje/elements/checkbox/checkbox.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {AdressComponent} from './adress/adress.component';
             {path: 'register', component: RegisterComponent},
             {path: 'dragdrop', component: DragdropComponent},
             {path: 'adress', component: AdressComponent},
+            {path: 'checkbox', component: CheckboxComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
     ],

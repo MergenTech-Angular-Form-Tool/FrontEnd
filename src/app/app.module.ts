@@ -153,9 +153,10 @@ import {DragDropModule} from 'primeng/dragdrop';
 import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
 import {FormElementService} from './demo/service/formElementService';
 import { RightbarComponent } from './proje/rightbar/rightbar.component';
-import {AdressComponent} from './adress/adress.component';
+import {AdressComponent} from './proje/elements/adress/adress.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import {CheckboxComponent} from './proje/elements/checkbox/checkbox.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -306,7 +307,8 @@ FullCalendarModule.registerPlugins([
         DragdropComponent,
         RightbarComponent,
         AdressComponent,
-        DateComponent
+        DateComponent,
+        CheckboxComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
