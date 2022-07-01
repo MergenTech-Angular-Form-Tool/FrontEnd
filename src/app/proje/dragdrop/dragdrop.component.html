@@ -2,8 +2,10 @@
 
 <div class="grid">
 
-    <app-sidebar [selectedElements]="selectedElements" [dragStart]="dragStartElement"
-                 [dragStop]="dragEndElement"></app-sidebar>
+    <app-leftbar [selectedElements]="selectedElements" [dragStart]="dragStartElement"
+                 [dragStop]="dragEndElement"></app-leftbar>
+
+    <app-rightbar></app-rightbar>
 
     <div class="col-12 md:col-6 center drop-column bg-warning" pDroppable="elements" (onDrop)="dropElement()">
         <p-table [value]="selectedElements" styleClass="p-datatable-gridlines" responsiveLayout="scroll">

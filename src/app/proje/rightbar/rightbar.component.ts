@@ -1,6 +1,4 @@
 import {Component, OnInit, Output, EventEmitter, HostListener, Input} from '@angular/core';
-import {FormElement} from '../../demo/domain/formElement';
-import {FormElementService} from '../../demo/service/formElementService';
 
 interface SidenavToggle {
     screenWidth: number;
@@ -8,20 +6,23 @@ interface SidenavToggle {
 }
 
 @Component({
-    selector: 'app-sidebar',
-    templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.scss']
+    selector: 'app-rightbar',
+    templateUrl: './rightbar.component.html',
+    styleUrls: ['./rightbar.component.scss']
 })
-
-export class SidebarComponent implements OnInit {
+export class RightbarComponent implements OnInit {
 
     @Output() onToggleSidenav: EventEmitter<SidenavToggle> = new EventEmitter();
     collapsed = false;
     screenWidth = 0;
-    @Input() selectedElements: FormElement[];
-    @Input() dragStart: (args: FormElement) => void;
-    @Input() dragStop: () => void;
-    formElements: FormElement[];
+    questionText = '';
+
+    constructor() {
+    }
+
+    ngOnInit(): void {
+        this.screenWidth = window.innerWidth;
+    }
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
@@ -33,6 +34,10 @@ export class SidebarComponent implements OnInit {
     }
 
     toggleCollapsed(): void {
+        if (this.collapsed) {
+
+        }
+
         this.collapsed = !this.collapsed;
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
@@ -42,12 +47,8 @@ export class SidebarComponent implements OnInit {
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
 
-    constructor(private formElementService: FormElementService) {
-    }
-
-    ngOnInit(): void {
-        this.screenWidth = window.innerWidth;
-        this.selectedElements = [];
-        this.formElementService.getElements().then(elements => this.formElements = elements);
+    alert(q: string) {
+        console.log(this.questionText);
+        alert(this.questionText);
     }
 }

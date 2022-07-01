@@ -21,7 +21,7 @@
             width: 3rem;
             min-width: 3rem;
             border-radius: 0.313rem;
-            padding: 0.313rem;
+            //padding: 0.313rem;
             font-size: 24px;
             font-weight: 900;
             cursor: pointer;
@@ -110,4 +110,12 @@
     .sidenav-link-text {
         color: #1e1e1e;
     }
+}
+
+.plus {
+    font-size: 20px;
+    color: #3a3636;
+    cursor: pointer;
+    //margin-left: 1.5rem;
+    margin: auto;
 }

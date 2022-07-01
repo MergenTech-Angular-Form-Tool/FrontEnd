@@ -1,0 +1,25 @@
+<div [className]="!collapsed ? 'sidenav-short' : 'sidenav'" [ngClass]="collapsed ? 'sidenav-collapsed': '' ">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapsed()">
+            <i class="bi bi-magic designer-logo"></i>
+        </button>
+        <div class="logo-text" *ngIf="collapsed">Form Designer</div>
+        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <div [className]="!collapsed ? 'p-4 d-none' : 'p-4 d-block'">
+
+        <div class="field">
+            <label for="username1" class="block fw-bold">Question Text :</label>
+            <input #questionText id="username1" type="username" aria-describedby="username1-help"
+                   class="form-control" pInputText/>
+            <small id="username1-help" class="block">Type your question.</small>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-success" (click)="alert(questionText)">Submit</button>
+        </div>
+
+    </div>
+</div>

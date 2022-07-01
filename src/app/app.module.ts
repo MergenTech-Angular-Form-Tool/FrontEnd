@@ -144,13 +144,14 @@ import interactionPlugin from '@fullcalendar/interaction';
 import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
-import {SidebarComponent} from './proje/sidebar/sidebar.component';
+import {LeftbarComponent} from './proje/leftbar/leftbar.component';
 import {MessageService} from 'primeng/api';
 import {NavbarComponent} from './proje/navbar/navbar.component';
 import {SplashScreenComponent} from './proje/splash-screen/splash-screen.component';
 import {DragDropModule} from 'primeng/dragdrop';
 import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
 import {FormElementService} from './demo/service/formElementService';
+import { RightbarComponent } from './proje/rightbar/rightbar.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -292,10 +293,11 @@ FullCalendarModule.registerPlugins([
         AnasayfaComponent,
         LoginComponent,
         RegisterComponent,
-        SidebarComponent,
+        LeftbarComponent,
         NavbarComponent,
         SplashScreenComponent,
-        DragdropComponent
+        DragdropComponent,
+        RightbarComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
