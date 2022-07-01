@@ -1,0 +1,62 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <span class="p-float-label">
+    <label >Soru Metni</label>
+    <input id="soru" type="text" pInputText>
+</span>
+</div>
+<div class="container">
+    <div class="p-inputswitch">
+        <label>Zorunlu</label>
+        <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-12">
+        <h3>Alt Etiketler</h3>
+        <h5>Adres</h5>
+        <span class="p-float-label">
+    <label for="adres1">Adres</label>
+    <input id="adres1" type="text" pInputText>
+</span>
+    </div>
+
+    <div class="col-12">
+        <span class="p-float-label">
+    <input id="adres2" type="text" pInputText>
+    <label for="adres2"></label>
+        <small id="comment1-help" class="block">Adres satırı 2</small>
+</span>
+    </div>
+
+    <div class="col-12 ">
+        <span class="p-float-label">
+        <label for="PostCode">Posta Kodu</label>
+        <input id="PostCode" type="text" pInputText>
+    </span></div>
+</div>
+<div class="container d-flex">
+    <div class="col-12 md:col-2">
+        <div class="p-inputgroup">
+            <label for="A_il">İl</label>
+            <input id="A_il" type="text" pInputText placeholder="İl giriniz.">
+        </div>
+    </div>
+    <div class="col-12 md:col-2">
+        <div class="p-inputgroup">
+            <label for="A_ilce">İlçe/Eyalet</label>
+            <input id="A_ilce" type="text" pInputText placeholder="İlçe giriniz.">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h5>Görünüm Seçenekleri</h5>
+    <div *ngFor="let category of categories" class="field-checkbox">
+        <p-checkbox name="group2" value="category" [value]="category"  [(ngModel)]="selectedCategories" [inputId]="category.key" [disabled]="category.key === 'R'"></p-checkbox>
+        <label [for]="category.key">{{category.name}}</label>
+    </div>
+</div>
+<div class="container">
+    <button pButton pRipple type="button" icon="pi pi-clone" class="p-button-rounded p-button-help"></button>
+    <small id="comment2-help" class="block">Bu alanın tüm kayıtlı ayarlarını koruyarak klonlaması yapılır.</small>
+</div>

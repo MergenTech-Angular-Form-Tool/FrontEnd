@@ -8,6 +8,8 @@ import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
 import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
+import {AdressComponent} from './adress/adress.component';
+
 
 @NgModule({
     imports: [
@@ -24,6 +26,7 @@ import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
             {path: 'login', component: LoginComponent},
             {path: 'register', component: RegisterComponent},
             {path: 'dragdrop', component: DragdropComponent},
+            {path: 'adress', component: AdressComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
     ],

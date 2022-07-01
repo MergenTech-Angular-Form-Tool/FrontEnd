@@ -152,6 +152,7 @@ import {DragDropModule} from 'primeng/dragdrop';
 import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
 import {FormElementService} from './demo/service/formElementService';
 import { RightbarComponent } from './proje/rightbar/rightbar.component';
+import {AdressComponent} from './adress/adress.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -297,7 +298,8 @@ FullCalendarModule.registerPlugins([
         NavbarComponent,
         SplashScreenComponent,
         DragdropComponent,
-        RightbarComponent
+        RightbarComponent,
+        AdressComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
