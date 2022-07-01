@@ -1,0 +1,26 @@
+<div class="label d-flex justify-content-start">
+
+    <label >Enter Question </label>
+</div>
+
+<div class="textField d-flex justify-content-start">
+
+    <input type="text" id="topLabel" placeholder="" pInputText />
+
+</div>
+
+
+<div class="numField d-flex justify-content-start">
+
+    <p-inputNumber [(ngModel)]="val" [showButtons]="true" mode="decimal" ></p-inputNumber>
+
+</div>
+
+<div class="d-flex justify-content-start">
+    <div class="label">
+    <label>Disable negative numbers</label>
+    </div>
+    <div class="checkBox">
+    <p-checkbox name="checkbox" value="val1" [(ngModel)]="selectedValue"></p-checkbox>
+    </div>
+</div>
