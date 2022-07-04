@@ -1,35 +1,17 @@
-<div class="grid p-fluid">
-    <div class="col-12">
-        <div class="p-inputgroup">
-            <div class="inputtext d-flex justify-content-center">
-                <input type="text" id="topLabel" placeholder="Soru giriniz." pInputText/>
-            </div>
-            <div class="p-inputgroup">
-                <div class="inputswitch d-flex justify-content-center">
-                    <label>Zorunlu</label>
-                    <p-inputSwitch id="zorunlu" [(ngModel)]="checked"></p-inputSwitch>
-                </div>
-            </div>
-        </div>
-        <label class="inputtext">Seçenek İçerikleri</label>
-        <div class="inputtextarea justify-content-center">
-    <textarea id="float-input" rows="5" cols="30" pInputTextarea autoResize="autoResize"
-              placeholder="Seçenekler"></textarea>
-        </div>
-        <div class="inputswitch d-flex justify-content">
-            <label class="inputlabel1" id="label1">Sütunlara Dağıt</label>
-            <p-inputSwitch id="dagit" [(ngModel)]="detail"></p-inputSwitch>
-            <div class="inputnumber d-flex justify-content">
-                <p-inputNumber [(ngModel)]="value" mode="decimal" [showButtons]="true" inputId="minmax-buttons"
-                               [min]="1"
-                               [max]="100">
-                </p-inputNumber>
-            </div>
-        </div>
-        <div class="button justify-content-center">
-            <button pButton pRipple type="button" icon="pi pi-clone" class="p-button-rounded p-button-help"></button>
-            <small id="comment2-help" class="block">Bu alanın tüm kayıtlı ayarlarını koruyarak klonlaması
-                yapılır.</small>
-        </div>
+<div class="">
+    <div class="mb-3">
+        <div class="mb-2">Enter your question:</div>
+        <input type="text" class="w-100" pInputText/>
     </div>
+
+    <div class="d-flex">
+        <label class="me-4">Required</label>
+        <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+    </div>
+</div>
+
+
+<div class="my-2">
+    <label class="mb-2">Option contents: </label>
+    <textarea rows="5" cols="30" pInputTextarea placeholder="Type with \n"></textarea>
 </div>

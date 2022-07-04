@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdressComponent implements OnInit {
     category: string;
     selectedCategories: any[] = ['', ''];
-    categories: any[] = [{name: 'adres1', key: 'A'}, {name: 'adres2', key: 'B'}, {name: 'İl', key: 'I'}, {name: 'İlçe/Eyalet', key: 'E'}, {name: 'Ülke', key: 'U'}];
+    categories: any[] = [{name: 'Address 1', key: 'A'}, {name: 'Address 2', key: 'B'}, {name: 'İl', key: 'I'}, {name: 'İlçe / Eyalet', key: 'E'}, {name: 'Ülke', key: 'U'}];
     checked = false;
     constructor() { }
 

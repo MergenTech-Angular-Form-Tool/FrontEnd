@@ -141,7 +141,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
-import { DateComponent } from './proje/elements/date/date.component';
+import {DateComponent} from './proje/elements/date/date.component';
 import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
@@ -152,12 +152,15 @@ import {SplashScreenComponent} from './proje/splash-screen/splash-screen.compone
 import {DragDropModule} from 'primeng/dragdrop';
 import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
 import {FormElementService} from './demo/service/formElementService';
-import { RightbarComponent } from './proje/rightbar/rightbar.component';
+import {RightbarComponent} from './proje/rightbar/rightbar.component';
 import {AdressComponent} from './proje/elements/adress/adress.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {CheckboxComponent} from './proje/elements/checkbox/checkbox.component';
-import { MailComponent } from './proje/elements/mail/mail.component';
+import {MailComponent} from './proje/elements/mail/mail.component';
+import {TextfieldComponent} from './proje/elements/textfield/textfield.component';
+import {DividerComponent} from './proje/elements/divider/divider.component';
+import {FileUploadComponent} from './proje/elements/file-upload/file-upload.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -310,7 +313,10 @@ FullCalendarModule.registerPlugins([
         AdressComponent,
         DateComponent,
         CheckboxComponent,
-        MailComponent
+        MailComponent,
+        TextfieldComponent,
+        DividerComponent,
+        FileUploadComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -1,4 +1,4 @@
-<div [className]="!collapsed ? 'sidenav-short' : 'sidenav'" [ngClass]="collapsed ? 'sidenav-collapsed': '' ">
+<div [ngClass]="collapsed ? 'sidenav-collapsed sidenav overflow-scroll': 'sidenav-short' ">
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapsed()">
             <i class="bi bi-brush-fill designer-logo"></i>
@@ -8,10 +8,15 @@
             <i class="fal fa-times close-icon"></i>
         </button>
     </div>
-    <app-adress></app-adress>
+
     <div [className]="!collapsed ? 'p-4 d-none' : 'p-4 d-block'">
+
+        <app-divider></app-divider>
+
         <div class="d-flex justify-content-end">
+            <button class="btn btn-success mt-3">Save</button>
         </div>
 
     </div>
+
 </div>
