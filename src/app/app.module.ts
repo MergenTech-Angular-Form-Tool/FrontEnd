@@ -157,6 +157,7 @@ import {AdressComponent} from './proje/elements/adress/adress.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {CheckboxComponent} from './proje/elements/checkbox/checkbox.component';
+import { MailComponent } from './proje/elements/mail/mail.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -308,7 +309,8 @@ FullCalendarModule.registerPlugins([
         RightbarComponent,
         AdressComponent,
         DateComponent,
-        CheckboxComponent
+        CheckboxComponent,
+        MailComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
