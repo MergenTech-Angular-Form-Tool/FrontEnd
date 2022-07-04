@@ -1,33 +1,35 @@
-<div class="container" xmlns="http://www.w3.org/1999/html">
-    <span class="p-float-label">
-    <label>Soru Metni</label>
-    <input id="soru" type="text" pInputText>
-</span>
-</div>
-<div class="container">
-    <div class="p-inputswitch">
-        <label for="zorunlu">Zorunlu</label>
-        <p-inputSwitch id="zorunlu" [(ngModel)]="checked"></p-inputSwitch>
+<div class="grid p-fluid">
+    <div class="col-12">
+        <div class="p-inputgroup">
+            <div class="inputtext d-flex justify-content-center">
+                <input type="text" id="topLabel" placeholder="Soru giriniz." pInputText/>
+            </div>
+            <div class="p-inputgroup">
+                <div class="inputswitch d-flex justify-content-center">
+                    <label>Zorunlu</label>
+                    <p-inputSwitch id="zorunlu" [(ngModel)]="checked"></p-inputSwitch>
+                </div>
+            </div>
+        </div>
+        <label class="inputtext">Seçenek İçerikleri</label>
+        <div class="inputtextarea justify-content-center">
+    <textarea id="float-input" rows="5" cols="30" pInputTextarea autoResize="autoResize"
+              placeholder="Seçenekler"></textarea>
+        </div>
+        <div class="inputswitch d-flex justify-content">
+            <label class="inputlabel1" id="label1">Sütunlara Dağıt</label>
+            <p-inputSwitch id="dagit" [(ngModel)]="detail"></p-inputSwitch>
+            <div class="inputnumber d-flex justify-content">
+                <p-inputNumber [(ngModel)]="value" mode="decimal" [showButtons]="true" inputId="minmax-buttons"
+                               [min]="1"
+                               [max]="100">
+                </p-inputNumber>
+            </div>
+        </div>
+        <div class="button justify-content-center">
+            <button pButton pRipple type="button" icon="pi pi-clone" class="p-button-rounded p-button-help"></button>
+            <small id="comment2-help" class="block">Bu alanın tüm kayıtlı ayarlarını koruyarak klonlaması
+                yapılır.</small>
+        </div>
     </div>
-</div>
-<div class="container-md">
-    <h4>Seçenek İçerikleri</h4>
-    <span class="p-float-label">
-<textarea id="float-input" rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
-    <label for="float-input">Seçenekler</label>
-</span>
-</div>
-<div class="container d-flex">
-    <div class="field col-12 md:col-2">
-    <label for="dagit">Sütunlara Dağıt</label>
-    <p-inputSwitch id="dagit" [(ngModel)]="detail"></p-inputSwitch>
-    </div>
-    <div class="field col-12 md:col-2">
-        <p-inputNumber [(ngModel)]="value" mode="decimal" [showButtons]="true" inputId="minmax-buttons" [min]="1" [max]="100">
-        </p-inputNumber>
-    </div>
-</div>
-<div class="container">
-    <button pButton pRipple type="button" icon="pi pi-clone" class="p-button-rounded p-button-help"></button>
-    <small id="comment2-help" class="block">Bu alanın tüm kayıtlı ayarlarını koruyarak klonlaması yapılır.</small>
 </div>
