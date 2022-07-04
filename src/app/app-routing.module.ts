@@ -8,8 +8,8 @@ import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
 import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
-import {AdressComponent} from './proje/elements/adress/adress.component';
-import {CheckboxComponent} from './proje/elements/checkbox/checkbox.component';
+import {AdressComponent} from './proje/sidebarelements/adress/adress.component';
+import {CheckboxComponent} from './proje/sidebarelements/checkbox/checkbox.component';
 
 
 @NgModule({

@@ -10,8 +10,7 @@
     </div>
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let item of formElements">
-            <div class="sidenav-nav-link" pDraggable="elements" (onDragStart)="dragStart(item)"
-                 (onDragEnd)="dragStop()">
+            <div class="sidenav-nav-link user-select-none" (click)="add()">
                 <i class="sidenav-link-icon" [class]="item.class"></i>
                 <span class="sidenav-link-text" *ngIf="collapsed">{{item.name}}</span>
             </div>

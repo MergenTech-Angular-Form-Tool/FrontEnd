@@ -141,7 +141,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
-import {DateComponent} from './proje/elements/date/date.component';
+import {DateComponent} from './proje/sidebarelements/date/date.component';
 import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
@@ -153,14 +153,15 @@ import {DragDropModule} from 'primeng/dragdrop';
 import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
 import {FormElementService} from './demo/service/formElementService';
 import {RightbarComponent} from './proje/rightbar/rightbar.component';
-import {AdressComponent} from './proje/elements/adress/adress.component';
+import {AdressComponent} from './proje/sidebarelements/adress/adress.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import {CheckboxComponent} from './proje/elements/checkbox/checkbox.component';
-import {MailComponent} from './proje/elements/mail/mail.component';
-import {TextfieldComponent} from './proje/elements/textfield/textfield.component';
-import {DividerComponent} from './proje/elements/divider/divider.component';
-import {FileUploadComponent} from './proje/elements/file-upload/file-upload.component';
+import {CheckboxComponent} from './proje/sidebarelements/checkbox/checkbox.component';
+import {MailComponent} from './proje/sidebarelements/mail/mail.component';
+import {TextfieldComponent} from './proje/sidebarelements/textfield/textfield.component';
+import {DividerComponent} from './proje/sidebarelements/divider/divider.component';
+import {FileUploadComponent} from './proje/sidebarelements/file-upload/file-upload.component';
+import {PasswordComponent} from './proje/sidebarelements/password/password.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -316,7 +317,8 @@ FullCalendarModule.registerPlugins([
         MailComponent,
         TextfieldComponent,
         DividerComponent,
-        FileUploadComponent
+        FileUploadComponent,
+        PasswordComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

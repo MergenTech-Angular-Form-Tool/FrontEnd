@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter, HostListener, Input} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import {FormElement} from '../../demo/domain/formElement';
 import {FormElementService} from '../../demo/service/formElementService';
 
@@ -18,10 +18,9 @@ export class LeftbarComponent implements OnInit {
     @Output() onToggleSidenav: EventEmitter<SidenavToggle> = new EventEmitter();
     collapsed = false;
     screenWidth = 0;
-    @Input() selectedElements: FormElement[];
-    @Input() dragStart: (args: FormElement) => void;
-    @Input() dragStop: () => void;
     formElements: FormElement[];
+    @Input() selectedItems: any[] = [];
+    @Input() add: () => void;
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
@@ -47,7 +46,6 @@ export class LeftbarComponent implements OnInit {
 
     ngOnInit(): void {
         this.screenWidth = window.innerWidth;
-        this.selectedElements = [];
         this.formElementService.getElements().then(elements => this.formElements = elements);
     }
 }

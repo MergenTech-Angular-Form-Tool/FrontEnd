@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ProductService} from '../../demo/service/productservice';
+import {Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {FormElementService} from '../../demo/service/formElementService';
-import {FormElement} from '../../demo/domain/formElement';
+import {TextfieldComponent} from '../sidebarelements/textfield/textfield.component';
 
 @Component({
     selector: 'app-dragdrop',
@@ -10,32 +9,20 @@ import {FormElement} from '../../demo/domain/formElement';
 })
 export class DragdropComponent implements OnInit {
 
-    formElements: FormElement[];
-    selectedElements: FormElement[];
-    draggedElement: FormElement;
+    selectedItems: any[] = [];
+    @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
 
-    constructor(private productService: ProductService, private formElementService: FormElementService) {
-
+    constructor(private formElementService: FormElementService, private resolver: ComponentFactoryResolver) {
     }
 
     ngOnInit() {
-        this.selectedElements = [];
-        this.formElementService.getElements().then(elements => this.formElements = elements);
     }
 
-    dragStartElement(element: FormElement) {
-        this.draggedElement = element;
+    add() {
+        // this.entry.clear();
+        const factory = this.resolver.resolveComponentFactory(TextfieldComponent);
+        const componentRef = this.entry.createComponent(factory);
     }
 
-    dropElement() {
-        if (this.draggedElement) {
-            this.selectedElements = [...this.selectedElements, this.draggedElement];
-            this.draggedElement = null;
-        }
-    }
-
-    dragEndElement() {
-        this.draggedElement = null;
-    }
 
 }

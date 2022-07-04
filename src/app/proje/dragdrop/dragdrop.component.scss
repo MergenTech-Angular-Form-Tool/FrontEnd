@@ -6,6 +6,8 @@
     margin: 50px 250px auto;
     min-height: 200px;
     padding: 0;
+    width: calc(100vw - 600px);
+    height: 100vh;
 }
 
 :host ::ng-deep .drag-column {
