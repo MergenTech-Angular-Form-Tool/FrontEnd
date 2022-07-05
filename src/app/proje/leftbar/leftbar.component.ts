@@ -1,7 +1,16 @@
 import {Component, ComponentFactoryResolver, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import {FormElement} from '../../demo/domain/formElement';
 import {FormElementService} from '../../demo/service/formElementService';
-import {TextfieldComponent} from '../sidebarelements/textfield/textfield.component';
+import {MailComponent} from '../sidebarelements/mail/mail.component';
+import {TextfieldelementComponent} from '../middleelements/textfieldelement/textfieldelement.component';
+import {CheckboxelementComponent} from '../middleelements/checkboxelement/checkboxelement.component';
+import {DateelementComponent} from '../middleelements/dateelement/dateelement.component';
+import {PasswordelementComponent} from '../middleelements/passwordelement/passwordelement.component';
+import {NumberelementComponent} from '../middleelements/numberelement/numberelement.component';
+import {FileelementComponent} from '../middleelements/fileelement/fileelement.component';
+import {RangeelementComponent} from '../middleelements/rangeelement/rangeelement.component';
+import {DatetimeelementComponent} from '../middleelements/datetimeelement/datetimeelement.component';
+
 
 interface SidenavToggle {
     screenWidth: number;
@@ -50,8 +59,27 @@ export class LeftbarComponent implements OnInit {
         this.formElementService.getElements().then(elements => this.formElements = elements);
     }
 
-    add() {
-        const factory = this.resolver.resolveComponentFactory(TextfieldComponent);
+    add(open: string) {
+        let factory: any;
+        if (open === 'Text Field') {
+            factory = this.resolver.resolveComponentFactory(TextfieldelementComponent);
+        } else if (open === 'Checkbox') {
+            factory = this.resolver.resolveComponentFactory(CheckboxelementComponent);
+        } else if (open === 'Date') {
+            factory = this.resolver.resolveComponentFactory(DateelementComponent);
+        } else if (open === 'Date with Time') {
+            factory = this.resolver.resolveComponentFactory(DatetimeelementComponent);
+        } else if (open === 'Email') {
+            factory = this.resolver.resolveComponentFactory(MailComponent);
+        } else if (open === 'File') {
+            factory = this.resolver.resolveComponentFactory(FileelementComponent);
+        } else if (open === 'Number') {
+            factory = this.resolver.resolveComponentFactory(NumberelementComponent);
+        } else if (open === 'Password') {
+            factory = this.resolver.resolveComponentFactory(PasswordelementComponent);
+        } else if (open === 'Range') {
+            factory = this.resolver.resolveComponentFactory(RangeelementComponent);
+        }
         const componentRef = this.entry.createComponent(factory);
     }
 }

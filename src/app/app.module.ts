@@ -166,6 +166,11 @@ import {TextfieldelementComponent} from './proje/middleelements/textfieldelement
 import { CheckboxelementComponent } from './proje/middleelements/checkboxelement/checkboxelement.component';
 import { DateelementComponent } from './proje/middleelements/dateelement/dateelement.component';
 import { DatetimeelementComponent } from './proje/middleelements/datetimeelement/datetimeelement.component';
+import {NumberComponent} from './proje/sidebarelements/number/number.component';
+import {FileelementComponent} from './proje/middleelements/fileelement/fileelement.component';
+import {NumberelementComponent} from './proje/middleelements/numberelement/numberelement.component';
+import {PasswordelementComponent} from './proje/middleelements/passwordelement/passwordelement.component';
+import {RangeelementComponent} from './proje/middleelements/rangeelement/rangeelement.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -326,7 +331,12 @@ FullCalendarModule.registerPlugins([
         TextfieldelementComponent,
         CheckboxelementComponent,
         DateelementComponent,
-        DatetimeelementComponent
+        DatetimeelementComponent,
+        NumberComponent,
+        FileelementComponent,
+        NumberelementComponent,
+        PasswordelementComponent,
+        RangeelementComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
