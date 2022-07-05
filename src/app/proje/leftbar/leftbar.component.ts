@@ -80,7 +80,5 @@ export class LeftbarComponent implements OnInit {
             factory = this.resolver.resolveComponentFactory(RangeelementComponent);
         }
         const componentRef = this.entry.createComponent(factory);
-        const br = this.resolver.resolveComponentFactory(RangeelementComponent);
-        const brRef = this.entry.createComponent(br);
     }
 }
