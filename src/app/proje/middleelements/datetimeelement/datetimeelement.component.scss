@@ -1,3 +1,29 @@
-:host ::ng-deep .width{
+:host ::ng-deep .width {
     width: 500px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.buttons-cog {
+    opacity: 0.6;
+    transition: 0.3s;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 505px;
+}
+
+.buttons-cog:hover {
+    opacity: 1
+}
+
+.buttons-clr {
+    opacity: 0.6;
+    transition: 0.3s;
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 505px;
+}
+
+.buttons-clr:hover {
+    opacity: 1
 }

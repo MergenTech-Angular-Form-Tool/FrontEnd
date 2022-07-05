@@ -1,7 +1,31 @@
 .handle {
     cursor: move;
     height: 100px;
+    margin-top: 10px;
     border-style:solid;
     border-color:lightblue;
     border-collapse: collapse;
+}
+.buttons-cog {
+    opacity: 0.6;
+    transition: 0.3s;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 505px;
+}
+
+.buttons-cog:hover {
+    opacity: 1
+}
+
+.buttons-clr {
+    opacity: 0.6;
+    transition: 0.3s;
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 505px;
+}
+
+.buttons-clr:hover {
+    opacity: 1
 }
