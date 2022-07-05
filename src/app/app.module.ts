@@ -142,7 +142,6 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
 import {DateComponent} from './proje/sidebarelements/date/date.component';
-import {AnasayfaComponent} from './proje/anasayfa/anasayfa.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
 import {LeftbarComponent} from './proje/leftbar/leftbar.component';
@@ -150,7 +149,7 @@ import {MessageService} from 'primeng/api';
 import {NavbarComponent} from './proje/navbar/navbar.component';
 import {SplashScreenComponent} from './proje/splash-screen/splash-screen.component';
 import {DragDropModule} from 'primeng/dragdrop';
-import {DragdropComponent} from './proje/dragdrop/dragdrop.component';
+import {MainPageComponent} from './proje/main/mainPage.component';
 import {FormElementService} from './demo/service/formElementService';
 import {RightbarComponent} from './proje/rightbar/rightbar.component';
 import {AdressComponent} from './proje/sidebarelements/adress/adress.component';
@@ -313,13 +312,12 @@ FullCalendarModule.registerPlugins([
         AppAccessdeniedComponent,
         BlocksComponent,
         BlockViewer,
-        AnasayfaComponent,
         LoginComponent,
         RegisterComponent,
         LeftbarComponent,
         NavbarComponent,
         SplashScreenComponent,
-        DragdropComponent,
+        MainPageComponent,
         RightbarComponent,
         AdressComponent,
         DateComponent,

@@ -2,11 +2,11 @@ import {Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef
 import {FormElementService} from '../../demo/service/formElementService';
 
 @Component({
-    selector: 'app-dragdrop',
-    templateUrl: './dragdrop.component.html',
-    styleUrls: ['./dragdrop.component.scss']
+    selector: 'app-main',
+    templateUrl: './mainPage.component.html',
+    styleUrls: ['./mainPage.component.scss']
 })
-export class DragdropComponent implements OnInit {
+export class MainPageComponent implements OnInit {
 
     selectedItems: any[] = [];
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
