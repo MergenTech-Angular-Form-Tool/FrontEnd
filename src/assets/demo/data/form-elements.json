@@ -30,9 +30,5 @@
     {
         "name": "Password",
         "class": "bi bi-asterisk"
-    },
-    {
-        "name": "Range",
-        "class": "bi bi-view-list"
     }
 ]

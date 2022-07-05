@@ -1,21 +1,8 @@
-.numField{
-    margin-top:15px;
-    margin-left:20px;
+:host ::ng-deep .p-inputnumber-input {
+    width: 370px;
 }
 
-.checkBox{
-    margin-left:15px;
-    margin-top:15px;
-}
-
-.label{
-    margin-top:15px;
-    margin-left:23px;
-
-}
-
-.textField{
-    margin-top:5px;
-    margin-left:20px;
-    width:200px;
+.checkBox {
+    margin-left: 15px;
+    margin-top: 15px;
 }

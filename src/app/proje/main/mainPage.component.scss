@@ -3,24 +3,18 @@
 }
 
 .center {
-    margin: 50px 250px auto;
-    min-height: 200px;
+    //margin: 50px 250px auto;
+    //min-height: 200px;
+    //padding: 0;
+    //width: calc(100vw - 600px);
+    margin: 50px auto 50px;
     padding: 0;
-    width: calc(100vw - 600px);
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 :host ::ng-deep .drag-column {
     padding-right: .5em;
-}
-
-.drop-column {
-    border: 1px solid transparent;
-    transition: border-color .2s;
-
-    &.p-draggable-enter {
-        border-color: var(--primary-color);
-    }
 }
 
 .product-item {
