@@ -162,6 +162,10 @@ import {TextfieldComponent} from './proje/sidebarelements/textfield/textfield.co
 import {DividerComponent} from './proje/sidebarelements/divider/divider.component';
 import {FileUploadComponent} from './proje/sidebarelements/file-upload/file-upload.component';
 import {PasswordComponent} from './proje/sidebarelements/password/password.component';
+import {TextfieldelementComponent} from './proje/middleelements/textfieldelement/textfieldelement.component';
+import { CheckboxelementComponent } from './proje/middleelements/checkboxelement/checkboxelement.component';
+import { DateelementComponent } from './proje/middleelements/dateelement/dateelement.component';
+import { DatetimeelementComponent } from './proje/middleelements/datetimeelement/datetimeelement.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -318,7 +322,11 @@ FullCalendarModule.registerPlugins([
         TextfieldComponent,
         DividerComponent,
         FileUploadComponent,
-        PasswordComponent
+        PasswordComponent,
+        TextfieldelementComponent,
+        CheckboxelementComponent,
+        DateelementComponent,
+        DatetimeelementComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -2,11 +2,9 @@
 
 <div class="grid">
 
-    <app-leftbar [selectedItems]="selectedItems" [add]="add"></app-leftbar>
+    <app-leftbar [selectedItems]="selectedItems" [entry]="entry"></app-leftbar>
 
     <app-rightbar></app-rightbar>
-
-    <button class="ms-5" (click)="add()">add</button>
 
     <div class="center drop-column bg-light">
         <template #temp>

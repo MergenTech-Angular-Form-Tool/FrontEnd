@@ -1,6 +1,5 @@
 import {Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {FormElementService} from '../../demo/service/formElementService';
-import {TextfieldComponent} from '../sidebarelements/textfield/textfield.component';
 
 @Component({
     selector: 'app-dragdrop',
@@ -17,12 +16,5 @@ export class DragdropComponent implements OnInit {
 
     ngOnInit() {
     }
-
-    add() {
-        // this.entry.clear();
-        const factory = this.resolver.resolveComponentFactory(TextfieldComponent);
-        const componentRef = this.entry.createComponent(factory);
-    }
-
 
 }
