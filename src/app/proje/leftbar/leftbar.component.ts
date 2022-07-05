@@ -1,7 +1,6 @@
 import {Component, ComponentFactoryResolver, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import {FormElement} from '../../demo/domain/formElement';
 import {FormElementService} from '../../demo/service/formElementService';
-import {MailComponent} from '../sidebarelements/mail/mail.component';
 import {TextfieldelementComponent} from '../middleelements/textfieldelement/textfieldelement.component';
 import {CheckboxelementComponent} from '../middleelements/checkboxelement/checkboxelement.component';
 import {DateelementComponent} from '../middleelements/dateelement/dateelement.component';
@@ -10,7 +9,7 @@ import {NumberelementComponent} from '../middleelements/numberelement/numberelem
 import {FileelementComponent} from '../middleelements/fileelement/fileelement.component';
 import {RangeelementComponent} from '../middleelements/rangeelement/rangeelement.component';
 import {DatetimeelementComponent} from '../middleelements/datetimeelement/datetimeelement.component';
-
+import {MailelementComponent} from '../middleelements/mailelement/mailelement.component';
 
 interface SidenavToggle {
     screenWidth: number;
@@ -67,10 +66,10 @@ export class LeftbarComponent implements OnInit {
             factory = this.resolver.resolveComponentFactory(CheckboxelementComponent);
         } else if (open === 'Date') {
             factory = this.resolver.resolveComponentFactory(DateelementComponent);
-        } else if (open === 'Date with Time') {
+        } else if (open === 'Date with time') {
             factory = this.resolver.resolveComponentFactory(DatetimeelementComponent);
         } else if (open === 'Email') {
-            factory = this.resolver.resolveComponentFactory(MailComponent);
+            factory = this.resolver.resolveComponentFactory(MailelementComponent);
         } else if (open === 'File') {
             factory = this.resolver.resolveComponentFactory(FileelementComponent);
         } else if (open === 'Number') {
