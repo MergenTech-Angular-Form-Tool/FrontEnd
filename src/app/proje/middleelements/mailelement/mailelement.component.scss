@@ -1,3 +1,16 @@
+.Mailbox:hover {
+    .buttons-cog{
+        visibility: visible  !important;
+    }
+
+    .buttons-clr{
+        visibility: visible  !important;
+    }
+}
+
+
+
+
 .handle {
     cursor: move;
     height: 100px;
@@ -7,6 +20,7 @@
     border-collapse: collapse;
 }
 .buttons-cog {
+    visibility: hidden;
     opacity: 0.6;
     transition: 0.3s;
     position: absolute;
@@ -19,6 +33,7 @@
 }
 
 .buttons-clr {
+    visibility:hidden;
     opacity: 0.6;
     transition: 0.3s;
     position: absolute;

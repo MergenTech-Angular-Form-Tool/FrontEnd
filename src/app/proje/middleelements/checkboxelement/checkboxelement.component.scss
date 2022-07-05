@@ -1,9 +1,22 @@
+.example-box:hover {
+    .buttons-cog{
+        visibility: visible  !important;
+    }
+
+    .buttons-clr{
+        visibility: visible  !important;
+    }
+}
+
+
+
 .field-checkbox {
     width: 500px;
     height: 75px;
 }
 
 .buttons-cog {
+    visibility: hidden;
     opacity: 0.05;
     transition: 0.3s;
     position: absolute;
@@ -16,6 +29,7 @@
 }
 
 .buttons-clr {
+    visibility:hidden;
     opacity: 0.05;
     transition: 0.3s;
     position: absolute;

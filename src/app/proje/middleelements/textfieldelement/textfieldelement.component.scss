@@ -1,9 +1,22 @@
+.example-box:hover {
+    .buttons-cog{
+        visibility: visible  !important;
+    }
+
+    .buttons-clr{
+        visibility: visible  !important;
+    }
+}
+
+
+
+
+
 .handle {
     cursor: move;
     border-style: solid;
     border-color: lightblue;
     border-collapse: collapse;
-    snap: true;
 }
 
 :host ::ng-deep .width {
@@ -11,6 +24,7 @@
 }
 
 .buttons-cog {
+    visibility: hidden;
     opacity: 0.6;
     transition: 0.3s;
     position: absolute;
@@ -23,6 +37,7 @@
 }
 
 .buttons-clr {
+    visibility:hidden;
     opacity: 0.6;
     transition: 0.3s;
     position: absolute;
