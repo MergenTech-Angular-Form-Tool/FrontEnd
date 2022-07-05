@@ -1,9 +1,11 @@
 .handle {
     cursor: move;
-    width: 182px;
-    height: 120px;
-    border-style:solid;
-    border-color:lightblue;
+    border-style: solid;
+    border-color: lightblue;
     border-collapse: collapse;
-    snap:true;
+    snap: true;
+}
+
+:host ::ng-deep .width {
+    width: 500px !important;
 }
