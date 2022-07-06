@@ -22,6 +22,5 @@ export class TextfieldelementComponent implements OnInit {
     edit($event: any) {
         console.log($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.selectedId.emit($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-
     }
 }

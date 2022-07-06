@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: 'app-datetimeelement',
@@ -8,6 +8,8 @@ import {Component, OnInit} from '@angular/core';
 export class DatetimeelementComponent implements OnInit {
     date: Date;
 
+    @Output() selectedId: EventEmitter<string> = new EventEmitter();
+
     constructor() {
     }
 
@@ -16,5 +18,10 @@ export class DatetimeelementComponent implements OnInit {
 
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
+    }
+
+    edit($event: any) {
+        console.log($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
+        this.selectedId.emit($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
     }
 }

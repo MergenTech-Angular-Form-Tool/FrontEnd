@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-checkboxelement',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckboxelementComponent implements OnInit {
 
+    @Output() selectedId: EventEmitter<string> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,5 +16,9 @@ export class CheckboxelementComponent implements OnInit {
 
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
+    }
+    edit($event: any) {
+        console.log($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
+        this.selectedId.emit($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
     }
 }
