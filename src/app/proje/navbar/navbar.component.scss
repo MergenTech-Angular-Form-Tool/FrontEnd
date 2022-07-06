@@ -4,7 +4,8 @@
     top: 0px;
     display:block;
     background-color: #f8fafc;
-    overflow: hidden;
+    overflow: auto;
+    overflow-y: hidden;
     z-index: 99;
     box-shadow: 0 0 1rem 0 #9caeb7;
 }
