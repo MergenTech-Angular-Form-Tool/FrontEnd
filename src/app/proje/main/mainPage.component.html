@@ -2,12 +2,14 @@
 
 <div class="grid">
 
-    <app-leftbar [selectedItems]="selectedItems" [entry]="entry"></app-leftbar>
+    <app-leftbar [inc]="increment" [selectedItems]="selectedItems" [entry]="entry"></app-leftbar>
 
     <app-rightbar></app-rightbar>
 
+
     <div class="center bg-light">
 
+        <button (click)="show()">SHOW</button>
         <template #temp></template>
     </div>
 </div>

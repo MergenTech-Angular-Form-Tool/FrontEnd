@@ -30,6 +30,7 @@ export class LeftbarComponent implements OnInit {
     formElements: FormElement[];
     @Input() selectedItems: any[] = [];
     @Input() entry: any;
+    @Input() inc;
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
@@ -59,6 +60,7 @@ export class LeftbarComponent implements OnInit {
     }
 
     add(open: string) {
+        this.inc();
         let factory: any;
         if (open === 'Text Field') {
             factory = this.resolver.resolveComponentFactory(TextfieldelementComponent);
