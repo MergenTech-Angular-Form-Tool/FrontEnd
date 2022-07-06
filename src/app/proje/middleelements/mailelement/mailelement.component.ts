@@ -8,7 +8,6 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 })
 export class MailelementComponent implements OnInit {
 
-    @Output() selectedId: EventEmitter<string> = new EventEmitter();
 
     constructor(private shareDataService: SharedDataService) {
     }

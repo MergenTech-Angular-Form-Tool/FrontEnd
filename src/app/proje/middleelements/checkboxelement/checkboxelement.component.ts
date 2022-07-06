@@ -8,7 +8,7 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 })
 export class CheckboxelementComponent implements OnInit {
 
-    @Output() selectedId: EventEmitter<string> = new EventEmitter();
+    
     selected: string;
 
     constructor(private shareDataService: SharedDataService) {
