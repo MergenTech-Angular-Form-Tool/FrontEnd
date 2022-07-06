@@ -18,6 +18,10 @@ export class DatetimeComponent implements OnInit {
     selected: string;
 
     constructor() {
+
+    }
+
+    ngOnInit(): void {
         this.dateFormats = [
             {format: 'dd.mm.yy', value: 'dd.mm.yy'},
             {format: 'dd-mm-yy', value: 'dd-mm-yy'},
@@ -25,9 +29,6 @@ export class DatetimeComponent implements OnInit {
             {format: 'mm.dd.yy', value: 'mm.dd.yy'},
             {format: 'mm-dd-yy', value: 'mm-dd-yy'},
             {format: 'mm/dd/yy', value: 'dd/mm/yy'}];
-    }
-
-    ngOnInit(): void {
     }
 
 }
