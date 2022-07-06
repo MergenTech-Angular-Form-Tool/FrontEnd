@@ -173,6 +173,7 @@ import {RangeelementComponent} from './proje/middleelements/rangeelement/rangeel
 import {MailelementComponent} from './proje/middleelements/mailelement/mailelement.component';
 import {SharedDataService} from './demo/service/sharedataservice';
 import { ProfileComponent } from './proje/profile/profile.component';
+import { DatetimeComponent } from './proje/sidebarelements/datetime/datetime.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -339,7 +340,8 @@ FullCalendarModule.registerPlugins([
         PasswordelementComponent,
         RangeelementComponent,
         MailelementComponent,
-        ProfileComponent
+        ProfileComponent,
+        DatetimeComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
