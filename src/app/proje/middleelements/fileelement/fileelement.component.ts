@@ -12,4 +12,7 @@ export class FileelementComponent implements OnInit {
   ngOnInit(): void {
   }
 
+    delete($event: any) {
+        $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
+    }
 }

@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-rangeelement',
-  templateUrl: './rangeelement.component.html',
-  styleUrls: ['./rangeelement.component.scss']
+    selector: 'app-rangeelement',
+    templateUrl: './rangeelement.component.html',
+    styleUrls: ['./rangeelement.component.scss']
 })
 export class RangeelementComponent implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
+    delete($event: any) {
+        $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
+    }
 }
