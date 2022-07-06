@@ -28,7 +28,6 @@ export class LeftbarComponent implements OnInit {
     collapsed = false;
     screenWidth = 0;
     formElements: FormElement[];
-    @Input() selectedItems: any[] = [];
     @Input() entry: any;
     state: { id: number } = {
         id: 0

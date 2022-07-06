@@ -11,7 +11,35 @@
 
     <div [className]="!collapsed ? 'p-4 d-none' : 'p-4 d-block'">
 
-        <app-password></app-password>
+        <div [ngSwitch]="enum">
+            <div *ngSwitchCase="'Text Field'">
+                <app-textfield></app-textfield>
+            </div>
+            <div *ngSwitchCase="'Checkbox'">
+                <app-checkbox></app-checkbox>
+            </div>
+            <div *ngSwitchCase="'Date'">
+                <app-date></app-date>
+            </div>
+            <div *ngSwitchCase="'Date with time'">
+                <app-datetimeelement></app-datetimeelement>
+            </div>
+            <div *ngSwitchCase="'Email'">
+                <app-mail></app-mail>
+            </div>
+            <div *ngSwitchCase="'File'">
+                <app-file-upload></app-file-upload>
+            </div>
+            <div *ngSwitchCase="'Number'">
+                <app-number></app-number>
+            </div>
+            <div *ngSwitchCase="'Password'">
+                <app-password></app-password>
+            </div>
+            <div *ngSwitchCase="'Range'">
+                <app-divider></app-divider>
+            </div>
+        </div>
 
         <div class="d-flex justify-content-end">
             <button class="btn btn-success mt-3">Save</button>
