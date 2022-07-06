@@ -23,9 +23,8 @@ export class CheckboxelementComponent implements OnInit {
     }
 
     edit($event: any) {
-        console.log($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        this.selectedId.emit($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        this.selectedId = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
+        // this.selectedId.emit($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
+        // this.selectedId = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.shareDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
     }
 }

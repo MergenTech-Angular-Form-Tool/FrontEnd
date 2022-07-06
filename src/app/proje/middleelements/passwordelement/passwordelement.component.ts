@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {SharedDataService} from '../../../demo/service/sharedataservice';
 
 @Component({
     selector: 'app-passwordelement',
@@ -9,8 +10,9 @@ export class PasswordelementComponent implements OnInit {
 
     @Output() selectedId: EventEmitter<string> = new EventEmitter();
 
-    constructor() {
+    constructor(private shareDataService: SharedDataService) {
     }
+
 
     ngOnInit(): void {
     }
@@ -20,7 +22,6 @@ export class PasswordelementComponent implements OnInit {
     }
 
     edit($event: any) {
-        console.log($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        this.selectedId.emit($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
+        this.shareDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
     }
 }

@@ -1,18 +1,18 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SharedDataService} from '../../../demo/service/sharedataservice';
 
 @Component({
-  selector: 'app-fileelement',
-  templateUrl: './fileelement.component.html',
-  styleUrls: ['./fileelement.component.scss']
+    selector: 'app-fileelement',
+    templateUrl: './fileelement.component.html',
+    styleUrls: ['./fileelement.component.scss']
 })
 export class FileelementComponent implements OnInit {
 
-    @Output() selectedId: EventEmitter<string> = new EventEmitter();
+    constructor(private shareDataService: SharedDataService) {
+    }
 
-    constructor() { }
-
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
@@ -20,6 +20,6 @@ export class FileelementComponent implements OnInit {
 
     edit($event: any) {
         console.log($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        this.selectedId.emit($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
+        this.shareDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
     }
 }
