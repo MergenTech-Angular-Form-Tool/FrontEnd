@@ -10,21 +10,11 @@ export class MainPageComponent implements OnInit {
 
     selectedItems: any[] = [];
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
-    id = 0;
 
     constructor(private formElementService: FormElementService, private resolver: ComponentFactoryResolver) {
     }
 
-    ngOnInit() {
-        this.increment();
+    ngOnInit(): void {
     }
 
-    show() {
-        alert(this.id);
-    }
-
-    increment() {
-        console.log('asdasd');
-        this.id++;
-    }
 }

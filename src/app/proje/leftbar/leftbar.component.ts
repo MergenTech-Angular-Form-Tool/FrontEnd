@@ -30,7 +30,9 @@ export class LeftbarComponent implements OnInit {
     formElements: FormElement[];
     @Input() selectedItems: any[] = [];
     @Input() entry: any;
-    @Input() inc;
+    state: { id: number } = {
+        id: 0
+    };
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
@@ -60,27 +62,43 @@ export class LeftbarComponent implements OnInit {
     }
 
     add(open: string) {
-        this.inc();
+
+        let name = '';
         let factory: any;
         if (open === 'Text Field') {
             factory = this.resolver.resolveComponentFactory(TextfieldelementComponent);
+            name = 'Text Field';
         } else if (open === 'Checkbox') {
             factory = this.resolver.resolveComponentFactory(CheckboxelementComponent);
+            name = 'Checkbox';
         } else if (open === 'Date') {
             factory = this.resolver.resolveComponentFactory(DateelementComponent);
+            name = 'Date';
         } else if (open === 'Date with time') {
             factory = this.resolver.resolveComponentFactory(DatetimeelementComponent);
+            name = 'Datetime';
         } else if (open === 'Email') {
             factory = this.resolver.resolveComponentFactory(MailelementComponent);
+            name = 'Email';
         } else if (open === 'File') {
             factory = this.resolver.resolveComponentFactory(FileelementComponent);
+            name = 'File';
         } else if (open === 'Number') {
             factory = this.resolver.resolveComponentFactory(NumberelementComponent);
+            name = 'Number';
         } else if (open === 'Password') {
             factory = this.resolver.resolveComponentFactory(PasswordelementComponent);
+            name = 'Password';
         } else if (open === 'Range') {
             factory = this.resolver.resolveComponentFactory(RangeelementComponent);
+            name = 'Range';
         }
         const componentRef = this.entry.createComponent(factory);
+        this.increment();
+        componentRef.location.nativeElement.id = name + '_' + this.state.id;
+    }
+
+    increment() {
+        this.state.id++;
     }
 }
