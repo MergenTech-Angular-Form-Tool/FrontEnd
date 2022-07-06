@@ -18,7 +18,6 @@ export class DatetimeComponent implements OnInit {
     selected: string;
 
     constructor() {
-
     }
 
     ngOnInit(): void {

@@ -8,7 +8,7 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 })
 export class PasswordelementComponent implements OnInit {
 
-    @Output() selectedId: EventEmitter<string> = new EventEmitter();
+
 
     constructor(private shareDataService: SharedDataService) {
     }
