@@ -171,6 +171,7 @@ import {NumberelementComponent} from './proje/middleelements/numberelement/numbe
 import {PasswordelementComponent} from './proje/middleelements/passwordelement/passwordelement.component';
 import {RangeelementComponent} from './proje/middleelements/rangeelement/rangeelement.component';
 import {MailelementComponent} from './proje/middleelements/mailelement/mailelement.component';
+import { ProfileComponent } from './proje/profile/profile.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -336,7 +337,8 @@ FullCalendarModule.registerPlugins([
         NumberelementComponent,
         PasswordelementComponent,
         RangeelementComponent,
-        MailelementComponent
+        MailelementComponent,
+        ProfileComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

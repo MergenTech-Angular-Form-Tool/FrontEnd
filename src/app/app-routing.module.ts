@@ -6,6 +6,7 @@ import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
 import {MainPageComponent} from './proje/main/mainPage.component';
+import {ProfileComponent} from './proje/profile/profile.component';
 
 @NgModule({
     imports: [
@@ -20,6 +21,7 @@ import {MainPageComponent} from './proje/main/mainPage.component';
             {path: 'notfound', component: AppNotfoundComponent},
             {path: 'login', component: LoginComponent},
             {path: 'register', component: RegisterComponent},
+            {path: 'profile', component: ProfileComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
     ],

@@ -1,0 +1,45 @@
+<div class="login-body">
+    <div class="login-wrapper">
+        <div class="login-panel">
+            <div class="buttonback">
+                <button pButton pRipple type="button" icon="pi pi-arrow-left"
+                         class="p-button-rounded p-button-help p-button-text" ></button>
+            </div>
+            <form [formGroup]="formGroup" class="d-flex flex-column">
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input #name matInput formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Surname</mat-label>
+                    <input #surname matInput formControlName="surname">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input #email matInput formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Confirm Password</mat-label>
+                    <input #passConfirm matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </form>
+
+            <button pButton pRipple label="UPDATE" type="button" class="p-button-raised p-button-secondary"
+                    (click)="profile(name.value, surname.value, email.value, pass.value, passConfirm.value)">
+            </button>
+            <button pButton pRipple type="button"  label="" class="p-button-raised p-button-danger" >
+            </button>
+        </div>
+    </div>
+</div>
+<p-toast position="top-right"></p-toast>
