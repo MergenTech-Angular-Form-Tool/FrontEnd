@@ -16,14 +16,11 @@ export class RightbarComponent implements OnInit {
     @Output() onToggleSidenav: EventEmitter<SidenavToggle> = new EventEmitter();
     collapsed = false;
     screenWidth = 0;
-    questionText = '';
     id: string;
     enum: string;
 
     constructor(private shareDateService: SharedDataService) {
-
         shareDateService.currentMessage.subscribe(message => this.id = message);
-
     }
 
     ngOnInit(): void {
@@ -40,15 +37,19 @@ export class RightbarComponent implements OnInit {
     }
 
     toggleCollapsed(): void {
-        if (this.collapsed) {
 
+        if (!this.collapsed) {
+            this.shareDateService.currentMessage.subscribe(message => {
+                    this.enum = message.split('_')[0];
+                    this.id = message.split('_')[1];
+                }
+            );
         }
 
         this.collapsed = !this.collapsed;
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
-        console.log(this.id);
-        this.enum = this.id.split('_')[0];
-        this.id = this.id.split('_')[1];
+
+        this.shareDateService.currentMessage.subscribe(message => this.id = message);
 
     }
 
@@ -57,8 +58,4 @@ export class RightbarComponent implements OnInit {
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
 
-    alert(q: HTMLInputElement) {
-        console.log(this.questionText);
-        alert(this.questionText);
-    }
 }
