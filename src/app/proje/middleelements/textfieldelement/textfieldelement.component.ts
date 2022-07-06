@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {SharedDataService} from '../../../demo/service/sharedataservice';
 
 @Component({
     selector: 'app-textfieldelement',
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TextfieldelementComponent implements OnInit {
 
-    constructor() {
+    constructor(private sharedDataService: SharedDataService) {
     }
 
     ngOnInit(): void {
@@ -15,5 +16,9 @@ export class TextfieldelementComponent implements OnInit {
 
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
+    }
+
+    edit($event: any) {
+        this.sharedDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
     }
 }

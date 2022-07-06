@@ -1,4 +1,5 @@
-import {Component, OnInit, Output, EventEmitter, HostListener, Input} from '@angular/core';
+import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
+import {SharedDataService} from '../../demo/service/sharedataservice';
 
 interface SidenavToggle {
     screenWidth: number;
@@ -16,8 +17,13 @@ export class RightbarComponent implements OnInit {
     collapsed = false;
     screenWidth = 0;
     questionText = '';
+    id: string;
+    enum: string;
 
-    constructor() {
+    constructor(private shareDateService: SharedDataService) {
+
+        shareDateService.currentMessage.subscribe(message => this.id = message);
+
     }
 
     ngOnInit(): void {
@@ -40,6 +46,10 @@ export class RightbarComponent implements OnInit {
 
         this.collapsed = !this.collapsed;
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+        console.log(this.id);
+        this.enum = this.id.split('_')[0];
+        this.id = this.id.split('_')[1];
+
     }
 
     closeSidenav(): void {

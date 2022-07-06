@@ -1,5 +1,5 @@
-import {Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
-import {FormElementService} from '../../demo/service/formElementService';
+import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import {SharedDataService} from '../../demo/service/sharedataservice';
 
 @Component({
     selector: 'app-main',
@@ -8,23 +8,17 @@ import {FormElementService} from '../../demo/service/formElementService';
 })
 export class MainPageComponent implements OnInit {
 
-    selectedItems: any[] = [];
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
-    id = 0;
+    data: string;
 
-    constructor(private formElementService: FormElementService, private resolver: ComponentFactoryResolver) {
+    constructor(shareDateService: SharedDataService) {
+        shareDateService.currentMessage.subscribe(message => {
+            this.data = message;
+        });
     }
 
-    ngOnInit() {
-        this.increment();
+
+    ngOnInit(): void {
     }
 
-    show() {
-        alert(this.id);
-    }
-
-    increment() {
-        console.log('asdasd');
-        this.id++;
-    }
 }

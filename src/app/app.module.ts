@@ -171,6 +171,7 @@ import {NumberelementComponent} from './proje/middleelements/numberelement/numbe
 import {PasswordelementComponent} from './proje/middleelements/passwordelement/passwordelement.component';
 import {RangeelementComponent} from './proje/middleelements/rangeelement/rangeelement.component';
 import {MailelementComponent} from './proje/middleelements/mailelement/mailelement.component';
+import {SharedDataService} from './demo/service/sharedataservice';
 import { ProfileComponent } from './proje/profile/profile.component';
 
 FullCalendarModule.registerPlugins([
@@ -344,7 +345,7 @@ FullCalendarModule.registerPlugins([
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
-        MessageService, FormElementService
+        MessageService, FormElementService, SharedDataService
     ],
     bootstrap: [AppComponent]
 })
