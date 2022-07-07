@@ -5,6 +5,8 @@ import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
     templateUrl: './mainPage.component.html',
     styleUrls: ['./mainPage.component.scss']
 })
+
+
 export class MainPageComponent implements OnInit {
 
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
@@ -13,6 +15,10 @@ export class MainPageComponent implements OnInit {
     }
 
     ngOnInit(): void {
+
     }
 
+    clearall(){
+        this.entry.clear();
+    }
 }
