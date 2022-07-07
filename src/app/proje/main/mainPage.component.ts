@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-main',
@@ -11,14 +12,17 @@ export class MainPageComponent implements OnInit {
 
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
 
-    constructor() {
+    constructor(public translate: TranslateService) {
+        translate.addLangs(['en', 'tr']);
+        translate.setDefaultLang('en');
+
     }
 
     ngOnInit(): void {
 
     }
 
-    clearall(){
+    clearall() {
         this.entry.clear();
     }
 }

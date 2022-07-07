@@ -3,7 +3,7 @@
         <button class="logo" (click)="toggleCollapsed()">
             <i class="bi bi-brush-fill designer-logo"></i>
         </button>
-        <div class="logo-text" *ngIf="collapsed" i18n>Form Designer</div>
+        <div class="logo-text" *ngIf="collapsed">{{ 'FORM_DESIGNER' | translate}}</div>
         <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
             <i class="fal fa-times close-icon"></i>
         </button>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="d-flex justify-content-end">
-            <button class="btn btn-success mt-3">Save</button>
+            <button class="btn btn-success mt-3">{{ 'SAVE' | translate}}</button>
         </div>
 
     </div>

@@ -1,9 +1,9 @@
 <div class="d-flex flex-column">
-    <label class="fw-bold mb-1" i18n>Enter title of date field : </label>
+    <label class="fw-bold mb-1">{{ 'ENTER_DATE' | translate}}</label>
     <input type="text" pInputText name="date_title">
 </div>
 
 <div class="d-flex flex-column mt-3">
-    <label class="fw-bold mb-1" i18n>Choose date format : </label>
+    <label class="fw-bold mb-1">{{ 'CHOOSE_DATE_FORMAT' | translate}} </label>
     <p-dropdown styleClass="w-100" [options]="dateFormats" [(ngModel)]="selected" optionLabel="format" optionValue="value" placeholder="dd-mm-yy"></p-dropdown>
 </div>

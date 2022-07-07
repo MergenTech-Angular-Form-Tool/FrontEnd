@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
@@ -174,12 +174,18 @@ import {MailelementComponent} from './proje/middleelements/mailelement/maileleme
 import {SharedDataService} from './demo/service/sharedataservice';
 import { ProfileComponent } from './proje/profile/profile.component';
 import { DatetimeComponent } from './proje/sidebarelements/datetime/datetime.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
     timeGridPlugin,
     interactionPlugin
 ]);
+
+export function httpTranslateLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
 
 @NgModule({
     imports: [
@@ -272,7 +278,14 @@ FullCalendarModule.registerPlugins([
         DragDropModule,
         MatIconModule,
         MatInputModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: httpTranslateLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
     ],
     declarations: [
         AppComponent,

@@ -19,17 +19,16 @@
     <span class="p-inputgroup-addon">.com</span>
 </div>
 <div class="inputswitch">
-<label class="inputlabel" id="label1" i18n>Character input limit</label>
-<p-inputSwitch class="inputswitch2" id="girisLmt" [(ngModel)]="detail"></p-inputSwitch>
+    <label class="inputlabel" id="label1">{{ 'CHAR_LIMIT' | translate}}</label>
+    <p-inputSwitch class="inputswitch2" id="girisLmt" [(ngModel)]="detail"></p-inputSwitch>
 </div>
 <div class="p-inputgroup">
     <div class="field justify-content">
-        <label class="slidertext" i18n>Character : {{val2}}</label>
-        <p-slider  [(ngModel)]="val2"></p-slider>
+        <label class="slidertext">{{ 'CHAR' | translate}} {{val2}}</label>
+        <p-slider [(ngModel)]="val2"></p-slider>
     </div>
 </div>
 <div class="button justify-content-center">
     <button pButton pRipple type="button" icon="pi pi-clone" class="p-button-rounded p-button-help"></button>
-    <small id="comment2-help" class="block" i18n>Bu alanın tüm kayıtlı ayarlarını koruyarak klonlaması
-        yapılır.</small>
+    <small id="comment2-help" class="block">{{ 'CLON' | translate}}</small>
 </div>

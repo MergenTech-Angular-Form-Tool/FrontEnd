@@ -2,12 +2,18 @@
     <div class="container">
 
         <a href='/' class="logo user-select-none"> <img src="assets/layout/images/navbarlogo.png" class="logo"></a>
-        <a href='/' i18n="Go to main page|Navbar home">Home</a>
+        <a href='/'>{{'HOME' | translate}}</a>
 
         <div class="d-flex justify-content-end">
-            <a href=#login i18n>Login</a>
-            <a href=#register i18n>Register</a>
-            <a href="#profile" i18n>Profile</a>
+            <a href=#login>{{'LOGIN' | translate}}</a>
+            <a href=#register>{{'REGISTER' | translate}}</a>
+            <a href="#profile">{{'PROFILE' | translate}}</a>
+            <label class="language-switcher">
+                <input type="checkbox" (click)="changeLang()">
+                <span class="slider round"></span>
+                <span class="select-fr user-select-none">EN</span>
+                <span class="select-en user-select-none">TR</span>
+            </label>
         </div>
     </div>
 </div>
