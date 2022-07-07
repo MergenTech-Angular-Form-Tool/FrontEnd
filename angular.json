@@ -16,11 +16,17 @@
             "root": "",
             "sourceRoot": "src",
             "prefix": "app",
+            "i18n": {
+                "sourceLocale": "en-US",
+                "locales": {
+                    "tr": "translate/messages.tr.xlf"
+                }
+            },
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/freya-ng",
+                        "outputPath": "dist/",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -47,6 +53,9 @@
                         ]
                     },
                     "configurations": {
+                        "tr": {
+                            "localize": ["tr"]
+                        },
                         "production": {
                             "budgets": [
                                 {
@@ -87,6 +96,9 @@
                     "configurations": {
                         "production": {
                             "browserTarget": "freya-ng:build:production"
+                        },
+                        "tr": {
+                            "browserTarget": "freya-ng:build:tr"
                         },
                         "development": {
                             "browserTarget": "freya-ng:build:development"

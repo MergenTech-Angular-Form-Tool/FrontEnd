@@ -13,7 +13,7 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Password</mat-label>
+                    <mat-label i18n>Password</mat-label>
                     <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
@@ -23,8 +23,8 @@
                     (click)="login(email.value, pass.value)">
             </button>
 
-            <a href="#">forget password?</a>
-            <p>Don’t you have an account, <span (click)="gotoHome()" class="register-a">sign up</span>!</p>
+            <a href="#" i18n>forget password?</a>
+            <p i18n>Don’t you have an account, <span (click)="gotoHome()" class="register-a">sign up</span>!</p>
         </div>
         <div class="login-footer">
             <h4>Mergen</h4>

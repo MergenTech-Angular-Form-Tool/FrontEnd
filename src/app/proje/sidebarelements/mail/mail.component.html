@@ -6,7 +6,7 @@
             </div>
             <div class="p-inputgroup">
                 <div class="inputswitch d-flex justify-content">
-                    <label>Zorunlu</label>
+                    <label i18n>Required</label>
                     <p-inputSwitch id="zorunlu" [(ngModel)]="checked"></p-inputSwitch>
                 </div>
             </div>
@@ -14,22 +14,22 @@
     </div>
 </div>
 <div class="field d-flex justify-content">
-    <label class="textmail">E-mail</label>
+    <label class="textmail" i18n>E-mail</label>
     <input type="text" pInputText placeholder="ornek@ornek">
     <span class="p-inputgroup-addon">.com</span>
 </div>
 <div class="inputswitch">
-<label class="inputlabel" id="label1">Karakter Giriş Limiti</label>
+<label class="inputlabel" id="label1" i18n>Character input limit</label>
 <p-inputSwitch class="inputswitch2" id="girisLmt" [(ngModel)]="detail"></p-inputSwitch>
 </div>
 <div class="p-inputgroup">
     <div class="field justify-content">
-        <label class="slidertext">Karakter Sayısı: {{val2}}</label>
+        <label class="slidertext" i18n>Character : {{val2}}</label>
         <p-slider  [(ngModel)]="val2"></p-slider>
     </div>
 </div>
 <div class="button justify-content-center">
     <button pButton pRipple type="button" icon="pi pi-clone" class="p-button-rounded p-button-help"></button>
-    <small id="comment2-help" class="block">Bu alanın tüm kayıtlı ayarlarını koruyarak klonlaması
+    <small id="comment2-help" class="block" i18n>Bu alanın tüm kayıtlı ayarlarını koruyarak klonlaması
         yapılır.</small>
 </div>

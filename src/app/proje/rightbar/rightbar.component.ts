@@ -44,12 +44,10 @@ export class RightbarComponent implements OnInit {
                     this.id = message.split('_')[1];
                 }
             );
-            console.log(this.shareDateService.currentMessage);
         }
 
         this.collapsed = !this.collapsed;
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
-
         this.shareDateService.currentMessage.subscribe(message => this.id = message);
 
     }

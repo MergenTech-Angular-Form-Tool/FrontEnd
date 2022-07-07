@@ -7,28 +7,28 @@
 
             <form [formGroup]="formGroup" class="d-flex flex-column">
                 <mat-form-field appearance="fill">
-                    <mat-label>Name</mat-label>
+                    <mat-label i18n>Name</mat-label>
                     <input #name matInput formControlName="name">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Surname</mat-label>
+                    <mat-label i18n>Surname</mat-label>
                     <input #surname matInput formControlName="surname">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Email</mat-label>
+                    <mat-label i18n>Email</mat-label>
                     <input #email matInput formControlName="email">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Password</mat-label>
+                    <mat-label i18n>Password</mat-label>
                     <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Confirm Password</mat-label>
+                    <mat-label i18n>Confirm Password</mat-label>
                     <input #passConfirm matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
