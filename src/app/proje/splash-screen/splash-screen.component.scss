@@ -15,12 +15,17 @@
 }
 
 .app-label {
-    margin-top: 250px;
     color: #fff;
-    font-weight: 800;
-    font-size: 2.5em;
+    position:absolute;
+    font-weight: 700;
+    font-size: 3em;
     font-family: 'Roboto', sans-serif;
     user-select: none;
+   // margin-top:85vh;
+    bottom:0;
+    left:auto;
+    //margin-left: -150px;
+
     cursor: default;
 }
 
@@ -32,35 +37,18 @@
 }
 
 .app-logo {
+    position:absolute;
     background-image: url("~src/assets/layout/images/logoGif.gif");
     background-repeat: no-repeat;
     animation-delay: ceil(1);
     max-width: 100%;
-    margin-top:150px;
+    margin-top:-70px;
+    margin-left:-80px;
     background-position: center;
     background-size: contain;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
-.fadein{
-
-
-    animation: scale 3s;
-
-    @keyframes scale {
-        to {
-            transform: scale(1.5)
-        }
-    }
-
-
-
-
-
-}
-
-
-
 
 .app-loader {
 
