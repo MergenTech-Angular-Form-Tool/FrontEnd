@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {CollapsedRightBarService} from '../../demo/service/collapsedRightBarService';
+import {CollapsedRightBarService} from "../../demo/service/collapsedRightBarService";
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 
 @Component({
     selector: 'app-main',
@@ -24,6 +25,17 @@ export class MainPageComponent implements OnInit {
 
     clearall() {
         this.entry.clear();
-        this.collapsedRightBarService.close();
+    }
+
+    drop(event: CdkDragDrop<string[]>) {
+        if (event.previousContainer === event.container) {
+            moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+        } else {
+            console.log('Transfering item to new container')
+            transferArrayItem(event.previousContainer.data,
+                event.container.data,
+                event.previousIndex,
+                event.currentIndex);
+        }
     }
 }

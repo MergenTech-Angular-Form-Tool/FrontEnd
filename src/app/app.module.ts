@@ -151,7 +151,6 @@ import {SplashScreenComponent} from './proje/splash-screen/splash-screen.compone
 import {DragDropModule} from 'primeng/dragdrop';
 import {MainPageComponent} from './proje/main/mainPage.component';
 import {RightbarComponent} from './proje/rightbar/rightbar.component';
-import {AdressComponent} from './proje/sidebarelements/adress/adress.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {CheckboxComponent} from './proje/sidebarelements/checkbox/checkbox.component';
@@ -335,7 +334,6 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         SplashScreenComponent,
         MainPageComponent,
         RightbarComponent,
-        AdressComponent,
         DateComponent,
         CheckboxComponent,
         MailComponent,
