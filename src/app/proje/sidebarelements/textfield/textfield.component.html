@@ -8,9 +8,12 @@
     </div>
 
     <div class="d-flex flex-column">
-        <input class="mb-2" type="text" id="topLabel" pInputText/>
-        <input class="mb-2" type="text" id="placeHolder" pInputText/>
-        <input type="text" id="botLabel" pInputText/>
+        <input class="mb-2" type="text" id="topLabel" [(ngModel)]="question" pInputText/>
+        <input class="mb-2" type="text" id="placeHolder" [(ngModel)]="subtext" pInputText/>
+        <input type="text" id="botLabel" [(ngModel)]="placeholder" pInputText/>
     </div>
-</div>
 
+</div>
+<div class="d-flex justify-content-end">
+    <button class="btn btn-success mt-3" (click)='onSubmit()'>{{ 'SAVE' | translate}}</button>
+</div>
