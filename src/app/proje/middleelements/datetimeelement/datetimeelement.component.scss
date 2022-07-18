@@ -1,42 +1,22 @@
 .example-box:hover {
-    .buttons-cog{
-        visibility: visible  !important;
+    .buttons-cog {
+        visibility: visible !important;
     }
 
-    .buttons-clr{
-        visibility: visible  !important;
+    .buttons-clr {
+        visibility: visible !important;
     }
 }
 
+.handle:hover {
+    cursor: move;
+    border-style: solid;
+    border-color: dodgerblue;
+    border-width: 0.3px;
+}
 
 :host ::ng-deep .width {
     width: 500px !important;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-.buttons-cog {
-    visibility: hidden;
-    opacity: 0.6;
-    transition: 0.3s;
-    position: absolute;
-    margin-top: 5px;
-    margin-left: 505px;
-}
-
-.buttons-cog:hover {
-    opacity: 1
-}
-
-.buttons-clr {
-    visibility: hidden;
-    opacity: 0.6;
-    transition: 0.3s;
-    position: absolute;
-    margin-top: 45px;
-    margin-left: 505px;
-}
-
-.buttons-clr:hover {
-    opacity: 1
 }

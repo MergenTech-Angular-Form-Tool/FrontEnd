@@ -8,37 +8,13 @@
     }
 }
 
-
-.handle {
+.handle:hover {
     cursor: move;
     border-style: solid;
-    border-color: black;
+    border-color: dodgerblue;
     border-width: 0.3px;
 }
 
 :host ::ng-deep .width {
     width: 500px !important;
-}
-
-.buttons-cog {
-    visibility: hidden;
-    opacity: 0.6;
-    position: absolute;
-    margin-left: 505px;
-}
-
-.buttons-cog:hover {
-    opacity: 1
-}
-
-.buttons-clr {
-    visibility: hidden;
-    opacity: 0.6;
-    position: absolute;
-    margin-top: 45px;
-    margin-left: 505px;
-}
-
-.buttons-clr:hover {
-    opacity: 1
 }

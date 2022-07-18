@@ -1,46 +1,16 @@
 .Mailbox:hover {
-    .buttons-cog{
-        visibility: visible  !important;
+    .buttons-cog {
+        visibility: visible !important;
     }
 
-    .buttons-clr{
-        visibility: visible  !important;
+    .buttons-clr {
+        visibility: visible !important;
     }
 }
 
-
-
-
-.handle {
+.handle:hover {
     cursor: move;
-    height: 100px;
-    margin-top: 10px;
-    border-style:solid;
-    border-color:lightblue;
-    border-collapse: collapse;
-}
-.buttons-cog {
-    visibility: hidden;
-    opacity: 0.6;
-    transition: 0.3s;
-    position: absolute;
-    margin-top: 5px;
-    margin-left: 505px;
-}
-
-.buttons-cog:hover {
-    opacity: 1
-}
-
-.buttons-clr {
-    visibility:hidden;
-    opacity: 0.6;
-    transition: 0.3s;
-    position: absolute;
-    margin-top: 45px;
-    margin-left: 505px;
-}
-
-.buttons-clr:hover {
-    opacity: 1
+    border-style: solid;
+    border-color: dodgerblue;
+    border-width: 0.3px;
 }

@@ -14,8 +14,7 @@ export class MainPageComponent implements OnInit {
 
     constructor(public translate: TranslateService) {
         translate.addLangs(['en', 'tr']);
-        translate.setDefaultLang('en');
-
+        translate.setDefaultLang('tr');
     }
 
     ngOnInit(): void {

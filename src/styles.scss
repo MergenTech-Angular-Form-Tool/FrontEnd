@@ -14,6 +14,35 @@ $gutter: 1rem; //for primeflex grid system
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
-html, body { height: 100%;
-overflow-x:hidden;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.buttons-cog {
+    visibility: hidden;
+    opacity: 0.5;
+    position: absolute;
+    margin-left: 503px;
+}
+
+.buttons-cog:hover {
+    opacity: 1
+}
+
+.buttons-clr {
+    visibility: hidden;
+    opacity: 0.5;
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 503px;
+}
+
+.buttons-clr:hover {
+    opacity: 1
+}

@@ -1,12 +1,17 @@
 <div class="example-box" cdkDragLockAxis="y" cdkDrag>
     <div class="buttons-cog">
-        <p-button type="button" (onClick)="edit($event)"  styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+        <p-button type="button" (onClick)="edit($event)" styleClass="p-button-help p-button-rounded"
+                  icon="pi pi-cog"></p-button>
     </div>
     <div class="buttons-clr">
-        <p-button (onClick)="delete($event)" type="button" styleClass="p-button-danger p-button-rounded" icon="bi bi-trash"></p-button>
+        <p-button (onClick)="delete($event)" type="button" styleClass="p-button-danger p-button-rounded"
+                  icon="bi bi-trash"></p-button>
     </div>
-    <div class="d-flex flex-column">
-        <label class="mb-2">{{ 'HEADER' | translate}}</label>
-        <p-calendar inputStyleClass="width" inputId="basic"></p-calendar>
+
+    <div class="handle">
+        <div class="d-flex flex-column">
+            <label class="mb-2">{{ 'HEADER' | translate}}</label>
+            <p-calendar inputStyleClass="width" inputId="basic"></p-calendar>
+        </div>
     </div>
 </div>
