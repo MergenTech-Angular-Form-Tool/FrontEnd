@@ -1,5 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
+import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
 
 @Component({
     selector: 'app-dateelement',
@@ -9,7 +10,7 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 export class DateelementComponent implements OnInit {
 
 
-    constructor(private shareDataService: SharedDataService) {
+    constructor(private shareDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService) {
     }
 
     ngOnInit(): void {
@@ -20,8 +21,7 @@ export class DateelementComponent implements OnInit {
     }
 
     edit($event: any) {
-        // this.selectedId.emit($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.shareDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-
+        this.collapsedRightBarService.toggle();
     }
 }

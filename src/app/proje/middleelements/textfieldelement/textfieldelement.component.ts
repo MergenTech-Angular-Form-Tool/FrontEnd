@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
+import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
 
 @Component({
     selector: 'app-textfieldelement',
@@ -8,7 +9,7 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 })
 export class TextfieldelementComponent implements OnInit {
 
-    constructor(private sharedDataService: SharedDataService) {
+    constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService) {
     }
 
     ngOnInit(): void {
@@ -20,5 +21,6 @@ export class TextfieldelementComponent implements OnInit {
 
     edit($event: any) {
         this.sharedDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
+        // this.collapsedRightBarService.open();
     }
 }

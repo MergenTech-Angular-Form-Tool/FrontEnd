@@ -1,5 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
+import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
 
 @Component({
     selector: 'app-checkboxelement',
@@ -8,10 +9,9 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 })
 export class CheckboxelementComponent implements OnInit {
 
-    
     selected: string;
 
-    constructor(private shareDataService: SharedDataService) {
+    constructor(private shareDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService) {
         shareDataService.currentMessage.subscribe(message => this.selected = message);
     }
 
@@ -23,8 +23,7 @@ export class CheckboxelementComponent implements OnInit {
     }
 
     edit($event: any) {
-        // this.selectedId.emit($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        // this.selectedId = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.shareDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
+        this.collapsedRightBarService.toggle();
     }
 }

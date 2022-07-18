@@ -1,5 +1,6 @@
 import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
 import {SharedDataService} from '../../demo/service/sharedataservice';
+import {CollapsedRightBarService} from '../../demo/service/collapsedRightBarService';
 
 interface SidenavToggle {
     screenWidth: number;
@@ -19,8 +20,10 @@ export class RightbarComponent implements OnInit {
     id: string;
     enum: string;
 
-    constructor(private shareDateService: SharedDataService) {
+    constructor(private shareDateService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService) {
         shareDateService.currentMessage.subscribe(message => this.id = message);
+        collapsedRightBarService.currentMessage.subscribe(message => this.collapsed = message);
+
     }
 
     ngOnInit(): void {

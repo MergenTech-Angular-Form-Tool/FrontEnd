@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {CollapsedRightBarService} from '../../demo/service/collapsedRightBarService';
 
 @Component({
     selector: 'app-main',
@@ -12,7 +13,7 @@ export class MainPageComponent implements OnInit {
 
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
 
-    constructor(public translate: TranslateService) {
+    constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService) {
         translate.addLangs(['en', 'tr']);
         translate.setDefaultLang('tr');
     }
@@ -23,5 +24,6 @@ export class MainPageComponent implements OnInit {
 
     clearall() {
         this.entry.clear();
+        this.collapsedRightBarService.close();
     }
 }
