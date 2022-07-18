@@ -11,8 +11,8 @@ export class CheckboxelementComponent implements OnInit {
 
     selected: string;
 
-    constructor(private shareDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService) {
-        shareDataService.currentMessage.subscribe(message => this.selected = message);
+    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService) {
+        shared.currentMessage.subscribe(message => this.selected = message);
     }
 
     ngOnInit(): void {
@@ -20,10 +20,12 @@ export class CheckboxelementComponent implements OnInit {
 
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
+        this.collapsed.close();
+        this.shared.changeMessage('');
     }
 
     edit($event: any) {
-        this.shareDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        this.collapsedRightBarService.open();
+        this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
+        this.collapsed.open();
     }
 }

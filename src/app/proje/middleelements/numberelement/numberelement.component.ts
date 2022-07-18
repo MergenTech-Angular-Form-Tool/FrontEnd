@@ -11,7 +11,7 @@ export class NumberelementComponent implements OnInit {
 
     val: number;
 
-    constructor(private shareDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService) {
+    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService) {
     }
 
     ngOnInit(): void {
@@ -19,10 +19,12 @@ export class NumberelementComponent implements OnInit {
 
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
+        this.collapsed.close();
+        this.shared.changeMessage('');
     }
 
     edit($event: any) {
-        this.shareDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        this.collapsedRightBarService.open();
+        this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
+        this.collapsed.open();
     }
 }
