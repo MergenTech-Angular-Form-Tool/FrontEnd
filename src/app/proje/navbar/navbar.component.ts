@@ -19,10 +19,10 @@ export class NavbarComponent implements OnInit {
     changeLang() {
 
         if (this.flag) {
-            this.translate.use('tr');
+            this.translate.use('en');
             this.flag = false;
         } else {
-            this.translate.use('en');
+            this.translate.use('tr');
             this.flag = true;
         }
 

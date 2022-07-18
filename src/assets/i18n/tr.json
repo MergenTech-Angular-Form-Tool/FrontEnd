@@ -53,5 +53,12 @@
     "ENTER_PLACEHOLDER": "Yer tutucu metni giriniz :",
     "ENTER_SUB_TEXT": "Alt metin giriniz :",
     "SAVE": "Kaydet",
-    "CLEAR_ALL": "Temizle"
+    "CLEAR_ALL": "Temizle",
+    "TEXT_FIELD": "Metin Girişi",
+    "CHECK_BOX": "Doğru-Yanlış",
+    "DATE": "Tarih Girişi",
+    "DATE_TIME": "Zaman ve Tarih Girişi",
+    "FILE": "Dosya Girişi",
+    "NUMBER": "Sayı Girişi",
+    "RANGE": "Ayraç"
 }

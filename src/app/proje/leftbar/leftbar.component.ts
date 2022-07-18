@@ -1,6 +1,4 @@
 import {Component, ComponentFactoryResolver, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
-import {FormElement} from '../../demo/domain/formElement';
-import {FormElementService} from '../../demo/service/formElementService';
 import {TextfieldelementComponent} from '../middleelements/textfieldelement/textfieldelement.component';
 import {CheckboxelementComponent} from '../middleelements/checkboxelement/checkboxelement.component';
 import {DateelementComponent} from '../middleelements/dateelement/dateelement.component';
@@ -27,7 +25,6 @@ export class LeftbarComponent implements OnInit {
     @Output() onToggleSidenav: EventEmitter<SidenavToggle> = new EventEmitter();
     collapsed = false;
     screenWidth = 0;
-    formElements: FormElement[];
     @Input() entry: any;
     state: { id: number } = {
         id: 0
@@ -52,12 +49,11 @@ export class LeftbarComponent implements OnInit {
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
 
-    constructor(private formElementService: FormElementService, private resolver: ComponentFactoryResolver) {
+    constructor(private resolver: ComponentFactoryResolver) {
     }
 
     ngOnInit(): void {
         this.screenWidth = window.innerWidth;
-        this.formElementService.getElements().then(elements => this.formElements = elements);
     }
 
     add(open: string) {

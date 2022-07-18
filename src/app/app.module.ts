@@ -150,7 +150,6 @@ import {NavbarComponent} from './proje/navbar/navbar.component';
 import {SplashScreenComponent} from './proje/splash-screen/splash-screen.component';
 import {DragDropModule} from 'primeng/dragdrop';
 import {MainPageComponent} from './proje/main/mainPage.component';
-import {FormElementService} from './demo/service/formElementService';
 import {RightbarComponent} from './proje/rightbar/rightbar.component';
 import {AdressComponent} from './proje/sidebarelements/adress/adress.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -360,7 +359,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
-        MessageService, FormElementService, SharedDataService
+        MessageService, SharedDataService
     ],
     bootstrap: [AppComponent]
 })

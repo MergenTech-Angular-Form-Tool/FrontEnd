@@ -53,5 +53,12 @@
     "ENTER_PLACEHOLDER": "Enter Placeholder",
     "ENTER_SUB_TEXT": "Enter sub-text :",
     "SAVE": "Save",
-    "CLEAR_ALL": "Clear All"
+    "CLEAR_ALL": "Clear All",
+    "TEXT_FIELD": "Text Field",
+    "CHECK_BOX": "Checkbox",
+    "DATE": "Date",
+    "DATE_TIME": "Date with time",
+    "FILE": "File",
+    "NUMBER": "Number",
+    "RANGE": "Range"
 }
