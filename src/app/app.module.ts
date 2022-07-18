@@ -175,6 +175,7 @@ import { DatetimeComponent } from './proje/sidebarelements/datetime/datetime.com
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {CollapsedRightBarService} from './demo/service/collapsedRightBarService';
+import {SaveService} from './demo/service/saveservice';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -358,7 +359,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
-        MessageService, SharedDataService, CollapsedRightBarService
+        MessageService, SharedDataService, CollapsedRightBarService, SaveService
     ],
     bootstrap: [AppComponent]
 })
