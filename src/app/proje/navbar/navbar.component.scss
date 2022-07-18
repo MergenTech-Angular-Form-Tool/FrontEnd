@@ -64,7 +64,7 @@ body {
         height: 0;
     }
 
-    .select-fr,
+    .select-tr,
     .select-en {
         position: absolute;
         font-size: #{$height / 2.5};
@@ -73,7 +73,7 @@ body {
         mix-blend-mode: difference;
     }
 
-    .select-fr {
+    .select-tr {
         left: #{$height / 3.5};
     }
 
