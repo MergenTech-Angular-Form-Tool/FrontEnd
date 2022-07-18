@@ -21,6 +21,6 @@ export class FileelementComponent implements OnInit {
 
     edit($event: any) {
         this.shareDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        this.collapsedRightBarService.toggle();
+        this.collapsedRightBarService.open();
     }
 }

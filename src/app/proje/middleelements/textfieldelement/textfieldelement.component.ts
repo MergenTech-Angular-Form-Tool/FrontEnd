@@ -21,6 +21,6 @@ export class TextfieldelementComponent implements OnInit {
 
     edit($event: any) {
         this.sharedDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        // this.collapsedRightBarService.open();
+        this.collapsedRightBarService.open();
     }
 }
