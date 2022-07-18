@@ -1,22 +1,19 @@
 .example-box:hover {
-    .buttons-cog{
-        visibility: visible  !important;
+    .buttons-cog {
+        visibility: visible !important;
     }
 
-    .buttons-clr{
-        visibility: visible  !important;
+    .buttons-clr {
+        visibility: visible !important;
     }
 }
-
-
-
 
 
 .handle {
     cursor: move;
     border-style: solid;
-    border-color: lightblue;
-    border-collapse: collapse;
+    border-color: black;
+    border-width: 0.3px;
 }
 
 :host ::ng-deep .width {
@@ -26,9 +23,7 @@
 .buttons-cog {
     visibility: hidden;
     opacity: 0.6;
-    transition: 0.3s;
     position: absolute;
-    margin-top: 5px;
     margin-left: 505px;
 }
 
@@ -37,9 +32,8 @@
 }
 
 .buttons-clr {
-    visibility:hidden;
+    visibility: hidden;
     opacity: 0.6;
-    transition: 0.3s;
     position: absolute;
     margin-top: 45px;
     margin-left: 505px;
