@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
-import {GetElementDetailsService} from "../../../demo/service/getElementDetailsService";
-import {Mail} from "../../../demo/domain/elements/mail";
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {Mail} from '../../../demo/domain/elements/mail';
 
 @Component({
     selector: 'app-mailelement',
@@ -10,6 +10,7 @@ import {Mail} from "../../../demo/domain/elements/mail";
     styleUrls: ['./mailelement.component.scss']
 })
 export class MailelementComponent implements OnInit {
+
     message: string;
     placeholder: string;
     header: string;
@@ -25,6 +26,10 @@ export class MailelementComponent implements OnInit {
                 this.smalltext = temp.subtext;
             }
         });
+
+        this.header = 'HEADER';
+        this.placeholder = 'Email';
+        this.smalltext = 'SMALL_TEXT';
     }
 
     ngOnInit(): void {

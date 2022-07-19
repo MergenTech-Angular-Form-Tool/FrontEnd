@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
-import {GetElementDetailsService} from "../../../demo/service/getElementDetailsService";
-import{Date} from "../../../demo/domain/elements/date";
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {Date} from '../../../demo/domain/elements/date';
 
 @Component({
     selector: 'app-dateelement',
@@ -10,21 +10,24 @@ import{Date} from "../../../demo/domain/elements/date";
     styleUrls: ['./dateelement.component.scss']
 })
 export class DateelementComponent implements OnInit {
-    id:string;
-    header:string;
-    selected:string;
 
-    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService, private getElement: GetElementDetailsService) {
+    id: string;
+    header: string;
+    selected: string;
+
+    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
+                private getElement: GetElementDetailsService) {
         this.getElement.currentMessage.subscribe(message => {
             const temp = message as Date;
             if (temp.id === this.id) {
                 this.header = temp.header;
-                this.selected=temp.selected;
+                this.selected = temp.selected;
             }
         });
     }
 
     ngOnInit(): void {
+        this.header = 'HEADER';
     }
 
     delete($event: any) {
