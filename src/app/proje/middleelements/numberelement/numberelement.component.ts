@@ -33,6 +33,8 @@ export class NumberelementComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.header = 'HEADER';
+        this.val = 0;
     }
 
     delete($event: any) {
