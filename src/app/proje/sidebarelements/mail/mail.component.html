@@ -1,21 +1,20 @@
-<div class="d-flex">
-    <div class="d-flex flex-column col-5 px-0 pt-0">
-        <label class="pt-2 mb-4" for="topLabel">{{ 'ENTER_Q' | translate}}</label>
-        <label class="pt-1 mb-4" for="placeHolder">{{ 'ENTER_SUB_TEXT' | translate}}</label>
-        <label for="botLabel">{{ 'ENTER_PLACEHOLDER' | translate}}</label>
+<div class="d-flex flex-column">
+
+    <label class="pt-2 mb-2 fw-bold" for="topLabel">{{ 'ENTER_Q' | translate}}</label>
+    <input class="mb-4" type="text" id="topLabel" [(ngModel)]="question" pInputText/>
+
+    <label class="pt-1 mb-2 fw-bold" for="placeHolder">{{ 'ENTER_SUB_TEXT' | translate}}</label>
+    <input class="mb-4" type="text" id="placeHolder" [(ngModel)]="subtext" pInputText/>
+
+    <label class="mb-2 fw-bold" for="botLabel">{{ 'ENTER_PLACEHOLDER' | translate}}</label>
+    <div class="p-inputgroup mb-4">
+        <input type="text" id="botLabel" [(ngModel)]="placeholder" pInputText/>
+        <span class="p-inputgroup-addon">.com</span>
     </div>
 
-    <div class="d-flex flex-column">
-        <input class="mb-2" type="text" id="topLabel" [(ngModel)]="question" pInputText/>
-        <input class="mb-2" type="text" id="placeHolder" [(ngModel)]="subtext" pInputText/>
-        <div class="p-inputgroup">
-            <input type="text" id="botLabel" [(ngModel)]="placeholder" pInputText/>
-            <span class="p-inputgroup-addon">.com</span>
-        </div>
-    </div>
 </div>
-<div class="inputswitch d-flex justify-content">
-    <label i18n>Required</label>
+<div class="inputswitch d-flex">
+    <label class="me-3 fw-bold">{{'REQUIRED' | translate}}</label>
     <p-inputSwitch id="zorunlu" [(ngModel)]="checked"></p-inputSwitch>
 </div>
 

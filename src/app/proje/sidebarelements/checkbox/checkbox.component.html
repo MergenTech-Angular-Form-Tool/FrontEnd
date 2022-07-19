@@ -1,19 +1,13 @@
 <div class="">
     <div class="mb-3">
-        <div class="mb-2">{{ 'ENTER_Q' | translate}}</div>
+        <div class="mb-2 fw-bold">{{ 'ENTER_Q' | translate}}</div>
         <input type="text" [(ngModel)]="header" class="w-100" pInputText/>
     </div>
 
     <div class="d-flex">
-        <label class="me-4">{{ 'REQUIRED' | translate}}</label>
+        <label class="me-4 fw-bold">{{ 'REQUIRED' | translate}}</label>
         <p-inputSwitch [(ngModel)]="required"></p-inputSwitch>
     </div>
-</div>
-
-
-<div class="my-2">
-    <label class="mb-2">Option contents: </label>
-    <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="options" placeholder="Type with \n"></textarea>
 </div>
 
 <div class="d-flex justify-content-end">
