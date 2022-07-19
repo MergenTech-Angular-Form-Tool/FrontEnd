@@ -12,7 +12,7 @@ import {FileUpload} from '../../../demo/domain/elements/fileUpload';
 export class FileelementComponent implements OnInit {
 
     id: string;
-    header = 'HEADER';
+    header: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
                 private getElement: GetElementDetailsService) {
@@ -26,6 +26,7 @@ export class FileelementComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.header = 'HEADER';
     }
 
     delete($event: any) {
