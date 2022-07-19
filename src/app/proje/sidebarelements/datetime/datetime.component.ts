@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {SharedDataService} from "../../../demo/service/sharedataservice";
+import {GetElementDetailsService} from "../../../demo/service/getElementDetailsService";
 
 interface Date {
     format: string;
@@ -12,22 +14,31 @@ interface Date {
 })
 export class DatetimeComponent implements OnInit {
     hide: boolean;
-    passwordInput: string;
-    date2: any;
     dateFormats: Date[];
     selected: string;
+    question:string;
+    id: string;
 
-    constructor() {
+    constructor(private share: SharedDataService, private getElement: GetElementDetailsService) {
     }
 
     ngOnInit(): void {
+        this.share.currentMessage.subscribe(id => this.id = id);
+
         this.dateFormats = [
             {format: 'dd.mm.yy', value: 'dd.mm.yy'},
             {format: 'dd-mm-yy', value: 'dd-mm-yy'},
             {format: 'dd/mm/yy', value: 'dd/mm/yy'},
             {format: 'mm.dd.yy', value: 'mm.dd.yy'},
             {format: 'mm-dd-yy', value: 'mm-dd-yy'},
-            {format: 'mm/dd/yy', value: 'dd/mm/yy'}];
+            {format: 'mm/dd/yy', value: 'mm/dd/yy'}];
     }
+    onSubmit() {
 
+        this.getElement.changeMessage({
+            id: this.id,
+            header: this.question,
+            selected: this.selected
+        });
+    }
 }

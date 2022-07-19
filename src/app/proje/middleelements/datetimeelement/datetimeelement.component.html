@@ -9,8 +9,8 @@
     </div>
     <div class="handle">
         <div class="d-flex flex-column">
-            <label class="mb-2">{{ 'HEADER' | translate}}</label>
-            <p-calendar inputStyleClass="width" [(ngModel)]="date" [showTime]="true" [showSeconds]="true"></p-calendar>
+            <label class="mb-3">{{ header | translate}}</label>
+            <p-calendar inputStyleClass="width" dateFormat="{{selected}}" [showTime]="true" [showSeconds]="true" [hourFormat]="12" ></p-calendar>
         </div>
     </div>
 </div>
