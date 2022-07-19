@@ -3,6 +3,8 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
 import {SaveService} from '../../../demo/service/saveservice';
 import {Subscription} from 'rxjs';
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {TextField} from '../../../demo/domain/elements/textField';
 
 @Component({
     selector: 'app-textfieldelement',
@@ -18,10 +20,17 @@ export class TextfieldelementComponent implements OnInit {
     change: boolean;
 
     constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService,
-                private save: SaveService) {
+                private save: SaveService, private getElement: GetElementDetailsService) {
 
         this.clickEventsubscription = this.save.getClickEvent().subscribe(() => {
             this.pass();
+        });
+
+        this.getElement.currentMessage.subscribe( message => {
+            const temp = message as TextField;
+            this.header = temp.header;
+            this.placeholder = temp.placeholder;
+            this.smalltext = temp.subtext;
         });
     }
 

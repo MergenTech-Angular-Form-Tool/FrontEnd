@@ -160,9 +160,9 @@ import {DividerComponent} from './proje/sidebarelements/divider/divider.componen
 import {FileUploadComponent} from './proje/sidebarelements/file-upload/file-upload.component';
 import {PasswordComponent} from './proje/sidebarelements/password/password.component';
 import {TextfieldelementComponent} from './proje/middleelements/textfieldelement/textfieldelement.component';
-import { CheckboxelementComponent } from './proje/middleelements/checkboxelement/checkboxelement.component';
-import { DateelementComponent } from './proje/middleelements/dateelement/dateelement.component';
-import { DatetimeelementComponent } from './proje/middleelements/datetimeelement/datetimeelement.component';
+import {CheckboxelementComponent} from './proje/middleelements/checkboxelement/checkboxelement.component';
+import {DateelementComponent} from './proje/middleelements/dateelement/dateelement.component';
+import {DatetimeelementComponent} from './proje/middleelements/datetimeelement/datetimeelement.component';
 import {NumberComponent} from './proje/sidebarelements/number/number.component';
 import {FileelementComponent} from './proje/middleelements/fileelement/fileelement.component';
 import {NumberelementComponent} from './proje/middleelements/numberelement/numberelement.component';
@@ -170,12 +170,13 @@ import {PasswordelementComponent} from './proje/middleelements/passwordelement/p
 import {RangeelementComponent} from './proje/middleelements/rangeelement/rangeelement.component';
 import {MailelementComponent} from './proje/middleelements/mailelement/mailelement.component';
 import {SharedDataService} from './demo/service/sharedataservice';
-import { ProfileComponent } from './proje/profile/profile.component';
-import { DatetimeComponent } from './proje/sidebarelements/datetime/datetime.component';
+import {ProfileComponent} from './proje/profile/profile.component';
+import {DatetimeComponent} from './proje/sidebarelements/datetime/datetime.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {CollapsedRightBarService} from './demo/service/collapsedRightBarService';
 import {SaveService} from './demo/service/saveservice';
+import {GetElementDetailsService} from './demo/service/getElementDetailsService';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -355,11 +356,12 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         ProfileComponent,
         DatetimeComponent
     ],
+    // Allah'a emanet havayolları :)
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
-        MessageService, SharedDataService, CollapsedRightBarService, SaveService
+        MessageService, SharedDataService, CollapsedRightBarService, SaveService, GetElementDetailsService
     ],
     bootstrap: [AppComponent]
 })
