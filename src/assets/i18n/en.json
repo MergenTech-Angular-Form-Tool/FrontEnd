@@ -60,5 +60,10 @@
     "DATE_TIME": "Date with time",
     "FILE": "File",
     "NUMBER": "Number",
-    "RANGE": "Range"
+    "RANGE": "Range",
+    "HEADER_TEXT": "Enter header text :",
+    "CHOOSE": "Choose",
+    "CANCEL": "Cancel",
+    "UPLOAD": "Upload",
+    "DEFAULT": "Enter a default value :"
 }

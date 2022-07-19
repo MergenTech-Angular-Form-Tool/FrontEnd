@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {Passwordfield} from '../../../demo/domain/elements/passwordfield';
 
 @Component({
     selector: 'app-passwordelement',
@@ -9,7 +11,20 @@ import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarS
 })
 export class PasswordelementComponent implements OnInit {
 
-    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService) {
+    id: string;
+    q: string;
+    placeholder: string;
+
+    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
+                private getElement: GetElementDetailsService) {
+
+        this.getElement.currentMessage.subscribe(message => {
+            const temp = message as Passwordfield;
+            if (temp.id === this.id) {
+                this.q = temp.q;
+                this.placeholder = temp.placeholder;
+            }
+        });
     }
 
     ngOnInit(): void {
@@ -22,6 +37,7 @@ export class PasswordelementComponent implements OnInit {
     }
 
     edit($event: any) {
+        this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsed.open();
     }

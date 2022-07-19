@@ -1,21 +1,10 @@
 <div class="label d-flex justify-content-start">
-
-    <label>{{ 'Q_TEXT' | translate}}</label>
-
+    <label>{{ 'HEADER_TEXT' | translate}}</label>
 </div>
-
-
 <div class="textField d-flex justify-content-start">
-
-    <input type="text" id="topLabel" placeholder="File Upload" pInputText />
-
+    <input [(ngModel)]="header" type="text" id="topLabel" pInputText>
 </div>
 
-<div class="sublabel d-flex justify-content-start">
-
-    <label>{{ 'Q_TYPE' | translate}}</label>
-
+<div class="d-flex justify-content-end">
+    <button class="btn btn-success mt-3" (click)='onSubmit()'>{{ 'SAVE' | translate}}</button>
 </div>
-
-
-
