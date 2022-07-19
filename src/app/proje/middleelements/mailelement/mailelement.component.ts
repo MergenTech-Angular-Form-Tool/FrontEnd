@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
+import {GetElementDetailsService} from "../../../demo/service/getElementDetailsService";
+import {Mail} from "../../../demo/domain/elements/mail";
 
 @Component({
     selector: 'app-mailelement',
@@ -8,9 +10,21 @@ import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarS
     styleUrls: ['./mailelement.component.scss']
 })
 export class MailelementComponent implements OnInit {
+    message: string;
+    placeholder: string;
+    header: string;
+    smalltext: string;
+    id: string;
 
-
-    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService) {
+    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService, private getElement: GetElementDetailsService) {
+        this.getElement.currentMessage.subscribe(message => {
+            const temp = message as Mail;
+            if (temp.id === this.id) {
+                this.header = temp.header;
+                this.placeholder = temp.placeholder;
+                this.smalltext = temp.subtext;
+            }
+        });
     }
 
     ngOnInit(): void {
@@ -23,6 +37,7 @@ export class MailelementComponent implements OnInit {
     }
 
     edit($event: any) {
+        this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsed.open();
     }

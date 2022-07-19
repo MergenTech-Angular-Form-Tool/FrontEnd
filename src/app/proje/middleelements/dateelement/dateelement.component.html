@@ -10,8 +10,8 @@
 
     <div class="handle">
         <div class="d-flex flex-column">
-            <label class="mb-2">{{ 'HEADER' | translate}}</label>
-            <p-calendar inputStyleClass="width" inputId="basic"></p-calendar>
+            <label class="mb-3">{{ header | translate}}</label>
+            <p-calendar inputStyleClass="width" dateFormat="{{selected}}" inputId="basic"></p-calendar>
         </div>
     </div>
 </div>

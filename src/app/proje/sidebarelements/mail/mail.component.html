@@ -1,34 +1,24 @@
-<div class="grid">
-    <div class="col-12">
+<div class="d-flex">
+    <div class="d-flex flex-column col-5 px-0 pt-0">
+        <label class="pt-2 mb-4" for="topLabel">{{ 'ENTER_Q' | translate}}</label>
+        <label class="pt-1 mb-4" for="placeHolder">{{ 'ENTER_SUB_TEXT' | translate}}</label>
+        <label for="botLabel">{{ 'ENTER_PLACEHOLDER' | translate}}</label>
+    </div>
+
+    <div class="d-flex flex-column">
+        <input class="mb-2" type="text" id="topLabel" [(ngModel)]="question" pInputText/>
+        <input class="mb-2" type="text" id="placeHolder" [(ngModel)]="subtext" pInputText/>
         <div class="p-inputgroup">
-            <div class="inputtext d-flex justify-content">
-                <input type="text" id="topLabel" placeholder="Soru giriniz." pInputText/>
-            </div>
-            <div class="p-inputgroup">
-                <div class="inputswitch d-flex justify-content">
-                    <label i18n>Required</label>
-                    <p-inputSwitch id="zorunlu" [(ngModel)]="checked"></p-inputSwitch>
-                </div>
-            </div>
+            <input type="text" id="botLabel" [(ngModel)]="placeholder" pInputText/>
+            <span class="p-inputgroup-addon">.com</span>
         </div>
     </div>
 </div>
-<div class="field d-flex justify-content">
-    <label class="textmail" i18n>E-mail</label>
-    <input type="text" pInputText placeholder="ornek@ornek">
-    <span class="p-inputgroup-addon">.com</span>
+<div class="inputswitch d-flex justify-content">
+    <label i18n>Required</label>
+    <p-inputSwitch id="zorunlu" [(ngModel)]="checked"></p-inputSwitch>
 </div>
-<div class="inputswitch">
-    <label class="inputlabel" id="label1">{{ 'CHAR_LIMIT' | translate}}</label>
-    <p-inputSwitch class="inputswitch2" id="girisLmt" [(ngModel)]="detail"></p-inputSwitch>
-</div>
-<div class="p-inputgroup">
-    <div class="field justify-content">
-        <label class="slidertext">{{ 'CHAR' | translate}} {{val2}}</label>
-        <p-slider [(ngModel)]="val2"></p-slider>
-    </div>
-</div>
-<div class="button justify-content-center">
-    <button pButton pRipple type="button" icon="pi pi-clone" class="p-button-rounded p-button-help"></button>
-    <small id="comment2-help" class="block">{{ 'CLON' | translate}}</small>
+
+<div class="d-flex justify-content-end">
+    <button class="btn btn-success mt-3" (click)='onSubmit()'>{{ 'SAVE' | translate}}</button>
 </div>
