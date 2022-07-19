@@ -11,15 +11,6 @@ export class CollapsedRightBarService {
     private messageSource = new BehaviorSubject(this.editDataDetails);
     currentMessage = this.messageSource.asObservable();
 
-    toggle() {
-        if (this.editDataDetails === false) {
-            this.messageSource.next(true);
-            this.editDataDetails = true;
-        } else {
-            this.messageSource.next(false);
-            this.editDataDetails = false;
-        }
-    }
 
     open() {
         this.messageSource.next(true);
