@@ -3,7 +3,6 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {Divider} from '../../../demo/domain/elements/divider';
-import {DividerModule} from 'primeng/divider';
 
 
 
