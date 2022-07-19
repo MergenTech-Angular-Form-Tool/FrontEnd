@@ -27,7 +27,7 @@
     "ZIP": "Posta kodu :",
     "CITY": "Şehir :",
     "ENTER_Q": "Soru giriniz :",
-    "REQUIRED": "Gerekli",
+    "REQUIRED": "Zorunlu",
     "ENTER_TITLE": "Tarih alanının başlığını giriniz :",
     "CHOOSE_DATE_FORMAT": "Tarih formatını seçiniz :",
     "LINE_COLOR": "Çizgi rengi",
@@ -55,10 +55,15 @@
     "SAVE": "Kaydet",
     "CLEAR_ALL": "Temizle",
     "TEXT_FIELD": "Metin Girişi",
-    "CHECK_BOX": "Doğru-Yanlış",
+    "CHECK_BOX": "Checkbox",
     "DATE": "Tarih Girişi",
     "DATE_TIME": "Zaman ve Tarih Girişi",
     "FILE": "Dosya Girişi",
     "NUMBER": "Sayı Girişi",
-    "RANGE": "Ayraç"
+    "RANGE": "Ayraç",
+    "HEADER_TEXT": "Başlık metnini giriniz :",
+    "CHOOSE": "Seç",
+    "CANCEL": "İptal",
+    "UPLOAD": "Yükle",
+    "DEFAULT": "Varsayılan değeri giriniz :"
 }

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {FileUpload} from '../../../demo/domain/elements/fileUpload';
 
 @Component({
     selector: 'app-fileelement',
@@ -9,7 +11,18 @@ import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarS
 })
 export class FileelementComponent implements OnInit {
 
-    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService) {
+    id: string;
+    header = 'HEADER';
+
+    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
+                private getElement: GetElementDetailsService) {
+
+        this.getElement.currentMessage.subscribe(message => {
+            const temp = message as FileUpload;
+            if (temp.id === this.id) {
+                this.header = temp.header;
+            }
+        });
     }
 
     ngOnInit(): void {
@@ -22,6 +35,7 @@ export class FileelementComponent implements OnInit {
     }
 
     edit($event: any) {
+        this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsed.open();
     }

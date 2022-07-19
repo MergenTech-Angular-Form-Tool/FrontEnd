@@ -1,19 +1,23 @@
-.numField{
-    margin-top:15px;
-    margin-left:20px;
+.numField {
+    margin-top: 15px;
+    margin-left: 20px;
 }
 
-.checkBox{
-    margin-left:15px;
-    margin-top:15px;
+.checkBox {
+    margin-left: 15px;
+    margin-top: 15px;
 }
 
-.label{
-    margin-top:15px;
-    margin-left:23px;
+.label {
+    margin-top: 15px;
+    margin-left: 23px;
 }
 
-.textField{
-    margin-top:5px;
-    margin-left:20px;
+.textField {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+:host ::ng-deep .width {
+    width: 275px;
 }

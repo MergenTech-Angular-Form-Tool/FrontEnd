@@ -8,7 +8,10 @@
                   icon="bi bi-trash"></p-button>
     </div>
     <div class="handle">
-        <label class="my-2">{{ 'HEADER' | translate}}</label>
-        <p-fileUpload name="myfile[]" maxFileSize="1000000" styleClass="width"></p-fileUpload>
+        <label class="my-2">{{ header | translate}}</label>
+        <p-fileUpload i18n name="myfile[]" maxFileSize="1000000" styleClass="width"
+                      chooseLabel="{{'CHOOSE' | translate}}"
+                      uploadLabel="{{'UPLOAD' | translate}}"
+                      cancelLabel="{{'CANCEL' | translate}}"></p-fileUpload>
     </div>
 </div>
