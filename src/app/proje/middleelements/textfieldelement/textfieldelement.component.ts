@@ -23,9 +23,7 @@ export class TextfieldelementComponent implements OnInit {
     constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService,
                 private save: SaveService, private getElement: GetElementDetailsService) {
 
-        /*this.clickEventsubscription = this.save.getClickEvent().subscribe(() => {
-            this.pass();
-        });*/
+
 
         this.getElement.currentMessage.subscribe( message => {
             const temp = message as TextField;

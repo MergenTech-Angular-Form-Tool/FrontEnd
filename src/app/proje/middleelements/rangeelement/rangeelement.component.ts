@@ -1,6 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {Divider} from '../../../demo/domain/elements/divider';
+import {DividerModule} from 'primeng/divider';
+
+
 
 @Component({
     selector: 'app-rangeelement',
@@ -8,8 +13,28 @@ import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarS
     styleUrls: ['./rangeelement.component.scss']
 })
 export class RangeelementComponent implements OnInit {
+    id: string;
+    color: string;
+    style: string;
+    height: string;
+    marginBot: string;
+    marginTop: string;
+    space: string;
+    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
+                private getElement: GetElementDetailsService) {
 
-    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService) {
+        this.getElement.currentMessage.subscribe( message => {
+            const temp = message as Divider;
+            if ( temp.id === this.id){
+                this.color = temp.color;
+                this.style = temp.style;
+                this.height = temp.height + 'px';
+                this.marginBot = temp.marginBot;
+                this.marginTop = temp.marginTop;
+                this.space = temp.space;
+            }
+
+        });
     }
 
     ngOnInit(): void {
@@ -22,7 +47,9 @@ export class RangeelementComponent implements OnInit {
     }
 
     edit($event: any) {
+        this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsed.open();
+
     }
 }

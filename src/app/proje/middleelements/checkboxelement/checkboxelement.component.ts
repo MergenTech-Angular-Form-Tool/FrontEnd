@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {CheckBox} from '../../../demo/domain/elements/checkBox';
 
 @Component({
     selector: 'app-checkboxelement',
@@ -10,9 +12,24 @@ import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarS
 export class CheckboxelementComponent implements OnInit {
 
     selected: string;
+    id: string;
+    header: string;
+    required: string;
+    options: string;
 
-    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService) {
+    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
+                private getElement: GetElementDetailsService) {
         shared.currentMessage.subscribe(message => this.selected = message);
+
+        this.getElement.currentMessage.subscribe( message => {
+            const temp = message as CheckBox;
+            if ( temp.id === this.id){
+                this.header = temp.header;
+                this.options = temp.options;
+                this.required = temp.required;
+            }
+
+        });
     }
 
     ngOnInit(): void {
@@ -25,6 +42,7 @@ export class CheckboxelementComponent implements OnInit {
     }
 
     edit($event: any) {
+        this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsed.open();
     }

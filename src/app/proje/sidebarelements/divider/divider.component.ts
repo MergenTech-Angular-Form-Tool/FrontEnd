@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {SharedDataService} from '../../../demo/service/sharedataservice';
 
 @Component({
   selector: 'app-divider',
@@ -6,14 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./divider.component.scss']
 })
 export class DividerComponent implements OnInit {
-    val: number;
-    height: number;
-    below: number;
-    above: number;
-    space: number;
-  constructor() { }
+    id: string;
+    color: string;
+    style: string;
+    height: string;
+    marginBot: string;
+    marginTop: string;
+    space: string;
+  constructor(private getElement: GetElementDetailsService, private share: SharedDataService) { }
 
   ngOnInit(): void {
+      this.share.currentMessage.subscribe(id => this.id = id);
+
   }
 
+    onSubmit() {
+
+        this.getElement.changeMessage({
+            id: this.id,
+            color: this.color,
+            style: this.style,
+            height: this.height,
+            marginBot: this.marginBot,
+            marginTop: this.marginTop,
+            space: this.space,
+        });
+
+
+    }
 }

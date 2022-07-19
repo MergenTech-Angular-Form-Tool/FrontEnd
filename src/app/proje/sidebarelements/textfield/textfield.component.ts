@@ -25,14 +25,6 @@ export class TextfieldComponent implements OnInit {
     }
 
     onSubmit() {
-        // this.save.changeMessage(this.question);
-        // const element = document.getElementById(this.id);
-        // console.log(element.firstChild.firstChild.nextSibling.nextSibling.firstChild.firstChild.);
-        // tslint:disable-next-line:max-line-length
-        // element.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.innerHTML = this.message;
-        //
-        // this.save.sendClickEvent();
-        // console.log(this.question, this.subtext, this.placeholder);
 
         this.getElement.changeMessage({
             id: this.id,

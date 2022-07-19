@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {SharedDataService} from '../../../demo/service/sharedataservice';
 
 
 @Component({
@@ -7,12 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkbox.component.scss']
 })
 export class CheckboxComponent implements OnInit {
-    checked: string;
-    detail: string;
-    value = 1;
-  constructor() { }
+    id: string;
+    header: string;
+    required: string;
+    options: string;
+  constructor( private getElement: GetElementDetailsService, private share: SharedDataService) { }
 
   ngOnInit(): void {
-  }
+      this.share.currentMessage.subscribe(id => this.id = id);
 
+  }
+    onSubmit() {
+        this.getElement.changeMessage({
+            id: this.id,
+            header: this.header,
+            required: this.required,
+            options: this.options,
+        });
+
+
+
+    }
 }

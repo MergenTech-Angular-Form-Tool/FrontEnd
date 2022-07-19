@@ -7,7 +7,7 @@
 
 <div class="textField d-flex justify-content-start">
 
-    <input type="color" class="textField" placeholder="#012345" pInputText/>
+    <input type="color" class="textField" [(ngModel)]="color" placeholder="#012345" pInputText/>
 
 </div>
 
@@ -23,10 +23,10 @@
 </div>
 
 <div class="label d-flex justify-content-start">
-    <select name="Divider Style" id="divider" class="divider">
-        <option value="solid">{{ 'SOLID' | translate}}</option>
-        <option value="dotted">{{ 'DOTTED' | translate}}</option>
-        <option value="dashed">{{ 'DASHED' | translate}}</option>
+    <select [(ngModel)]="style"  name="Divider Style" id="divider" class="divider">
+        <option value="solid"  >{{ 'solid' | translate}}</option>
+        <option value="dotted" >{{ 'dotted' | translate}}</option>
+        <option value="dashed" >{{ 'dashed' | translate}}</option>
     </select>
 </div>
 
@@ -49,53 +49,10 @@
 
 </div>
 
-<div class="sublabel d-flex justify-content-start">
 
-    <label>{{ 'SET_LINE_HEIGHT' | translate}}</label>
-
-</div>
 
 <hr class="hr">
 
-<div class="label d-flex justify-content-start">
-
-    <label>{{ 'DIVIDER_HEIGHT' | translate}}</label>
-
-</div>
-
-<div class="textField d-flex justify-content-start">
-
-    <p-inputNumber [(ngModel)]="below" [showButtons]="true" mode="decimal"></p-inputNumber>
-
-</div>
-
-<div class="sublabel d-flex justify-content-start">
-
-    <label>{{ 'PUT_BELOW_SPACE' | translate}}</label>
-
-</div>
-
-<hr>
-
-<div class="label d-flex justify-content-start">
-
-    <label>{{ 'SPACE_ABOVE' | translate}}</label>
-
-</div>
-
-<div class="textField d-flex justify-content-start">
-
-    <p-inputNumber [(ngModel)]="above" [showButtons]="true" mode="decimal"></p-inputNumber>
-
-</div>
-
-<div class="sublabel d-flex justify-content-start">
-
-    <label>{{ 'PUT_BELOW_SPACE' | translate}}</label>
-
-</div>
-
-<hr style="height:2px;">
 
 <div class="label d-flex justify-content-start">
 
@@ -111,8 +68,11 @@
 
 <div class="sublabel d-flex justify-content-start">
 
-    <label style="margin-bottom:50px;"> {{ 'PUT_BELOW_SPACE' | translate}}</label>
+    <label > {{ 'PUT_BELOW_SPACE' | translate}}</label>
 
+</div>
+<div class="d-flex justify-content-end">
+    <button class="btn btn-success my-3"  (click)='onSubmit()'>{{ 'SAVE' | translate}}</button>
 </div>
 
 <div></div>
