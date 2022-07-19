@@ -42,9 +42,9 @@ export class TextfieldelementComponent implements OnInit {
 
     ngOnInit(): void {
         this.save.currentMessage.subscribe( message => this.message = message);
-        this.header = 'Enter Question';
-        this.placeholder = 'Enter Placeholder';
-        this.smalltext = 'Enter Smalltext';
+        this.header = 'ENTER_Q';
+        this.placeholder = 'ENTER_PLACEHOLDER';
+        this.smalltext = 'ENTER_SUB_TEXT';
     }
 
     delete($event: any) {

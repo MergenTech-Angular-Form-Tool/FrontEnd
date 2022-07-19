@@ -11,7 +11,7 @@
         <div class="handle">
             <label class="mb-3">{{ header | translate}}</label>
             <div class="mb-2">
-                <input pInputText [(ngModel)]="placeholder" type="text" style="width: 500px;">
+                <input pInputText placeholder="{{ placeholder | translate }}" type="text" style="width: 500px;">
             </div>
             <small i18n>{{ smalltext | translate}}</small>
         </div>
