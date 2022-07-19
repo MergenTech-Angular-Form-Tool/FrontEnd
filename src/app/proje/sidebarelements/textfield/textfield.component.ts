@@ -35,6 +35,7 @@ export class TextfieldComponent implements OnInit {
         // console.log(this.question, this.subtext, this.placeholder);
 
         this.getElement.changeMessage({
+            id: this.id,
             header: this.question,
             subtext: this.subtext,
             placeholder: this.placeholder

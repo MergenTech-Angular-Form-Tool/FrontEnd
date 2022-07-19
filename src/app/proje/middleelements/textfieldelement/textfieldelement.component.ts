@@ -18,19 +18,23 @@ export class TextfieldelementComponent implements OnInit {
     header: string;
     smalltext: string;
     change: boolean;
+    id: string;
 
     constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService,
                 private save: SaveService, private getElement: GetElementDetailsService) {
 
-        this.clickEventsubscription = this.save.getClickEvent().subscribe(() => {
+        /*this.clickEventsubscription = this.save.getClickEvent().subscribe(() => {
             this.pass();
-        });
+        });*/
 
         this.getElement.currentMessage.subscribe( message => {
             const temp = message as TextField;
-            this.header = temp.header;
-            this.placeholder = temp.placeholder;
-            this.smalltext = temp.subtext;
+            if ( temp.id === this.id){
+                this.header = temp.header;
+                this.placeholder = temp.placeholder;
+                this.smalltext = temp.subtext;
+            }
+
         });
     }
 
@@ -43,14 +47,13 @@ export class TextfieldelementComponent implements OnInit {
     }
 
     edit($event: any) {
+        this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.sharedDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
-        // this.collapsedRightBarService.open();
+        this.collapsedRightBarService.open();
     }
-    pass(){
+   /* pass(){
         this.header = this.message;
-
-
-    }
+    }*/
 
 
 
