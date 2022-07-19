@@ -6,6 +6,7 @@ import {Subscription} from 'rxjs';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {TextField} from '../../../demo/domain/elements/textField';
 
+
 @Component({
     selector: 'app-textfieldelement',
     templateUrl: './textfieldelement.component.html',
@@ -20,6 +21,8 @@ export class TextfieldelementComponent implements OnInit {
     change: boolean;
     id: string;
 
+
+
     constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService,
                 private save: SaveService, private getElement: GetElementDetailsService) {
 
@@ -27,6 +30,7 @@ export class TextfieldelementComponent implements OnInit {
 
         this.getElement.currentMessage.subscribe( message => {
             const temp = message as TextField;
+
             if ( temp.id === this.id){
                 this.header = temp.header;
                 this.placeholder = temp.placeholder;
@@ -38,6 +42,9 @@ export class TextfieldelementComponent implements OnInit {
 
     ngOnInit(): void {
         this.save.currentMessage.subscribe( message => this.message = message);
+        this.header = 'Enter Question';
+        this.placeholder = 'Enter Placeholder';
+        this.smalltext = 'Enter Smalltext';
     }
 
     delete($event: any) {
@@ -49,9 +56,7 @@ export class TextfieldelementComponent implements OnInit {
         this.sharedDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsedRightBarService.open();
     }
-   /* pass(){
-        this.header = this.message;
-    }*/
+
 
 
 
