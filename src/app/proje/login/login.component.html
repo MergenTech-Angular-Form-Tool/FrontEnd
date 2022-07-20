@@ -1,7 +1,12 @@
 <div class="login-body">
     <div class="login-wrapper">
         <div class="login-panel">
-            <a [routerLink]="['/']" class="logo">
+
+            <div class="mb-5">
+                <app-lang-switcher></app-lang-switcher>
+            </div>
+
+            <a [routerLink]="['/']">
                 <img class="mergen-logo" src="assets/layout/images/mergentechLogo.png" alt="freya-layout"/>
             </a>
 
@@ -25,7 +30,7 @@
 
             <a href="#">{{'FORGET_PASSWORD' | translate}}</a>
             <p>{{'DONTHAVEACCOUNT' | translate}} <span (click)="gotoHome()"
-                                                      class="register-a">{{'SIGN_UP' | translate}}</span>!</p>
+                                                       class="register-a">{{'SIGN_UP' | translate}}</span>!</p>
         </div>
         <div class="login-footer">
             <h4>Mergen</h4>

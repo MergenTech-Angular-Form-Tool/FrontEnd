@@ -8,12 +8,7 @@
             <a href=#login>{{'LOGIN' | translate}}</a>
             <a href=#register>{{'REGISTER' | translate}}</a>
             <a href="#profile">{{'PROFILE' | translate}}</a>
-            <label class="language-switcher">
-                <input type="checkbox" (click)="changeLang()">
-                <span class="slider round"></span>
-                <span class="select-tr user-select-none">TR</span>
-                <span class="select-en user-select-none">EN</span>
-            </label>
+            <app-lang-switcher></app-lang-switcher>
         </div>
     </div>
 </div>

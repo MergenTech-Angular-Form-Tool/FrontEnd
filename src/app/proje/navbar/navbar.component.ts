@@ -8,23 +8,10 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class NavbarComponent implements OnInit {
 
-    flag = true;
-
     constructor(public translate: TranslateService) {
     }
 
     ngOnInit(): void {
     }
 
-    changeLang() {
-
-        if (this.flag) {
-            this.translate.use('en');
-            this.flag = false;
-        } else {
-            this.translate.use('tr');
-            this.flag = true;
-        }
-
-    }
 }

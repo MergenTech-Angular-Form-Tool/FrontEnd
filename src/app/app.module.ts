@@ -177,6 +177,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {CollapsedRightBarService} from './demo/service/collapsedRightBarService';
 import {SaveService} from './demo/service/saveservice';
 import {GetElementDetailsService} from './demo/service/getElementDetailsService';
+import { LangSwitcherComponent } from './proje/lang-switcher/lang-switcher.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -354,7 +355,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         RangeelementComponent,
         MailelementComponent,
         ProfileComponent,
-        DatetimeComponent
+        DatetimeComponent,
+        LangSwitcherComponent
     ],
     // Allah'a emanet havayolları :)
     providers: [

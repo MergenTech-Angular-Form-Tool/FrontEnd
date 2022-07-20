@@ -1,6 +1,11 @@
 <div class="login-body">
     <div class="login-wrapper">
         <div class="login-panel">
+
+            <div class="mb-5">
+                <app-lang-switcher></app-lang-switcher>
+            </div>
+
             <a [routerLink]="['/']" class="logo">
                 <img class="mergen-logo" src="../../../assets/layout/images/mergentechLogo.png" alt="freya-layout"/>
             </a>
@@ -42,7 +47,7 @@
 
         <div class="login-footer">
             <h4>Mergen</h4>
-            <h6>Copyright 2022 Ⓒ Mergen Yazılım</h6>
+            <h6>Copyright 2022 Ⓒ Mergen {{'SOFTWARE' | translate}}</h6>
         </div>
 
     </div>

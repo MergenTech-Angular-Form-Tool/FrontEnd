@@ -67,5 +67,6 @@
     "UPLOAD": "Upload",
     "DEFAULT": "Enter a default value :",
     "UPDATE": "Update",
-    "PLACEHOLDER": "Placeholder text"
+    "PLACEHOLDER": "Placeholder text",
+    "SOFTWARE": "Software"
 }
