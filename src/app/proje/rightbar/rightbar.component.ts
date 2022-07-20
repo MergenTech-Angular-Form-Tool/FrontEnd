@@ -27,6 +27,7 @@ export class RightbarComponent implements OnInit {
 
     ngOnInit(): void {
         this.screenWidth = window.innerWidth;
+        this.toggleCollapsed();
     }
 
     @HostListener('window:resize', ['$event'])
