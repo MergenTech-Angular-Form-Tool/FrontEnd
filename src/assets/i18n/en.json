@@ -69,5 +69,8 @@
     "UPDATE": "Update",
     "PLACEHOLDER": "Placeholder text",
     "SOFTWARE": "Software",
-    "PREVIEW": "Show Preview"
+    "PREVIEW": "Show Preview",
+    "CREATE": "CREATE",
+    "SETTINGS": "SETTINGS",
+    "PUBLISH": "PUBLISH"
 }

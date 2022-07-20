@@ -178,6 +178,7 @@ import {CollapsedRightBarService} from './demo/service/collapsedRightBarService'
 import {SaveService} from './demo/service/saveservice';
 import {GetElementDetailsService} from './demo/service/getElementDetailsService';
 import { LangSwitcherComponent } from './proje/lang-switcher/lang-switcher.component';
+import { SecondaryNavComponent } from './proje/secondary-nav/secondary-nav.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -356,7 +357,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         MailelementComponent,
         ProfileComponent,
         DatetimeComponent,
-        LangSwitcherComponent
+        LangSwitcherComponent,
+        SecondaryNavComponent
     ],
     // Allah'a emanet havayolları :)
     providers: [

@@ -69,5 +69,8 @@
     "UPDATE": "Güncelle",
     "PLACEHOLDER": "Yer tutucu metni",
     "SOFTWARE": "Yazılım",
-    "PREVIEW": "Önizlemyi Göster"
+    "PREVIEW": "Önizlemeyi Göster",
+    "CREATE": "OLUŞTUR",
+    "SETTINGS": "AYARLAR",
+    "PUBLISH": "YAYINLA"
 }

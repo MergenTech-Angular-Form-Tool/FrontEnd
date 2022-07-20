@@ -14,7 +14,6 @@ import {SharedDataService} from '../../demo/service/sharedataservice';
 export class MainPageComponent implements OnInit {
 
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
-    preview: boolean;
 
     constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService,
                 private sharedDataService: SharedDataService) {
@@ -23,6 +22,20 @@ export class MainPageComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            if (currentScrollPos <= 25) {
+                document.getElementById('sec-nav').style.top = '60px';
+                document.getElementById('left').style.top = '104px';
+                document.getElementById('right').style.top = '104px';
+            } else {
+                document.getElementById('sec-nav').style.top = '0';
+                document.getElementById('left').style.top = '44px';
+                document.getElementById('right').style.top = '44px';
+            }
+            prevScrollpos = currentScrollPos;
+        };
     }
 
     clearall() {
@@ -42,36 +55,4 @@ export class MainPageComponent implements OnInit {
         }
     }
 
-    showPreview() {
-        const bars = document.getElementById('bars');
-        const cog = document.getElementsByClassName('buttons-cog');
-        const clr = document.getElementsByClassName('buttons-clr');
-        const center = document.getElementById('center');
-        if (this.preview) {
-            bars.style.display = 'none';
-
-            for (let i = 0; i < cog.length; i++) {
-                cog[i].classList.add('d-none');
-                clr[i].classList.add('d-none');
-            }
-
-            for (let i = 2; i < center.children.length; i++) {
-                const child = center.children[i].firstElementChild.firstElementChild.nextElementSibling.nextElementSibling;
-                child.classList.remove('handle-container');
-            }
-
-        } else {
-            bars.style.display = 'block';
-
-            for (let i = 0; i < cog.length; i++) {
-                cog[i].classList.remove('d-none');
-                clr[i].classList.remove('d-none');
-            }
-
-            for (let i = 2; i < center.children.length; i++) {
-                const child = center.children[i].firstElementChild.firstElementChild.nextElementSibling.nextElementSibling;
-                child.classList.add('handle-container');
-            }
-        }
-    }
 }

@@ -2,14 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i);
 
 .topnav {
-    position: sticky;
     top: 0;
     display: block;
     background-color: #f8fafc;
     overflow: auto;
     overflow-y: hidden;
     z-index: 99;
-    box-shadow: 0 0 1rem 0 #9caeb7;
 }
 
 .topnav a {

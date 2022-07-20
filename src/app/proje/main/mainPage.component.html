@@ -1,5 +1,6 @@
 <!--<app-splash-screen></app-splash-screen>-->
-<app-navbar style="position:fixed; width:100%; z-index:99;"></app-navbar>
+<app-navbar style="width:100%; z-index:99;"></app-navbar>
+<app-secondary-nav></app-secondary-nav>
 
 <div class="grid">
 
@@ -9,13 +10,7 @@
     </div>
 
     <div class="center bg-light" id="center">
-        <div class="d-flex justify-content-around">
-
-            <div class="d-flex mt-2">
-                <label class="me-2">{{'PREVIEW' | translate}}</label>
-                <p-inputSwitch [(ngModel)]="preview" (onChange)="showPreview()"></p-inputSwitch>
-            </div>
-
+        <div class="d-flex justify-content-end mb-3" id="clear-button">
             <button pButton type="button" (click)="clearall()" label="{{ 'CLEAR_ALL' | translate}}" icon="bi bi-trash"
                     class="p-button-danger"></button>
         </div>
@@ -23,3 +18,4 @@
 
     </div>
 </div>
+
