@@ -29,7 +29,7 @@ export class PasswordelementComponent implements OnInit {
 
     ngOnInit(): void {
         this.q = 'HEADER';
-        this.placeholder = 'ENTER_PLACEHOLDER';
+        this.placeholder = 'PLACEHOLDER';
     }
 
     delete($event: any) {
