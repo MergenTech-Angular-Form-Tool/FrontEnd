@@ -33,7 +33,7 @@ export class CheckboxelementComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.header = 'ENTER_Q';
+        this.header = 'OPTION';
     }
 
     delete($event: any) {

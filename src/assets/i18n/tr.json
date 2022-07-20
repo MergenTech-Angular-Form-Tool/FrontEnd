@@ -66,5 +66,6 @@
     "CANCEL": "İptal",
     "UPLOAD": "Yükle",
     "DEFAULT": "Varsayılan değeri giriniz :",
-    "UPDATE": "Güncelle"
+    "UPDATE": "Güncelle",
+    "PLACEHOLDER": "Yer tutucu metni"
 }

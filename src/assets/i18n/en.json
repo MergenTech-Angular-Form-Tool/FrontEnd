@@ -66,5 +66,6 @@
     "CANCEL": "Cancel",
     "UPLOAD": "Upload",
     "DEFAULT": "Enter a default value :",
-    "UPDATE": "Update"
+    "UPDATE": "Update",
+    "PLACEHOLDER": "Placeholder text"
 }

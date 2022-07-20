@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
 import {SaveService} from '../../../demo/service/saveservice';
-import {Subscription} from 'rxjs';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {TextField} from '../../../demo/domain/elements/textField';
 
@@ -13,7 +12,7 @@ import {TextField} from '../../../demo/domain/elements/textField';
     styleUrls: ['./textfieldelement.component.scss']
 })
 export class TextfieldelementComponent implements OnInit {
-    clickEventsubscription: Subscription;
+
     message: string;
     placeholder: string;
     header: string;
@@ -21,30 +20,25 @@ export class TextfieldelementComponent implements OnInit {
     change: boolean;
     id: string;
 
-
-
     constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService,
                 private save: SaveService, private getElement: GetElementDetailsService) {
 
-
-
-        this.getElement.currentMessage.subscribe( message => {
+        this.getElement.currentMessage.subscribe(message => {
             const temp = message as TextField;
 
-            if ( temp.id === this.id){
+            if (temp.id === this.id) {
                 this.header = temp.header;
                 this.placeholder = temp.placeholder;
                 this.smalltext = temp.subtext;
             }
-
         });
     }
 
     ngOnInit(): void {
-        this.save.currentMessage.subscribe( message => this.message = message);
-        this.header = 'ENTER_Q';
-        this.placeholder = 'ENTER_PLACEHOLDER';
-        this.smalltext = 'ENTER_SUB_TEXT';
+        this.save.currentMessage.subscribe(message => this.message = message);
+        this.header = 'HEADER';
+        this.placeholder = 'PLACEHOLDER';
+        this.smalltext = 'SMALL_TEXT';
     }
 
     delete($event: any) {
@@ -56,8 +50,5 @@ export class TextfieldelementComponent implements OnInit {
         this.sharedDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsedRightBarService.open();
     }
-
-
-
 
 }
