@@ -15,7 +15,7 @@ interface SidenavToggle {
 export class RightbarComponent implements OnInit {
 
     @Output() onToggleSidenav: EventEmitter<SidenavToggle> = new EventEmitter();
-    collapsed = false;
+    collapsed: boolean;
     screenWidth = 0;
     id: string;
     enum: string;
@@ -56,7 +56,6 @@ export class RightbarComponent implements OnInit {
         if (!quit) {
             this.collapsed = !this.collapsed;
             this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
-            this.shareDateService.currentMessage.subscribe(message => this.id = message);
         }
     }
 

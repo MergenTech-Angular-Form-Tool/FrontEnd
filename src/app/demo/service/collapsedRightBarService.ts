@@ -14,11 +14,9 @@ export class CollapsedRightBarService {
 
     open() {
         this.messageSource.next(true);
-        this.editDataDetails = true;
     }
 
     close() {
         this.messageSource.next(false);
-        this.editDataDetails = false;
     }
 }

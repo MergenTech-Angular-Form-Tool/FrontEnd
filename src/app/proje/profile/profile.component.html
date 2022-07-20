@@ -9,7 +9,7 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>{{ 'SURNAME' | translate}}</mat-label>
+                    <mat-label>{{ 'LAST_NAME' | translate}}</mat-label>
                     <input #surname matInput formControlName="surname">
                 </mat-form-field>
 
@@ -25,13 +25,13 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>{{ 'CONFIRM_PASSWORD' | translate}}</mat-label>
+                    <mat-label>{{ 'PASSWORD_CONFIRM' | translate}}</mat-label>
                     <input #passConfirm matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
             </form>
 
-            <button pButton pRipple label="UPDATE" type="button" class="p-button-raised p-button-secondary"
+            <button pButton pRipple label="{{'UPDATE' | translate}}" type="button" class="p-button-raised p-button-secondary"
                     (click)="profile(name.value, surname.value, email.value, pass.value, passConfirm.value)">
             </button>
 
