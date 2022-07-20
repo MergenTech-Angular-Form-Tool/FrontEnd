@@ -8,23 +8,24 @@
             <form [formGroup]="formGroup" class="form d-flex flex-column">
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Email</mat-label>
+                    <mat-label>{{'EMAIL' | translate}}</mat-label>
                     <input #email matInput formControlName="email">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label i18n>Password</mat-label>
+                    <mat-label>{{'PASSWORD' | translate}}</mat-label>
                     <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
             </form>
 
-            <button pButton pRipple label="LOGIN" type="button" class="login"
+            <button pButton pRipple label="{{'LOGIN' | translate}}" type="button" class="login"
                     (click)="login(email.value, pass.value)">
             </button>
 
-            <a href="#" i18n>forget password?</a>
-            <p i18n>Don’t you have an account, <span (click)="gotoHome()" class="register-a">sign up</span>!</p>
+            <a href="#">{{'FORGET_PASSWORD' | translate}}</a>
+            <p>{{'DONTHAVEACCOUNT' | translate}} <span (click)="gotoHome()"
+                                                      class="register-a">{{'SIGN_UP' | translate}}</span>!</p>
         </div>
         <div class="login-footer">
             <h4>Mergen</h4>
