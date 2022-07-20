@@ -3,12 +3,19 @@
 
 <div class="grid">
 
-    <app-leftbar [entry]="entry"></app-leftbar>
+    <div id="bars">
+        <app-leftbar [entry]="entry"></app-leftbar>
+        <app-rightbar></app-rightbar>
+    </div>
 
-    <app-rightbar></app-rightbar>
+    <div class="center bg-light" id="center">
+        <div class="d-flex justify-content-around">
 
-    <div class="center bg-light">
-        <div class="clearall">
+            <div class="d-flex mt-2">
+                <label class="me-2">{{'PREVIEW' | translate}}</label>
+                <p-inputSwitch [(ngModel)]="preview" (onChange)="showPreview()"></p-inputSwitch>
+            </div>
+
             <button pButton type="button" (click)="clearall()" label="{{ 'CLEAR_ALL' | translate}}" icon="bi bi-trash"
                     class="p-button-danger"></button>
         </div>

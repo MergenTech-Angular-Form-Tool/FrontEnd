@@ -46,3 +46,10 @@ body {
 .buttons-clr:hover {
     opacity: 1
 }
+
+.handle-container .handle:hover {
+    cursor: move;
+    border-style: solid;
+    border-color: dodgerblue;
+    border-width: 0.3px;
+}

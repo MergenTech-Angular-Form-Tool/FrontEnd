@@ -68,5 +68,6 @@
     "DEFAULT": "Enter a default value :",
     "UPDATE": "Update",
     "PLACEHOLDER": "Placeholder text",
-    "SOFTWARE": "Software"
+    "SOFTWARE": "Software",
+    "PREVIEW": "Show Preview"
 }

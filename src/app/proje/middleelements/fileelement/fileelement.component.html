@@ -7,11 +7,13 @@
         <p-button (onClick)="delete($event)" type="button" styleClass="p-button-danger p-button-rounded"
                   icon="bi bi-trash"></p-button>
     </div>
-    <div class="handle">
-        <label class="my-2">{{ header | translate}}</label>
-        <p-fileUpload i18n name="myfile[]" maxFileSize="1000000" styleClass="width"
-                      chooseLabel="{{'CHOOSE' | translate}}"
-                      uploadLabel="{{'UPLOAD' | translate}}"
-                      cancelLabel="{{'CANCEL' | translate}}"></p-fileUpload>
+    <div class="handle-container">
+        <div class="handle">
+            <label class="my-2">{{ header | translate}}</label>
+            <p-fileUpload i18n name="myfile[]" maxFileSize="1000000" styleClass="width"
+                          chooseLabel="{{'CHOOSE' | translate}}"
+                          uploadLabel="{{'UPLOAD' | translate}}"
+                          cancelLabel="{{'CANCEL' | translate}}"></p-fileUpload>
+        </div>
     </div>
 </div>

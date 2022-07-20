@@ -14,8 +14,10 @@ import {SharedDataService} from '../../demo/service/sharedataservice';
 export class MainPageComponent implements OnInit {
 
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
+    preview: boolean;
 
-    constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService, private sharedDataService: SharedDataService) {
+    constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService,
+                private sharedDataService: SharedDataService) {
         translate.addLangs(['en', 'tr']);
         translate.setDefaultLang('tr');
     }
@@ -37,6 +39,39 @@ export class MainPageComponent implements OnInit {
                 event.container.data,
                 event.previousIndex,
                 event.currentIndex);
+        }
+    }
+
+    showPreview() {
+        const bars = document.getElementById('bars');
+        const cog = document.getElementsByClassName('buttons-cog');
+        const clr = document.getElementsByClassName('buttons-clr');
+        const center = document.getElementById('center');
+        if (this.preview) {
+            bars.style.display = 'none';
+
+            for (let i = 0; i < cog.length; i++) {
+                cog[i].classList.add('d-none');
+                clr[i].classList.add('d-none');
+            }
+
+            for (let i = 2; i < center.children.length; i++) {
+                const child = center.children[i].firstElementChild.firstElementChild.nextElementSibling.nextElementSibling;
+                child.classList.remove('handle-container');
+            }
+
+        } else {
+            bars.style.display = 'block';
+
+            for (let i = 0; i < cog.length; i++) {
+                cog[i].classList.remove('d-none');
+                clr[i].classList.remove('d-none');
+            }
+
+            for (let i = 2; i < center.children.length; i++) {
+                const child = center.children[i].firstElementChild.firstElementChild.nextElementSibling.nextElementSibling;
+                child.classList.add('handle-container');
+            }
         }
     }
 }

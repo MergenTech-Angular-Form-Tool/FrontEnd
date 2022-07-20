@@ -7,10 +7,12 @@
         <p-button (onClick)="delete($event)" type="button" styleClass="p-button-danger p-button-rounded"
                   icon="bi bi-trash"></p-button>
     </div>
-    <div class="handle">
-        <div class="field-checkbox">
-            <p-checkbox [binary]="true" inputId="binary"></p-checkbox>
-            <label>{{ header | translate}}</label>
+    <div class="handle-container">
+        <div class="handle">
+            <div class="field-checkbox">
+                <p-checkbox [binary]="true" inputId="binary"></p-checkbox>
+                <label>{{ header | translate}}</label>
+            </div>
         </div>
     </div>
 </div>

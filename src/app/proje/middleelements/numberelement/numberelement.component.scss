@@ -8,13 +8,6 @@
     }
 }
 
-.handle:hover {
-    cursor: move;
-    border-style: solid;
-    border-color: dodgerblue;
-    border-width: 0.3px;
-}
-
 :host ::ng-deep .p-inputnumber-input {
     width: 466px;
     margin-top: 15px;
