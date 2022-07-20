@@ -27,6 +27,8 @@ export class NumberelementComponent implements OnInit {
                 this.val = temp.defaultValue;
                 if (temp.isNegative) {
                     this.min = 0;
+                } else {
+                    this.min = -9999999;
                 }
             }
         });

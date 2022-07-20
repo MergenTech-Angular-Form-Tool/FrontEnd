@@ -12,7 +12,7 @@ export class NumberComponent implements OnInit {
     id: string;
     header: string;
     defaultValue: number;
-    selectedValue: boolean;
+    isNegative: boolean;
 
     constructor(private getElement: GetElementDetailsService, private share: SharedDataService) {
     }
@@ -26,7 +26,7 @@ export class NumberComponent implements OnInit {
             id: this.id,
             header: this.header,
             defaultValue: this.defaultValue,
-            isNegative: this.selectedValue[0]
+            isNegative: this.isNegative
         });
     }
 }
