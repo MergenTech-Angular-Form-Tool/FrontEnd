@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {CollapsedRightBarService} from '../../demo/service/collapsedRightBarService';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {SharedDataService} from '../../demo/service/sharedataservice';
 
 @Component({
@@ -43,16 +42,4 @@ export class MainPageComponent implements OnInit {
         this.collapsedRightBarService.close();
         this.sharedDataService.changeMessage(' _ ');
     }
-
-    drop(event: CdkDragDrop<string[]>) {
-        if (event.previousContainer === event.container) {
-            moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-        } else {
-            transferArrayItem(event.previousContainer.data,
-                event.container.data,
-                event.previousIndex,
-                event.currentIndex);
-        }
-    }
-
 }

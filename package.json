@@ -29,6 +29,7 @@
     "@fullcalendar/timegrid": "^5.8.0",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "angular-background-image": "^0.1.2",
     "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.8.3",
     "chart.js": "^3.3.2",
