@@ -8,23 +8,39 @@
     display: flex;
     flex-direction: column;
     width: 500px;
-    height: 620px;
-    overflow-y:auto;
-    overflow-x:hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.intro-2 {
-    //background: url("https://icon-library.com/images/69472.svg.svg") no-repeat center center;margin: 105px auto 50px;
-    //background-size: 880px;
-}
-.intro-3{
-    background: url("../../../assets/layout/images/mobile.svg") no-repeat center center;margin: 105px auto 50px;
-    background-size: 950px;
-    height:400px;
-}
+.mobile {
 
-.view {
-    height: 100vh !important;
+    .fixer {
+        height: 620px;
+    }
+
+    .intro-3 {
+        background: url("../../../assets/layout/images/mobile.svg") no-repeat center center;
+        margin: 105px auto 50px;
+        background-size: 950px;
+        height: 400px;
+    }
+
+    .view {
+        height: 100vh !important;
+    }
+
+}
+.tablet {
+
+    .intro-2 {
+        background: url("https://icon-library.com/images/69472.svg.svg") no-repeat center center;
+        margin: 105px auto 50px;
+        background-size: 880px;
+    }
+
+    .fixer {
+        height: 620px;
+    }
 }
 
 :host ::ng-deep .drag-column {
@@ -85,23 +101,3 @@
     }
 }
 
-.button {
-    background-color: darkslateblue;
-    border-radius: 5px;
-    color: white;
-    padding: 5px;
-    width: 10%;
-    margin: 5px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.phone{
-    align-content: center;
-    width:650px;
-    position:fixed;
-    margin-top:-100px;
-    margin-left: -50px;
-    height:800px;
-
-}

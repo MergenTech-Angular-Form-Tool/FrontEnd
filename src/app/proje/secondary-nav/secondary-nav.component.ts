@@ -7,6 +7,7 @@ import {MenuItem} from 'primeng/api';
     styleUrls: ['./secondary-nav.component.scss']
 })
 export class SecondaryNavComponent implements OnInit {
+
     preview: boolean;
     items: MenuItem[];
 
@@ -16,15 +17,19 @@ export class SecondaryNavComponent implements OnInit {
     ngOnInit(): void {
         this.items = [
             {
-                icon: 'pi pi-mobile',
+                icon: 'pi pi-mobile', command: () => {
+                    this.showMobile();
+                }
             },
             {
-                icon: 'pi pi-desktop', command:  () => {
+                icon: 'pi pi-desktop', command: () => {
                     this.showPreview();
                 }
             },
             {
-                icon: 'pi pi-tablet',
+                icon: 'pi pi-tablet', command: () => {
+                    this.showTablet();
+                }
             }
         ];
     }
@@ -35,7 +40,9 @@ export class SecondaryNavComponent implements OnInit {
         const clr = document.getElementsByClassName('buttons-clr');
         const center = document.getElementById('center');
         const clrBtn = document.getElementById('clear-button');
-        console.log(clrBtn);
+
+        console.log(bars);
+
         if (this.preview) {
             bars.style.display = 'none';
 
@@ -67,5 +74,35 @@ export class SecondaryNavComponent implements OnInit {
             clrBtn.classList.add('d-flex');
 
         }
+    }
+
+    changePreview() {
+        this.preview = !this.preview;
+    }
+
+    showMobile() {
+        const mobile = document.getElementById('container');
+        if (this.preview) {
+            mobile.classList.remove('desktop');
+            mobile.classList.remove('tablet');
+            mobile.classList.add('mobile');
+        } else {
+            mobile.classList.remove('mobile');
+            mobile.classList.add('desktop');
+        }
+        this.showPreview();
+    }
+
+    showTablet() {
+        const tablet = document.getElementById('container');
+        if (this.preview) {
+            tablet.classList.remove('desktop');
+            tablet.classList.remove('mobile');
+            tablet.classList.add('tablet');
+        } else {
+            tablet.classList.remove('tablet');
+            tablet.classList.add('desktop');
+        }
+        this.showPreview();
     }
 }

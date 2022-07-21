@@ -26,12 +26,12 @@ export class MainPageComponent implements OnInit {
             const currentScrollPos = window.pageYOffset;
             if (currentScrollPos <= 25) {
                 document.getElementById('sec-nav').style.top = '60px';
-                document.getElementById('left').style.top = '104px';
-                document.getElementById('right').style.top = '104px';
+                document.getElementById('left').style.top = '114px';
+                document.getElementById('right').style.top = '114px';
             } else {
                 document.getElementById('sec-nav').style.top = '0';
-                document.getElementById('left').style.top = '44px';
-                document.getElementById('right').style.top = '44px';
+                document.getElementById('left').style.top = '54px';
+                document.getElementById('right').style.top = '54px';
             }
             prevScrollpos = currentScrollPos;
         };
