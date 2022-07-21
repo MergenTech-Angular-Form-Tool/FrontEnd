@@ -9,6 +9,7 @@ import {MainPageComponent} from './proje/main/mainPage.component';
 import {ProfileComponent} from './proje/profile/profile.component';
 import {SettingsComponent} from './proje/settings/settings.component';
 import {PublishComponent} from './proje/publish/publish.component';
+import {FormsettingsComponent} from './proje/formsettings/formsettings.component';
 
 @NgModule({
     imports: [
@@ -26,6 +27,7 @@ import {PublishComponent} from './proje/publish/publish.component';
             {path: 'profile', component: ProfileComponent},
             {path: 'settings', component: SettingsComponent},
             {path: 'publish', component: PublishComponent},
+            {path: 'form', component: FormsettingsComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
     ],

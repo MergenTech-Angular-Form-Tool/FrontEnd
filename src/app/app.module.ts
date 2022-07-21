@@ -182,6 +182,8 @@ import { SecondaryNavComponent } from './proje/secondary-nav/secondary-nav.compo
 import { SettingsComponent } from './proje/settings/settings.component';
 import { PublishComponent } from './proje/publish/publish.component';
 import {SpeedDialModule} from 'primeng/speeddial';
+import { FormsettingsComponent } from './proje/formsettings/formsettings.component';
+import { EmailsettingsComponent } from './proje/emailsettings/emailsettings.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -364,7 +366,9 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         LangSwitcherComponent,
         SecondaryNavComponent,
         SettingsComponent,
-        PublishComponent
+        PublishComponent,
+        FormsettingsComponent,
+        EmailsettingsComponent
     ],
     // Allah'a emanet havayolları :)
     providers: [
