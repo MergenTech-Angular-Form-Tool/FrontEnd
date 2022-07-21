@@ -8,6 +8,7 @@ import {MenuItem} from 'primeng/api';
 })
 export class SecondaryNavComponent implements OnInit {
 
+    clicked = '';
     preview: boolean;
     items: MenuItem[];
 
@@ -23,7 +24,7 @@ export class SecondaryNavComponent implements OnInit {
             },
             {
                 icon: 'pi pi-desktop', command: () => {
-                    this.showPreview();
+                    this.showDesktop();
                 }
             },
             {
@@ -40,8 +41,6 @@ export class SecondaryNavComponent implements OnInit {
         const clr = document.getElementsByClassName('buttons-clr');
         const center = document.getElementById('center');
         const clrBtn = document.getElementById('clear-button');
-
-        console.log(bars);
 
         if (this.preview) {
             bars.style.display = 'none';
@@ -83,26 +82,47 @@ export class SecondaryNavComponent implements OnInit {
     showMobile() {
         const mobile = document.getElementById('container');
         if (this.preview) {
-            mobile.classList.remove('desktop');
             mobile.classList.remove('tablet');
             mobile.classList.add('mobile');
         } else {
             mobile.classList.remove('mobile');
-            mobile.classList.add('desktop');
         }
-        this.showPreview();
+        if (this.preview) {
+            this.showPreview();
+        }
+        if (this.clicked === 'mobile') {
+            this.showPreview();
+        }
+        this.clicked = 'mobile';
     }
 
     showTablet() {
         const tablet = document.getElementById('container');
         if (this.preview) {
-            tablet.classList.remove('desktop');
             tablet.classList.remove('mobile');
             tablet.classList.add('tablet');
         } else {
             tablet.classList.remove('tablet');
-            tablet.classList.add('desktop');
         }
-        this.showPreview();
+        if (this.preview) {
+            this.showPreview();
+        }
+        if (this.clicked === 'tablet') {
+            this.showPreview();
+        }
+        this.clicked = 'tablet';
+    }
+
+    showDesktop() {
+        const desktop = document.getElementById('container');
+        desktop.classList.remove('tablet');
+        desktop.classList.remove('mobile');
+        if (this.preview) {
+            this.showPreview();
+        }
+        if (this.clicked === 'desktop') {
+            this.showPreview();
+        }
+        this.clicked = 'desktop';
     }
 }
