@@ -72,5 +72,8 @@
     "PREVIEW": "Önizlemeyi Göster",
     "CREATE": "OLUŞTUR",
     "SETTINGS": "AYARLAR",
-    "PUBLISH": "YAYINLA"
+    "PUBLISH": "YAYINLA",
+    "FORM_SETTINGS": "Form Ayarları",
+    "FORM_SETTINGS_SUB": "Form durumu ve özellikleri",
+    "FORM_EMAIL_SUB": "Teslim edildikten sonra mail gönder"
 }

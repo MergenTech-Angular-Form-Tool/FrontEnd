@@ -179,6 +179,8 @@ import {SaveService} from './demo/service/saveservice';
 import {GetElementDetailsService} from './demo/service/getElementDetailsService';
 import { LangSwitcherComponent } from './proje/lang-switcher/lang-switcher.component';
 import { SecondaryNavComponent } from './proje/secondary-nav/secondary-nav.component';
+import { SettingsComponent } from './proje/settings/settings.component';
+import { PublishComponent } from './proje/publish/publish.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -358,7 +360,9 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         ProfileComponent,
         DatetimeComponent,
         LangSwitcherComponent,
-        SecondaryNavComponent
+        SecondaryNavComponent,
+        SettingsComponent,
+        PublishComponent
     ],
     // Allah'a emanet havayolları :)
     providers: [

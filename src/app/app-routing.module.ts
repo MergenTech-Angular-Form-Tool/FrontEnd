@@ -7,6 +7,8 @@ import {LoginComponent} from './proje/login/login.component';
 import {RegisterComponent} from './proje/register/register.component';
 import {MainPageComponent} from './proje/main/mainPage.component';
 import {ProfileComponent} from './proje/profile/profile.component';
+import {SettingsComponent} from './proje/settings/settings.component';
+import {PublishComponent} from './proje/publish/publish.component';
 
 @NgModule({
     imports: [
@@ -22,6 +24,8 @@ import {ProfileComponent} from './proje/profile/profile.component';
             {path: 'login', component: LoginComponent},
             {path: 'register', component: RegisterComponent},
             {path: 'profile', component: ProfileComponent},
+            {path: 'settings', component: SettingsComponent},
+            {path: 'publish', component: PublishComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
     ],

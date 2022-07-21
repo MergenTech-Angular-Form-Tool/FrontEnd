@@ -72,5 +72,8 @@
     "PREVIEW": "Show Preview",
     "CREATE": "CREATE",
     "SETTINGS": "SETTINGS",
-    "PUBLISH": "PUBLISH"
+    "PUBLISH": "PUBLISH",
+    "FORM_SETTINGS": "Form Settings",
+    "FORM_SETTINGS_SUB": "Form status and proporties",
+    "FORM_EMAIL_SUB": "Send emails after submission."
 }
