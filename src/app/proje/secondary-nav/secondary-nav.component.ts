@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {MenuItem} from 'primeng/api';
 
 @Component({
     selector: 'app-secondary-nav',
@@ -7,11 +8,25 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SecondaryNavComponent implements OnInit {
     preview: boolean;
+    items: MenuItem[];
 
     constructor() {
     }
 
     ngOnInit(): void {
+        this.items = [
+            {
+                icon: 'pi pi-mobile',
+            },
+            {
+                icon: 'pi pi-desktop', command:  () => {
+                    this.showPreview();
+                }
+            },
+            {
+                icon: 'pi pi-tablet',
+            }
+        ];
     }
 
     showPreview() {
