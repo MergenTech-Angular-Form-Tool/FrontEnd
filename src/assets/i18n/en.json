@@ -75,5 +75,13 @@
     "PUBLISH": "PUBLISH",
     "FORM_SETTINGS": "Form Settings",
     "FORM_SETTINGS_SUB": "Form status and proporties",
-    "FORM_EMAIL_SUB": "Send emails after submission."
+    "FORM_EMAIL_SUB": "Send emails after submission.",
+    "SHARE":"Quick Share",
+    "SUB_SHARE": "Direct form link and social share",
+    "EMBED": "EMBED",
+    "SUB_EMBED": "Various webpage embed options.",
+    "ASSIGN":"Assign Form",
+    "SUB_ASSIGN": "Assign your forms to others.",
+    "SUB_EMAIL_PUBLISH": "Reminders and instant sharing.",
+    "SUB_PDF": "Download fillable PDF"
 }

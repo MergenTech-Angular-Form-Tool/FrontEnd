@@ -12,4 +12,7 @@ export class PublishComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ffor(){
+
+  }
 }

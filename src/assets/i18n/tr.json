@@ -6,7 +6,7 @@
     "ELEMENTS": "Elementler",
     "PASSWORD": "Şifre",
     "PASSWORD_CONFIRM": "Şifre Onay",
-    "EMAIL": "Email",
+    "EMAIL": "E-posta",
     "NAME": "İsim",
     "LAST_NAME": "Soyisim",
     "ADDRESS": "Adres",
@@ -75,5 +75,13 @@
     "PUBLISH": "YAYINLA",
     "FORM_SETTINGS": "Form Ayarları",
     "FORM_SETTINGS_SUB": "Form durumu ve özellikleri",
-    "FORM_EMAIL_SUB": "Teslim edildikten sonra mail gönder"
+    "FORM_EMAIL_SUB": "Teslim edildikten sonra mail gönder",
+    "SHARE": "Hızlı Paylaşım",
+    "SUB_SHARE":"Doğrudan form bağlantısı",
+    "EMBED": "yerleştirme",
+    "SUB_EMBED": "Web sayfası yerleştirme ayarl arı.",
+    "ASSIGN":"Form İlet",
+    "SUB_ASSIGN": "Formlarınızı başkalarına iletin.",
+    "SUB_EMAIL_PUBLISH": "Hatırlatıcılar ve anında paylaşım."
+
 }
