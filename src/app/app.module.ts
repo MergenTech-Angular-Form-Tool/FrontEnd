@@ -181,6 +181,7 @@ import { LangSwitcherComponent } from './proje/lang-switcher/lang-switcher.compo
 import { SecondaryNavComponent } from './proje/secondary-nav/secondary-nav.component';
 import { SettingsComponent } from './proje/settings/settings.component';
 import { PublishComponent } from './proje/publish/publish.component';
+import {SpeedDialModule} from 'primeng/speeddial';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -290,7 +291,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
                 useFactory: httpTranslateLoaderFactory,
                 deps: [HttpClient]
             }
-        })
+        }),
+        SpeedDialModule
     ],
     declarations: [
         AppComponent,
