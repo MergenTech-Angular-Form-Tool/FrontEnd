@@ -79,9 +79,19 @@
     "SHARE": "Hızlı Paylaşım",
     "SUB_SHARE":"Doğrudan form bağlantısı",
     "EMBED": "yerleştirme",
-    "SUB_EMBED": "Web sayfası yerleştirme ayarl arı.",
+    "SUB_EMBED": "Web sayfası yerleştirme ayarları.",
     "ASSIGN":"Form İlet",
     "SUB_ASSIGN": "Formlarınızı başkalarına iletin.",
-    "SUB_EMAIL_PUBLISH": "Hatırlatıcılar ve anında paylaşım."
+    "SUB_EMAIL_PUBLISH": "Hatırlatıcılar ve anında paylaşım",
+    "DIRECT": "Formunuzun doğrudan bağlantısı",
+    "SUB_DIRECT": "Formunuz bu adreste güvenli bir şekilde yayınlandı ve kullanıma hazır.",
+    "SUB_PDF": "Doldurulabilir PDF'yi indirin",
+    "D_PDF": "PDF`yi indirin",
+    "EMAIL_FORM": "E-Posta Formu",
+    "SUB_EMAIL_FORM": "Formlarınızı e-posta yoluyla paylaşın.",
+    "SSHARE": "Paylaş",
+    "SUB_SSHARE":"E-posta yoluyla formunuzun doğrudan bağlantısını paylaşın.",
+    "SCHEDULE": "planlama",
+    "SUB_SCHEDULE": "İnsanlara formunuzu doldurmalarını hatırlatmak için periyodik e-postalar gönderin."
 
 }

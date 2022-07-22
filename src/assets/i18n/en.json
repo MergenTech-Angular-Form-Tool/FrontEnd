@@ -82,6 +82,16 @@
     "SUB_EMBED": "Various webpage embed options.",
     "ASSIGN":"Assign Form",
     "SUB_ASSIGN": "Assign your forms to others.",
-    "SUB_EMAIL_PUBLISH": "Reminders and instant sharing.",
-    "SUB_PDF": "Download fillable PDF"
+    "SUB_EMAIL_PUBLISH": "Reminders and instant sharing",
+    "SUB_PDF": "Download fillable PDF",
+    "DIRECT": "Direct link of your form",
+    "SUB_DIRECT": "Your form is securely published and ready to use at this address.",
+    "D_PDF": "Download PDF",
+    "EMAIL_FORM": "Email Form",
+    "SUB_EMAIL_FORM": "Share your forms through email.",
+    "SSHARE": "Share",
+    "SUB_SSHARE": "Share a direct link to your form via email.",
+    "SCHEDULE": "Schedule",
+    "SUB_SCHEDULE": "Send periodic emails to remind people to fill out your form."
+
 }

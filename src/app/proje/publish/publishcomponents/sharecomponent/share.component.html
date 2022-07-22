@@ -3,10 +3,10 @@
        class="pi pi-link text-black"></i>
     <div>
         <div class="fw-bold text-uppercase">
-            DIRECT LINK OF YOUR FORM
+            {{ 'DIRECT' | translate }}
         </div>
         <div>
-            Your form is securely published and ready to use at this address.
+            {{ 'SUB_DIRECT' | translate }}
         </div>
         <div>
             <input pInputText placeholder="{{ placeholder | translate }}" type="text" style="width: 500px;">
@@ -15,5 +15,5 @@
 
 </div>
 <div class="justify-content-end mt-5 ">
-<p-button >Share</p-button>
+<p-button >{{ 'SHARE' | translate }}</p-button>
 </div>
