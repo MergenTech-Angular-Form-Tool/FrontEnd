@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ComponentFactoryResolver, Input, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-publish',
@@ -7,12 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublishComponent implements OnInit {
 
-  constructor() { }
+    @Input() entry: any;
+    state: { id: number } = {
+        id: 0
+    };
 
-  ngOnInit(): void {
-  }
+    public comp: string;
+    constructor(private resolver: ComponentFactoryResolver) {
+    }
 
-  ffor(){
+    ngOnInit(): void {
+        this.comp = 'Share';
+    }
 
-  }
+
+    showComponent(comp: string) {
+        this.comp = comp;
+
+    }
 }
+

@@ -1,10 +1,15 @@
 .left{
     margin-top: 10px;
     overflow-y:auto;
+    position:fixed;
 
     }
 ::-webkit-scrollbar {
     width: 20px;
     background: #F08C44FF;
 
+}
+
+.mb-6{
+    margin-bottom: 30px;
 }

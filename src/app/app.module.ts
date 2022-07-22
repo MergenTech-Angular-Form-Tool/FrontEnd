@@ -184,6 +184,9 @@ import { PublishComponent } from './proje/publish/publish.component';
 import {SpeedDialModule} from 'primeng/speeddial';
 import { FormsettingsComponent } from './proje/formsettings/formsettings.component';
 import { EmailsettingsComponent } from './proje/emailsettings/emailsettings.component';
+import { ShareComponent } from './proje/publish/publishcomponents/sharecomponent/share.component';
+import { EmailComponent } from './proje/publish/publishcomponents/emailcomponent/email.component';
+import { PdfComponent } from './proje/publish/publishcomponents/pdfcomponent/pdf.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -368,7 +371,10 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         SettingsComponent,
         PublishComponent,
         FormsettingsComponent,
-        EmailsettingsComponent
+        EmailsettingsComponent,
+        ShareComponent,
+        EmailComponent,
+        PdfComponent
     ],
     // Allah'a emanet havayolları :)
     providers: [

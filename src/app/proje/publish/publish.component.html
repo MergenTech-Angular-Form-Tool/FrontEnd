@@ -3,7 +3,7 @@
 
 <div class="d-flex flex-row position-relative top">
     <div class="left">
-        <div class="left-item ms-3 mt-5 p-3">
+        <div class="left-item ms-3 mt-5 p-3" (click)="showComponent('Share')">
             <div class="d-flex flex-row align-items-center">
                 <i style="font-size: 2rem; margin-right: 20px"
                    class="pi pi-share-alt text-black"></i>
@@ -17,38 +17,10 @@
                 </div>
             </div>
         </div>
-        <div class="left-item ms-3 mt-5 p-3">
-            <div class="d-flex flex-row align-items-center">
-                <i style="font-size: 2rem; margin-right: 20px"
-                   class="pi pi-code text-black"></i>
-                <div>
-                    <div class="fw-bold text-uppercase">
-                        {{'EMBED' | translate}}
-                    </div>
-                    <div>
-                        {{'SUB_EMBED' | translate}}
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="left-item ms-3 mt-5 p-3">
-            <div class="d-flex flex-row align-items-center">
-                <i style="font-size: 2rem; margin-right: 20px"
-                   class="pi pi-users text-black"></i>
-                <div>
-                    <div class="fw-bold text-uppercase">
-                        {{'ASSIGN' | translate}}
-                    </div>
-                    <div>
-                        {{'SUB_ASSIGN' | translate}}
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="left-item ms-3 mt-5 p-3">
-            <div class="d-flex flex-row align-items-center">
+        <div class="left-item ms-3 mt-5 p-3" (click)="showComponent('Email')">
+            <div class="d-flex flex-row align-items-center" >
                 <i style="font-size: 2rem; margin-right: 20px"
                    class="pi pi-envelope text-black"></i>
                 <div>
@@ -62,7 +34,7 @@
             </div>
         </div>
 
-        <div class="left-item ms-3 mt-5 p-3">
+        <div class="left-item ms-3 mt-5 p-3" (click)="showComponent('Pdf')">
             <div class="d-flex flex-row align-items-center">
                 <i style="font-size: 2rem; margin-right: 20px"
                    class="pi pi-file-pdf text-black"></i>
@@ -76,39 +48,22 @@
                 </div>
             </div>
         </div>
-        <div class="left-item ms-3 mt-5 p-3">
-            <div class="d-flex flex-row align-items-center">
-                <i style="font-size: 2rem; margin-right: 20px"
-                   class="pi pi-code text-black"></i>
-                <div>
-                    <div class="fw-bold text-uppercase">
-                        {{'EMBED' | translate}}
-                    </div>
-                    <div>
-                        {{'SUB_EMBED' | translate}}
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
 
     </div>
     <div class="mt-5 shift-left">
-        <div class="d-flex flex-row align-items-center">
-            <i style="font-size: 2rem; margin-right: 20px"
-               class="bi bi-gear-fill text-black"></i>
-            <div>
-                <div class="fw-bold text-uppercase">
-                    {{'FORM_SETTINGS' | translate}}
-                </div>
-                <div>
-                    {{'FORM_SETTINGS_SUB' | translate}}
-                </div>
-            </div>
+        <div [ngSwitch]="comp">
+            <app-sharecomponent *ngSwitchCase="'Share'"></app-sharecomponent>
+            <app-emailcomponent *ngSwitchCase="'Email'"></app-emailcomponent>
+            <app-pdfcomponent *ngSwitchCase="'Pdf'"></app-pdfcomponent>
         </div>
     </div>
 
-    <!--    <div class="card">-->
-    <!---->
-    <!--    </div>-->
 </div>
+
+
+
+
+
+
