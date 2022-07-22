@@ -93,6 +93,12 @@
     "SSHARE": "Paylaş",
     "SUB_SSHARE":"E-posta yoluyla formunuzun doğrudan bağlantısını paylaşın.",
     "SCHEDULE": "planlama",
-    "SUB_SCHEDULE": "İnsanlara formunuzu doldurmalarını hatırlatmak için periyodik e-postalar gönderin."
+    "SUB_SCHEDULE": "İnsanlara formunuzu doldurmalarını hatırlatmak için periyodik e-postalar gönderin.",
+    "TITLE": "Başlık",
+    "SUB_TITLE": "Bu form için kısa ve açıklayıcı bir isim giriniz.",
+    "FORM_STAT":"Form Durumu",
+    "SUB_FORM_STAT": "Formunuzu hemen şimdi, belirli bir tarihte veya belirli bir form yanıtı sayısına ulaştığında devre dışı bırakabilirsiniz."
+
+
 
 }

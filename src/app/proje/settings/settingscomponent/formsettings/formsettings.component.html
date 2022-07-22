@@ -13,16 +13,15 @@
 
 <p-card styleClass="mt-4 text-black" header="Form">
 
-    <h5>Başlık</h5>
-    <small> Bu form için kısa ve açıklayıcı bir isim giriniz.</small>
+    <h5>{{"TITLE" | translate}}</h5>
+    <small>{{"SUB_TITLE" | translate}}</small>
     <div>
         <input type="text" pInputText (change)="changeFormName()" [(ngModel)]="value1">
     </div>
     <p-divider></p-divider>
 
-    <h5>Form Durumu</h5>
-    <small>Formunuzu hemen şimdi, belirli bir tarihte veya belirli bir form yanıtı
-        sayısına ulaştığında devre dışı bırakabilirsiniz.</small>
+    <h5>{{"FORM_STAT" | translate}}</h5>
+    <small>{{"SUB_FORM_STAT" | translate}}</small>
     <div>
         <p-dropdown inputId="dropdown" [autoDisplayFirst]="true" [options]="durum" [(ngModel)]="value7"
                     optionLabel="name" class="ng-invalid ng-dirty" style="width: 100px"></p-dropdown>

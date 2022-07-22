@@ -18,7 +18,7 @@ export class FormsettingsComponent implements OnInit {
 
     ngOnInit(): void {
         this.durum = [
-            {name: 'Etkin duruma geçir ', code: '0'},
+            {name: 'Etkinleştir ', code: '0'},
             {name: 'Devre dışı bırak ', code: '1'},
         ];
     }
