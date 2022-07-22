@@ -177,16 +177,17 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {CollapsedRightBarService} from './demo/service/collapsedRightBarService';
 import {SaveService} from './demo/service/saveservice';
 import {GetElementDetailsService} from './demo/service/getElementDetailsService';
-import { LangSwitcherComponent } from './proje/lang-switcher/lang-switcher.component';
-import { SecondaryNavComponent } from './proje/secondary-nav/secondary-nav.component';
-import { SettingsComponent } from './proje/settings/settings.component';
-import { PublishComponent } from './proje/publish/publish.component';
+import {LangSwitcherComponent} from './proje/lang-switcher/lang-switcher.component';
+import {SecondaryNavComponent} from './proje/secondary-nav/secondary-nav.component';
+import {SettingsComponent} from './proje/settings/settings.component';
+import {PublishComponent} from './proje/publish/publish.component';
 import {SpeedDialModule} from 'primeng/speeddial';
-import { FormsettingsComponent } from './proje/settings/settingscomponent/formsettings/formsettings.component';
-import { EmailsettingsComponent } from './proje/settings/settingscomponent/emailsettings/emailsettings.component';
-import { ShareComponent } from './proje/publish/publishcomponents/sharecomponent/share.component';
-import { EmailComponent } from './proje/publish/publishcomponents/emailcomponent/email.component';
-import { PdfComponent } from './proje/publish/publishcomponents/pdfcomponent/pdf.component';
+import {ShareComponent} from './proje/publish/publishcomponents/sharecomponent/share.component';
+import {EmailComponent} from './proje/publish/publishcomponents/emailcomponent/email.component';
+import {PdfComponent} from './proje/publish/publishcomponents/pdfcomponent/pdf.component';
+import {FormsettingsComponent} from './proje/settings/settingscomponent/formsettings/formsettings.component';
+import {EmailsettingsComponent} from './proje/settings/settingscomponent/emailsettings/emailsettings.component';
+import {FormNameService} from './demo/service/formnameservice';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -377,11 +378,13 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         PdfComponent
     ],
     // Allah'a emanet havayolları :)
+    // Bu projeyi yazan yazılımcılar kör oldu.
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
-        MessageService, SharedDataService, CollapsedRightBarService, SaveService, GetElementDetailsService
+        MessageService, SharedDataService, CollapsedRightBarService, SaveService,
+        GetElementDetailsService, FormNameService
     ],
     bootstrap: [AppComponent]
 })

@@ -1,6 +1,5 @@
 <div class="d-flex flex-row align-items-center">
-    <i style="font-size: 2rem; margin-right: 20px;"
-       class="bi bi-gear-fill text-black"></i>
+    <i style="font-size: 2rem; margin-right: 20px;" class="bi bi-gear-fill text-black"></i>
     <div>
         <div class="fw-bold text-uppercase">
             {{'FORM_SETTINGS' | translate}}
@@ -10,23 +9,22 @@
         </div>
     </div>
 
-    <p-card style="margin-left:-550px; margin-top:-15px;" header="Form">
-
-        <h-5>Başlık</h-5>
-        <small> Bu form için kısa ve açıklayıcı bir isim giriniz.</small>
-        <div>
-            <input type="text" pInputText [(ngModel)]="value1">
-            <span class="ml-2">{{value1}}</span>
-        </div>
-        <p-divider></p-divider>
-
-        <h5>Form Durumu</h5>
-        <small>Formunuzu hemen şimdi, belirli bir tarihte veya belirli bir form yanıtı
-            sayısına ulaştığında devre dışı bırakabilirsiniz.</small>
-        <div>
-            <p-dropdown inputId="dropdown" [autoDisplayFirst]="true" [options]="durum" [(ngModel)]="value7"
-                        optionLabel="name" class="ng-invalid ng-dirty" style="width: 100px"></p-dropdown>
-        </div>
-    </p-card>
-
 </div>
+
+<p-card styleClass="mt-4 text-black" header="Form">
+
+    <h5>Başlık</h5>
+    <small> Bu form için kısa ve açıklayıcı bir isim giriniz.</small>
+    <div>
+        <input type="text" pInputText (change)="changeFormName()" [(ngModel)]="value1">
+    </div>
+    <p-divider></p-divider>
+
+    <h5>Form Durumu</h5>
+    <small>Formunuzu hemen şimdi, belirli bir tarihte veya belirli bir form yanıtı
+        sayısına ulaştığında devre dışı bırakabilirsiniz.</small>
+    <div>
+        <p-dropdown inputId="dropdown" [autoDisplayFirst]="true" [options]="durum" [(ngModel)]="value7"
+                    optionLabel="name" class="ng-invalid ng-dirty" style="width: 100px"></p-dropdown>
+    </div>
+</p-card>

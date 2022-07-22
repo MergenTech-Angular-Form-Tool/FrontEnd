@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import {FormNameService} from '../../demo/service/formnameservice';
 
 @Component({
     selector: 'app-navbar',
@@ -8,10 +8,17 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class NavbarComponent implements OnInit {
 
-    constructor(public translate: TranslateService) {
+    formName: string;
+
+    constructor(private form: FormNameService) {
+        form.currentMessage.subscribe(message => this.formName = message);
     }
 
     ngOnInit(): void {
     }
 
+    changeFormName() {
+        this.form.setFormName(document.getElementById('form-name').innerText);
+        console.log(this.formName);
+    }
 }

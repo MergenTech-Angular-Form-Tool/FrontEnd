@@ -92,6 +92,6 @@
     "SSHARE": "Share",
     "SUB_SSHARE": "Share a direct link to your form via email.",
     "SCHEDULE": "Schedule",
-    "SUB_SCHEDULE": "Send periodic emails to remind people to fill out your form."
-
+    "SUB_SCHEDULE": "Send periodic emails to remind people to fill out your form.",
+    "FORM_NAME": "Form Name"
 }

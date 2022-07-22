@@ -1,6 +1,4 @@
-import {Component, ComponentFactoryResolver, Input, OnInit} from '@angular/core';
-import {FormsettingsComponent} from './settingscomponent/formsettings/formsettings.component';
-import {EmailsettingsComponent} from './settingscomponent/emailsettings/emailsettings.component';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
     selector: 'app-settings',
@@ -14,11 +12,11 @@ export class SettingsComponent implements OnInit {
     @Input() entry: any;
     public comp: string;
 
-    constructor(private resolver: ComponentFactoryResolver) {
+    constructor() {
     }
 
     ngOnInit(): void {
-        this.comp = 'Share';
+        this.comp = 'Form Settings';
 
     }
 
