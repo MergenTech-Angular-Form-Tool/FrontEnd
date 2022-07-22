@@ -182,8 +182,8 @@ import { SecondaryNavComponent } from './proje/secondary-nav/secondary-nav.compo
 import { SettingsComponent } from './proje/settings/settings.component';
 import { PublishComponent } from './proje/publish/publish.component';
 import {SpeedDialModule} from 'primeng/speeddial';
-import { FormsettingsComponent } from './proje/formsettings/formsettings.component';
-import { EmailsettingsComponent } from './proje/emailsettings/emailsettings.component';
+import { FormsettingsComponent } from './proje/settings/settingscomponent/formsettings/formsettings.component';
+import { EmailsettingsComponent } from './proje/settings/settingscomponent/emailsettings/emailsettings.component';
 import { ShareComponent } from './proje/publish/publishcomponents/sharecomponent/share.component';
 import { EmailComponent } from './proje/publish/publishcomponents/emailcomponent/email.component';
 import { PdfComponent } from './proje/publish/publishcomponents/pdfcomponent/pdf.component';

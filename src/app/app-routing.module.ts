@@ -9,7 +9,7 @@ import {MainPageComponent} from './proje/main/mainPage.component';
 import {ProfileComponent} from './proje/profile/profile.component';
 import {SettingsComponent} from './proje/settings/settings.component';
 import {PublishComponent} from './proje/publish/publish.component';
-import {FormsettingsComponent} from './proje/formsettings/formsettings.component';
+import {FormsettingsComponent} from './proje/settings/settingscomponent/formsettings/formsettings.component';
 
 @NgModule({
     imports: [

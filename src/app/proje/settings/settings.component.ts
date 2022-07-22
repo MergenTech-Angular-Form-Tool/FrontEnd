@@ -1,6 +1,6 @@
 import {Component, ComponentFactoryResolver, Input, OnInit} from '@angular/core';
-import {FormsettingsComponent} from '../formsettings/formsettings.component';
-import {EmailsettingsComponent} from '../emailsettings/emailsettings.component';
+import {FormsettingsComponent} from './settingscomponent/formsettings/formsettings.component';
+import {EmailsettingsComponent} from './settingscomponent/emailsettings/emailsettings.component';
 
 @Component({
     selector: 'app-settings',
@@ -12,31 +12,18 @@ export class SettingsComponent implements OnInit {
         id: 0
     };
     @Input() entry: any;
+    public comp: string;
 
     constructor(private resolver: ComponentFactoryResolver) {
     }
 
     ngOnInit(): void {
+        this.comp = 'Share';
 
     }
 
-    add(open: string) {
-        let name = '';
-        let factory: any;
-        if (open === 'Form Settings') {
-            factory = this.resolver.resolveComponentFactory(FormsettingsComponent);
-            name = 'Form Settings';
-        } else if (open === 'Email Settings') {
-            factory = this.resolver.resolveComponentFactory(EmailsettingsComponent);
-            name = 'Email Setttings';
-        }
-        const componentRef = this.entry.createComponent(factory);
-        this.increment();
-        componentRef.location.nativeElement.id = name + '_' + this.state.id;
+    showComponent(comp: string) {
+        this.comp = comp;
 
-    }
-
-    increment() {
-        this.state.id++;
     }
 }

@@ -3,7 +3,7 @@
 
 <div class="d-flex flex-row position-relative top">
     <div class="left">
-        <div class="left-item ms-3 mt-5 p-3" (click)="add('Form Settings')">
+        <div class="left-item ms-3 mt-5 p-3" (click)="showComponent('Form Settings')">
             <div class="d-flex flex-row align-items-center">
                 <i style="font-size: 2rem; margin-right: 20px"
                    class="bi bi-gear-fill text-black"></i>
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="left-item ms-3 mt-5 p-3" (click)="add('Email Settings')">
+        <div class="left-item ms-3 mt-5 p-3" (click)="showComponent('Email Settings')">
             <div class="d-flex flex-row align-items-center">
                 <i style="font-size: 2rem; margin-right: 20px"
                    class="bi bi-envelope-fill text-black"></i>
@@ -30,6 +30,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="mt-5 shift-left">
+        <div [ngSwitch]="comp">
+            <app-formsettings *ngSwitchCase="'Form Settings'"></app-formsettings>
+            <app-emailsettings *ngSwitchCase="'Email Settings'"></app-emailsettings>
         </div>
     </div>
 </div>
