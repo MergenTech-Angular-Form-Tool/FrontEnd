@@ -6,9 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
     styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-    state: { id: number } = {
-        id: 0
-    };
+
     @Input() entry: any;
     public comp: string;
 

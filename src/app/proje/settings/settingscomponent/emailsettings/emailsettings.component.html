@@ -1,1 +1,68 @@
-<p-button label="Send"></p-button>
+<div class="d-flex flex-row align-items-center">
+    <i style="font-size: 2rem; margin-right: 20px;"
+       class="bi bi-gear-fill text-black"></i>
+    <div>
+        <div class="fw-bold text-uppercase">
+            {{'EMAIL' | translate}}
+        </div>
+        <div>
+            {{'FORM_EMAIL_SUB' | translate}}
+        </div>
+    </div>
+</div>
+<div class="card" styleClass="mt-4 text-black">
+    <p-toolbar styleClass="mb-4">
+        <ng-template pTemplate="left">
+            <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2"
+                    (click)="openNew()"></button>
+        </ng-template>
+        <ng-template pTemplate="right">
+            <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import"
+                          chooseLabel="Import"
+                          class="mr-2 inline-block"></p-fileUpload>
+            <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+        </ng-template>
+    </p-toolbar>
+    <p-table>
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                <h5 class="m-0">Manage Mail Adress</h5>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="name">Name
+                    <p-sortIcon field="name"></p-sortIcon>
+                </th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{product.name}}</td>
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
+                            (click)="editProduct(product)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                            (click)="deleteProduct(product)"></button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+                In total there are {{products ? products.length : 0 }} confirm email.
+            </div>
+        </ng-template>
+    </p-table>
+    <p-dialog [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
+        <ng-template pTemplate="content">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus />
+                <small class="p-error" >Name is required.</small>
+            </div>
+        </ng-template>
+    </p-dialog>
+</div>
+
+
