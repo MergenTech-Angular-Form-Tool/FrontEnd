@@ -17,8 +17,13 @@ export class NavbarComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    changeFormName() {
+    changeFormName(event) {
+        const element = event.srcElement;
+        while (element.firstElementChild) {
+            if (element.firstElementChild.nodeName === 'DIV' || element.firstElementChild.nodeName === 'BR') {
+                element.removeChild(element.firstChild);
+            }
+        }
         this.form.setFormName(document.getElementById('form-name').innerText);
-        console.log(this.formName);
     }
 }
