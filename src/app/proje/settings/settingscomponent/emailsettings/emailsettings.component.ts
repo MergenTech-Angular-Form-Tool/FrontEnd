@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Product} from '../../../../demo/domain/product';
 import {ProductService} from '../../../../demo/service/productservice';
-import {ConfirmationService, MessageService} from 'primeng/api';
+import {MessageService} from 'primeng/api';
 
 
 
@@ -20,8 +20,7 @@ export class EmailsettingsComponent implements OnInit {
     submitted: boolean;
 
     statuses: any[];
-    constructor(private productService: ProductService,
-                private messageService: MessageService, private confirmationService: ConfirmationService) {
+    constructor(private productService: ProductService, private messageService: MessageService) {
     }
 
     ngOnInit(): void {
@@ -37,17 +36,17 @@ export class EmailsettingsComponent implements OnInit {
         this.productDialog = true;
     }
 
-    deleteProduct(product: Product) {
-        this.confirmationService.confirm({
-            message: 'Are you sure you want to delete ' + product.name + '?',
-            header: 'Confirm',
-            icon: 'pi pi-exclamation-triangle',
-            accept: () => {
-                this.products = this.products.filter(val => val.id !== product.id);
-                this.product = {};
-                this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
-            }
-        });
-    }
+    // deleteProduct(product: Product) {
+    //     this.confirmationService.confirm({
+    //         message: 'Are you sure you want to delete ' + product.name + '?',
+    //         header: 'Confirm',
+    //         icon: 'pi pi-exclamation-triangle',
+    //         accept: () => {
+    //             this.products = this.products.filter(val => val.id !== product.id);
+    //             this.product = {};
+    //             this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
+    //         }
+    //     });
+    // }
 
 }
