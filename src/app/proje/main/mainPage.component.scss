@@ -15,31 +15,35 @@
 .mobile {
 
     .fixer {
-        height: 620px;
+        height: 882px;
     }
 
-    .intro-3 {
-        background: url("../../../assets/layout/images/mobile.svg") no-repeat center center;
+    .intro-3 { //mobile
+        background: url("../../../assets/layout/images/preview/mobile01.png") no-repeat  center -5px;
         margin: 105px auto 50px;
-        background-size: 950px;
-        height: 400px;
+        background-size: 1500px;
     }
 
     .view {
-        height: 100vh !important;
+        height: 140vh !important;
     }
 
 }
+
 .tablet {
 
-    .intro-2 {
-        background: url("https://icon-library.com/images/69472.svg.svg") no-repeat center center;
+    .intro-2 { //tablet
+        background: url("../../../assets/layout/images/preview/tablet.png") no-repeat  center 30px;
         margin: 105px auto 50px;
-        background-size: 880px;
+        background-size: 900px;
     }
 
     .fixer {
-        height: 620px;
+        height: 650px;
+    }
+
+    .view {
+        height: 140vh !important;
     }
 }
 
