@@ -8,6 +8,7 @@ import {FileelementComponent} from '../middleelements/fileelement/fileelement.co
 import {RangeelementComponent} from '../middleelements/rangeelement/rangeelement.component';
 import {DatetimeelementComponent} from '../middleelements/datetimeelement/datetimeelement.component';
 import {MailelementComponent} from '../middleelements/mailelement/mailelement.component';
+import {MiddleElementsService} from '../../demo/service/middleelementsservice';
 
 interface SidenavToggle {
     screenWidth: number;
@@ -49,7 +50,7 @@ export class LeftbarComponent implements OnInit {
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
 
-    constructor(private resolver: ComponentFactoryResolver) {
+    constructor(private resolver: ComponentFactoryResolver, private middle: MiddleElementsService) {
     }
 
     ngOnInit(): void {
@@ -91,6 +92,9 @@ export class LeftbarComponent implements OnInit {
         const componentRef = this.entry.createComponent(factory);
         this.increment();
         componentRef.location.nativeElement.id = name + '_' + this.state.id;
+
+        this.middle.changeMessage(document.getElementById('center'));
+
     }
 
     increment() {

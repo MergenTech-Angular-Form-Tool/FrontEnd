@@ -188,6 +188,7 @@ import {PdfComponent} from './proje/publish/publishcomponents/pdfcomponent/pdf.c
 import {FormsettingsComponent} from './proje/settings/settingscomponent/formsettings/formsettings.component';
 import {EmailsettingsComponent} from './proje/settings/settingscomponent/emailsettings/emailsettings.component';
 import {FormNameService} from './demo/service/formnameservice';
+import {MiddleElementsService} from './demo/service/middleelementsservice';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -384,7 +385,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
         MessageService, SharedDataService, CollapsedRightBarService, SaveService,
-        GetElementDetailsService, FormNameService
+        GetElementDetailsService, FormNameService, MiddleElementsService
     ],
     bootstrap: [AppComponent]
 })

@@ -36,6 +36,7 @@ export class SecondaryNavComponent implements OnInit {
     }
 
     showPreview() {
+
         const bars = document.getElementById('bars');
         const cog = document.getElementsByClassName('buttons-cog');
         const clr = document.getElementsByClassName('buttons-clr');
@@ -80,46 +81,64 @@ export class SecondaryNavComponent implements OnInit {
     }
 
     showMobile() {
+
         const mobile = document.getElementById('container');
+
+        if (mobile.classList.contains('tablet')) {
+            mobile.classList.remove('tablet');
+            mobile.classList.add('mobile');
+        }
+
         if (this.preview) {
             mobile.classList.remove('tablet');
             mobile.classList.add('mobile');
-        } else {
-            mobile.classList.remove('mobile');
-        }
-        if (this.preview) {
             this.showPreview();
         }
+
+        // üstüne 2. kez basıldığında kapatılacak
         if (this.clicked === 'mobile') {
+            mobile.classList.remove('mobile');
             this.showPreview();
+        } else {
+            // en son tıklananı kaydet
+            this.clicked = 'mobile';
         }
-        this.clicked = 'mobile';
+
     }
 
     showTablet() {
+
         const tablet = document.getElementById('container');
+
+        if (tablet.classList.contains('mobile')) {
+            tablet.classList.remove('mobile');
+            tablet.classList.add('tablet');
+        }
+
         if (this.preview) {
             tablet.classList.remove('mobile');
             tablet.classList.add('tablet');
-        } else {
-            tablet.classList.remove('tablet');
-        }
-        if (this.preview) {
             this.showPreview();
         }
+
+        // üstüne 2. kez basıldığında kapatılacak
         if (this.clicked === 'tablet') {
+            tablet.classList.remove('tablet');
             this.showPreview();
+        } else {
+            // en son tıklananı kaydet
+            this.clicked = 'tablet';
         }
-        this.clicked = 'tablet';
+
     }
 
     showDesktop() {
+
         const desktop = document.getElementById('container');
         desktop.classList.remove('tablet');
         desktop.classList.remove('mobile');
-        if (this.preview) {
-            this.showPreview();
-        }
+
+        // üstüne 2. kez basıldığında kapatılacak
         if (this.clicked === 'desktop') {
             this.showPreview();
         }
