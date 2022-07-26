@@ -13,6 +13,6 @@ export class EmailComponent implements OnInit {
   }
 
     open() {
-        console.log('clicked');
+        window.open('mailto:xyz@abc.com');
     }
 }
