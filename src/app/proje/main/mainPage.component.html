@@ -10,11 +10,15 @@
                     <app-rightbar></app-rightbar>
                 </div>
 
-                <div class="center fixer bg-light" id="center">
-                    <div class="d-flex justify-content-end mb-3" id="clear-button">
+                <div class="center fixer bg-light rounded" id="center">
+                    <div class="d-flex justify-content-end mb-3" id="clear-button" *ngIf="!noItem">
                         <button pButton type="button" (click)="clearall()" label="{{ 'CLEAR_ALL' | translate}}"
                                 icon="bi bi-trash"
                                 class="p-button-danger"></button>
+                    </div>
+                    <div *ngIf="noItem" class="d-flex flex-column text-center user-select-none p-5">
+                        <p>Şuanda gösterilecek hiçbir element yok.</p>
+                        <p>Element eklemek için sol paneli açınız.</p>
                     </div>
                     <template #temp></template>
 

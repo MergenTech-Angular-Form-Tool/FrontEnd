@@ -3,7 +3,7 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {Divider} from '../../../demo/domain/elements/divider';
-
+import {NoItemService} from '../../../demo/service/noitemservice';
 
 
 @Component({
@@ -19,12 +19,13 @@ export class RangeelementComponent implements OnInit {
     marginBot: string;
     marginTop: string;
     space: string;
-    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
-                private getElement: GetElementDetailsService) {
 
-        this.getElement.currentMessage.subscribe( message => {
+    constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
+                private getElement: GetElementDetailsService, private noItemService: NoItemService) {
+
+        this.getElement.currentMessage.subscribe(message => {
             const temp = message as Divider;
-            if ( temp.id === this.id){
+            if (temp.id === this.id) {
                 this.color = temp.color;
                 this.style = temp.style;
                 this.height = temp.height + 'px';
@@ -42,7 +43,13 @@ export class RangeelementComponent implements OnInit {
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
         this.collapsed.close();
-        this.shared.changeMessage('');
+
+        const center = document.getElementById('center');
+        if (center.firstElementChild.id === 'clear-button' && center.firstElementChild.nextElementSibling.nodeName === 'TEMPLATE') {
+            if (center.firstElementChild.nextElementSibling.nextElementSibling === null) {
+                this.noItemService.set(true);
+            }
+        }
     }
 
     edit($event: any) {

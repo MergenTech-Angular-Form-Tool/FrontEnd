@@ -4,6 +4,7 @@ import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarS
 import {SaveService} from '../../../demo/service/saveservice';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {TextField} from '../../../demo/domain/elements/textField';
+import {NoItemService} from '../../../demo/service/noitemservice';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class TextfieldelementComponent implements OnInit {
     id: string;
 
     constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService,
-                private save: SaveService, private getElement: GetElementDetailsService) {
+                private save: SaveService, private getElement: GetElementDetailsService, private noItemService: NoItemService,
+                private collapsed: CollapsedRightBarService) {
 
         this.getElement.currentMessage.subscribe(message => {
             const temp = message as TextField;
@@ -43,6 +45,14 @@ export class TextfieldelementComponent implements OnInit {
 
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
+        this.collapsed.close();
+
+        const center = document.getElementById('center');
+        if (center.firstElementChild.id === 'clear-button' && center.firstElementChild.nextElementSibling.nodeName === 'TEMPLATE') {
+            if (center.firstElementChild.nextElementSibling.nextElementSibling === null) {
+                this.noItemService.set(true);
+            }
+        }
     }
 
     edit($event: any) {

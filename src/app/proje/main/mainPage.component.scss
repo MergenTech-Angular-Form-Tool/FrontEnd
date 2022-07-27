@@ -3,7 +3,7 @@
 }
 
 .center {
-    margin: 130px auto 50px;
+    margin: 90px auto 50px;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
     }
 
     .intro-3 { //mobile
-        background: url("../../../assets/layout/images/preview/mobile01.png") no-repeat  center -5px;
+        background: url("../../../assets/layout/images/preview/mobile01.png") no-repeat center -5px;
         margin: 105px auto 50px;
         background-size: 1500px;
     }
@@ -33,7 +33,7 @@
 .tablet {
 
     .intro-2 { //tablet
-        background: url("../../../assets/layout/images/preview/tablet.png") no-repeat  center 30px;
+        background: url("../../../assets/layout/images/preview/tablet.png") no-repeat center 30px;
         margin: 105px auto 50px;
         background-size: 900px;
     }
@@ -105,3 +105,6 @@
     }
 }
 
+.rounded {
+    border-radius: .3rem;
+}

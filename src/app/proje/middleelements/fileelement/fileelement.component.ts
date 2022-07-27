@@ -3,6 +3,7 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {FileUpload} from '../../../demo/domain/elements/fileUpload';
+import {NoItemService} from '../../../demo/service/noitemservice';
 
 @Component({
     selector: 'app-fileelement',
@@ -15,7 +16,7 @@ export class FileelementComponent implements OnInit {
     header: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
-                private getElement: GetElementDetailsService) {
+                private getElement: GetElementDetailsService, private noItemService: NoItemService) {
 
         this.getElement.currentMessage.subscribe(message => {
             const temp = message as FileUpload;
@@ -32,7 +33,13 @@ export class FileelementComponent implements OnInit {
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
         this.collapsed.close();
-        this.shared.changeMessage('');
+
+        const center = document.getElementById('center');
+        if (center.firstElementChild.id === 'clear-button' && center.firstElementChild.nextElementSibling.nodeName === 'TEMPLATE') {
+            if (center.firstElementChild.nextElementSibling.nextElementSibling === null) {
+                this.noItemService.set(true);
+            }
+        }
     }
 
     edit($event: any) {

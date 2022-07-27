@@ -3,6 +3,7 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarService';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {CheckBox} from '../../../demo/domain/elements/checkBox';
+import {NoItemService} from '../../../demo/service/noitemservice';
 
 @Component({
     selector: 'app-checkboxelement',
@@ -18,7 +19,7 @@ export class CheckboxelementComponent implements OnInit {
     options: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
-                private getElement: GetElementDetailsService) {
+                private getElement: GetElementDetailsService, private noItemService: NoItemService) {
         shared.currentMessage.subscribe(message => this.selected = message);
 
         this.getElement.currentMessage.subscribe( message => {
@@ -39,8 +40,13 @@ export class CheckboxelementComponent implements OnInit {
     delete($event: any) {
         $event.currentTarget.parentElement.parentElement.parentElement.parentElement.remove();
         this.collapsed.close();
-        this.shared.changeMessage('');
-    }
+
+        const center = document.getElementById('center');
+        if (center.firstElementChild.id === 'clear-button' && center.firstElementChild.nextElementSibling.nodeName === 'TEMPLATE') {
+            if (center.firstElementChild.nextElementSibling.nextElementSibling === null) {
+                this.noItemService.set(true);
+            }
+        }    }
 
     edit($event: any) {
         this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;

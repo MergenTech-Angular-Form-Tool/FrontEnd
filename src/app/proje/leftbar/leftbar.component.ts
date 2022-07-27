@@ -9,6 +9,7 @@ import {RangeelementComponent} from '../middleelements/rangeelement/rangeelement
 import {DatetimeelementComponent} from '../middleelements/datetimeelement/datetimeelement.component';
 import {MailelementComponent} from '../middleelements/mailelement/mailelement.component';
 import {MiddleElementsService} from '../../demo/service/middleelementsservice';
+import {NoItemService} from '../../demo/service/noitemservice';
 
 interface SidenavToggle {
     screenWidth: number;
@@ -50,7 +51,7 @@ export class LeftbarComponent implements OnInit {
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
 
-    constructor(private resolver: ComponentFactoryResolver, private middle: MiddleElementsService) {
+    constructor(private resolver: ComponentFactoryResolver, private middle: MiddleElementsService, private noItem: NoItemService) {
     }
 
     ngOnInit(): void {
@@ -95,6 +96,7 @@ export class LeftbarComponent implements OnInit {
 
         this.middle.changeMessage(document.getElementById('center'));
 
+        this.noItem.set(false);
     }
 
     increment() {

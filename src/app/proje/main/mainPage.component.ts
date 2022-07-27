@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {CollapsedRightBarService} from '../../demo/service/collapsedRightBarService';
 import {SharedDataService} from '../../demo/service/sharedataservice';
+import {NoItemService} from '../../demo/service/noitemservice';
 
 @Component({
     selector: 'app-main',
@@ -13,11 +14,13 @@ import {SharedDataService} from '../../demo/service/sharedataservice';
 export class MainPageComponent implements OnInit {
 
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
+    noItem: boolean;
 
     constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService,
-                private sharedDataService: SharedDataService) {
+                private sharedDataService: SharedDataService, private noItemService: NoItemService) {
         translate.addLangs(['en', 'tr']);
         translate.setDefaultLang('tr');
+        noItemService.currentMessage.subscribe(message => this.noItem = message);
     }
 
     ngOnInit(): void {
@@ -38,6 +41,7 @@ export class MainPageComponent implements OnInit {
     }
 
     clearall() {
+        this.noItemService.set(true);
         this.entry.clear();
         this.collapsedRightBarService.close();
         this.sharedDataService.changeMessage(' _ ');
