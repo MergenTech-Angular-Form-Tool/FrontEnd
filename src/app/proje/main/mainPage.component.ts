@@ -3,6 +3,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {CollapsedRightBarService} from '../../demo/service/collapsedRightBarService';
 import {SharedDataService} from '../../demo/service/sharedataservice';
 import {NoItemService} from '../../demo/service/noitemservice';
+import {ChangeDateService} from '../../demo/service/changedateservice';
 
 @Component({
     selector: 'app-main',
@@ -17,7 +18,7 @@ export class MainPageComponent implements OnInit {
     noItem: boolean;
 
     constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService,
-                private sharedDataService: SharedDataService, private noItemService: NoItemService) {
+                private sharedDataService: SharedDataService, private noItemService: NoItemService, private date: ChangeDateService) {
         translate.addLangs(['en', 'tr']);
         translate.setDefaultLang('tr');
         noItemService.currentMessage.subscribe(message => this.noItem = message);
@@ -45,5 +46,6 @@ export class MainPageComponent implements OnInit {
         this.entry.clear();
         this.collapsedRightBarService.close();
         this.sharedDataService.changeMessage(' _ ');
+        this.date.set(Date.now());
     }
 }

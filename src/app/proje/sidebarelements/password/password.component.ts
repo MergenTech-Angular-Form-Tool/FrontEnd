@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {ChangeDateService} from '../../../demo/service/changedateservice';
 
 @Component({
     selector: 'app-password',
@@ -13,7 +14,7 @@ export class PasswordComponent implements OnInit {
     q: string;
     placeholder: string;
 
-    constructor(private share: SharedDataService, private getElement: GetElementDetailsService) {
+    constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService) {
     }
 
     ngOnInit(): void {
@@ -21,10 +22,13 @@ export class PasswordComponent implements OnInit {
     }
 
     onSubmit() {
+
         this.getElement.changeMessage({
             id: this.id,
             q: this.q,
             placeholder: this.placeholder
         });
+
+        this.date.set(Date.now());
     }
 }

@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {SaveService} from "../../../demo/service/saveservice";
-import {SharedDataService} from "../../../demo/service/sharedataservice";
-import {GetElementDetailsService} from "../../../demo/service/getElementDetailsService";
+import {Component, OnInit} from '@angular/core';
+import {SaveService} from '../../../demo/service/saveservice';
+import {SharedDataService} from '../../../demo/service/sharedataservice';
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {ChangeDateService} from '../../../demo/service/changedateservice';
 
 @Component({
-  selector: 'app-mail',
-  templateUrl: './mail.component.html',
-  styleUrls: ['./mail.component.scss']
+    selector: 'app-mail',
+    templateUrl: './mail.component.html',
+    styleUrls: ['./mail.component.scss']
 })
 export class MailComponent implements OnInit {
     checked: string;
@@ -16,32 +17,28 @@ export class MailComponent implements OnInit {
     placeholder: string;
     subtext: string;
     id: string;
-  constructor(private save: SaveService, private share: SharedDataService, private getElement: GetElementDetailsService) { }
 
-  ngOnInit(): void {
-      this.share.currentMessage.subscribe(id => this.id = id);
-  }
+    constructor(private save: SaveService, private share: SharedDataService, private getElement: GetElementDetailsService,
+                private date: ChangeDateService) {
+    }
+
+    ngOnInit(): void {
+        this.share.currentMessage.subscribe(id => this.id = id);
+    }
+
     onSubmit() {
-        // this.save.changeMessage(this.question);
-        // const element = document.getElementById(this.id);
-        // console.log(element.firstChild.firstChild.nextSibling.nextSibling.firstChild.firstChild.);
-        // tslint:disable-next-line:max-line-length
-        // element.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.innerHTML = this.message;
-        //
-        // this.save.sendClickEvent();
-        // console.log(this.question, this.subtext, this.placeholder);
 
         this.getElement.changeMessage({
             id: this.id,
             checked: this.checked,
-            detail:this.detail,
+            detail: this.detail,
             val2: this.val2,
             header: this.question,
             subtext: this.subtext,
             placeholder: this.placeholder
         });
 
-
+        this.date.set(Date.now());
     }
 
 

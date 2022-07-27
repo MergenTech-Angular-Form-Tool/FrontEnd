@@ -4,6 +4,7 @@ import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarS
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {Date} from '../../../demo/domain/elements/date';
 import {NoItemService} from '../../../demo/service/noitemservice';
+import {ChangeDateService} from '../../../demo/service/changedateservice';
 
 @Component({
     selector: 'app-dateelement',
@@ -17,7 +18,8 @@ export class DateelementComponent implements OnInit {
     selected: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
-                private getElement: GetElementDetailsService, private noItemService: NoItemService) {
+                private getElement: GetElementDetailsService, private noItemService: NoItemService,
+                private date: ChangeDateService) {
         this.getElement.currentMessage.subscribe(message => {
             const temp = message as Date;
             if (temp.id === this.id) {
@@ -40,11 +42,16 @@ export class DateelementComponent implements OnInit {
             if (center.firstElementChild.nextElementSibling.nextElementSibling === null) {
                 this.noItemService.set(true);
             }
-        }    }
+        }
+
+        this.date.set(Date.now());
+    }
 
     edit($event: any) {
         this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsed.open();
+
+        this.date.set(Date.now());
     }
 }

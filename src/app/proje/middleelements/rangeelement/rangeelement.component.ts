@@ -4,6 +4,7 @@ import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarS
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {Divider} from '../../../demo/domain/elements/divider';
 import {NoItemService} from '../../../demo/service/noitemservice';
+import {ChangeDateService} from '../../../demo/service/changedateservice';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class RangeelementComponent implements OnInit {
     space: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
-                private getElement: GetElementDetailsService, private noItemService: NoItemService) {
+                private getElement: GetElementDetailsService, private noItemService: NoItemService,
+                private date: ChangeDateService) {
 
         this.getElement.currentMessage.subscribe(message => {
             const temp = message as Divider;
@@ -50,6 +52,8 @@ export class RangeelementComponent implements OnInit {
                 this.noItemService.set(true);
             }
         }
+
+        this.date.set(Date.now());
     }
 
     edit($event: any) {
@@ -57,5 +61,6 @@ export class RangeelementComponent implements OnInit {
         this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsed.open();
 
+        this.date.set(Date.now());
     }
 }

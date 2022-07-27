@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SaveService} from '../../../demo/service/saveservice';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {ChangeDateService} from '../../../demo/service/changedateservice';
 
 @Component({
     selector: 'app-textfield',
@@ -9,8 +10,6 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
     styleUrls: ['./textfield.component.scss']
 })
 export class TextfieldComponent implements OnInit {
-    constructor(private save: SaveService, private share: SharedDataService, private getElement: GetElementDetailsService) {
-    }
 
     value1: any;
     question: string;
@@ -18,6 +17,10 @@ export class TextfieldComponent implements OnInit {
     subtext: string;
     message: string;
     id: string;
+
+    constructor(private save: SaveService, private share: SharedDataService, private getElement: GetElementDetailsService,
+                private date: ChangeDateService) {
+    }
 
     ngOnInit(): void {
         this.save.currentMessage.subscribe(message => this.message = message);
@@ -33,7 +36,7 @@ export class TextfieldComponent implements OnInit {
             placeholder: this.placeholder
         });
 
-
+        this.date.set(Date.now());
     }
 
 

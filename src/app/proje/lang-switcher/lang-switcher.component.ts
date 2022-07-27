@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {ChangeDateService} from '../../demo/service/changedateservice';
 
 @Component({
     selector: 'app-lang-switcher',
@@ -10,7 +11,7 @@ export class LangSwitcherComponent implements OnInit {
 
     flag = true;
 
-    constructor(private translate: TranslateService) {
+    constructor(private translate: TranslateService, private date: ChangeDateService) {
     }
 
     ngOnInit(): void {
@@ -24,5 +25,6 @@ export class LangSwitcherComponent implements OnInit {
             this.translate.use('tr');
             this.flag = true;
         }
+        this.date.set(Date.now());
     }
 }

@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
+import {ChangeDateService} from '../../../demo/service/changedateservice';
 
 @Component({
-  selector: 'app-divider',
-  templateUrl: './divider.component.html',
-  styleUrls: ['./divider.component.scss']
+    selector: 'app-divider',
+    templateUrl: './divider.component.html',
+    styleUrls: ['./divider.component.scss']
 })
 export class DividerComponent implements OnInit {
     id: string;
@@ -15,12 +16,14 @@ export class DividerComponent implements OnInit {
     marginBot: string;
     marginTop: string;
     space: string;
-  constructor(private getElement: GetElementDetailsService, private share: SharedDataService) { }
 
-  ngOnInit(): void {
-      this.share.currentMessage.subscribe(id => this.id = id);
+    constructor(private getElement: GetElementDetailsService, private share: SharedDataService, private date: ChangeDateService) {
+    }
 
-  }
+    ngOnInit(): void {
+        this.share.currentMessage.subscribe(id => this.id = id);
+
+    }
 
     onSubmit() {
 
@@ -34,6 +37,6 @@ export class DividerComponent implements OnInit {
             space: this.space,
         });
 
-
+        this.date.set(Date.now());
     }
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {GetElementDetailsService} from "../../../demo/service/getElementDetailsService";
-import {SharedDataService} from "../../../demo/service/sharedataservice";
+import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
+import {SharedDataService} from '../../../demo/service/sharedataservice';
+import {ChangeDateService} from '../../../demo/service/changedateservice';
 
 interface Date {
     format: string;
@@ -17,10 +18,10 @@ export class DateComponent implements OnInit {
     hide: boolean;
     dateFormats: Date[];
     selected: string;
-    question:string;
+    question: string;
     id: string;
 
-    constructor(private share: SharedDataService, private getElement: GetElementDetailsService) {
+    constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService) {
     }
 
     ngOnInit(): void {
@@ -33,18 +34,17 @@ export class DateComponent implements OnInit {
             {format: 'mm.dd.yy', value: 'mm.dd.yy'},
             {format: 'mm-dd-yy', value: 'mm-dd-yy'},
             {format: 'mm/dd/yy', value: 'mm/dd/yy'}];
-
     }
 
     onSubmit() {
 
         this.getElement.changeMessage({
             id: this.id,
-            header:this.question,
+            header: this.question,
             selected: this.selected
         });
 
-
+        this.date.set(Date.now());
     }
 
 }

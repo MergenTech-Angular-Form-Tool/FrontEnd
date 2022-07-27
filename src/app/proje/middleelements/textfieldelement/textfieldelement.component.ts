@@ -5,6 +5,7 @@ import {SaveService} from '../../../demo/service/saveservice';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {TextField} from '../../../demo/domain/elements/textField';
 import {NoItemService} from '../../../demo/service/noitemservice';
+import {ChangeDateService} from '../../../demo/service/changedateservice';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class TextfieldelementComponent implements OnInit {
 
     constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService,
                 private save: SaveService, private getElement: GetElementDetailsService, private noItemService: NoItemService,
-                private collapsed: CollapsedRightBarService) {
+                private collapsed: CollapsedRightBarService, private date: ChangeDateService) {
 
         this.getElement.currentMessage.subscribe(message => {
             const temp = message as TextField;
@@ -53,12 +54,16 @@ export class TextfieldelementComponent implements OnInit {
                 this.noItemService.set(true);
             }
         }
+
+        this.date.set(Date.now());
     }
 
     edit($event: any) {
         this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.sharedDataService.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsedRightBarService.open();
+
+        this.date.set(Date.now());
     }
 
 }

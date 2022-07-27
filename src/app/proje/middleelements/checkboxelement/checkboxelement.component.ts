@@ -4,6 +4,7 @@ import {CollapsedRightBarService} from '../../../demo/service/collapsedRightBarS
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {CheckBox} from '../../../demo/domain/elements/checkBox';
 import {NoItemService} from '../../../demo/service/noitemservice';
+import {ChangeDateService} from '../../../demo/service/changedateservice';
 
 @Component({
     selector: 'app-checkboxelement',
@@ -19,12 +20,13 @@ export class CheckboxelementComponent implements OnInit {
     options: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
-                private getElement: GetElementDetailsService, private noItemService: NoItemService) {
+                private getElement: GetElementDetailsService, private noItemService: NoItemService,
+                private date: ChangeDateService) {
         shared.currentMessage.subscribe(message => this.selected = message);
 
-        this.getElement.currentMessage.subscribe( message => {
+        this.getElement.currentMessage.subscribe(message => {
             const temp = message as CheckBox;
-            if ( temp.id === this.id){
+            if (temp.id === this.id) {
                 this.header = temp.header;
                 this.options = temp.options;
                 this.required = temp.required;
@@ -46,11 +48,16 @@ export class CheckboxelementComponent implements OnInit {
             if (center.firstElementChild.nextElementSibling.nextElementSibling === null) {
                 this.noItemService.set(true);
             }
-        }    }
+        }
+
+        this.date.set(Date.now());
+    }
 
     edit($event: any) {
         this.id = $event.currentTarget.parentElement.parentElement.parentElement.parentElement.id;
         this.shared.changeMessage($event.currentTarget.parentElement.parentElement.parentElement.parentElement.id);
         this.collapsed.open();
+
+        this.date.set(Date.now());
     }
 }
