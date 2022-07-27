@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormNameService} from '../../demo/service/formnameservice';
+import {Changedateservice} from '../../demo/service/changedateservice';
 
 @Component({
     selector: 'app-navbar',
@@ -9,8 +10,8 @@ import {FormNameService} from '../../demo/service/formnameservice';
 export class NavbarComponent implements OnInit {
 
     formName: string;
-
-    constructor(private form: FormNameService) {
+    objDate = this.changedate;
+    constructor(private form: FormNameService, private changedate: Changedateservice) {
         form.currentMessage.subscribe(message => this.formName = message);
     }
 
