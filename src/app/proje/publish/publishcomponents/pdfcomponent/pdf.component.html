@@ -1,4 +1,4 @@
-<div class="d-flex flex-row align-items-center">
+<div class="d-flex flex-row align-items-center" id="pdf">
     <i style="font-size: 2rem; margin-right: 20px"
        class="pi pi-file-pdf text-black"></i>
     <div>
@@ -9,5 +9,5 @@
             {{"SUB_PDF" | translate}}
         </div>
     </div>
-    <p-button class="justify-content-end ml-10">{{"D_PDF" | translate}}</p-button>
+    <p-button class="justify-content-end ml-10" (click)="toPdf()" >{{"D_PDF" | translate}}</p-button>
 </div>

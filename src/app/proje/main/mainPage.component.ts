@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {CollapsedRightBarService} from '../../demo/service/collapsedRightBarService';
 import {SharedDataService} from '../../demo/service/sharedataservice';
+import {MiddleElementsService} from '../../demo/service/middleelementsservice';
 
 @Component({
     selector: 'app-main',
@@ -15,7 +16,7 @@ export class MainPageComponent implements OnInit {
     @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
 
     constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService,
-                private sharedDataService: SharedDataService) {
+                private sharedDataService: SharedDataService, private middleservice: MiddleElementsService) {
         translate.addLangs(['en', 'tr']);
         translate.setDefaultLang('tr');
     }
@@ -35,6 +36,9 @@ export class MainPageComponent implements OnInit {
             }
             prevScrollpos = currentScrollPos;
         };
+
+        const h = document.getElementById('temp').innerHTML;
+        this.middleservice.changeMessage(h);
     }
 
     clearall() {
@@ -42,4 +46,6 @@ export class MainPageComponent implements OnInit {
         this.collapsedRightBarService.close();
         this.sharedDataService.changeMessage(' _ ');
     }
+
+    sendHTML(){}
 }
