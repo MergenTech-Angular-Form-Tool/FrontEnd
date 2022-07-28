@@ -98,5 +98,7 @@
     "SUB_TITLE": "Enter a short and descriptive name for this form.",
     "FORM_STAT":"Form Status",
     "SAVED": "All changes are saved",
-    "SUB_FORM_STAT": "You can deactivate your form right now, on a specific date, or when it reaches a specific number of form responses."
+    "SUB_FORM_STAT": "You can deactivate your form right now, on a specific date, or when it reaches a specific number of form responses.",
+    "NO_ITEM1": "There are no items in this form.",
+    "NO_ITEM2": "Add a new item to this form from left bar."
 }

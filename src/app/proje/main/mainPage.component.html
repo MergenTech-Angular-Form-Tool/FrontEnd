@@ -17,8 +17,8 @@
                                 class="p-button-danger"></button>
                     </div>
                     <div *ngIf="noItem" class="d-flex flex-column text-center user-select-none p-5">
-                        <p>Şuanda gösterilecek hiçbir element yok.</p>
-                        <p>Element eklemek için sol paneli açınız.</p>
+                        <p>{{ 'NO_ITEM1' | translate }}</p>
+                        <p>{{ 'NO_ITEM2' | translate }}</p>
                     </div>
                     <template #temp></template>
 

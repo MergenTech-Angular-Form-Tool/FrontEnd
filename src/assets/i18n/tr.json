@@ -98,8 +98,7 @@
     "SUB_TITLE": "Bu form için kısa ve açıklayıcı bir isim giriniz.",
     "FORM_STAT":"Form Durumu",
     "SAVED": "Tüm değişiklikler kaydedildi",
-    "SUB_FORM_STAT": "Formunuzu hemen şimdi, belirli bir tarihte veya belirli bir form yanıtı sayısına ulaştığında devre dışı bırakabilirsiniz."
-
-
-
+    "SUB_FORM_STAT": "Formunuzu hemen şimdi, belirli bir tarihte veya belirli bir form yanıtı sayısına ulaştığında devre dışı bırakabilirsiniz.",
+    "NO_ITEM1": "Şuanda gösterilecek hiçbir element yok.",
+    "NO_ITEM2": "Element eklemek için sol paneli açınız."
 }
