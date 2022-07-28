@@ -105,5 +105,6 @@
     "POPUP_INVALID_EMAIL": "Geçersiz email!",
     "POPUP_LOGIN_SUCCESS": "Başarıyla giriş yaptınız!",
     "POPUP_LOGIN_WELCOME": "Sitemize hoşgeldiniz!",
-    "POPUP_INVALID_EP": "Şifre veya email geçersiz!"
+    "POPUP_INVALID_EP": "Şifre veya email geçersiz!",
+    "LOGOUT": "Çıkış"
 }

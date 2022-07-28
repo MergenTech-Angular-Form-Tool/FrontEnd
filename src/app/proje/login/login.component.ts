@@ -4,7 +4,6 @@ import {Router} from '@angular/router';
 import {MessageService} from 'primeng/api';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
-import {LoginResponse} from '../../demo/domain/auth/loginresponse';
 
 @Component({
     selector: 'app-login',
@@ -42,11 +41,12 @@ export class LoginComponent implements OnInit {
             username: email,
             password: pass
         }).subscribe(
-            (res: LoginResponse) => {
+            (res: any) => {
                 if (res.status === '200') {
                     this.messageService.add({severity: 'success', summary: 'Login Successfully', detail: 'Welcome to our website!'});
+                    localStorage.setItem('token', res.data.token);
+
                     setTimeout(() => window.location.href = '/', 1000);
-                    localStorage.setItem('token', res.token);
                 }
             },
             (err: any) => {

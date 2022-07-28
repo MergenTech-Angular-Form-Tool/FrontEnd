@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterContentInit, Component, OnInit} from '@angular/core';
 import {FormNameService} from '../../demo/service/formnameservice';
 import {ChangeDateService} from '../../demo/service/changedateservice';
 
@@ -7,10 +7,11 @@ import {ChangeDateService} from '../../demo/service/changedateservice';
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterContentInit {
 
     formName: string;
     objDate: number;
+    token = true;
 
     constructor(private form: FormNameService, private dateService: ChangeDateService) {
         form.currentMessage.subscribe(message => this.formName = message);
@@ -18,6 +19,13 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit(): void {
+    }
+
+    ngAfterContentInit() {
+
+        const token = localStorage.getItem('token');
+        this.token = !(token === undefined || token === null);
+        // this.token = true;
     }
 
     changeFormName(event) {
@@ -29,4 +37,10 @@ export class NavbarComponent implements OnInit {
         }
         this.form.setFormName(document.getElementById('form-name').innerText);
     }
+
+    logout() {
+        localStorage.removeItem('token');
+        this.token = false;
+    }
+
 }

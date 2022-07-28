@@ -20,13 +20,13 @@
 
                 <mat-form-field appearance="fill">
                     <mat-label>{{ 'PASSWORD' | translate}}</mat-label>
-                    <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="pass">
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>{{ 'PASSWORD_CONFIRM' | translate}}</mat-label>
-                    <input #passConfirm matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <input #passConfirm matInput [type]="hide ? 'password' : 'text'" formControlName="passConfirm">
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
             </form>

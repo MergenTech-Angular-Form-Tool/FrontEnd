@@ -1,6 +1,8 @@
 export interface LoginResponse {
-    status: string;
-    message: string;
-    token: string;
-    userId: number;
+
+    status?: string;
+    message?: string;
+    token?: string;
+    userId?: number;
+
 }
