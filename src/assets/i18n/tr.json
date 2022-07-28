@@ -42,7 +42,7 @@
     "SET_LINE_HEIGHT": "Çizgi yüksekliğini ayarla (px).",
     "SPACE_BELOW": "Ayraç altında boşluk",
     "SPACE_ABOVE": "Ayraç üstünde boşluk",
-    "PUT_BELOW_SPACE": "Çizginin altına boşluk koy. Değer 'px' cinsinden olmalı.",
+    "PUT_BELOW_SPACE": "Çizgi uzunluğunu belirleyin",
     "HORIZONTAL_SPACE": "Yatay boşluk",
     "Q_TEXT": "Soru metni",
     "TYPE_Q": "Soru metnini giriniz :",
