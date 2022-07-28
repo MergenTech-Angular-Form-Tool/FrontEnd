@@ -5,7 +5,7 @@ $deep-blue: rgb(199, 221, 231);
 .language-switcher {
     position: relative;
     display: inline-block;
-    width: calc(#{$height} * 2);
+    width: calc($height * 2);
     height: $height;
     -webkit-transform: translateY(40%);
     -moz-transform: translateY(40%);
@@ -29,18 +29,18 @@ $deep-blue: rgb(199, 221, 231);
     .select-tr,
     .select-en {
         position: absolute;
-        font-size: #{$height / 2.5};
-        top: #{$height / 4};
+        font-size: calc($height / 2.5);
+        top: calc($height / 4);
         color: #fff;
         mix-blend-mode: difference;
     }
 
     .select-tr {
-        left: #{$height / 3.5};
+        left: calc($height / 3.5);
     }
 
     .select-en {
-        right: #{$height / 4};
+        right: calc($height / 4);
     }
 }
 
