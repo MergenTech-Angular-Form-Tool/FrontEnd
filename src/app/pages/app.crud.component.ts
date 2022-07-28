@@ -12,9 +12,9 @@ export class AppCrudComponent implements OnInit {
 
     productDialog: boolean;
 
-    deleteProductDialog: boolean = false;
+    deleteProductDialog = false;
 
-    deleteProductsDialog: boolean = false;
+    deleteProductsDialog = false;
 
     products: Product[];
 
@@ -33,7 +33,7 @@ export class AppCrudComponent implements OnInit {
     constructor(private productService: ProductService, private messageService: MessageService,
                 private confirmationService: ConfirmationService) {}
 
-    
+
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
 
@@ -97,7 +97,8 @@ export class AppCrudComponent implements OnInit {
         if (this.product.name.trim()) {
             if (this.product.id) {
                 // @ts-ignore
-                this.product.inventoryStatus = this.product.inventoryStatus.value ? this.product.inventoryStatus.value: this.product.inventoryStatus;
+                // tslint:disable-next-line:max-line-length
+                this.product.inventoryStatus = this.product.inventoryStatus.value ? this.product.inventoryStatus.value : this.product.inventoryStatus;
                 this.products[this.findIndexById(this.product.id)] = this.product;
                 this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
             } else {
