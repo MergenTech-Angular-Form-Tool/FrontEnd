@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {MessageService} from 'primeng/api';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
+import {baseUrl} from '../../demo/domain/baseurl';
 
 @Component({
     selector: 'app-login',
@@ -37,7 +38,7 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        this.http.post('http://localhost:8080/auth/login', {
+        this.http.post(baseUrl + 'auth/login', {
             username: email,
             password: pass
         }).subscribe(

@@ -5,6 +5,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {RegisterResponse} from '../../demo/domain/auth/registerresponse';
 import {Router} from '@angular/router';
+import {baseUrl} from '../../demo/domain/baseurl';
 
 @Component({
     selector: 'app-register',
@@ -46,7 +47,7 @@ export class RegisterComponent implements OnInit {
             return;
         }
 
-        this.http.post('http://localhost:8080/auth/register', {
+        this.http.post(baseUrl + 'auth/register', {
             name: this.formGroup.get('name').value,
             surname: this.formGroup.get('surname').value,
             email: this.formGroup.get('email').value,

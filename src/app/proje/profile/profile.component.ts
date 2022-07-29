@@ -5,6 +5,7 @@ import {MessageService} from 'primeng/api';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {UpdateUser} from '../../demo/domain/updateuser';
+import {baseUrl} from '../../demo/domain/baseurl';
 
 
 @Component({
@@ -47,7 +48,7 @@ export class ProfileComponent implements OnInit, AfterContentInit {
             return;
         }
 
-        this.http.put<UpdateUser>('http://localhost:8080/api/user', {
+        this.http.put<UpdateUser>(baseUrl + 'api/user', {
             name: this.formGroup.get('name').value,
             surname: this.formGroup.get('surname').value,
             email: this.formGroup.get('email').value,
@@ -71,7 +72,7 @@ export class ProfileComponent implements OnInit, AfterContentInit {
     }
 
     ngAfterContentInit(): void {
-        this.http.get('http://localhost:8080/api/user', {
+        this.http.get(baseUrl + 'api/user', {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
             }
