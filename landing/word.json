@@ -1,0 +1,15 @@
+{
+    "page": {
+        "PAGES_WELCOME": "Welcome",
+        "PAGES_DESCRIPTION": "Please login to start creating forms quickly and easily."
+    },
+    "create": {
+        "CREATE_DESCRIPTION": "Create the form you want easily and comfortably."
+    },
+    "settings": {
+        "SETTINGS_DESCRIPTION": "Make the necessary arrangements."
+    },
+    "publish": {
+        "PUBLISH_DESCRIPTION": "Share the form you created the way you want."
+    }
+}
