@@ -1,0 +1,29 @@
+<div class="d-flex flex-row align-items-center">
+    <i style="font-size: 2rem; margin-right: 20px;" class="bi bi-gear-fill text-black"></i>
+    <div>
+        <div class="fw-bold text-uppercase">
+            {{'FORM_SETTINGS' | translate}}
+        </div>
+        <div>
+            {{'FORM_SETTINGS_SUB' | translate}}
+        </div>
+    </div>
+
+</div>
+
+<p-card styleClass="mt-4 text-black" header="Form">
+
+    <h5>{{"TITLE" | translate}}</h5>
+    <small>{{"SUB_TITLE" | translate}}</small>
+    <div>
+        <input type="text" pInputText (change)="changeFormName()" [(ngModel)]="value1">
+    </div>
+    <p-divider></p-divider>
+
+    <h5>{{"FORM_STAT" | translate}}</h5>
+    <small>{{"SUB_FORM_STAT" | translate}}</small>
+    <div>
+        <p-dropdown inputId="dropdown" [autoDisplayFirst]="true" [options]="durum" [(ngModel)]="value7"
+                    optionLabel="name" class="ng-invalid ng-dirty" style="width: 100px"></p-dropdown>
+    </div>
+</p-card>

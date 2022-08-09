@@ -1,0 +1,33 @@
+.mergen-logo {
+    width: 100px !important;
+    height: 100px !important;
+    margin: 0 auto !important;
+}
+
+button.login {
+    min-height: 46px;
+    background: #53A8DCFF !important;
+    border: none !important;
+}
+
+button.login:hover {
+    background: #0f75ab !important;
+}
+
+.register-a {
+    color: #53A8DCFF !important;
+    cursor: pointer !important;
+
+}
+
+:host ::ng-deep .pass {
+    width: 247px !important;
+    margin-bottom: 10px;
+    background-color: #F6F7F7;
+    border: 1.2px solid #D4D6D9;
+    color: #515C66;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+}
+

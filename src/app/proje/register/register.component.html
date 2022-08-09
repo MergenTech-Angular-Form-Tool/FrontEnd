@@ -1,0 +1,56 @@
+<div class="login-body">
+    <div class="login-wrapper">
+        <div class="login-panel">
+
+            <div class="mb-5">
+                <app-lang-switcher></app-lang-switcher>
+            </div>
+
+            <a [routerLink]="['/']" class="mb-3">
+                <img class="mergen-logo" src="../../../assets/layout/images/mergentechLogo.png" alt="freya-layout"/>
+            </a>
+
+            <form [formGroup]="formGroup" class="d-flex flex-column">
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'NAME' | translate}}</mat-label>
+                    <input #name matInput formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'LAST_NAME' | translate}}</mat-label>
+                    <input #surname matInput formControlName="surname">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'EMAIL' | translate}}</mat-label>
+                    <input #email matInput formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'PASSWORD' | translate}}</mat-label>
+                    <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'PASSWORD_CONFIRM' | translate}}</mat-label>
+                    <input #passConfirm matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </form>
+
+            <button pButton pRipple label="{{'REGISTER' | translate}}" type="button" class="register"
+                    (click)="register(name.value, surname.value, email.value, pass.value, passConfirm.value)">
+            </button>
+
+        </div>
+
+        <div class="login-footer">
+            <h4>Mergen</h4>
+            <h6>Copyright 2022 Ⓒ Mergen {{'SOFTWARE' | translate}}</h6>
+        </div>
+
+    </div>
+</div>
+
+<p-toast position="top-right"></p-toast>

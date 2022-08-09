@@ -1,0 +1,14 @@
+.example-box:hover {
+    .buttons-cog {
+        visibility: visible !important;
+    }
+
+    .buttons-clr {
+        visibility: visible !important;
+    }
+}
+
+:host ::ng-deep .example-box {
+    width: 500px !important;
+    height: 75px !important;
+}

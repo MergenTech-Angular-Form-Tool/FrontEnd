@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="login-body">
+    <div class="login-wrapper">
+        <div class="login-panel">
+            <form [formGroup]="formGroup" class="d-flex flex-column">
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'NAME' | translate}}</mat-label>
+                    <input #name matInput formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'LAST_NAME' | translate}}</mat-label>
+                    <input #surname matInput formControlName="surname">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'EMAIL' | translate}}</mat-label>
+                    <input #email matInput formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'PASSWORD' | translate}}</mat-label>
+                    <input #pass matInput [type]="hide ? 'password' : 'text'" formControlName="pass">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>{{ 'PASSWORD_CONFIRM' | translate}}</mat-label>
+                    <input #passConfirm matInput [type]="hide ? 'password' : 'text'" formControlName="passConfirm">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </form>
+
+            <button pButton pRipple label="{{'UPDATE' | translate}}" type="button" class="p-button-raised primary-btn"
+                    (click)="profile(name.value, surname.value, email.value, pass.value, passConfirm.value)">
+            </button>
+
+        </div>
+    </div>
+</div>
+<p-toast position="top-right"></p-toast>

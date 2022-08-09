@@ -1,0 +1,128 @@
+.sidenav {
+    background: rgb(248, 250, 252);
+    transition: all .5s ease;
+    position: fixed;
+    z-index: 1;
+    top: 114px;
+    right: 0;
+    width: 5rem;
+    height: 100vh;
+    box-shadow: 0 0 1rem 0 #9caeb7;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        padding: 0.93rem 0 0 0.6rem;
+        width: 100%;
+
+        .logo {
+            background: rgb(194, 222, 232);
+            text-align: center;
+            width: 3rem;
+            min-width: 3rem;
+            border-radius: 0.313rem;
+            padding: 0.313rem;
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+            border: none;
+            margin-left: 7px;
+
+            .designer-logo {
+                font-size: 20px;
+                color: #3a3636;
+                cursor: pointer;
+                margin: auto;
+            }
+        }
+
+        .logo-text {
+            margin-left: 1.5rem;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e1e1e;
+        }
+
+        .btn-close {
+            margin-left: auto;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: transparent;
+            border: none;
+        }
+    }
+}
+
+.sidenav-collapsed {
+    width: 25rem;
+}
+
+.active {
+    background-color: #F6F7F7;
+
+    .sidenav-link-icon,
+    .sidenav-link-text {
+        color: #1e1e1e;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+
+.sidenav-short {
+    transition: all .5s ease;
+    position: fixed;
+    z-index: 1;
+    top: 114px;
+    right: 15px;
+    height: 10vh;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        padding: 0.93rem 0 0 0.6rem;
+        width: 100%;
+
+        .logo {
+            background: rgb(194, 222, 232);
+            text-align: center;
+            width: 4rem;
+            height: 4rem;
+            min-width: 3rem;
+            border-radius: 0.313rem;
+            padding: 0.313rem;
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+            border: none;
+            margin-left: 7px;
+
+            .designer-logo {
+                font-size: 30px;
+                color: #3a3636;
+                cursor: pointer;
+                margin: 6px auto auto;
+            }
+        }
+
+        .logo-text {
+            margin-left: 1.5rem;
+            color: #1e1e1e;
+        }
+
+        .btn-close {
+            margin-left: auto;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: transparent;
+            border: none;
+
+        }
+    }
+}

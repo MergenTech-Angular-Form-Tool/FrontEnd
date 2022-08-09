@@ -1,0 +1,32 @@
+.nav {
+    background: rgb(244, 187, 89);
+    background: linear-gradient(90deg, rgb(169, 190, 218) 0%, rgb(110, 165, 222) 50%, rgb(19, 109, 182) 69%);
+    height: 54px;
+    transition: all ease .2s;
+}
+
+.topnav a {
+    font-size: 20px;
+    opacity: 0.8;
+    float: left;
+    display: block;
+    color: #ffffff;
+    height: 54px;
+    text-align: center;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.topnav a.active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+:host ::ng-deep .p-speeddial-direction-left {
+    margin-top: -20px !important;
+}

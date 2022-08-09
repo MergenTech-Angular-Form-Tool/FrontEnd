@@ -1,0 +1,28 @@
+<app-navbar style="width:100%; z-index:99;"></app-navbar>
+<app-secondary-nav></app-secondary-nav>
+<div id="container">
+    <div class="view intro-2 intro-3 rgba-gradient">
+        <div class="full-bg-img">
+            <div class="grid">
+                <div id="bars">
+                    <app-leftbar [entry]="entry"></app-leftbar>
+                    <app-rightbar></app-rightbar>
+                </div>
+
+                <div class="center fixer bg-light rounded" id="center">
+                    <div class="d-flex justify-content-end mb-3" id="clear-button" *ngIf="!noItem">
+                        <button pButton type="button" (click)="clearall()" label="{{ 'CLEAR_ALL' | translate}}"
+                                icon="bi bi-trash"
+                                class="p-button-danger"></button>
+                    </div>
+                    <div *ngIf="noItem" class="d-flex flex-column text-center user-select-none p-5">
+                        <p>{{ 'NO_ITEM1' | translate }}</p>
+                        <p>{{ 'NO_ITEM2' | translate }}</p>
+                    </div>
+                    <template #temp></template>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<app-secondary-nav></app-secondary-nav>
+
+<div class="d-flex flex-row position-relative top44">
+    <div class="left">
+        <div class="left-item ms-3 mt-5 p-3" (click)="showComponent('Share')">
+            <div class="d-flex flex-row align-items-center">
+                <i style="font-size: 2rem; margin-right: 20px"
+                   class="pi pi-share-alt text-black"></i>
+                <div>
+                    <div class="fw-bold text-uppercase">
+                        {{'SHARE' | translate}}
+                    </div>
+                    <div>
+                        {{'SUB_SHARE' | translate}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="left-item ms-3 mt-5 p-3" (click)="showComponent('Email')">
+            <div class="d-flex flex-row align-items-center" >
+                <i style="font-size: 2rem; margin-right: 20px"
+                   class="pi pi-envelope text-black"></i>
+                <div>
+                    <div class="fw-bold text-uppercase">
+                        {{'EMAIL' | translate}}
+                    </div>
+                    <div>
+                        {{'SUB_EMAIL_PUBLISH' | translate}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-item ms-3 mt-5 p-3" (click)="showComponent('Pdf')">
+            <div class="d-flex flex-row align-items-center">
+                <i style="font-size: 2rem; margin-right: 20px"
+                   class="pi pi-file-pdf text-black"></i>
+                <div>
+                    <div class="fw-bold text-uppercase">
+                        PDF
+                    </div>
+                    <div>
+                        {{'SUB_PDF' | translate}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5 shift-left">
+        <div [ngSwitch]="comp">
+            <app-sharecomponent *ngSwitchCase="'Share'"></app-sharecomponent>
+            <app-emailcomponent *ngSwitchCase="'Email'"></app-emailcomponent>
+            <app-pdfcomponent *ngSwitchCase="'Pdf'"></app-pdfcomponent>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
