@@ -1,0 +1,61 @@
+.login-footer{
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 20px;
+}
+
+.photo{
+    text-align: center;
+    margin:auto;
+    padding:10px;
+    width:30%;
+    height: auto;
+}
+
+.photo:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 50px;
+}
+
+.info{
+    text-align: center;
+    margin:auto;
+    padding:5px;
+    font-size: 20px;
+    border-style: solid;
+    border-width:2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.everyrow1{
+    margin: auto;
+    width: 100%;
+    margin-top:100px;
+    background-color: rgba(92,172,238,0.3);
+    height: auto;
+    min-height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-left: 6px solid #191970;
+}
+
+.everyrow2{
+    margin: auto;
+    width: 100%;
+    margin-top:100px;
+    height: auto;
+    min-height: 200px;
+    background-color: rgba(216,191,216,0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-right: 6px solid #68228b;
+}
+
