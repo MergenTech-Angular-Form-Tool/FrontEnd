@@ -1,0 +1,97 @@
+<app-splash-screen></app-splash-screen>
+
+<div class="topnav" id="myTopnav">
+    <div class="container d-flex">
+
+        <div class="col-4 pt-0 pb-0">
+            <a href='/' class="logo user-select-none"> <img src="assets/layout/images/navbarlogo.png" class="logo"></a>
+        </div>
+
+        <div class="col-6 d-flex justify-content-center pt-0 pb-0 align-items-center flex-column"></div>
+
+        <div class="col-2 pt-0 pb-0">
+            <app-lang-switcher></app-lang-switcher>
+        </div>
+    </div>
+</div>
+
+
+<div class="container text-center " id="landing">
+    <div class="row">
+
+        <div class="col col-md-4" id="welcomeWrite">
+
+            <h1 class="display-4 ">{{'WELCOME' | translate}}</h1>
+            <br>
+
+            <p class="lead my-3">{{'WELCOME_DESCRIPTION' | translate}} </p>
+            <br>
+
+            <button pButton pRipple (click)="gotoLogin()"
+                    label="{{'LOGIN' | translate}}" type="button" class="login register-a "></button>
+            <br>
+            <br>
+
+            <p>{{'DONTHAVEACCOUNT' | translate }}
+                <button pButton pRipple (click)="gotoRegister()" label="{{'REGISTER' | translate}}" type="button"
+                        class="register register-a">
+                </button>
+            </p>
+
+        </div>
+        <div class="col col-md-4 ">
+            <a [routerLink]="['/']">
+                <img class="mergen-logo" id="landingImg" src="../../../assets/layout/images/mergentechLogo.png"
+                     alt="freya-layout"/>
+            </a>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="row" id="landingCards">
+
+    <div class="col-md-3 card">
+        <img src="../../../assets/layout/images/create.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{'CREATE' | translate}}</h5>
+            <p class="card-text">{{'CREATE_DESCRIPTION' | translate}}</p>
+
+        </div>
+    </div>
+
+    <div class="col-md-3 card">
+        <img src="../../../assets/layout/images/edit.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{'EDIT' | translate}}</h5>
+            <p class="card-text">{{'EDIT_DESCRIPTION' | translate}}</p>
+
+        </div>
+    </div>
+
+    <div class="col-md-3 card">
+        <img src="../../../assets/layout/images/share.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{'PUBLISH' | translate}}</h5>
+            <p class="card-text">{{'PUBLISH_DESCRIPTION' | translate}}</p>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="login-footer">
+    <h4>Mergen</h4>
+    <h6>Copyright 2022 Ⓒ Mergen Yazılım</h6>
+</div>
+
+
+
+
+
+

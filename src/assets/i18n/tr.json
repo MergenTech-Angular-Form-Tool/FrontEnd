@@ -106,5 +106,11 @@
     "POPUP_LOGIN_SUCCESS": "Başarıyla giriş yaptınız!",
     "POPUP_LOGIN_WELCOME": "Sitemize hoşgeldiniz!",
     "POPUP_INVALID_EP": "Şifre veya email geçersiz!",
-    "LOGOUT": "Çıkış"
+    "LOGOUT": "Çıkış",
+    "WELCOME": "HOŞ GELDİNİZ",
+    "WELCOME_DESCRIPTION": "Hızlı ve kolay bir şekilde form oluşturmaya başlamak için lütfen giriş yapınız.",
+    "CREATE_DESCRIPTION": "Kolay ve rahat bir şekilde dilediğiniz formu oluşturun.",
+    "EDIT_DESCRIPTION": "Gerekli düzenlemeleri yapın.",
+    "PUBLISH_DESCRIPTION": "Oluşturduğunuz formu istediğiniz şekilde paylaşın.",
+    "EDIT": "DÜZENLE"
 }

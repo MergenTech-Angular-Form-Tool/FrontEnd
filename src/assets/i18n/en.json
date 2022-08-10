@@ -106,5 +106,11 @@
     "POPUP_LOGIN_SUCCESS": "Login Successfully",
     "POPUP_LOGIN_WELCOME": "Welcome to our website!",
     "POPUP_INVALID_EP": "Invalid email or password!",
-    "LOGOUT": "Logout"
+    "LOGOUT": "Logout",
+    "WELCOME": "WELCOME",
+    "WELCOME_DESCRIPTION": "Please login to start creating forms quickly and easily.",
+    "CREATE_DESCRIPTION": "Create the form you want easily and comfortably.",
+    "EDIT_DESCRIPTION": "Make the necessary arrangements.",
+    "PUBLISH_DESCRIPTION": "Share the form you created the way you want.",
+    "EDIT": "EDIT"
 }

@@ -10,15 +10,17 @@ import {ProfileComponent} from './proje/profile/profile.component';
 import {SettingsComponent} from './proje/settings/settings.component';
 import {PublishComponent} from './proje/publish/publish.component';
 import {FormsettingsComponent} from './proje/settings/settingscomponent/formsettings/formsettings.component';
+import {LandingComponent} from './proje/landing/landing.component';
+import {HomeProfileComponent} from "./proje/home-profile/home-profile.component";
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
             {
-                path: '', component: MainPageComponent,
-                children: [
-                ]
+                path: '', component: LandingComponent,
+                children: []
             },
+            {path: 'main', component: MainPageComponent},
             {path: 'error', component: AppErrorComponent},
             {path: 'access', component: AppAccessdeniedComponent},
             {path: 'notfound', component: AppNotfoundComponent},
@@ -28,6 +30,7 @@ import {FormsettingsComponent} from './proje/settings/settingscomponent/formsett
             {path: 'settings', component: SettingsComponent},
             {path: 'publish', component: PublishComponent},
             {path: 'form', component: FormsettingsComponent},
+            {path: 'homeprofile', component: HomeProfileComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
     ],

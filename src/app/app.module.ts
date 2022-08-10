@@ -191,6 +191,9 @@ import {FormNameService} from './demo/service/formnameservice';
 import {MiddleElementsService} from './demo/service/middleelementsservice';
 import {NoItemService} from './demo/service/noitemservice';
 import {ChangeDateService} from './demo/service/changedateservice';
+import { LandingComponent } from './proje/landing/landing.component';
+import { FormComponent } from './proje/form/form.component';
+import { HomeProfileComponent } from './proje/home-profile/home-profile.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -378,7 +381,10 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         EmailsettingsComponent,
         ShareComponent,
         EmailComponent,
-        PdfComponent
+        PdfComponent,
+        LandingComponent,
+        FormComponent,
+        HomeProfileComponent
     ],
     // Allah'a emanet havayolları :)
     // Bu projeyi yazan yazılımcılar kör oldu.
@@ -394,3 +400,4 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
 })
 export class AppModule {
 }
+
