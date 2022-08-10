@@ -31,9 +31,56 @@ export class RegisterComponent implements OnInit {
     }
 
     register(name: string, surname: string, email: string, pass: string, passConfirm: string) {
+        const symbol = '*|,:<>[]{}`;()@&$#%!+-"/';
+        let isThereSymbol = false;
+        for (let i = 0; i < pass.length; i++) {
+            if (symbol.indexOf(pass.charAt(i)) !== -1) {
+                isThereSymbol = true;
+            }
+        }
 
         if (name === '' || surname === '' || email === '' || pass === '' || passConfirm === '') {
             this.messageService.add({severity: 'error', summary: 'Error', detail: 'Some fields are empty!'});
+            return;
+        }
+        if (pass.length < 6) {
+            this.messageService.add({
+                severity: 'error',
+                summary: 'Error',
+                detail: 'Password must be 6 characters or greater!'
+            });
+            return;
+        }
+        if (pass.search(/[a-z]/) < 0) {
+            this.messageService.add({
+                severity: 'error',
+                summary: 'Error',
+                detail: 'Password must contain at least one lowercase letter!'
+            });
+            return;
+        }
+        if (pass.search(/[A-Z]/) < 0) {
+            this.messageService.add({
+                severity: 'error',
+                summary: 'Error',
+                detail: 'Password must contain at least one uppercase letter!'
+            });
+            return;
+        }
+        if (pass.search(/[0-9]/) < 0) {
+            this.messageService.add({
+                severity: 'error',
+                summary: 'Error',
+                detail: 'Password must contain at least one number!'
+            });
+            return;
+        }
+        if (isThereSymbol === false) {
+            this.messageService.add({
+                severity: 'error',
+                summary: 'Error',
+                detail: 'The password must contain at least one symbol!'
+            });
             return;
         }
 
@@ -56,7 +103,11 @@ export class RegisterComponent implements OnInit {
         }).subscribe(
             (res: RegisterResponse) => {
                 if (res.status === '200') {
-                    this.messageService.add({severity: 'success', summary: 'Registration Successfully', detail: 'Welcome to our website!'});
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Registration Successfully',
+                        detail: 'Welcome to our website!'
+                    });
                     setTimeout(() => this.router.navigate(['/login']), 1200);
 
                 }
@@ -70,6 +121,4 @@ export class RegisterComponent implements OnInit {
             }
         );
     }
-
-
 }
