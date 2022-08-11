@@ -9,13 +9,9 @@ import {Router} from '@angular/router';
 })
 export class ProfilnavComponent implements OnInit {
 
+  constructor(private messageService: MessageService, private router: Router) { }
 
+  ngOnInit(): void {
+  }
 
-    constructor(private messageService: MessageService, private router: Router) {
-    }
-
-
-    ngOnInit(): void {
-
-    }
 }

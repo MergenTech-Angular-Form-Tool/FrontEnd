@@ -1,49 +1,49 @@
-
 <div class="row">
 
     <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #f8fafc;">
 
-    <div class="col-md-3 logo">
-        <a href='#/main' class="logo user-select-none"> <img src="assets/layout/images/navbarlogo.png" class="logo"></a>
-    </div>
-
-     <div class=" col-md-9 collapse navbar-collapse" id="navbarSupportedContent">
-
-        <ul class="navbar-nav ml-auto" id="menuitems">
-
-            <li class="nav-item active">
-                <a class="nav-link" href="#/main"><i class="bi bi-house-door-fill"></i>{{'HOME' | translate}} <span class="sr-only">(current)</span></a>
-            </li>
-
-            <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id= "navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bi bi-gear-fill"></i>{{'SETTINGNAV' | translate}}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#/profile">{{'ACCOUNTSET' | translate}}</a>
-                    <a class="dropdown-item" href="#/settings">{{'FORMSET' | translate}}</a>
-                </div>
-            </li>
-
-            <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bi bi-info-circle-fill"></i>{{'SUPPORT' | translate}}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#/user-guide">{{'USERGUIDE' | translate}}</a>
-                    <a class="dropdown-item" href="#/communication">{{'CONTACT' | translate}}</a>
-                </div>
-            </li>
-
-            <li class="nav-item active">
-                <a class="nav-link" href="#/"><i class="bi bi-x-circle-fill"></i>{{'LOGOUT' | translate}} <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-
-        <div class="translate">
-             <app-lang-switcher></app-lang-switcher>
+        <div class="col-md-3 logo">
+            <a href='#/main' class="logo user-select-none"> <img src="assets/layout/images/navbarlogo.png" class="logo"></a>
         </div>
 
-     </div>
+        <div class=" col-md-9 collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav ml-auto" id="menuitems">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/main"><i class="bi bi-house-door-fill"></i>{{'HOME' | translate}} <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home-profile"><i class="bi bi-person-circle"></i>{{'PROFILE' | translate}} <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-info-circle-fill"></i>{{'SUPPORT' | translate}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#/user-guide">{{'USERGUIDE' | translate}}</a>
+                        <a class="dropdown-item" href="#/communication">{{'CONTACT' | translate}}</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-gear-fill"></i>{{'ACCOUNT' | translate}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#/profile">{{'SETTINGNAV' | translate}}</a>
+                        <a class="dropdown-item" href="#/">{{'LOGOUT' | translate}}</a>
+                    </div>
+                </li>
+
+            </ul>
+
+            <div class="translate">
+                <app-lang-switcher></app-lang-switcher>
+            </div>
+
+        </div>
     </nav>
 </div>
