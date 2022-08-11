@@ -138,6 +138,15 @@
     "UGp8": "You can create your form by clicking the create button, and you can go to the sharing section by clicking the publish button.",
     "UGp9": "From the Form Settings section, you can add descriptions to your forms, and enable - disable settings.",
     "UGp10":"You can share your form via direct link, e-mail, download as pdf.",
-    "USERINFO": "USER INFORMATION"
-
+    "USERINFO": "USER INFORMATION",
+    "NO_FORM": "You have no form yet!",
+    "SHOW_FORM" : "Your forms will be displayed here.",
+    "CREATE_FORM" : "CREATE FORM",
+    "STARTNOW": "START NOW",
+    "ALLFORMS": "All Forms",
+    "OUTLINES": "Drafts",
+    "FAVORITES": "Favorites",
+    "ARCHIVE": "Archive",
+    "TRASH": "Trash",
+    "ACCOUNT": "Account"
 }

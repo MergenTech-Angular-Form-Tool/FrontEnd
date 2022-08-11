@@ -192,10 +192,9 @@ import {MiddleElementsService} from './demo/service/middleelementsservice';
 import {NoItemService} from './demo/service/noitemservice';
 import {ChangeDateService} from './demo/service/changedateservice';
 import { LandingComponent } from './proje/landing/landing.component';
-import { ProfilnavComponent } from './proje/profilnav/profilnav.component';
+import { FormComponent } from './proje/form/form.component';
 import { HomeProfileComponent } from './proje/home-profile/home-profile.component';
-
-import {MenuItem} from 'primeng/api';
+import { ProfilnavComponent } from './proje/profilnav/profilnav.component';
 import { CommunicationComponent } from './proje/communication/communication.component';
 import { UserGuideComponent } from './proje/user-guide/user-guide.component';
 
@@ -387,8 +386,9 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         EmailComponent,
         PdfComponent,
         LandingComponent,
-        ProfilnavComponent,
+        FormComponent,
         HomeProfileComponent,
+        ProfilnavComponent,
         CommunicationComponent,
         UserGuideComponent
     ],

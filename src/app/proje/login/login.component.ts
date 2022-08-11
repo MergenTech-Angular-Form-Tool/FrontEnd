@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
                     this.messageService.add({severity: 'success', summary: 'Login Successfully', detail: 'Welcome to our website!'});
                     localStorage.setItem('token', res.data.token);
 
-                    setTimeout(() => window.location.href = '#home-profile', 1000);
+                    setTimeout(() => window.location.href = '#homeprofile', 1000);
                 }
             },
             (err: any) => {

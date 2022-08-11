@@ -1,5 +1,5 @@
 {
-    "HOME": "Ana sayfa",
+    "HOME": "Anasayfa",
     "LOGIN": "Giriş",
     "REGISTER": "Kayıt Ol",
     "PROFILE": "Profil",
@@ -138,5 +138,15 @@
     "UGp8": "Oluştur butonuna tıklayarak formunuzu oluşturabilir, yayınla butonuna tıklayarak formunuzu paylaşma bölümüne geçebilirsiniz.",
     "UGp9": "Form Ayarları kısmından formlarınıza açıklama ekleyip, etkinleştirme - devre dışı bırakma ayarlarını yapabilirsiniz.",
     "UGp10":"Formunuzu doğrudan bağlantı, e-posta yoluyla paylaşabilir, pdf olarak indirebilirsiniz.",
-    "USERINFO": "KULLANICI BİLGİLERİ"
+    "USERINFO": "KULLANICI BİLGİLERİ",
+    "NO_FORM": "Henüz hiç formunuz yok!",
+    "SHOW_FORM": "Formlarınız burada görüntülenecek.",
+    "CREATE_FORM" : "FORM OLUŞTUR",
+    "STARTNOW": "ŞİMDİ BAŞLA",
+    "ALLFORMS": "Tüm Formlar",
+    "OUTLINES": "Taslaklar",
+    "FAVORITES": "Favoriler",
+    "ARCHIVE": "Arşiv",
+    "TRASH": "Çöp Kutusu",
+    "ACCOUNT": "Hesap"
 }
