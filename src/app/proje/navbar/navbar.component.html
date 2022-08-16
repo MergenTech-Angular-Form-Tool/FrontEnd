@@ -2,7 +2,7 @@
     <div class="container d-flex">
 
         <div class="col-4 pt-0 pb-0">
-            <a href='#main' class="logo user-select-none"> <img src="assets/layout/images/navbarlogo.png" class="logo"></a>
+            <a href='#/main' class="logo user-select-none"> <img src="assets/layout/images/navbarlogo.png" class="logo"></a>
 
         </div>
 
@@ -14,9 +14,9 @@
         </div>
 
         <div class="col-4 pt-0 pb-0">
-            <a href=#login *ngIf="!token">{{'LOGIN' | translate}}</a>
-            <a href=#register *ngIf="!token">{{'REGISTER' | translate}}</a>
-            <a href="#home-profile" *ngIf="token">{{'PROFILE' | translate}}</a>
+            <a href="#/login" *ngIf="!token">{{'LOGIN' | translate}}</a>
+            <a href="#/register" *ngIf="!token">{{'REGISTER' | translate}}</a>
+            <a href="#/home-profile" *ngIf="token">{{'PROFILE' | translate}}</a>
             <a (click)="logout()" *ngIf="token">{{'LOGOUT' | translate}}</a>
             <app-lang-switcher></app-lang-switcher>
         </div>

@@ -22,6 +22,10 @@ export class TextfieldelementComponent implements OnInit {
     change: boolean;
     id: string;
 
+    getPlaceHolder() {
+        return this.placeholder;
+    }
+
     constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService,
                 private save: SaveService, private getElement: GetElementDetailsService, private noItemService: NoItemService,
                 private collapsed: CollapsedRightBarService, private date: ChangeDateService) {

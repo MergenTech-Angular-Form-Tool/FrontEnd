@@ -28,12 +28,14 @@ export class LoginComponent implements OnInit {
 
     login(email: string, pass: string) {
 
-        if (email === '' || pass === '') {
+        setTimeout(() => window.location.href = '#/home-profile', 1000);
+
+        /*if (email === '' || pass === '') {
             this.messageService.add({severity: 'error', summary: 'Error', detail: 'Some fields are empty!'});
             return;
-        }
+        }*/
 
-        if (!Singleton.validateEmail(email)) {
+        /*if (!Singleton.validateEmail(email)) {
             this.messageService.add({severity: 'error', summary: 'Error', detail: 'Invalid email!'});
             return;
         }
@@ -56,7 +58,7 @@ export class LoginComponent implements OnInit {
                 } else {
                     alert('Something went wrong!');
                 }
-            });
+            });*/
     }
 
     gotoHome() {

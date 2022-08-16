@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {CollapsedRightBarService} from '../../demo/service/collapsedRightBarService';
 import {SharedDataService} from '../../demo/service/sharedataservice';
@@ -12,16 +12,21 @@ import {ChangeDateService} from '../../demo/service/changedateservice';
 })
 
 
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, AfterViewInit {
 
-    @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
+    @ViewChild('temp', {static: true, read: ViewContainerRef}) entry: ViewContainerRef;
     noItem: boolean;
 
-    constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService,
-                private sharedDataService: SharedDataService, private noItemService: NoItemService, private date: ChangeDateService) {
+
+    // tslint:disable-next-line:max-line-length
+    constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService, private sharedDataService: SharedDataService, private noItemService: NoItemService, private date: ChangeDateService, private cdRef: ChangeDetectorRef) {
         translate.addLangs(['en', 'tr']);
         translate.setDefaultLang('tr');
         noItemService.currentMessage.subscribe(message => this.noItem = message);
+    }
+
+    ngAfterViewInit(): void {
+        this.cdRef.detectChanges();
     }
 
     ngOnInit(): void {

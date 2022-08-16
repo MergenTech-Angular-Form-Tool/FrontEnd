@@ -1,22 +1,65 @@
 <app-profilnav></app-profilnav>
-<app-form></app-form>
 
-<div class="grid-container">
+<div>
 
-        <div>
-            <div >
-                <strong>{{'NO_FORM' | translate}}</strong>
-                <br><br>
-                {{'SHOW_FORM' | translate}}
-                <br><br>
+    <div class="wrapper">
+        <!--Top menu -->
+
+        <div class="sidebar">
+            <!--profile image & text-->
+            <div class="button-place">
+                <a href="#main" class="button button-58">{{'CREATE_FORM' | translate}}</a>
+            </div>
+
+            <!--menu item-->
+            <ul>
+                <li>
+                    <a (click)="showComponent('Allforms')">
+                        <span class="item"><i class="bi bi-folder-fill icon"></i>{{'ALLFORMS' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="showComponent('Outlines')">
+                        <span class="item"><i class="bi bi-inboxes-fill icon"></i>{{'OUTLINES' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="showComponent('Favorites')">
+                        <span class="item"><i class="bi bi-star-fill icon"></i>{{'FAVORITES' | translate}}</span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="showComponent('Archive')">
+                        <span class="item"><i class="bi bi-archive-fill icon"></i>{{'ARCHIVE' | translate}}</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a (click)="showComponent('Trash')">
+                        <span class="item"><i class="bi bi-trash3-fill icon"></i>{{'TRASH' | translate}} </span>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="showComponent('Report')">
+                        <span class="item"><i class="bi bi-trash3-fill icon"></i>{{'REPORT' | translate}} </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="grid-container">
+
+        <div >
+            <div [ngSwitch]="comp">
+                <app-allforms *ngSwitchCase="'Allforms'"></app-allforms>
+                <app-archive *ngSwitchCase="'Archive'"></app-archive>
+                <app-favorites *ngSwitchCase="'Favorites'"></app-favorites>
+                <app-outlines *ngSwitchCase="'Outlines'"></app-outlines>
+                <app-report *ngSwitchCase="'Report'"></app-report>
+                <app-trash *ngSwitchCase="'Trash'"></app-trash>
             </div>
         </div>
-        <div>
-            <img src="../../../assets/layout/images/formicon.png" style="width: 80px">
-            <br><br>
-        </div>
-        <div class="button-place">
-            <a href="#main" class="button button-58">{{'STARTNOW' | translate}}</a>
-        </div>
 
+    </div>
 </div>

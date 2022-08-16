@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// @ts-ignore
+import {form} from '../../../../demo/domain/form';
 
 @Component({
   selector: 'app-home-profile',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeProfileComponent implements OnInit {
 
-  constructor() { }
+    noform: boolean;
+    form: form[];
+
+  constructor( ) {
+
+  }
+
+    public comp: string;
 
   ngOnInit(): void {
+      this.comp = 'Allforms';
   }
+
+    showComponent(comp: string) {
+        this.comp = comp;
+    }
 
 }
