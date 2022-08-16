@@ -133,7 +133,6 @@ export class SecondaryNavComponent implements OnInit {
     }
 
     showDesktop() {
-
         const desktop = document.getElementById('container');
         desktop.classList.remove('tablet');
         desktop.classList.remove('mobile');

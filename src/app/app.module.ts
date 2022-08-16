@@ -191,12 +191,18 @@ import {FormNameService} from './demo/service/formnameservice';
 import {MiddleElementsService} from './demo/service/middleelementsservice';
 import {NoItemService} from './demo/service/noitemservice';
 import {ChangeDateService} from './demo/service/changedateservice';
-import { LandingComponent } from './proje/landing/landing.component';
-import { FormComponent } from './proje/form/form.component';
-import { HomeProfileComponent } from './proje/home-profile/home-profile.component';
-import { ProfilnavComponent } from './proje/profilnav/profilnav.component';
-import { CommunicationComponent } from './proje/communication/communication.component';
-import { UserGuideComponent } from './proje/user-guide/user-guide.component';
+import {LandingComponent} from './proje/landing/landing.component';
+import {FormComponent} from './proje/form/form.component';
+import {HomeProfileComponent} from './proje/home-profile/home-profile.component';
+import {ProfilnavComponent} from './proje/profilnav/profilnav.component';
+import {CommunicationComponent} from './proje/communication/communication.component';
+import {UserGuideComponent} from './proje/user-guide/user-guide.component';
+import { FavoritesComponent } from './proje/home-profile/profile-sidebar/favorites/favorites.component';
+import { ArchiveComponent } from './proje/home-profile/profile-sidebar/archive/archive.component';
+import {AllformsComponent} from "./proje/home-profile/profile-sidebar/allforms/allforms.component";
+import {OutlinesComponent} from "./proje/home-profile/profile-sidebar/outlines/outlines.component";
+import {ReportComponent} from "./proje/home-profile/profile-sidebar/report/report.component";
+import {TrashComponent} from "./proje/home-profile/profile-sidebar/trash/trash.component";
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -390,10 +396,14 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         HomeProfileComponent,
         ProfilnavComponent,
         CommunicationComponent,
-        UserGuideComponent
+        UserGuideComponent,
+        FavoritesComponent,
+        ArchiveComponent,
+        AllformsComponent,
+        OutlinesComponent,
+        ReportComponent,
+        TrashComponent,
     ],
-    // Allah'a emanet havayolları :)
-    // Bu projeyi yazan yazılımcılar kör oldu.
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
@@ -402,7 +412,10 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         GetElementDetailsService, FormNameService, MiddleElementsService, NoItemService,
         ChangeDateService
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    exports: [
+        OutlinesComponent
+    ]
 })
 export class AppModule {
 }

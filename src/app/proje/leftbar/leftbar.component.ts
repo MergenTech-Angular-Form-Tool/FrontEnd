@@ -1,4 +1,13 @@
-import {Component, ComponentFactoryResolver, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
+import {
+    AfterViewInit, ChangeDetectorRef,
+    Component,
+    ComponentFactoryResolver,
+    EventEmitter,
+    HostListener,
+    Input,
+    OnInit,
+    Output
+} from '@angular/core';
 import {TextfieldelementComponent} from '../middleelements/textfieldelement/textfieldelement.component';
 import {CheckboxelementComponent} from '../middleelements/checkboxelement/checkboxelement.component';
 import {DateelementComponent} from '../middleelements/dateelement/dateelement.component';
@@ -52,9 +61,10 @@ export class LeftbarComponent implements OnInit {
         this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
     }
 
-    constructor(private resolver: ComponentFactoryResolver, private middle: MiddleElementsService, private noItem: NoItemService,
-                private change: ChangeDateService) {
+    // tslint:disable-next-line:max-line-length
+    constructor(private resolver: ComponentFactoryResolver, private middle: MiddleElementsService, private noItem: NoItemService, private change: ChangeDateService) {
     }
+
 
     ngOnInit(): void {
         this.screenWidth = window.innerWidth;
@@ -95,11 +105,11 @@ export class LeftbarComponent implements OnInit {
         const componentRef = this.entry.createComponent(factory);
         this.increment();
         componentRef.location.nativeElement.id = name + '_' + this.state.id;
+/*        console.log(componentRef.location.nativeElement);
+        console.log(typeof componentRef.location.nativeElement);*/
 
         this.middle.changeMessage(document.getElementById('center'));
-
         this.noItem.set(false);
-
         this.change.set(Date.now());
     }
 

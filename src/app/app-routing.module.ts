@@ -29,7 +29,6 @@ import {UserGuideComponent} from "./proje/user-guide/user-guide.component";
             {path: 'notfound', component: AppNotfoundComponent},
             {path: 'login', component: LoginComponent},
             {path: 'register', component: RegisterComponent},
-            {path: 'homeprofile', component: HomeProfileComponent},
             {path: 'home-profile', component: HomeProfileComponent},
             {path: 'settings', component: SettingsComponent},
             {path: 'publish', component: PublishComponent},
@@ -38,7 +37,7 @@ import {UserGuideComponent} from "./proje/user-guide/user-guide.component";
             {path: 'communication', component: CommunicationComponent},
             {path: 'user-guide', component: UserGuideComponent},
             {path: '**', redirectTo: '/notfound'},
-        ], {scrollPositionRestoration: 'enabled'})
+        ],  {scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled'})
     ],
     exports: [RouterModule]
 })

@@ -5,8 +5,11 @@
         <div class="full-bg-img">
             <div class="grid">
                 <div id="bars">
-                    <app-leftbar [entry]="entry"></app-leftbar>
-                    <app-rightbar></app-rightbar>
+                    <router-outlet>
+                        <span></span>
+                        <app-leftbar [entry]="entry"></app-leftbar>
+                        <app-rightbar></app-rightbar>
+                    </router-outlet>
                 </div>
 
                 <div class="center fixer bg-light rounded" id="center">
