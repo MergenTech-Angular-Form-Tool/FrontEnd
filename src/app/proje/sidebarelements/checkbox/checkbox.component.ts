@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
+import {CheckboxService} from '../../../demo/service/elementservice/checkbox.service';
 
 @Component({
     selector: 'app-checkbox',
@@ -15,7 +16,7 @@ export class CheckboxComponent implements OnInit {
     options: string;
 
     constructor(private getElement: GetElementDetailsService, private share: SharedDataService,
-                private date: ChangeDateService) {
+                private date: ChangeDateService, private checkboxService: CheckboxService) {
     }
 
     ngOnInit(): void {

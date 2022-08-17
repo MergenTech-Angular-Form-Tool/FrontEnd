@@ -199,10 +199,11 @@ import {CommunicationComponent} from './proje/communication/communication.compon
 import {UserGuideComponent} from './proje/user-guide/user-guide.component';
 import { FavoritesComponent } from './proje/home-profile/profile-sidebar/favorites/favorites.component';
 import { ArchiveComponent } from './proje/home-profile/profile-sidebar/archive/archive.component';
-import {AllformsComponent} from "./proje/home-profile/profile-sidebar/allforms/allforms.component";
-import {OutlinesComponent} from "./proje/home-profile/profile-sidebar/outlines/outlines.component";
-import {ReportComponent} from "./proje/home-profile/profile-sidebar/report/report.component";
-import {TrashComponent} from "./proje/home-profile/profile-sidebar/trash/trash.component";
+import {AllformsComponent} from './proje/home-profile/profile-sidebar/allforms/allforms.component';
+import {OutlinesComponent} from './proje/home-profile/profile-sidebar/outlines/outlines.component';
+import {ReportComponent} from './proje/home-profile/profile-sidebar/report/report.component';
+import {TrashComponent} from './proje/home-profile/profile-sidebar/trash/trash.component';
+import {CheckboxService} from './demo/service/elementservice/checkbox.service';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -405,7 +406,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         TrashComponent,
     ],
     providers: [
-        {provide: LocationStrategy, useClass: HashLocationStrategy},
+        {provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: 'url', useValue: 'http://localhost:8080/' },
+        CheckboxService,
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
         MessageService, SharedDataService, CollapsedRightBarService, SaveService,
