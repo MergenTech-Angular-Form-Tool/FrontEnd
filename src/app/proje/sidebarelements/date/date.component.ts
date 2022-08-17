@@ -20,6 +20,7 @@ export class DateComponent implements OnInit {
     selected: string;
     question: string;
     id: string;
+    dateList = [];
 
     constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService) {
     }
@@ -43,6 +44,14 @@ export class DateComponent implements OnInit {
             header: this.question,
             selected: this.selected
         });
+
+        this.dateList.push({
+            id: this.id,
+            header: this.question,
+            selected: this.selected
+        });
+
+        console.log(this.dateList);
 
         this.date.set(Date.now());
     }

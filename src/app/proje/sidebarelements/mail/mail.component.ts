@@ -17,6 +17,7 @@ export class MailComponent implements OnInit {
     placeholder: string;
     subtext: string;
     id: string;
+    mailList = [];
 
     constructor(private save: SaveService, private share: SharedDataService, private getElement: GetElementDetailsService,
                 private date: ChangeDateService) {
@@ -37,6 +38,18 @@ export class MailComponent implements OnInit {
             subtext: this.subtext,
             placeholder: this.placeholder
         });
+
+        this.mailList.push({
+            id: this.id,
+            checked: this.checked,
+            detail: this.detail,
+            val2: this.val2,
+            header: this.question,
+            subtext: this.subtext,
+            placeholder: this.placeholder
+        });
+
+        console.log(this.mailList);
 
         this.date.set(Date.now());
     }

@@ -1,5 +1,5 @@
 export interface Deneme {
-    id: number;
+    id?: number;
     question: string;
     sequenceNumberForLocation: number;
     formId: number;

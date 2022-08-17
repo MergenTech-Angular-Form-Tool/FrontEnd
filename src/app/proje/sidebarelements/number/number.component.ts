@@ -14,6 +14,7 @@ export class NumberComponent implements OnInit {
     header: string;
     defaultValue: number;
     isNegative: boolean;
+    numberList = [];
 
     constructor(private getElement: GetElementDetailsService, private share: SharedDataService, private date: ChangeDateService) {
     }
@@ -30,6 +31,15 @@ export class NumberComponent implements OnInit {
             defaultValue: this.defaultValue,
             isNegative: this.isNegative
         });
+
+        this.numberList.push({
+            id: this.id,
+            header: this.header,
+            defaultValue: this.defaultValue,
+            isNegative: this.isNegative
+        });
+
+        console.log(this.numberList);
 
         this.date.set(Date.now());
     }

@@ -14,8 +14,8 @@ export class FavoritesComponent implements OnInit {
 
     checkboxList: Deneme[];
     checkbox: Deneme = {
-        id: 199,
-        question: 'CCCCCCCCCCCCCCCCCCCC',
+        id: 150,
+        question: 'Ali',
         sequenceNumberForLocation: 1,
         formId: 2,
         createTimestamp: '2022-08-17T06:37:22.928+00:00',
@@ -43,9 +43,10 @@ export class FavoritesComponent implements OnInit {
     }
 
     updateData(deneme: Deneme) {
+        console.log();
         const updateCheckbox: Deneme = {
-            id: deneme.id,
-            question: 'BBBBBBBBBBBBBBBBB',
+            id: 19,
+            question: 'Kübra',
             sequenceNumberForLocation: 1,
             formId: 2,
             createTimestamp: '2022-08-17T06:37:22.928+00:00',

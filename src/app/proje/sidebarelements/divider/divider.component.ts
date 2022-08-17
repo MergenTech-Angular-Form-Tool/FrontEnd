@@ -16,6 +16,7 @@ export class DividerComponent implements OnInit {
     marginBot: string;
     marginTop: string;
     space: string;
+    dividerList = [];
 
     constructor(private getElement: GetElementDetailsService, private share: SharedDataService, private date: ChangeDateService) {
     }
@@ -36,6 +37,18 @@ export class DividerComponent implements OnInit {
             marginTop: this.marginTop,
             space: this.space,
         });
+
+        this.dividerList.push({
+            id: this.id,
+            color: this.color,
+            style: this.style,
+            height: this.height,
+            marginBot: this.marginBot,
+            marginTop: this.marginTop,
+            space: this.space,
+        });
+
+        console.log(this.dividerList);
 
         this.date.set(Date.now());
     }

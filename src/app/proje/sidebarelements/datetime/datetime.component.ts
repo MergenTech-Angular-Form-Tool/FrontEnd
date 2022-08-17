@@ -19,6 +19,7 @@ export class DatetimeComponent implements OnInit {
     selected: string;
     question: string;
     id: string;
+    dateTimeList = [];
 
     constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService) {
     }
@@ -42,6 +43,14 @@ export class DatetimeComponent implements OnInit {
             header: this.question,
             selected: this.selected
         });
+
+        this.dateTimeList.push({
+            id: this.id,
+            header: this.question,
+            selected: this.selected
+        });
+
+        console.log(this.dateTimeList);
 
         this.date.set(Date.now());
     }

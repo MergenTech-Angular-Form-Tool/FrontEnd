@@ -12,6 +12,7 @@ export class FileUploadComponent implements OnInit {
 
     id: string;
     header: string;
+    fileUploadList = [];
 
     constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService) {
     }
@@ -25,6 +26,13 @@ export class FileUploadComponent implements OnInit {
             id: this.id,
             header: this.header
         });
+
+        this.fileUploadList.push({
+            id: this.id,
+            header: this.header
+        });
+
+        console.log(this.fileUploadList);
 
         this.date.set(Date.now());
     }
