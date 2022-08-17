@@ -6,7 +6,13 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class CheckboxService {
 
+    checkbox: Deneme;
+
     constructor(private httpClient: HttpClient, @Inject('url') private url: string) {
+    }
+
+    getId() {
+        return this.checkbox.id;
     }
 
     GetAll() {

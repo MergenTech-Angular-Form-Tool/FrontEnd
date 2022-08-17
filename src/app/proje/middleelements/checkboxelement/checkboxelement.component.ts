@@ -13,22 +13,21 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 })
 export class CheckboxelementComponent implements OnInit {
 
-    selected: string;
     id: string;
+    sequenceNumberForLocation: number;
     header: string;
     required: string;
-    options: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
                 private getElement: GetElementDetailsService, private noItemService: NoItemService,
                 private date: ChangeDateService) {
-        shared.currentMessage.subscribe(message => this.selected = message);
+        /*shared.currentMessage.subscribe(message => this.selected = message);*/
 
         this.getElement.currentMessage.subscribe(message => {
             const temp = message as CheckBox;
             if (temp.id === this.id) {
+                this.sequenceNumberForLocation = temp.sequenceNumberForLocation;
                 this.header = temp.header;
-                this.options = temp.options;
                 this.required = temp.required;
             }
 

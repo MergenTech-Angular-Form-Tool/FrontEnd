@@ -11,9 +11,10 @@ import {CheckboxService} from '../../../demo/service/elementservice/checkbox.ser
 })
 export class CheckboxComponent implements OnInit {
     id: string;
+    sequenceNumberForLocation: number;
     header: string;
     required: string;
-    options: string;
+    checkboxList = [];
 
     constructor(private getElement: GetElementDetailsService, private share: SharedDataService,
                 private date: ChangeDateService, private checkboxService: CheckboxService) {
@@ -26,10 +27,22 @@ export class CheckboxComponent implements OnInit {
     onSubmit() {
         this.getElement.changeMessage({
             id: this.id,
+            sequenceNumberForLocation: this.sequenceNumberForLocation,
             header: this.header,
             required: this.required,
-            options: this.options,
         });
+
+        const sptlitted = this.id.split('_');
+        console.log('Splitted ID: ' + sptlitted);
+
+        this.checkboxList.push({
+            id: sptlitted[0],
+            sequenceNumberForLocation: sptlitted[1],
+            header: this.header,
+            required: this.required
+        });
+
+        console.log(this.checkboxList);
 
         this.date.set(Date.now());
     }
