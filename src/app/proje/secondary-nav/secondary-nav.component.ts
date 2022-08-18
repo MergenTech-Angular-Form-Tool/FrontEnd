@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import {Router} from '@angular/router';
+
 
 @Component({
     selector: 'app-secondary-nav',
@@ -12,7 +14,8 @@ export class SecondaryNavComponent implements OnInit {
     preview: boolean;
     items: MenuItem[];
 
-    constructor() {
+
+    constructor( private router: Router ) {
     }
 
     ngOnInit(): void {
@@ -143,5 +146,10 @@ export class SecondaryNavComponent implements OnInit {
             this.showPreview();
         }
         this.clicked = 'desktop';
+    }
+
+
+    createForm() {
+
     }
 }

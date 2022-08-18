@@ -1,5 +1,5 @@
 <app-navbar style="width:100%; z-index:99;"></app-navbar>
-<app-secondary-nav></app-secondary-nav>
+<app-secondary-nav ></app-secondary-nav>
 <div id="container">
     <div class="view intro-2 intro-3 rgba-gradient">
         <div class="full-bg-img">
@@ -15,7 +15,7 @@
                                 icon="bi bi-trash"
                                 class="p-button-danger"></button>
                     </div>
-                    <div *ngIf="noItem" class="d-flex flex-column text-center user-select-none p-5">
+                    <div *ngIf="noItem" class="d-flex flex-column text-center user-select-none p-5" id="formexperience">
                         <p>{{ 'NO_ITEM1' | translate }}</p>
                         <p>{{ 'NO_ITEM2' | translate }}</p>
                     </div>

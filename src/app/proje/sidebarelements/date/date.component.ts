@@ -2,8 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
+import {Date} from '../../../demo/domain/elements/date';
+import {DateService} from '../../../demo/service/elementservice/date.service';
 
-interface Date {
+interface Date2 {
     format: string;
     value: string;
 }
@@ -14,14 +16,22 @@ interface Date {
     styleUrls: ['./date.component.scss']
 })
 export class DateComponent implements OnInit {
-
-    hide: boolean;
-    dateFormats: Date[];
+    id: number;
+    header: string;
     selected: string;
+    sequenceNumberForLocation: number;
+    formId: number;
+    dateInputId: string;
+    title: string;
+    hide: string;
+    dateFormat: string;
+    dateValue: string;
+    dateFormats: Date2[];
     question: string;
-    id: string;
+    dateList: Date;
 
-    constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService) {
+    constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService,
+                private dateservice: DateService) {
     }
 
     ngOnInit(): void {
@@ -41,8 +51,38 @@ export class DateComponent implements OnInit {
         this.getElement.changeMessage({
             id: this.id,
             header: this.question,
-            selected: this.selected
+            selected: this.selected,
+            sequenceNumberForLocation: 4,
+            formId: 2,
+            dateInputId: null,
+            title: this.title,
+            hide: this.hide,
+            dateFormat: this.dateFormat,
+            dateValue: this.dateValue,
         });
+
+        // this.dateList.push({
+        //     id: this.id,
+        //     header: this.question,
+        //     selected: this.selected
+        // });
+        this.dateList = {
+            id: 1,
+            header: this.header,
+            selected: this.selected,
+            sequenceNumberForLocation: 4,
+            formId: 2,
+            dateInputId: null,
+            title: this.title,
+            hide: this.hide,
+            dateFormat: this.dateFormat,
+            dateValue: this.dateValue,
+        };
+
+        this.dateservice.PostAdd(this.dateList).subscribe((response: any) => {
+            console.log(response);
+        });
+
 
         this.date.set(Date.now());
     }

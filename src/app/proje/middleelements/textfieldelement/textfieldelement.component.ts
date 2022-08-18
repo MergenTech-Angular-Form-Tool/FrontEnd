@@ -20,7 +20,7 @@ export class TextfieldelementComponent implements OnInit {
     header: string;
     smalltext: string;
     change: boolean;
-    id: string;
+    id: number;
 
     constructor(private sharedDataService: SharedDataService, private collapsedRightBarService: CollapsedRightBarService,
                 private save: SaveService, private getElement: GetElementDetailsService, private noItemService: NoItemService,

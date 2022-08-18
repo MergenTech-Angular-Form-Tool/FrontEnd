@@ -1,0 +1,41 @@
+a.logo:hover {
+    color: black;
+    background-color: #f8fafc;
+    animation: desecale 1s;
+}
+
+img.logo {
+    margin-left: 23px;
+    width: 150px;
+    height: 65px;
+}
+
+img.logo:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#menuitems li{
+    text-align: center;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+#menuitems li:hover {
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    border-bottom-style: solid;
+    color:black;
+}
+
+#menuitems li i{
+    font-size: 14px;
+}
+
+.translate{
+    text-align: center;
+    margin-bottom: 16px;
+    margin-right: 8px;
+}

@@ -13,8 +13,11 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 })
 export class FileelementComponent implements OnInit {
 
-    id: string;
+    id: number;
     header: string;
+    sequenceNumberForLocation: number;
+    formId: number;
+    fileInputId: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
                 private getElement: GetElementDetailsService, private noItemService: NoItemService,

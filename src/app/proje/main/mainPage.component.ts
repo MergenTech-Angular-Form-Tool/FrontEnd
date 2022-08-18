@@ -14,7 +14,7 @@ import {ChangeDateService} from '../../demo/service/changedateservice';
 
 export class MainPageComponent implements OnInit {
 
-    @ViewChild('temp', {read: ViewContainerRef}) entry: ViewContainerRef;
+    @ViewChild('temp', {static: true , read: ViewContainerRef}) entry: ViewContainerRef;
     noItem: boolean;
 
     constructor(public translate: TranslateService, private collapsedRightBarService: CollapsedRightBarService,
@@ -48,4 +48,5 @@ export class MainPageComponent implements OnInit {
         this.sharedDataService.changeMessage(' _ ');
         this.date.set(Date.now());
     }
+
 }

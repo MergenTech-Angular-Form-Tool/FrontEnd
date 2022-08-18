@@ -26,38 +26,41 @@ export class LoginComponent implements OnInit {
         });
     }
 
-    login(email: string, pass: string) {
+  login(email: string, pass: string) {
+      setTimeout(() => window.location.href = '#/home-profile', 1000);
 
-        if (email === '' || pass === '') {
-            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Some fields are empty!'});
-            return;
-        }
 
-        if (!Singleton.validateEmail(email)) {
-            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Invalid email!'});
-            return;
-        }
+      /*   if (email === '' || pass === '') {
+           this.messageService.add({severity: 'error', summary: 'Error', detail: 'Some fields are empty!'});
+           return;
+       }
 
-        this.http.post(baseUrl + 'auth/login', {
-            username: email,
-            password: pass
-        }).subscribe(
-            (res: any) => {
-                if (res.status === '200') {
-                    this.messageService.add({severity: 'success', summary: 'Login Successfully', detail: 'Welcome to our website!'});
-                    localStorage.setItem('token', res.data.token);
+       if (!Singleton.validateEmail(email)) {
+           this.messageService.add({severity: 'error', summary: 'Error', detail: 'Invalid email!'});
+           return;
+       }
 
-                    setTimeout(() => window.location.href = '#homeprofile', 1000);
-                }
-            },
-            (err: any) => {
-                if (err.error.error === 'BadCredentials' || err.error.error === 'UserNotFound') {
-                    this.messageService.add({severity: 'error', summary: 'Error', detail: 'Invalid email or password!'});
-                } else {
-                    alert('Something went wrong!');
-                }
-            });
-    }
+       this.http.post(baseUrl + 'auth/login', {
+           username: email,
+           password: pass
+       }).subscribe(
+           (res: any) => {
+               if (res.status === '200') {
+                   this.messageService.add({severity: 'success', summary: 'Login Successfully', detail: 'Welcome to our website!'});
+                   localStorage.setItem('token', res.data.token);
+
+                   setTimeout(() => window.location.href = '#homeprofile', 1000);
+               }
+           },
+           (err: any) => {
+               if (err.error.error === 'BadCredentials' || err.error.error === 'UserNotFound') {
+                   this.messageService.add({severity: 'error', summary: 'Error', detail: 'Invalid email or password!'});
+               } else {
+                   alert('Something went wrong!');
+               }
+           });
+   }*/
+  }
 
     gotoHome() {
         this.router.navigate(['/register']);  // define your component where you want to go

@@ -25,6 +25,7 @@ interface SidenavToggle {
 
 export class LeftbarComponent implements OnInit {
 
+    // tslint:disable-next-line:no-output-on-prefix
     @Output() onToggleSidenav: EventEmitter<SidenavToggle> = new EventEmitter();
     collapsed = false;
     screenWidth = 0;
@@ -32,6 +33,7 @@ export class LeftbarComponent implements OnInit {
     state: { id: number } = {
         id: 0
     };
+    entryComponents = [];
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
@@ -67,30 +69,39 @@ export class LeftbarComponent implements OnInit {
         if (open === 'Text Field') {
             factory = this.resolver.resolveComponentFactory(TextfieldelementComponent);
             name = 'Text Field';
+            this.entryComponents.push(TextfieldelementComponent);
         } else if (open === 'Checkbox') {
             factory = this.resolver.resolveComponentFactory(CheckboxelementComponent);
             name = 'Checkbox';
+            this.entryComponents.push(CheckboxelementComponent);
         } else if (open === 'Date') {
             factory = this.resolver.resolveComponentFactory(DateelementComponent);
             name = 'Date';
+            this.entryComponents.push(DateelementComponent);
         } else if (open === 'Date with time') {
             factory = this.resolver.resolveComponentFactory(DatetimeelementComponent);
             name = 'Datetime';
+            this.entryComponents.push(DatetimeelementComponent);
         } else if (open === 'Email') {
             factory = this.resolver.resolveComponentFactory(MailelementComponent);
             name = 'Email';
+            this.entryComponents.push(MailelementComponent);
         } else if (open === 'File') {
             factory = this.resolver.resolveComponentFactory(FileelementComponent);
             name = 'File';
+            this.entryComponents.push(FileelementComponent);
         } else if (open === 'Number') {
             factory = this.resolver.resolveComponentFactory(NumberelementComponent);
             name = 'Number';
+            this.entryComponents.push(NumberelementComponent);
         } else if (open === 'Password') {
             factory = this.resolver.resolveComponentFactory(PasswordelementComponent);
             name = 'Password';
+            this.entryComponents.push(PasswordelementComponent);
         } else if (open === 'Range') {
             factory = this.resolver.resolveComponentFactory(RangeelementComponent);
             name = 'Range';
+            this.entryComponents.push(RangeelementComponent);
         }
         const componentRef = this.entry.createComponent(factory);
         this.increment();

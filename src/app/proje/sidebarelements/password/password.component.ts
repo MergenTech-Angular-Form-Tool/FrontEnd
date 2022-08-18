@@ -13,6 +13,7 @@ export class PasswordComponent implements OnInit {
     id: string;
     q: string;
     placeholder: string;
+    passwordList = [];
 
     constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService) {
     }
@@ -24,6 +25,11 @@ export class PasswordComponent implements OnInit {
     onSubmit() {
 
         this.getElement.changeMessage({
+            id: this.id,
+            q: this.q,
+            placeholder: this.placeholder
+        });
+        this.passwordList.push({
             id: this.id,
             q: this.q,
             placeholder: this.placeholder

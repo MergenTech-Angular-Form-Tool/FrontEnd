@@ -1,6 +1,9 @@
 import {BaseElement} from './baseElement';
 
 export interface FileUpload extends BaseElement {
-    id: string;
+    id: number;
     header: string;
+    sequenceNumberForLocation: number;
+    formId: number;
+    fileInputId: string;
 }

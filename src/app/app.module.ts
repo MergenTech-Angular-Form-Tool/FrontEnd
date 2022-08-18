@@ -192,8 +192,21 @@ import {MiddleElementsService} from './demo/service/middleelementsservice';
 import {NoItemService} from './demo/service/noitemservice';
 import {ChangeDateService} from './demo/service/changedateservice';
 import { LandingComponent } from './proje/landing/landing.component';
-import { FormComponent } from './proje/form/form.component';
 import { HomeProfileComponent } from './proje/home-profile/home-profile.component';
+import { ProfilnavComponent } from './proje/profilnav/profilnav.component';
+import { CommunicationComponent } from './proje/communication/communication.component';
+import { UserGuideComponent } from './proje/user-guide/user-guide.component';
+import { AllformsComponent } from './proje/home-profile/profile-sidebar/allforms/allforms.component';
+import { OutlinesComponent } from './proje/home-profile/profile-sidebar/outlines/outlines.component';
+import { FavoritesComponent } from './proje/home-profile/profile-sidebar/favorites/favorites.component';
+import { ArchiveComponent } from './proje/home-profile/profile-sidebar/archive/archive.component';
+import { TrashComponent } from './proje/home-profile/profile-sidebar/trash/trash.component';
+import { ReportComponent } from './proje/home-profile/profile-sidebar/report/report.component';
+import {CheckboxService} from './demo/service/elementservice/checkbox.service';
+
+
+
+
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -205,6 +218,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
 
+// @ts-ignore
+// @ts-ignore
 @NgModule({
     imports: [
         BrowserModule,
@@ -383,18 +398,29 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         EmailComponent,
         PdfComponent,
         LandingComponent,
-        FormComponent,
-        HomeProfileComponent
+        HomeProfileComponent,
+        ProfilnavComponent,
+        CommunicationComponent,
+        UserGuideComponent,
+        AllformsComponent,
+        OutlinesComponent,
+        FavoritesComponent,
+        ArchiveComponent,
+        TrashComponent,
+        ReportComponent,
+
     ],
+
     // Allah'a emanet havayolları :)
     // Bu projeyi yazan yazılımcılar kör oldu.
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
+        { provide: 'url', useValue: 'https://mergenform.herokuapp.com/' }, CheckboxService,
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
         MessageService, SharedDataService, CollapsedRightBarService, SaveService,
         GetElementDetailsService, FormNameService, MiddleElementsService, NoItemService,
-        ChangeDateService
+        ChangeDateService, LeftbarComponent
     ],
     bootstrap: [AppComponent]
 })

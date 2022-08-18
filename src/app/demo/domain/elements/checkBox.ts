@@ -1,8 +1,11 @@
 import {BaseElement} from './baseElement';
 
 export interface CheckBox extends BaseElement {
-    id: string;
+
+    id: number;
+    sequenceNumberForLocation: number;
+    formId: number;
+    checkboxId: null;
     header: string;
     required: string;
-    options: string;
 }

@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit, AfterContentInit {
     objDate: number;
     token = true;
 
+    // tslint:disable-next-line:max-line-length
     constructor(private router: Router, private form: FormNameService, private dateService: ChangeDateService) {
         form.currentMessage.subscribe(message => this.formName = message);
         dateService.currentMessage.subscribe(date => this.objDate = date);
@@ -44,5 +45,6 @@ export class NavbarComponent implements OnInit, AfterContentInit {
         this.token = false;
         this.router.navigate(['/']);
     }
+
 
 }
