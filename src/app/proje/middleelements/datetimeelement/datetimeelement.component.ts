@@ -15,7 +15,7 @@ export class DatetimeelementComponent implements OnInit {
 
     date: Date;
     header: string;
-    id: string;
+    id: number;
     selected: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,

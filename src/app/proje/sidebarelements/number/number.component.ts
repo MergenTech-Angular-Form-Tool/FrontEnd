@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
+import {NumberService} from "../../../demo/service/elementservice/number.service";
+import {NumberObject} from "../../../demo/domain/elements/numberobject";
 
 @Component({
     selector: 'app-number',
@@ -10,13 +12,17 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 })
 export class NumberComponent implements OnInit {
 
-    id: string;
+    id: number;
     header: string;
     defaultValue: number;
     isNegative: boolean;
-    numberList = [];
+    numberList: NumberObject;
+    sequenceNumberForLocation: number;
+    formId: number;
+    numberInputId: string;
 
-    constructor(private getElement: GetElementDetailsService, private share: SharedDataService, private date: ChangeDateService) {
+    constructor(private getElement: GetElementDetailsService, private share: SharedDataService, private date: ChangeDateService,
+                private numberservice: NumberService) {
     }
 
     ngOnInit(): void {
@@ -31,15 +37,26 @@ export class NumberComponent implements OnInit {
             defaultValue: this.defaultValue,
             isNegative: this.isNegative
         });
+        // this.numberList.push({
+        //     id: this.id,
+        //     header: this.header,
+        //     defaultValue: this.defaultValue,
+        //     isNegative: this.isNegative
+        // });
 
-        this.numberList.push({
-            id: this.id,
+        this.numberList = {
+            id: 1,
+            sequenceNumberForLocation: 4,
+            formId: 2,
+            numberInputId: null,
             header: this.header,
             defaultValue: this.defaultValue,
             isNegative: this.isNegative
-        });
+        };
 
-        console.log(this.numberList);
+        this.numberservice.PostAdd(this.numberList).subscribe((response: any) => {
+            console.log(response);
+        });
 
         this.date.set(Date.now());
     }

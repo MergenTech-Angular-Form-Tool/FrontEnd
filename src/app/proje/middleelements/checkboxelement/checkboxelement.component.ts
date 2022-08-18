@@ -6,6 +6,7 @@ import {CheckBox} from '../../../demo/domain/elements/checkBox';
 import {NoItemService} from '../../../demo/service/noitemservice';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 
+
 @Component({
     selector: 'app-checkboxelement',
     templateUrl: './checkboxelement.component.html',
@@ -13,22 +14,23 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 })
 export class CheckboxelementComponent implements OnInit {
 
-    id: string;
-    sequenceNumberForLocation: number;
+    // selected: string;
+    id: number;
     header: string;
     required: string;
+    sequenceNumberForLocation: number;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
                 private getElement: GetElementDetailsService, private noItemService: NoItemService,
-                private date: ChangeDateService) {
-        /*shared.currentMessage.subscribe(message => this.selected = message);*/
+                private date: ChangeDateService, ) {
+        // shared.currentMessage.subscribe(message => this.selected = message);
 
         this.getElement.currentMessage.subscribe(message => {
             const temp = message as CheckBox;
             if (temp.id === this.id) {
-                this.sequenceNumberForLocation = temp.sequenceNumberForLocation;
                 this.header = temp.header;
                 this.required = temp.required;
+                this.sequenceNumberForLocation  = temp.sequenceNumberForLocation;
             }
 
         });

@@ -13,9 +13,16 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 })
 export class DateelementComponent implements OnInit {
 
-    id: string;
+    id: number;
     header: string;
     selected: string;
+    sequenceNumberForLocation: number;
+    formId: number;
+    dateInputId: string;
+    title: string;
+    hide: string;
+    dateFormat: string;
+    dateValue: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
                 private getElement: GetElementDetailsService, private noItemService: NoItemService,

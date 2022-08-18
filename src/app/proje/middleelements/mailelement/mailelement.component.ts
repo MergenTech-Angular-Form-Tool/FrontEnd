@@ -17,7 +17,7 @@ export class MailelementComponent implements OnInit {
     placeholder: string;
     header: string;
     smalltext: string;
-    id: string;
+    id: number;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
                 private getElement: GetElementDetailsService, private noItemService: NoItemService, private date: ChangeDateService) {

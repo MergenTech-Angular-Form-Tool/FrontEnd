@@ -1,4 +1,4 @@
-<div class="example-box my-1" cdkDragLockAxis="y" cdkDragBoundary=".center" cdkDrag>
+<div class="example-box my-1" cdkDragLockAxis="y" cdkDragBoundary=".center" cdkDrag >
     <div class="buttons-cog">
         <p-button (onClick)="edit($event)" type="button" styleClass="p-button-help p-button-rounded"
                   icon="pi pi-cog"></p-button>
@@ -7,8 +7,8 @@
         <p-button (onClick)="delete($event)" type="button" styleClass="p-button-danger p-button-rounded"
                   icon="bi bi-trash"></p-button>
     </div>
-    <div class="d-flex flex-column handle-container">
-        <div class="handle">
+    <div class="d-flex flex-column handle-container" >
+        <div class="handle" >
             <label class="mb-3">{{ header | translate}}</label>
             <div class="mb-2">
                 <input pInputText placeholder="{{ placeholder | translate }}" type="text" style="width: 500px;">

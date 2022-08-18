@@ -3,6 +3,8 @@ import {SaveService} from '../../../demo/service/saveservice';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
+import {TextfieldService} from "../../../demo/service/elementservice/textfield.service";
+import {TextField} from "../../../demo/domain/elements/textField";
 
 @Component({
     selector: 'app-textfield',
@@ -11,15 +13,20 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 })
 export class TextfieldComponent implements OnInit {
 
+    id: number;
+    sequenceNumberForLocation: number;
+    formId: number;
+    textInputId: null;
     question: string;
     placeholder: string;
+    header: string;
     subtext: string;
+    change: string ;
     message: string;
-    id: string;
-    textFieldList = [];
+    textfieldList: TextField;
 
     constructor(private save: SaveService, private share: SharedDataService, private getElement: GetElementDetailsService,
-                private date: ChangeDateService) {
+                private date: ChangeDateService, private textfieldservice: TextfieldService) {
     }
 
     ngOnInit(): void {
@@ -31,29 +38,37 @@ export class TextfieldComponent implements OnInit {
 
         this.getElement.changeMessage({
             id: this.id,
+            sequenceNumberForLocation: this.sequenceNumberForLocation,
+            formId: 2,
             header: this.question,
             subtext: this.subtext,
-            placeholder: this.placeholder
+            placeholder: this.placeholder,
+            change: this.change,
+            question: this.question
         });
-        this.textFieldList.push({
-            id: this.id,
-            header: this.question,
+        // this.textfieldList.push({
+        //     id: this.id,
+        //     header: this.question,
+        //     subtext: this.subtext,
+        //     placeholder: this.placeholder
+        // });
+        // console.log(this.textfieldList);
+
+        this.textfieldList = {
+            id: 1,
+            sequenceNumberForLocation: 2,
+            formId: 2,
+            textInputId: null,
+            header: this.header,
             subtext: this.subtext,
-            placeholder: this.placeholder
+            placeholder: this.placeholder,
+            change: this.change,
+            question: this.question
+        };
+
+        this.textfieldservice.PostAdd(this.textfieldList).subscribe((response: any) => {
+            console.log(response);
         });
-        // Burada servisle bağlayacağız.
-        /*        console.log(this.id,
-                    this.question,
-                    this.subtext,
-                    this.placeholder);*/
-        // tslint:disable-next-line:prefer-for-of
-/*        console.log(this.textFieldList[0].id);*/
-        const json = JSON.stringify(this.textFieldList);
-        const jsonSent = JSON.parse(json);
-        console.log(jsonSent);
-        /*for (const argument of this.textFieldList) {
-            console.log(argument.id);
-        }*/
         this.date.set(Date.now());
     }
 

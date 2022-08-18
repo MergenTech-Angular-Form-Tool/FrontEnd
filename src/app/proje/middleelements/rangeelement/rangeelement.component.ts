@@ -13,7 +13,7 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
     styleUrls: ['./rangeelement.component.scss']
 })
 export class RangeelementComponent implements OnInit {
-    id: string;
+    id: number;
     color: string;
     style: string;
     height: string;

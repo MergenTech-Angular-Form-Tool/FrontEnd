@@ -3,6 +3,8 @@ import {SaveService} from '../../../demo/service/saveservice';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
+import {MailService} from '../../../demo/service/elementservice/mail.service';
+import {Mail} from '../../../demo/domain/elements/mail';
 
 @Component({
     selector: 'app-mail',
@@ -17,10 +19,13 @@ export class MailComponent implements OnInit {
     placeholder: string;
     subtext: string;
     id: string;
-    mailList = [];
+    sequenceNumberForLocation: number;
+    formId: number;
+    emailInputId: string;
+    mailList: Mail;
 
     constructor(private save: SaveService, private share: SharedDataService, private getElement: GetElementDetailsService,
-                private date: ChangeDateService) {
+                private date: ChangeDateService, private mailservice: MailService) {
     }
 
     ngOnInit(): void {
@@ -38,18 +43,30 @@ export class MailComponent implements OnInit {
             subtext: this.subtext,
             placeholder: this.placeholder
         });
-
-        this.mailList.push({
-            id: this.id,
+        // this.mailList.push({
+        //     id: this.id,
+        //     checked: this.checked,
+        //     detail: this.detail,
+        //     val2: this.val2,
+        //     header: this.question,
+        //     subtext: this.subtext,
+        // });
+        this.mailList = {
+            id: 1,
+            sequenceNumberForLocation: 4,
+            formId: 2,
+            emailInputId: null,
             checked: this.checked,
-            detail: this.detail,
-            val2: this.val2,
             header: this.question,
             subtext: this.subtext,
-            placeholder: this.placeholder
-        });
+            detail: this.detail,
+            placeholder: this.placeholder,
+            question: this.question,
+        };
 
-        console.log(this.mailList);
+        this.mailservice.PostAdd(this.mailList).subscribe((response: any) => {
+            console.log(response);
+        });
 
         this.date.set(Date.now());
     }
