@@ -13,7 +13,7 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 })
 export class NumberelementComponent implements OnInit {
 
-    id: string;
+    id: number;
     val: number;
     header: string;
     min: number;

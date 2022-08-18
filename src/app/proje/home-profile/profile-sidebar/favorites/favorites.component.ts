@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {CheckboxService} from '../../../../demo/service/elementservice/checkbox.service';
-import {Deneme} from '../../../../demo/domain/elements/deneme';
 
 @Component({
     selector: 'app-favorites',
@@ -12,20 +11,10 @@ export class FavoritesComponent implements OnInit {
     constructor(private checkboxService: CheckboxService) {
     }
 
-    checkboxList: Deneme[];
-    checkbox: Deneme = {
-        id: 150,
-        question: 'Ali',
-        sequenceNumberForLocation: 1,
-        formId: 2,
-        createTimestamp: '2022-08-17T06:37:22.928+00:00',
-        updateTimestamp: '2022-08-17T06:37:22.928+00:00'
-    };
-
     ngOnInit(): void {
     }
 
-    GetAll() {
+/*    GetAll() {
         this.checkboxService.GetAll().subscribe((response: Deneme[]) => this.checkboxList = response);
     }
 
@@ -58,6 +47,6 @@ export class FavoritesComponent implements OnInit {
                 this.checkbox = response;
             }
         });
-    }
+    }*/
 
 }

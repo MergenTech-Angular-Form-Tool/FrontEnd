@@ -29,14 +29,11 @@ export class PasswordComponent implements OnInit {
             q: this.q,
             placeholder: this.placeholder
         });
-
         this.passwordList.push({
             id: this.id,
             q: this.q,
             placeholder: this.placeholder
         });
-
-        console.log(this.passwordList);
 
         this.date.set(Date.now());
     }
