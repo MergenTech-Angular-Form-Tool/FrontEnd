@@ -1,6 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {LeftbarComponent} from "../../proje/leftbar/leftbar.component";
 
 @Injectable({
   providedIn: 'root'

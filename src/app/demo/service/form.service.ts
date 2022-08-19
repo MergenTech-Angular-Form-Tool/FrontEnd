@@ -1,18 +1,16 @@
-import { Injectable } from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Form} from '../domain/form';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormService {
 
-    formname: string;
-    formid: number;
-    lastdate: number;
+  constructor(private httpClient: HttpClient, @Inject('url') private url: string) { }
 
-  constructor() { }
-
-    getFormsmall(){
-        // tslint:disable-next-line:no-unused-expression
-      return this.formname, this.formid, this.lastdate;
+    getFormsAll() {
+        return this.httpClient.get<Form[]>(this.url + 'api/form/getAll');
     }
 }

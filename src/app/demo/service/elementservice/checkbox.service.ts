@@ -5,7 +5,7 @@ import {CheckBox} from '../../domain/elements/checkBox';
 @Injectable()
 export class CheckboxService {
 
-  constructor( private httpClient: HttpClient, @Inject('url') private url: string ) { }
+  constructor(private httpClient: HttpClient, @Inject('url') private url: string ) { }
 
 
     GetAll() {

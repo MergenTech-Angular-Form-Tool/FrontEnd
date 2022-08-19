@@ -406,7 +406,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         TrashComponent,
     ],
     providers: [
-        {provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: 'url', useValue: 'http://localhost:8080/' },
+        {provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: 'url', useValue: 'https://mergenform.herokuapp.com/' },
         CheckboxService,
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
