@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormService} from '../../../../demo/service/form.service';
 import {Form} from '../../../../demo/domain/form';
 import {Observable} from 'rxjs';
+import {FavoriteService} from "../../../../demo/service/favorite.service";
 
 @Component({
     selector: 'app-allforms',
@@ -16,21 +17,23 @@ export class AllformsComponent implements OnInit {
     form: Form[];
     cols: any[];
 
-    constructor(private formService: FormService) {
+    constructor(private formService: FormService, private favoriteservice: FavoriteService) {
     }
 
     ngOnInit(): void {
         this.formService.getFormsAll().subscribe(value => {
             this.form = value;
         });
-
         this.cols = [
             {field: 'id', header: 'ID'},
             {field: 'formName', header: 'FormName'},
-            {field: 'userId', header: 'UserID'}
+            {field: 'userId', header: 'UserID'},
+            {field: 'createTimestamp', header: 'Create Time'},
+            {field: 'updateTimestamp', header: 'Update Time'}
         ];
 
     }
+
 
     isExist() {
         console.log(this.form);

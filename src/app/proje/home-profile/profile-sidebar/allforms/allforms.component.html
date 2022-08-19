@@ -5,17 +5,25 @@
                 <th *ngFor="let col of columns">
                     {{col.header}}
                 </th>
+                <th></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">
             <tr>
-                <td *ngFor="let col of columns">
+                <td *ngFor="let col of columns" id="form">
                     {{rowData[col.field]}}
+                </td>
+                <td id="buttons">
+                    <button title="Favorilere ekle" pButton pRipple type="button" icon="pi pi-star" class="p-button-rounded p-button-help" id="favbutton" ></button>
+                    <button title="Arşivle" pButton pRipple type="button" icon="pi pi-inbox" class="p-button-rounded p-button-success" id="archbutton"></button>
+                    <button title="Sil" pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger" id="trashbutton"></button>
                 </td>
             </tr>
         </ng-template>
     </p-table>
 </div>
+
+
 <ng-template #elseBlock>
     <div>
         <div>
