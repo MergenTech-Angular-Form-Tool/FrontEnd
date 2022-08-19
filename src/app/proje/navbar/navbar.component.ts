@@ -2,6 +2,7 @@ import {AfterContentInit, Component, OnInit} from '@angular/core';
 import {FormNameService} from '../../demo/service/formnameservice';
 import {ChangeDateService} from '../../demo/service/changedateservice';
 import {Router} from '@angular/router';
+import {FormService} from '../../demo/service/form.service';
 
 @Component({
     selector: 'app-navbar',
@@ -14,12 +15,14 @@ export class NavbarComponent implements OnInit, AfterContentInit {
     objDate: number;
     token = true;
 
-    constructor(private router: Router, private form: FormNameService, private dateService: ChangeDateService) {
+    constructor(private router: Router, private form: FormNameService, private dateService: ChangeDateService,
+                private formservice: FormService) {
         form.currentMessage.subscribe(message => this.formName = message);
         dateService.currentMessage.subscribe(date => this.objDate = date);
     }
 
     ngOnInit(): void {
+
     }
 
     ngAfterContentInit() {
@@ -37,6 +40,7 @@ export class NavbarComponent implements OnInit, AfterContentInit {
             }
         }
         this.form.setFormName(document.getElementById('form-name').innerText);
+        this.formservice.formName = document.getElementById('form-name').innerText;
     }
 
     logout() {

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import {FormService} from '../../demo/service/form.service';
+import {Form} from '../../demo/domain/form';
 
 @Component({
     selector: 'app-secondary-nav',
@@ -11,8 +13,9 @@ export class SecondaryNavComponent implements OnInit {
     clicked = '';
     preview: boolean;
     items: MenuItem[];
+    formList: Form;
 
-    constructor() {
+    constructor(private formservice: FormService) {
     }
 
     ngOnInit(): void {
@@ -78,6 +81,18 @@ export class SecondaryNavComponent implements OnInit {
 
     changePreview() {
         this.preview = !this.preview;
+    }
+
+
+    addForm() {
+        this.formList = {
+            formName : this.formservice.formName,
+            userId: 1,
+        };
+        console.log(this.formList);
+        this.formservice.PostAdd(this.formList).subscribe((response: any) => {
+            console.log(response);
+        });
     }
 
     showMobile() {
