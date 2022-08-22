@@ -1,4 +1,4 @@
-<div *ngIf="form.length > 0; else elseBlock">
+<div *ngIf="form.length > 0; else elseBlock" class="allforms">
     <p-table [columns]="cols" [value]="form">
         <ng-template pTemplate="header" let-columns>
             <tr>
@@ -8,15 +8,16 @@
                 <th></th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex = "rowIndex">
             <tr>
                 <td *ngFor="let col of columns" id="form">
                     {{rowData[col.field]}}
                 </td>
                 <td id="buttons">
-                    <button title="Favorilere ekle" pButton pRipple type="button" icon="pi pi-star" class="p-button-rounded p-button-help" id="favbutton" ></button>
-                    <button title="Arşivle" pButton pRipple type="button" icon="pi pi-inbox" class="p-button-rounded p-button-success" id="archbutton"></button>
-                    <button title="Sil" pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger" id="trashbutton"></button>
+                    <button pButton pRipple type="button-lg" label="Ayrıntı Gör" id="content"></button>
+                    <button (click)="addToFavorites(rowIndex)" title="Favorilere ekle" pButton pRipple type="button" icon="pi pi-star" class="p-button-rounded p-button-help" id="favbutton" ></button>
+                    <button (click)="addToArchives()" title="Arşivle" pButton pRipple type="button" icon="pi pi-inbox" class="p-button-rounded p-button-success" id="archbutton"></button>
+                    <button (click)="addToTrash()" title="Sil" pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger" id="trashbutton"></button>
                 </td>
             </tr>
         </ng-template>

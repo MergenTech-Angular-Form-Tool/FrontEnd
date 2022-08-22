@@ -13,7 +13,7 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 })
 export class PasswordelementComponent implements OnInit {
 
-    id: string;
+    id: number;
     q: string;
     placeholder: string;
 

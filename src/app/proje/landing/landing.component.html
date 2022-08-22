@@ -15,7 +15,6 @@
     </div>
 </div>
 
-
 <div class="container text-center " id="landing">
     <div class="row">
 
@@ -27,6 +26,7 @@
             <p class="lead my-3">{{'WELCOME_DESCRIPTION' | translate}} </p>
             <br>
 
+
             <button pButton pRipple (click)="gotoLogin()"
                     label="{{'LOGIN' | translate}}" type="button" class="login register-a "></button>
             <br>
@@ -37,38 +37,28 @@
                         class="register register-a">
                 </button>
             </p>
-
         </div>
-        <div class="col col-md-4 ">
-            <a [routerLink]="['/']">
-                <img class="mergen-logo" id="landingImg" src="../../../assets/layout/images/mergentechLogo.png"
-                     alt="freya-layout"/>
-            </a>
+        <p class="lead my-3" id="mergenwrite">{{'MERGEN' | translate }}</p>
 
-        </div>
     </div>
-
 
 </div>
 
 
 <div class="row" id="landingCards">
-    <div class="col-md-3 card">
-        <img src="../../../assets/layout/images/create.jpeg" class="card-img-top" alt="...">
+    <div class="col-md-3 card" id="createcard">
         <div class="card-body">
             <h5 class="card-title">{{'CREATE' | translate}}</h5>
             <p class="card-text">{{'CREATE_DESCRIPTION' | translate}}</p>
         </div>
     </div>
-    <div class="col-md-3 card">
-        <img src="../../../assets/layout/images/edit.jpeg" class="card-img-top" alt="...">
+    <div class="col-md-3 card" id="editcard">
         <div class="card-body">
             <h5 class="card-title">{{'EDIT' | translate}}</h5>
             <p class="card-text">{{'EDIT_DESCRIPTION' | translate}}</p>
         </div>
     </div>
-    <div class="col-md-3 card">
-        <img src="../../../assets/layout/images/share.jpeg" class="card-img-top" alt="...">
+    <div class="col-md-3 card" id="sharecard">
         <div class="card-body">
             <h5 class="card-title">{{'PUBLISH' | translate}}</h5>
             <p class="card-text">{{'PUBLISH_DESCRIPTION' | translate}}</p>

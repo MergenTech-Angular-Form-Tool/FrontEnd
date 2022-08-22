@@ -1,5 +1,6 @@
 // Font
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i);
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Oswald:wght@200&family=Raleway&family=Tiro+Bangla:ital@0;1&family=Tiro+Kannada&display=swap');
 
 .topnav {
     background-color: #f8fafc;
@@ -77,39 +78,32 @@
 }
 
 #landing {
-    margin-top: 50px;
-    padding: 40px;
     text-align: center;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80%;
-    height: auto;
-    background-image: url("https://i.pinimg.com/564x/a1/3e/2d/a13e2d6b9f65ba2d811a5e2385d71b20.jpg");
+    max-width: 100%;
+    height: 500px;
+    background-image: url('../../../assets/layout/images/landing.png');
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 #welcomeWrite {
     text-align: center;
     margin: auto;
+    margin-top: 100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 100%;
-
-
 }
 
 #welcomeWrite h1 {
     font-weight: bold;
     color: #0B0A32;
     max-width: 100%;
+    font-size: 70px;
 
 }
 
@@ -118,17 +112,12 @@
     max-width: 100%;
 }
 
-
-#landingImg {
+#mergenwrite {
+    font-size: 12px;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display: block;
-    margin: auto;
-    max-width: 60%;
-    height: auto;
-
-
+    padding-bottom: 0px;
+    padding-top: 50px;
+    font-style: italic;
 }
 
 #landingCards {
@@ -137,6 +126,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 80%;
+    font-family: 'Raleway', sans-serif;
 }
 
 .card {
@@ -166,18 +156,19 @@
 .card h5 {
     font-size: 30px;
     max-width: 100%;
-    margin-top: 20px;
+    margin-top: 160px;
 }
 
 .card p {
     font-size: 18px;
     max-width: 100%;
-    margin-top: 20px;
+    margin-bottom: 25px;
 }
 
 
 .login-footer {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 button.login {
@@ -224,5 +215,18 @@ button.register:hover {
 
 }
 
+#createcard {
+    background-image: url("../../../assets/layout/images/create.png");
+    background-size: cover;
+}
 
+#editcard {
+    background-image: url("../../../assets/layout/images/edit.png");
+    background-size: cover;
+}
+
+#sharecard {
+    background-image: url("../../../assets/layout/images/share.png");
+    background-size: cover;
+}
 

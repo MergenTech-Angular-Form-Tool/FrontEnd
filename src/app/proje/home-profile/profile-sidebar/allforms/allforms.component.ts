@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormService} from '../../../../demo/service/form.service';
 import {Form} from '../../../../demo/domain/form';
 import {Observable} from 'rxjs';
-import {FavoriteService} from "../../../../demo/service/favorite.service";
+import {FavoriteService} from '../../../../demo/service/favorite.service';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-allforms',
@@ -16,8 +17,11 @@ export class AllformsComponent implements OnInit {
         userId: number;*/
     form: Form[];
     cols: any[];
+    favorites: Form[] = [];
+    formId: number;
+    favorite: boolean;
 
-    constructor(private formService: FormService, private favoriteservice: FavoriteService) {
+    constructor(private router: Router , private formService: FormService, private favoriteservice: FavoriteService, private favoriteService: FavoriteService) {
     }
 
     ngOnInit(): void {
@@ -33,16 +37,15 @@ export class AllformsComponent implements OnInit {
         ];
 
     }
-
-
-    isExist() {
-        console.log(this.form);
-        /*        const keys = Object.keys(this.form);
-                const len = keys.length;
-                if (len === 0) {
-                    console.log('Form yoktur');
-                } else {
-                    console.log('Form vardır', this.form[0].id);
-                }*/
+    addToFavorites(index: number) {
+        this.favoriteService.pushToFavorites(this.favorites, this.form, index);
+        console.log(this.favorites);
     }
+
+    addToArchives() {
+    }
+
+    addToTrash() {
+    }
+
 }
