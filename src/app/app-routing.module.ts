@@ -14,6 +14,7 @@ import {LandingComponent} from './proje/landing/landing.component';
 import {HomeProfileComponent} from './proje/home-profile/home-profile.component';
 import {CommunicationComponent} from "./proje/communication/communication.component";
 import {UserGuideComponent} from "./proje/user-guide/user-guide.component";
+import {FormcontentComponent} from "./proje/formcontent/formcontent.component";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {UserGuideComponent} from "./proje/user-guide/user-guide.component";
             {path: 'form', component: FormsettingsComponent},
             {path: 'profile', component: ProfileComponent},
             {path: 'communication', component: CommunicationComponent},
+            {path: 'formcontent', component: FormcontentComponent},
             {path: 'user-guide', component: UserGuideComponent},
             {path: '**', redirectTo: '/notfound'},
         ],  {scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled'})

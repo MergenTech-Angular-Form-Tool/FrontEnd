@@ -87,7 +87,6 @@ export class SecondaryNavComponent implements OnInit {
     addForm() {
         this.formList = {
             formName : this.formservice.formName,
-            userId: 1,
         };
         console.log(this.formList);
         this.formservice.PostAdd(this.formList).subscribe((response: any) => {

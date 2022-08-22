@@ -8,8 +8,5 @@ export class GetFormService {
 
   constructor(private httpClient: HttpClient, @Inject('url') private url: string) { }
 
-    GetAll() {
-        return this.httpClient.get(this.url + 'api/checkbox/getAll');
-    }
 
 }

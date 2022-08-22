@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AppRoutingModule} from './app-routing.module';
 
+
 import {AccordionModule} from 'primeng/accordion';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {AvatarModule} from 'primeng/avatar';
@@ -204,6 +205,7 @@ import {OutlinesComponent} from './proje/home-profile/profile-sidebar/outlines/o
 import {ReportComponent} from './proje/home-profile/profile-sidebar/report/report.component';
 import {TrashComponent} from './proje/home-profile/profile-sidebar/trash/trash.component';
 import {CheckboxService} from './demo/service/elementservice/checkbox.service';
+import { FormcontentComponent } from './proje/formcontent/formcontent.component';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -404,6 +406,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         OutlinesComponent,
         ReportComponent,
         TrashComponent,
+        FormcontentComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: 'url', useValue: 'https://mergenform.herokuapp.com/' },
