@@ -13,6 +13,7 @@ export class FormService {
     id?: number;
     formName?: string;
     userId?: number;
+    favorite?: boolean;
 
 
     getFormsAll() {
@@ -21,5 +22,9 @@ export class FormService {
 
     PostAdd(form: Form) {
         return this.httpClient.post(this.url + 'api/form', form);
+    }
+
+    updateForm(form: Form) {
+        return this.httpClient.put(this.url + 'api/form', form);
     }
 }
