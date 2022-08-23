@@ -1,2 +1,10 @@
 <app-profilnav></app-profilnav>
+<div *ngFor="let elementarr of arr" >
+   <div *ngFor="let element of elementarr" >
+      <div *ngIf="element.formId == data ">
 
+         {{element.formId}}
+          
+      </div>
+   </div>
+</div>

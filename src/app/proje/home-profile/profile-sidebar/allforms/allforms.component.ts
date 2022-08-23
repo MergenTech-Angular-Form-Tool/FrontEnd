@@ -4,6 +4,7 @@ import {Form} from '../../../../demo/domain/form';
 import {Observable} from 'rxjs';
 import {FavoriteService} from '../../../../demo/service/favorite.service';
 import {Router} from '@angular/router';
+import {SharedDataService} from "../../../../demo/service/sharedataservice";
 
 @Component({
     selector: 'app-allforms',
@@ -20,8 +21,15 @@ export class AllformsComponent implements OnInit {
     favorites: Form[] = [];
     formId: number;
     favorite: boolean;
+    displayBasic: boolean;
+    temp: number;
 
-    constructor(private router: Router , private formService: FormService, private favoriteservice: FavoriteService) {
+    formNameForContent: string;
+    formidForContent: number;
+
+    // tslint:disable-next-line:ban-types
+
+    constructor(private router: Router, private sharedDataService: SharedDataService, private formService: FormService, private favoriteservice: FavoriteService) {
     }
 
     ngOnInit(): void {
@@ -38,6 +46,7 @@ export class AllformsComponent implements OnInit {
         ];
 
     }
+
     addToFavorites(index: number) {
         console.log(this.form);
         this.form[index].favorite = this.form[index].favorite === false || this.form[index].favorite === undefined;
@@ -54,4 +63,9 @@ export class AllformsComponent implements OnInit {
         this.formService.updateForm(this.form[index]).subscribe(value => this.form[index] = value);
     }
 
+    openTheForm(id: number) {
+        this.temp = id;
+        this.sharedDataService.setData(this.temp);
+        this.router.navigate(['formcontent']);
+    }
 }

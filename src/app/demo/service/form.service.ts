@@ -17,6 +17,8 @@ export class FormService {
     userId?: number;
     favorite?: boolean;
 
+    formForContent: Form;
+
 
     getFormsAll() {
         return this.httpClient.get<Form[]>(this.url + 'api/form/getAll');
@@ -33,5 +35,4 @@ export class FormService {
     removeForm(id: number) {
         return this.httpClient.delete(this.url + 'api/form/remove/' + id);
     }
-
 }

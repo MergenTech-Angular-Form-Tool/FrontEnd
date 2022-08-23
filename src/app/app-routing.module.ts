@@ -12,9 +12,9 @@ import {PublishComponent} from './proje/publish/publish.component';
 import {FormsettingsComponent} from './proje/settings/settingscomponent/formsettings/formsettings.component';
 import {LandingComponent} from './proje/landing/landing.component';
 import {HomeProfileComponent} from './proje/home-profile/home-profile.component';
-import {CommunicationComponent} from "./proje/communication/communication.component";
-import {UserGuideComponent} from "./proje/user-guide/user-guide.component";
-import {FormcontentComponent} from "./proje/formcontent/formcontent.component";
+import {CommunicationComponent} from './proje/communication/communication.component';
+import {UserGuideComponent} from './proje/user-guide/user-guide.component';
+import {FormcontentComponent} from './proje/formcontent/formcontent.component';
 
 
 @NgModule({
