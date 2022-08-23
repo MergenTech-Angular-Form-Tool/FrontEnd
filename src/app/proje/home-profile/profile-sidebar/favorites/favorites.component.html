@@ -1,4 +1,3 @@
-
 <p>FAVORITES</p>
 
 <p-table [columns]="cols" [value]="form">
@@ -10,13 +9,14 @@
             <th></th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex = "rowIndex">
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex">
         <tr *ngIf="rowData.favorite===true">
             <td *ngFor="let col of columns" id="form">
                 {{rowData[col.field]}}
             </td>
             <td id="buttons">
                 <button pButton pRipple type="button-lg" label="Ayrıntı Gör" id="content"></button>
+                <button (click)="deleteFromFavorites(rowIndex)" title="Favorilerden çıkar" pButton pRipple type="button" icon="pi pi-star" class="p-button-rounded p-button-help" id="unfavorite" ></button>
             </td>
         </tr>
     </ng-template>

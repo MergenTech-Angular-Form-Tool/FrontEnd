@@ -9,13 +9,15 @@
             <th></th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex = "rowIndex">
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex">
         <tr *ngIf="rowData.archived===true">
             <td *ngFor="let col of columns" id="form">
                 {{rowData[col.field]}}
             </td>
             <td id="buttons">
                 <button pButton pRipple type="button-lg" label="Ayrıntı Gör" id="content"></button>
+                <button pButton pRipple type="button" (click)="restoreForm(rowIndex)" label="Geri Yükle"
+                        class="p-button-success" id="backload"></button>
             </td>
         </tr>
     </ng-template>
