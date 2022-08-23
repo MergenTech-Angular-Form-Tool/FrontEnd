@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ReportService} from '../../../../demo/service/report.service';
 
 @Component({
   selector: 'app-report',
@@ -10,10 +11,15 @@ export class ReportComponent implements OnInit {
 
     basicOptions: any;
 
-    constructor() {
+    constructor(private formReportService: ReportService) {
     }
 
     ngOnInit(): void {
+        // this.formReportService.getFormById(2).subscribe(value => {
+        //     this.formReport = value;
+        //     console.log(this.formReport);
+        // });
+
         this.basicData = {
             labels: ['Form1', 'Form2', 'Form3', 'Form4', 'Form5', 'Form6', 'Form7'],
             datasets: [

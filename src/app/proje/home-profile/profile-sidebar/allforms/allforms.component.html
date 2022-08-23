@@ -10,19 +10,35 @@
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex = "rowIndex">
             <tr *ngIf="rowData.removed === false && rowData.archived === false">
+
                 <td *ngFor="let col of columns" id="form">
                     {{rowData[col.field]}}
                 </td>
+
                 <td id="buttons">
-                    <button pButton pRipple type="button-lg" label="Ayrıntı Gör" id="content"></button>
+                    <button pButton pRipple type="button-lg" label="Ayrıntı Gör" id="content" (click) = "openTheForm(rowData.id)" ></button>
                     <button (click)="addToFavorites(rowIndex)" title="Favorilere ekle" pButton pRipple type="button" icon="pi pi-star" class="p-button-rounded p-button-help" id="favbutton" ></button>
                     <button (click)="addToArchives(rowIndex)" title="Arşivle" pButton pRipple type="button" icon="pi pi-inbox" class="p-button-rounded p-button-success" id="archbutton"></button>
                     <button (click)="addToTrash(rowIndex)" title="Sil" pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger" id="trashbutton"></button>
                 </td>
+
+
+
+
             </tr>
+
+
+
         </ng-template>
+
+
+
     </p-table>
 </div>
+
+
+
+
 
 
 <ng-template #elseBlock>
@@ -45,3 +61,5 @@
         </div>
     </div>
 </ng-template>
+
+

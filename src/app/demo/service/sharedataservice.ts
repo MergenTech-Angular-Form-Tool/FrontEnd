@@ -4,8 +4,11 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class SharedDataService {
 
+    sharedData: any;
+
     constructor() {
     }
+
 
     public editDataDetails: any = [];
     public subject = new Subject<any>();
@@ -14,5 +17,12 @@ export class SharedDataService {
 
     changeMessage(message: string) {
         this.messageSource.next(message);
+    }
+    setData(data: any){
+        this.sharedData = data;
+    }
+
+    getData() {
+        return this.sharedData;
     }
 }

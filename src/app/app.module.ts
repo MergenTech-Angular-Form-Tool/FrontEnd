@@ -5,6 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AppRoutingModule} from './app-routing.module';
+import {DynamicDialogModule} from 'primeng/dynamicdialog';
 
 
 import {AccordionModule} from 'primeng/accordion';
@@ -227,6 +228,7 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         AccordionModule,
         AutoCompleteModule,
         AvatarModule,
+        DynamicDialogModule,
         AvatarGroupModule,
         BadgeModule,
         BreadcrumbModule,

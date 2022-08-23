@@ -33,7 +33,7 @@ export class CheckboxComponent implements OnInit {
             sequenceNumberForLocation: this.sequenceNumberForLocation,
             formId: 2,
             header: this.header,
-            required: this.required,
+            required: this.required
         });
 
         /*        const sptlitted = this.id.split('_');
@@ -46,7 +46,8 @@ export class CheckboxComponent implements OnInit {
             formId: 2,
             checkboxId: null,
             header: this.header,
-            required: this.required
+            required: this.required,
+            name: 'checkbox',
         };
 
         this.checkboxService.PostAdd(this.checkboxList).subscribe((response: any) => {
