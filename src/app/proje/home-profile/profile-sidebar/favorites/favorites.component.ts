@@ -17,7 +17,7 @@ export class FavoritesComponent implements OnInit {
     favorites: Form[] = [];
     formId: number;
 
-    constructor(private router: Router , private formService: FormService, private favoriteservice: FavoriteService) {
+    constructor(private router: Router, private formService: FormService, private favoriteservice: FavoriteService) {
     }
 
 
@@ -33,6 +33,11 @@ export class FavoritesComponent implements OnInit {
             {field: 'updateTimestamp', header: 'Update Time'},
         ];
 
+    }
+
+    deleteFromFavorites(index: number) {
+        this.form[index].favorite = this.form[index].favorite === false || this.form[index].favorite === undefined;
+        this.formService.updateForm(this.form[index]).subscribe(value => this.form[index] = value);
     }
 
 

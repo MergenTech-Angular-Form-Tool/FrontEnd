@@ -5,11 +5,13 @@ import {Form} from '../domain/form';
 
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class FormService {
 
-  constructor(private httpClient: HttpClient, @Inject('url') private url: string) { }
+    constructor(private httpClient: HttpClient, @Inject('url') private url: string) {
+    }
+
     id?: number;
     formName?: string;
     userId?: number;
@@ -27,4 +29,9 @@ export class FormService {
     updateForm(form: Form) {
         return this.httpClient.put(this.url + 'api/form', form);
     }
+
+    removeForm(id: number) {
+        return this.httpClient.delete(this.url + 'api/form/remove/' + id);
+    }
+
 }
