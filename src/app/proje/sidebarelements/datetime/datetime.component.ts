@@ -60,6 +60,7 @@ export class DatetimeComponent implements OnInit {
         //     selected: this.selected
         // });
 
+        // @ts-ignore
         this.datetimeList = {
             id: 1,
             header: this.question,
@@ -71,6 +72,7 @@ export class DatetimeComponent implements OnInit {
             hide: this.hide,
             dateFormat: this.dateFormat,
             dateValue: this.dateValue,
+            elementName: 'datetime',
         };
 
         this.datetimeservice.PostAdd(this.datetimeList).subscribe((response: any) => {

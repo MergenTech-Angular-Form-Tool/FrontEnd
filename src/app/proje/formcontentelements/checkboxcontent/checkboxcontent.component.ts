@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {CheckboxService} from "../../../demo/service/elementservice/checkbox.service";
-import {CheckBox} from "../../../demo/domain/elements/checkBox";
-import {SharedDataService} from "../../../demo/service/sharedataservice";
-import {Checkbox} from "primeng/checkbox";
-import {HttpClient} from "@angular/common/http";
+import {CheckboxService} from '../../../demo/service/elementservice/checkbox.service';
+import {SharedDataService} from '../../../demo/service/sharedataservice';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'app-checkboxcontent',
@@ -18,9 +16,8 @@ export class CheckboxcontentComponent implements OnInit {
     checkboxList: any[] = [];
     data: any;
 
-    constructor(private checkboxService: CheckboxService, private httpService: HttpClient, private sharedDataService: SharedDataService,) {
+    constructor(private checkboxService: CheckboxService, private httpService: HttpClient, private sharedDataService: SharedDataService) {
     }
-
     async ngOnInit() {
 
         this.data = await this.sharedDataService.getData();
@@ -30,11 +27,12 @@ export class CheckboxcontentComponent implements OnInit {
         });
     }
 
-    show(item: any) {
-        this.id = item.id;
-        this.header = item.header;
-        this.required = item.required;
-        this.sequenceNumberForLocation = item.sequenceNumberForLocation;
+
+    show(element: any) {
+      this.id = element.id;
+      this.header = element.header;
+      this.required = element.required;
+      this.sequenceNumberForLocation = element.sequenceNumberForLocation;
     }
 
 }

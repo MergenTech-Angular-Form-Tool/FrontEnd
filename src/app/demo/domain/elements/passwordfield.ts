@@ -5,4 +5,5 @@ export interface Passwordfield extends BaseElement {
     q?: string;
     placeholder?: string;
     formId: number;
+    elementName: 'password';
 }

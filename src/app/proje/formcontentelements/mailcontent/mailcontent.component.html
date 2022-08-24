@@ -1,4 +1,10 @@
-<div class="Mailbox" cdkDragLockAxis="y" cdkDragBoundary=".center" cdkDrag>
+<div *ngFor="let element of mailList">
+    <div *ngIf="element[0].formId === data">
+        {{show(element[0])}}
+    </div>
+</div>
+
+<div class="Mailbox" >
     <div class="d-flex flex-column handle-container">
         <div class="handle">
             <label class="mb-3">{{ header | translate}}</label>

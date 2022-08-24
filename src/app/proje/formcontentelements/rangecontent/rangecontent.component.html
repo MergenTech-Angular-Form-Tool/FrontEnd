@@ -1,3 +1,9 @@
-<div class="example-box" cdkDragLockAxis="y" cdkDragBoundary=".center" cdkDrag>
+<div *ngFor="let element of dividerList">
+    <div *ngIf="element[0].formId === data">
+        {{show(element[0])}}
+    </div>
+</div>
+
+<div class="example-box" >
     <hr [style.height]="height" [style.color]="color" [style.margin-inline]="space+'px'"  >
 </div>

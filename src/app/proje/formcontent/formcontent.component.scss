@@ -1,8 +1,16 @@
 #content{
     margin: auto;
-    max-width: 40%;
+    max-width: 60%;
     height: auto;
     text-align: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    border: black;
+    border-width: 3px;
+    border-style: solid;
+    padding: 30px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .jumbotron>ul>li{
     list-style-position: inside;
@@ -15,3 +23,8 @@ ul li{
 
 }
 
+h1{
+    font-size: 40px;
+    text-align: center;
+    margin-top:30px;
+}

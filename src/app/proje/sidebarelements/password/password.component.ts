@@ -37,7 +37,8 @@ export class PasswordComponent implements OnInit {
             id: 2,
             q: this.q,
             formId: 5,
-            placeholder: this.placeholder
+            placeholder: this.placeholder,
+            elementName: 'password'
         };
 
         this.passwordService.PostAdd(this.passwordList).subscribe((response: any) => {

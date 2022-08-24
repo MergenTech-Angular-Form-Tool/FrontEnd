@@ -68,6 +68,7 @@ export class DividerComponent implements OnInit {
             marginBot: this.marginBot,
             marginTop: this.marginTop,
             space: this.space,
+            elementName: 'range'
         };
 
         this.dividerservice.PostAdd(this.dividerList).subscribe((response: any) => {

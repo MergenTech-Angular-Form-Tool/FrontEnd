@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FileuploadService} from "../../../demo/service/elementservice/fileupload.service";
+import {HttpClient} from "@angular/common/http";
+import {SharedDataService} from "../../../demo/service/sharedataservice";
 
 @Component({
   selector: 'app-filecontent',
@@ -10,11 +13,25 @@ export class FilecontentComponent implements OnInit {
     header: string;
     sequenceNumberForLocation: number;
     formId: number;
+    fileList: any[] = [];
+    data: any;
     fileInputId: string;
 
-  constructor() { }
+  constructor(private fileService: FileuploadService,  private httpService: HttpClient, private sharedDataService: SharedDataService) { }
 
-  ngOnInit(): void {
-  }
+    async ngOnInit() {
+
+        this.data = await this.sharedDataService.getData();
+
+        await this.fileService.GetAll().subscribe(value => {
+            return this.fileList.push(value);
+        });
+    }
+    show(element: any) {
+        this.id = element.id;
+        this.header = element.header;
+        this.sequenceNumberForLocation = element.sequenceNumberForLocation;
+        this.fileInputId = element.fileInputId;
+    }
 
 }

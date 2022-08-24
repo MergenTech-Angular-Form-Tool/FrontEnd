@@ -62,6 +62,7 @@ export class MailComponent implements OnInit {
             detail: this.detail,
             placeholder: this.placeholder,
             question: this.question,
+            elementName: 'mail'
         };
 
         this.mailservice.PostAdd(this.mailList).subscribe((response: any) => {

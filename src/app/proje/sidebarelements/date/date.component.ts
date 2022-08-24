@@ -77,6 +77,7 @@ export class DateComponent implements OnInit {
             hide: this.hide,
             dateFormat: this.dateFormat,
             dateValue: this.dateValue,
+            elementName: 'date'
         };
 
         this.dateservice.PostAdd(this.dateList).subscribe((response: any) => {

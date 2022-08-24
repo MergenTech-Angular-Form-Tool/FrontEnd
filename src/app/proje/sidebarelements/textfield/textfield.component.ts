@@ -63,7 +63,8 @@ export class TextfieldComponent implements OnInit {
             subtext: this.subtext,
             placeholder: this.placeholder,
             change: this.change,
-            question: this.question
+            question: this.question,
+            elementName: 'textfield'
         };
 
         this.textfieldservice.PostAdd(this.textfieldList).subscribe((response: any) => {

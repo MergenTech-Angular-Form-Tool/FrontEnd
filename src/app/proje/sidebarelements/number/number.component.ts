@@ -51,7 +51,8 @@ export class NumberComponent implements OnInit {
             numberInputId: null,
             header: this.header,
             defaultValue: this.defaultValue,
-            isNegative: this.isNegative
+            isNegative: this.isNegative,
+            elementName: 'number'
         };
 
         this.numberservice.PostAdd(this.numberList).subscribe((response: any) => {

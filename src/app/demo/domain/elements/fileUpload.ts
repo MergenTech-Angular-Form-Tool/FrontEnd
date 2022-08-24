@@ -6,4 +6,5 @@ export interface FileUpload extends BaseElement {
     sequenceNumberForLocation: number;
     formId: number;
     fileInputId: string;
+    elementName: 'file';
 }

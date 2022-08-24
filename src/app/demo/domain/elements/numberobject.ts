@@ -8,4 +8,5 @@ export interface NumberObject extends BaseElement {
     sequenceNumberForLocation: number;
     formId: number;
     numberInputId: string;
+    elementName: 'number';
 }

@@ -10,4 +10,5 @@ export interface TextField extends BaseElement {
     header: string;
     subtext: string;
     change: string ;
+    elementName: 'textfield';
 }
