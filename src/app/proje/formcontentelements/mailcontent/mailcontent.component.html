@@ -1,0 +1,12 @@
+<div class="Mailbox" cdkDragLockAxis="y" cdkDragBoundary=".center" cdkDrag>
+    <div class="d-flex flex-column handle-container">
+        <div class="handle">
+            <label class="mb-3">{{ header | translate}}</label>
+            <div class="p-inputgroup mb-2">
+                <input type="text" id="botLabel" [(ngModel)]="placeholder" pInputText style="width: 453px;"/>
+                <span class="p-inputgroup-addon">.com</span>
+            </div>
+            <small i18n>{{ smalltext | translate}}</small>
+        </div>
+    </div>
+</div>
