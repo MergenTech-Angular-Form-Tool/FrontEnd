@@ -1,10 +1,52 @@
 <app-profilnav></app-profilnav>
-<div *ngFor="let elementarr of arr" >
-   <div *ngFor="let element of elementarr" >
-      <div *ngIf="element.formId == data ">
 
-         {{element.formId}}
-          
-      </div>
-   </div>
+
+<button (click)="show()">fdsfdsfds</button>
+{{elementHeader}}
+{{elementid}}
+
+<div id="content">
+    <ul>
+        <div *ngFor="let elementarr of arr">
+            <div *ngFor="let element of elementarr">
+                <div *ngIf="data === element.formId">
+
+                    <li *ngIf="element.elementName ==='checkbox'">
+                        <app-checkboxcontent></app-checkboxcontent>
+                    </li>
+                    <li *ngIf="element.elementName ==='date'">
+                        <app-datecontent></app-datecontent>
+                    </li>
+                    <li *ngIf="element.elementName ==='datetime'">
+                        <app-datetimecontent></app-datetimecontent>
+                    </li>
+                    <li *ngIf="element.elementName ==='file'">
+                        <app-filecontent></app-filecontent>
+                    </li>
+                    <li *ngIf="element.elementName ==='mail'">
+                        <app-mailcontent></app-mailcontent>
+                    </li>
+                    <li *ngIf="element.elementName ==='number'">
+                        <app-numbercontent></app-numbercontent>
+                    </li>
+                    <li *ngIf="element.elementName ==='password'">
+                        <app-passwordcontent></app-passwordcontent>
+                    </li>
+                    <li *ngIf="element.elementName ==='range'">
+                        <app-rangecontent></app-rangecontent>
+                    </li>
+                    <li *ngIf="element.elementName ==='textfield'">
+                        <app-textfieldcontent></app-textfieldcontent>
+                    </li>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </ul>
+
+
 </div>

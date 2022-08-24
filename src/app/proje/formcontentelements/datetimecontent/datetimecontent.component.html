@@ -1,0 +1,12 @@
+<div class="example-box" cdkDragLockAxis="y" cdkDragBoundary=".center" cdkDrag>
+
+    <div class="handle-container">
+        <div class="handle">
+            <div class="d-flex flex-column">
+                <label class="mb-3">{{ header | translate}}</label>
+                <p-calendar inputStyleClass="width" dateFormat="{{selected}}" [showTime]="true" [showSeconds]="true"
+                            [hourFormat]="'12'"></p-calendar>
+            </div>
+        </div>
+    </div>
+</div>

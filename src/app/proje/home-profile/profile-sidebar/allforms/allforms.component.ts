@@ -23,6 +23,7 @@ export class AllformsComponent implements OnInit {
     favorite: boolean;
     displayBasic: boolean;
     temp: number;
+    formLength: number;
 
     formNameForContent: string;
     formidForContent: number;
@@ -35,6 +36,7 @@ export class AllformsComponent implements OnInit {
     ngOnInit(): void {
         this.formService.getFormsAll().subscribe(value => {
             this.form = value;
+            this.formLength = value.length;
         });
         this.cols = [
             {field: 'id', header: 'ID'},

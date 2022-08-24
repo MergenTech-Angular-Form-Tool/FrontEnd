@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ComponentFactoryResolver, OnInit} from '@angular/core';
 import {FormService} from '../../demo/service/form.service';
 import {Form} from "../../demo/domain/form";
 import {CheckboxService} from "../../demo/service/elementservice/checkbox.service";
@@ -11,6 +11,7 @@ import {NumberService} from "../../demo/service/elementservice/number.service";
 import {PasswordService} from "../../demo/service/elementservice/password.service";
 import {TextfieldService} from "../../demo/service/elementservice/textfield.service";
 import {SharedDataService} from "../../demo/service/sharedataservice";
+import {ChangeDateService} from "../../demo/service/changedateservice";
 
 @Component({
     selector: 'app-formcontent',
@@ -22,12 +23,16 @@ export class FormcontentComponent implements OnInit {
     arr: any[] = [];
     data: any;
 
+    elementid: number;
+    elementHeader: string;
+
     constructor(private checkboxService: CheckboxService, private dateTimeService: DatetimeService,
                 private dateService: DateService, private dividerService: DividerService,
                 private fileuploadService: FileuploadService, private mailService: MailService,
                 private numberService: NumberService, private passwordService: PasswordService,
                 private textfielService: TextfieldService, private formService: FormService,
-                private sharedDataService: SharedDataService) {
+                // tslint:disable-next-line:max-line-length
+                private sharedDataService: SharedDataService, private resolver: ComponentFactoryResolver, private change: ChangeDateService) {
     }
 
     ngOnInit(): void {
@@ -64,13 +69,26 @@ export class FormcontentComponent implements OnInit {
             this.arr.push(value);
         });
 
+        // for (let element of this.arr) {
+        //     // tslint:disable-next-line:only-arrow-functions
+        //     element = element.sort(function(a, b){ return a.sequenceNumberForLocation - b.sequenceNumberForLocation});
+        //     console.log(element);
+        // }
         // this.formService.getFormElement(this.formService.formForContent).subscribe(value => {
         //     this.arr.push(value);
         // });
 
-        console.log(this.data);
-
 
     }
 
+    show() {
+        for (let element of this.arr) {
+            // tslint:disable-next-line:only-arrow-functions
+            element = element.sort(function(a, b){ return a.sequenceNumberForLocation - b.sequenceNumberForLocation});
+
+            for (const elementElement of element) {
+                console.log(elementElement);
+            }
+        }
+    }
 }

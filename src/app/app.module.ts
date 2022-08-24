@@ -207,6 +207,16 @@ import {ReportComponent} from './proje/home-profile/profile-sidebar/report/repor
 import {TrashComponent} from './proje/home-profile/profile-sidebar/trash/trash.component';
 import {CheckboxService} from './demo/service/elementservice/checkbox.service';
 import { FormcontentComponent } from './proje/formcontent/formcontent.component';
+import { CheckboxcontentComponent } from './proje/formcontentelements/checkboxcontent/checkboxcontent.component';
+import { DatecontentComponent } from './proje/formcontentelements/datecontent/datecontent.component';
+import { DatetimecontentComponent } from './proje/formcontentelements/datetimecontent/datetimecontent.component';
+import { FilecontentComponent } from './proje/formcontentelements/filecontent/filecontent.component';
+import { MailcontentComponent } from './proje/formcontentelements/mailcontent/mailcontent.component';
+import { NumbercontentComponent } from './proje/formcontentelements/numbercontent/numbercontent.component';
+import { PasswordcontentComponent } from './proje/formcontentelements/passwordcontent/passwordcontent.component';
+import { RangecontentComponent } from './proje/formcontentelements/rangecontent/rangecontent.component';
+import { TextfieldcontentComponent } from './proje/formcontentelements/textfieldcontent/textfieldcontent.component';
+
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -409,6 +419,15 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         ReportComponent,
         TrashComponent,
         FormcontentComponent,
+        CheckboxcontentComponent,
+        DatecontentComponent,
+        DatetimecontentComponent,
+        FilecontentComponent,
+        MailcontentComponent,
+        NumbercontentComponent,
+        PasswordcontentComponent,
+        RangecontentComponent,
+        TextfieldcontentComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy}, { provide: 'url', useValue: 'https://mergenform.herokuapp.com/' },

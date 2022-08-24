@@ -1,0 +1,16 @@
+<div class="example-box" cdkDragLockAxis="y" cdkDragBoundary=".center" cdkDrag>
+    <div class="handle-container">
+        <div class="handle">
+
+            <div class="d-flex flex-column">
+                <label class="mt-2">{{ header | translate}}</label>
+            </div>
+
+            <div class="mt-3">
+                <p-inputNumber [(ngModel)]="val" [showButtons]="true" mode="decimal" [min]="min"></p-inputNumber>
+            </div>
+        </div>
+    </div>
+</div>
+
+
