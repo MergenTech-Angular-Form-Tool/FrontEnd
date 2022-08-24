@@ -22,6 +22,7 @@ export class FormcontentComponent implements OnInit {
 
     arr: any[] = [];
     data: any;
+    data2: any;
 
     elementid: number;
     elementHeader: string;
@@ -37,6 +38,8 @@ export class FormcontentComponent implements OnInit {
 
     ngOnInit(): void {
         this.data = this.sharedDataService.getData();
+        this.data2 = this.sharedDataService.getData2();
+
 
 
         this.checkboxService.GetAll().subscribe(value => {
@@ -68,27 +71,5 @@ export class FormcontentComponent implements OnInit {
         this.textfielService.GetAll().subscribe(value => {
             this.arr.push(value);
         });
-
-        // for (let element of this.arr) {
-        //     // tslint:disable-next-line:only-arrow-functions
-        //     element = element.sort(function(a, b){ return a.sequenceNumberForLocation - b.sequenceNumberForLocation});
-        //     console.log(element);
-        // }
-        // this.formService.getFormElement(this.formService.formForContent).subscribe(value => {
-        //     this.arr.push(value);
-        // });
-
-
-    }
-
-    show() {
-        for (let element of this.arr) {
-            // tslint:disable-next-line:only-arrow-functions
-            element = element.sort(function(a, b){ return a.sequenceNumberForLocation - b.sequenceNumberForLocation});
-
-            for (const elementElement of element) {
-                console.log(elementElement);
-            }
-        }
     }
 }

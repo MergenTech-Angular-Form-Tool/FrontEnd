@@ -47,7 +47,7 @@ export class CheckboxComponent implements OnInit {
             checkboxId: null,
             header: this.header,
             required: this.required,
-            name: 'checkbox',
+            elementName: 'checkbox',
         };
 
         this.checkboxService.PostAdd(this.checkboxList).subscribe((response: any) => {

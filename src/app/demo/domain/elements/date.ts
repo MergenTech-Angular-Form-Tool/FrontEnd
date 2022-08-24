@@ -11,4 +11,5 @@ export interface Date extends BaseElement {
     hide: string;
     dateFormat: string;
     dateValue: string;
+    elementName: string;
 }

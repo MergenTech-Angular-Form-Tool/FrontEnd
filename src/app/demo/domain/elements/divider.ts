@@ -11,4 +11,5 @@ export interface Divider extends BaseElement {
     sequenceNumberForLocation: number;
     formId: number;
     separatorId: null;
+    elementName: 'range';
 }

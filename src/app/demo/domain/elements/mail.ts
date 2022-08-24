@@ -11,4 +11,5 @@ export interface Mail extends BaseElement {
     emailInputId: string;
     question: string;
     detail: string;
+    elementName: 'mail';
 }

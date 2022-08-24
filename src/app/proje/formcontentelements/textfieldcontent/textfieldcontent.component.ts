@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {TextfieldService} from "../../../demo/service/elementservice/textfield.service";
+import {HttpClient} from "@angular/common/http";
+import {SharedDataService} from "../../../demo/service/sharedataservice";
 
 @Component({
   selector: 'app-textfieldcontent',
@@ -13,10 +16,27 @@ export class TextfieldcontentComponent implements OnInit {
     change: boolean;
     id: number;
 
+    textList: any[] = [];
+    data: any;
 
-    constructor() { }
 
-  ngOnInit(): void {
-  }
+    constructor(private textfieldService: TextfieldService,  private httpService: HttpClient, private sharedDataService: SharedDataService) { }
+
+    async ngOnInit() {
+
+        this.data = await this.sharedDataService.getData();
+
+        await this.textfieldService.GetAll().subscribe(value => {
+            return this.textList.push(value);
+        });
+    }
+
+    show(element: any) {
+        this.id = element.id;
+        this.header = element.question;
+        this.smalltext = element.subtext;
+        this.change = element.change;
+        this.placeholder = element.placeholder;
+    }
 
 }

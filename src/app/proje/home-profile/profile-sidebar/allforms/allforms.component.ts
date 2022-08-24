@@ -23,6 +23,7 @@ export class AllformsComponent implements OnInit {
     favorite: boolean;
     displayBasic: boolean;
     temp: number;
+    temp2:string;
     formLength: number;
 
     formNameForContent: string;
@@ -65,8 +66,10 @@ export class AllformsComponent implements OnInit {
         this.formService.updateForm(this.form[index]).subscribe(value => this.form[index] = value);
     }
 
-    openTheForm(id: number) {
+    openTheForm(id: number, name: string) {
         this.temp = id;
+        this.temp2 = name;
+        this.sharedDataService.setData2(this.temp2);
         this.sharedDataService.setData(this.temp);
         this.router.navigate(['formcontent']);
     }

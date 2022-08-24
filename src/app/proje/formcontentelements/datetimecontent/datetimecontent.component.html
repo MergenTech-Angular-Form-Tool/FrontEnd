@@ -1,4 +1,10 @@
-<div class="example-box" cdkDragLockAxis="y" cdkDragBoundary=".center" cdkDrag>
+<div *ngFor="let element of datetimeList">
+    <div *ngIf="element[0].formId === data">
+        {{show(element[0])}}
+    </div>
+</div>
+
+<div class="example-box" >
 
     <div class="handle-container">
         <div class="handle">

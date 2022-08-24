@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {DateService} from '../../../demo/service/elementservice/date.service';
+import {HttpClient} from '@angular/common/http';
+import {SharedDataService} from '../../../demo/service/sharedataservice';
 
 @Component({
   selector: 'app-datecontent',
@@ -17,10 +20,28 @@ export class DatecontentComponent implements OnInit {
     dateFormat: string;
     dateValue: string;
 
-  constructor() { }
+    dateList: any[] = [];
+    data: any;
 
-  ngOnInit(): void {
-      this.header  = 'girilen header gelecek. ';
+  constructor(private dateService: DateService, private httpService: HttpClient, private sharedDataService: SharedDataService) { }
+
+    async ngOnInit() {
+        this.data = await this.sharedDataService.getData();
+
+        await this.dateService.GetAll().subscribe(value => {
+            return this.dateList.push(value);
+        });
   }
+    show(element: any) {
+        this.id = element.id;
+        this.header = element.header;
+        this.selected = element.selected;
+        this.sequenceNumberForLocation = element.sequenceNumberForLocation;
+        this.title = element.title;
+        this.hide = element.hide;
+        this.dateFormat = element.dateFormat;
+        this.dateValue = element.dateValue;
+        this.dateInputId = element.dateInputId;
+    }
 
 }

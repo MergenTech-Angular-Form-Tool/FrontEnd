@@ -1,15 +1,18 @@
-
+<div *ngFor="let element of checkboxList">
+    <div *ngIf="element[0].formId === data">
+        {{show(element[0])}}
+    </div>
+</div>
         <div class="example-box box" >
             <div class="handle-container">
                 <div class="handle">
-                    <div class="field-checkbox">
-                        <p-checkbox [binary]="true" inputId="binary"></p-checkbox>
-                        <label>{{ header | translate}}</label>
+                    <div class="field-checkbox box ">
+                        <p-checkbox [binary]="true" inputId="binary" ></p-checkbox>
+                        <label id="inputheader">{{ header | translate}}</label>
                     </div>
                 </div>
             </div>
         </div>
-
 
 
 

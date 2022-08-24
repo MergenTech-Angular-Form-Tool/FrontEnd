@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Date} from "../../../demo/domain/elements/date";
+import {DatetimeService} from "../../../demo/service/elementservice/datetime.service";
+import {HttpClient} from "@angular/common/http";
+import {SharedDataService} from "../../../demo/service/sharedataservice";
 
 @Component({
   selector: 'app-datetimecontent',
@@ -8,14 +11,40 @@ import {Date} from "../../../demo/domain/elements/date";
 })
 export class DatetimecontentComponent implements OnInit {
     date: Date;
-    header: string;
     id: number;
+    header: string;
     selected: string;
+    sequenceNumberForLocation: number;
+    formId: number;
+    dateInputId: string;
+    title: string;
+    hide: string;
+    dateFormat: string;
+    dateValue: string;
 
-  constructor() { }
 
-  ngOnInit(): void {
-      this.header = 'girilen değer gelcek';
-  }
+    datetimeList: any[] = [];
+    data: any;
+
+  constructor(private datatimeService: DatetimeService, private httpService: HttpClient, private sharedDataService: SharedDataService) { }
+
+    async ngOnInit() {
+        this.data = await this.sharedDataService.getData();
+
+        await this.datatimeService.GetAll().subscribe(value => {
+            return this.datetimeList.push(value);
+        });
+    }
+    show(element: any) {
+        this.id = element.id;
+        this.header = element.question;
+        this.selected = element.selected;
+        this.sequenceNumberForLocation = element.sequenceNumberForLocation;
+        this.title = element.title;
+        this.hide = element.hide;
+        this.dateFormat = element.dateFormat;
+        this.dateValue = element.dateValue;
+        this.dateInputId = element.dateInputId;
+    }
 
 }

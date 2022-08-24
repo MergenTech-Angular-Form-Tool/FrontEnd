@@ -43,6 +43,7 @@ export class FileUploadComponent implements OnInit {
             formId: 2,
             fileInputId: null,
             header: this.header,
+            elementName: 'file'
         };
 
         this.fileuploadservice.PostAdd(this.fileuploadList).subscribe((response: any) => {

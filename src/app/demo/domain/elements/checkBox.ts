@@ -1,7 +1,7 @@
 import {BaseElement} from './baseElement';
 
 export interface CheckBox extends BaseElement {
-    name: 'checkbox';
+    elementName: 'checkbox';
     id: number;
     sequenceNumberForLocation: number;
     formId: number;
