@@ -22,9 +22,7 @@ export class AllformsComponent implements OnInit {
     temp2: string;
     formLength: number;
 
-
-    // tslint:disable-next-line:ban-types max-line-length
-    constructor(private router: Router, private sharedDataService: SharedDataService, private formService: FormService, private favoriteservice: FavoriteService) {
+    constructor(private router: Router, private sharedDataService: SharedDataService, private formService: FormService) {
     }
 
     ngOnInit(): void {
