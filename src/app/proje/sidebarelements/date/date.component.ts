@@ -4,6 +4,7 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {Date} from '../../../demo/domain/elements/date';
 import {DateService} from '../../../demo/service/elementservice/date.service';
+import {FormService} from "../../../demo/service/form.service";
 
 interface Date2 {
     format: string;
@@ -31,7 +32,7 @@ export class DateComponent implements OnInit {
     dateList: Date;
 
     constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService,
-                private dateservice: DateService) {
+                private dateservice: DateService, private formService: FormService) {
     }
 
     ngOnInit(): void {
@@ -80,9 +81,12 @@ export class DateComponent implements OnInit {
             elementName: 'date'
         };
 
-        this.dateservice.PostAdd(this.dateList).subscribe((response: any) => {
-            console.log(response);
-        });
+        this.formService.formElements.push(this.dateList);
+        console.log(this.formService.formElements);
+
+        /*       this.dateService.PostAdd(this.dateList).subscribe((response: any) => {
+                   console.log(response);
+               });*/
 
 
         this.date.set(Date.now());

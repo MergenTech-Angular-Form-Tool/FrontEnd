@@ -4,6 +4,7 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {FileUpload} from '../../../demo/domain/elements/fileUpload';
 import {FileuploadService} from '../../../demo/service/elementservice/fileupload.service';
+import {FormService} from "../../../demo/service/form.service";
 
 @Component({
     selector: 'app-file-upload',
@@ -20,7 +21,7 @@ export class FileUploadComponent implements OnInit {
     fileuploadList: FileUpload;
 
     constructor(private share: SharedDataService, private getElement: GetElementDetailsService, private date: ChangeDateService,
-                private fileuploadservice: FileuploadService) {
+                private fileuploadService: FileuploadService, private formService: FormService) {
     }
 
     ngOnInit(): void {
@@ -45,10 +46,12 @@ export class FileUploadComponent implements OnInit {
             header: this.header,
             elementName: 'file'
         };
+        this.formService.formElements.push(this.fileuploadList);
+        console.log(this.formService.formElements);
 
-        this.fileuploadservice.PostAdd(this.fileuploadList).subscribe((response: any) => {
-            console.log(response);
-        });
+        /*        this.fileuploadService.PostAdd(this.fileuploadList).subscribe((response: any) => {
+                    console.log(response);
+                });*/
 
 
         this.date.set(Date.now());

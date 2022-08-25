@@ -5,6 +5,7 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {DividerService} from '../../../demo/service/elementservice/divider.service';
 // @ts-ignore
 import {Divider} from '../../domain/elements/divider';
+import {FormService} from "../../../demo/service/form.service";
 
 @Component({
     selector: 'app-divider',
@@ -25,7 +26,7 @@ export class DividerComponent implements OnInit {
     dividerList: Divider ;
 
     constructor(private getElement: GetElementDetailsService, private share: SharedDataService, private date: ChangeDateService,
-                private dividerservice: DividerService) {
+                private dividerService: DividerService, private formService: FormService) {
     }
 
     ngOnInit(): void {
@@ -71,9 +72,12 @@ export class DividerComponent implements OnInit {
             elementName: 'range'
         };
 
-        this.dividerservice.PostAdd(this.dividerList).subscribe((response: any) => {
-            console.log(response);
-        });
+        this.formService.formElements.push(this.dividerList);
+        console.log(this.formService.formElements);
+
+        /*        this.dividerService.PostAdd(this.dividerList).subscribe((response: any) => {
+                    console.log(response);
+                });*/
 
         this.date.set(Date.now());
     }

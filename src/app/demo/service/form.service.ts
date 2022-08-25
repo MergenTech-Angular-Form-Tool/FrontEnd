@@ -1,6 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
 import {Form} from '../domain/form';
 
 
@@ -16,8 +15,9 @@ export class FormService {
     formName?: string;
     userId?: number;
     favorite?: boolean;
+    formElements: any[] = [];
 
-    formForContent: Form;
+    form: Form;
 
 
     getFormsAll() {

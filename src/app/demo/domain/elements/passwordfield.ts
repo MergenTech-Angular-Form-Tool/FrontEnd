@@ -4,6 +4,7 @@ export interface Passwordfield extends BaseElement {
     id?: number;
     q?: string;
     placeholder?: string;
+    sequenceNumberForLocation: number;
     formId: number;
     elementName: 'password';
 }

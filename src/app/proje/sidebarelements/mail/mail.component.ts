@@ -5,6 +5,7 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {MailService} from '../../../demo/service/elementservice/mail.service';
 import {Mail} from '../../../demo/domain/elements/mail';
+import {FormService} from "../../../demo/service/form.service";
 
 @Component({
     selector: 'app-mail',
@@ -25,7 +26,7 @@ export class MailComponent implements OnInit {
     mailList: Mail;
 
     constructor(private save: SaveService, private share: SharedDataService, private getElement: GetElementDetailsService,
-                private date: ChangeDateService, private mailservice: MailService) {
+                private date: ChangeDateService, private mailService: MailService, private formService: FormService) {
     }
 
     ngOnInit(): void {
@@ -65,9 +66,12 @@ export class MailComponent implements OnInit {
             elementName: 'mail'
         };
 
-        this.mailservice.PostAdd(this.mailList).subscribe((response: any) => {
+        this.formService.formElements.push(this.mailList);
+        console.log(this.formService.formElements);
+/*
+        this.mailService.PostAdd(this.mailList).subscribe((response: any) => {
             console.log(response);
-        });
+        });*/
 
         this.date.set(Date.now());
     }

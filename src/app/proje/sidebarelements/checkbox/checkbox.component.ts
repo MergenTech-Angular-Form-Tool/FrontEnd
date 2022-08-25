@@ -4,6 +4,7 @@ import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {CheckboxService} from '../../../demo/service/elementservice/checkbox.service';
 import {CheckBox} from '../../../demo/domain/elements/checkBox';
+import {FormService} from "../../../demo/service/form.service";
 
 @Component({
     selector: 'app-checkbox',
@@ -19,8 +20,7 @@ export class CheckboxComponent implements OnInit {
     required: string;
     checkboxList: CheckBox;
 
-    constructor(private getElement: GetElementDetailsService, private share: SharedDataService,
-                private date: ChangeDateService, private checkboxService: CheckboxService) {
+    constructor(private getElement: GetElementDetailsService, private share: SharedDataService, private date: ChangeDateService, private checkboxService: CheckboxService, private formService: FormService) {
     }
 
     ngOnInit(): void {
@@ -50,9 +50,13 @@ export class CheckboxComponent implements OnInit {
             elementName: 'checkbox',
         };
 
-        this.checkboxService.PostAdd(this.checkboxList).subscribe((response: any) => {
-            console.log(response);
-        });
+        this.formService.formElements.push(this.checkboxList);
+        console.log(this.formService.formElements);
+        /*
+                this.checkboxService.PostAdd(this.checkboxList).subscribe((response: any) => {
+                    console.log(response);
+                });
+        */
 
         console.log(this.checkboxList);
 
