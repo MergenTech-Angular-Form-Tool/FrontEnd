@@ -1,9 +1,19 @@
+
 <div *ngIf="formLength > 0; else elseBlock" class="allforms">
     <p-table [columns]="cols" [value]="form">
         <ng-template pTemplate="header" let-columns>
             <tr>
-                <th *ngFor="let col of columns">
-                    {{col.header}}
+                <th>
+                    {{'ID' | translate}}
+                </th>
+                <th>
+                    {{'FormName' | translate}}
+                </th>
+                <th>
+                    {{'CreateTime' | translate}}
+                </th>
+                <th>
+                    {{'UpdateTime' | translate}}
                 </th>
                 <th></th>
             </tr>
@@ -16,7 +26,7 @@
                 </td>
 
                 <td id="buttons">
-                    <button pButton pRipple type="button-lg" label="Ayrıntı Gör" id="content" (click) = "openTheForm(rowData.id,rowData.formName)" ></button>
+                    <button pButton pRipple type="button-lg"  id="content" (click) = "openTheForm(rowData.id,rowData.formName)" > {{'DETAIL' | translate}} </button>
                     <button (click)="addToFavorites(rowIndex)" title="Favorilere ekle" pButton pRipple type="button" icon="pi pi-star" class="p-button-rounded p-button-help" id="favbutton" ></button>
                     <button (click)="addToArchives(rowIndex)" title="Arşivle" pButton pRipple type="button" icon="pi pi-inbox" class="p-button-rounded p-button-success" id="archbutton"></button>
                     <button (click)="addToTrash(rowIndex)" title="Sil" pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-danger" id="trashbutton"></button>
@@ -48,3 +58,4 @@
         </div>
     </div>
 </ng-template>
+

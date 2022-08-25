@@ -3,8 +3,17 @@
 <p-table [columns]="cols" [value]="form">
     <ng-template pTemplate="header" let-columns>
         <tr>
-            <th *ngFor="let col of columns">
-                {{col.header}}
+            <th>
+                {{'ID' | translate}}
+            </th>
+            <th>
+                {{'FormName' | translate}}
+            </th>
+            <th>
+                {{'CreateTime' | translate}}
+            </th>
+            <th>
+                {{'UpdateTime' | translate}}
             </th>
             <th></th>
         </tr>
@@ -15,11 +24,11 @@
                 {{rowData[col.field]}}
             </td>
             <td id="buttons">
-                <button pButton pRipple type="button" label="Ayrıntı Gör" id="content"></button>
-                <button pButton pRipple type="button" (click)="restoreForm(rowIndex)" label="Geri Yükle"
-                        class="p-button-success" id="backload"></button>
+                <button pButton pRipple type="button" id="content"> {{'DETAIL' | translate}}</button>
+                <button pButton pRipple type="button" (click)="restoreForm(rowIndex)"
+                        class="p-button-success" id="backload">{{'RESTORE' | translate}}</button>
                 <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
-                <p-button styleClass="p-button-danger" id="delete"(click)="confirm2(rowIndex)" icon="pi pi-times" label="Delete" ></p-button>
+                <p-button styleClass="p-button-danger " id="delete" (click)="confirm2(rowIndex)"  >{{'DELETE' | translate}}</p-button>
             </td>
         </tr>
     </ng-template>

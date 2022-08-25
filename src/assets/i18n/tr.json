@@ -150,5 +150,14 @@
     "TRASH": "Çöp Kutusu",
     "ACCOUNT": "Hesap",
     "REPORT": "Raporlarım",
-    "MERGEN": "MERGEN, Altay mitolojisinde bilgiyi elinde tutan ve bilgiye hükmeden anlamına gelir."
+    "MERGEN": "MERGEN, Altay mitolojisinde bilgiyi elinde tutan ve bilgiye hükmeden anlamına gelir.",
+    "DETAIL": "Detay",
+    "UNARCHIVE": "Arşivden Çıkar",
+    "ID": "ID",
+    "FormName": "Form Adı",
+    "CreateTime": "Oluşturulma Tarihi",
+    "UpdateTime": "Değiştirilme Tarihi",
+    "RESTORE": "Geri Yükle",
+    "DELETE": "Sil",
+    "SHOWREPORT": "Raporları Getir"
 }

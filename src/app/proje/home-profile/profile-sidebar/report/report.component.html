@@ -1,8 +1,8 @@
-<button pButton pRipple type="button" (click)="show()" label="GÖSTER" class="p-button-info"></button>
+<button pButton pRipple type="button" (click)="show()"  class="p-button-info">{{'SHOWREPORT' | translate}}</button>
 <br><br>
-<div id="report">
+<div id="report" style="display:none">
     <div class="card">
-        <h5>Raporlarım</h5>
+        <h5>{{'REPORTS' | translate}}</h5>
         <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
     </div>
 </div>

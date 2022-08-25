@@ -150,5 +150,14 @@
     "TRASH": "Trash",
     "ACCOUNT": "Account",
     "REPORT": "Reports",
-   "MERGEN": "MERGEN, in Altai mythology, means the one who holds the knowledge and dominates the knowledge."
+   "MERGEN": "MERGEN, in Altai mythology, means the one who holds the knowledge and dominates the knowledge.",
+    "DETAIL": "Detail",
+    "UNARCHIVE": "Unarchive",
+    "ID": "ID",
+    "FormName": "Form Name",
+    "CreateTime": "Create Time",
+    "UpdateTime": "Update Time",
+    "RESTORE": "Restore",
+    "DELETE": "Delete",
+    "SHOWREPORT": "Show Report"
 }

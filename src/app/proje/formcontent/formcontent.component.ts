@@ -22,6 +22,7 @@ export class FormcontentComponent implements OnInit {
     arr: any[] = [];
     data: any;
     data2: any;
+    arr2: any[] = [];
 
     constructor(private checkboxService: CheckboxService, private dateTimeService: DatetimeService,
                 private dateService: DateService, private dividerService: DividerService,
@@ -65,7 +66,10 @@ export class FormcontentComponent implements OnInit {
         this.textfielService.GetAll().subscribe(value => {
             this.arr.push(value);
         });
+    }
 
+    addtoarr2(element){
+        this.arr2.push(element);
     }
 
 }

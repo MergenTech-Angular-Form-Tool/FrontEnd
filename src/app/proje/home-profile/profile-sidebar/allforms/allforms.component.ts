@@ -5,6 +5,7 @@ import {FavoriteService} from '../../../../demo/service/favorite.service';
 import {Router} from '@angular/router';
 import {SharedDataService} from '../../../../demo/service/sharedataservice';
 
+// @ts-ignore
 @Component({
     selector: 'app-allforms',
     templateUrl: './allforms.component.html',
@@ -22,6 +23,8 @@ export class AllformsComponent implements OnInit {
     temp2: string;
     formLength: number;
 
+
+
     constructor(private router: Router, private sharedDataService: SharedDataService, private formService: FormService) {
     }
 
@@ -31,15 +34,16 @@ export class AllformsComponent implements OnInit {
             this.formLength = value.length;
         });
         this.cols = [
-            {field: 'id', header: 'ID}'},
+            {field: 'id', header: 'ID'},
             {field: 'formName', header: 'FormName'},
             {field: 'createTimestamp', header: 'Create Time'},
             {field: 'updateTimestamp', header: 'Update Time'},
         ];
+
+
     }
 
     addToFavorites(index: number) {
-        console.log(this.form);
         this.form[index].favorite = this.form[index].favorite === false || this.form[index].favorite === undefined;
         this.formService.updateForm(this.form[index]).subscribe(value => this.form[index] = value);
     }
@@ -61,4 +65,5 @@ export class AllformsComponent implements OnInit {
         this.sharedDataService.setData(this.temp);
         this.router.navigate(['formcontent']);
     }
+
 }
