@@ -1,4 +1,8 @@
-<div class="card">
-    <h1>{{'REPORT' | translate}}</h1>
-    <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+<button pButton pRipple type="button" (click)="show()" label="GÖSTER" class="p-button-info"></button>
+<br><br>
+<div id="report">
+    <div class="card">
+        <h5>Raporlarım</h5>
+        <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+    </div>
 </div>

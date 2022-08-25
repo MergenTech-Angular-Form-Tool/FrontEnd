@@ -28,8 +28,7 @@ export class FormcontentComponent implements OnInit {
                 private fileuploadService: FileuploadService, private mailService: MailService,
                 private numberService: NumberService, private passwordService: PasswordService,
                 private textfielService: TextfieldService, private formService: FormService,
-                // tslint:disable-next-line:max-line-length
-                private sharedDataService: SharedDataService, private resolver: ComponentFactoryResolver, private change: ChangeDateService) {
+                private sharedDataService: SharedDataService) {
     }
 
     async ngOnInit() {
@@ -67,6 +66,6 @@ export class FormcontentComponent implements OnInit {
             this.arr.push(value);
         });
 
-   }
+    }
 
 }
