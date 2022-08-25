@@ -5,7 +5,10 @@
     <ul>
         <div *ngFor="let elementarr of arr">
             <div *ngFor="let element of elementarr">
+
                 <div *ngIf="data === element.formId">
+
+
 
                     <li *ngIf="element.elementName ==='checkbox'">
                         <app-checkboxcontent></app-checkboxcontent>
@@ -35,14 +38,8 @@
                         <app-textfieldcontent></app-textfieldcontent>
                     </li>
 
-
-
                 </div>
             </div>
         </div>
-
-
     </ul>
-
-
 </div>

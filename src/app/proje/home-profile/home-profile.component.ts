@@ -9,21 +9,16 @@ import {form} from '../../../../demo/domain/form';
 })
 export class HomeProfileComponent implements OnInit {
 
-    noform: boolean;
     form: form[];
 
-  constructor( ) {
-
-  }
+  constructor( ) {}
 
     public comp: string;
 
   ngOnInit(): void {
       this.comp = 'Allforms';
   }
-
     showComponent(comp: string) {
         this.comp = comp;
     }
-
 }

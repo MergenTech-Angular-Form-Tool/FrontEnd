@@ -8,18 +8,12 @@ import {ReportService} from '../../../../demo/service/report.service';
 })
 export class ReportComponent implements OnInit {
     basicData: any;
-
     basicOptions: any;
 
     constructor(private formReportService: ReportService) {
     }
 
     ngOnInit(): void {
-        // this.formReportService.getFormById(2).subscribe(value => {
-        //     this.formReport = value;
-        //     console.log(this.formReport);
-        // });
-
         this.basicData = {
             labels: ['Form1', 'Form2', 'Form3', 'Form4', 'Form5', 'Form6', 'Form7'],
             datasets: [

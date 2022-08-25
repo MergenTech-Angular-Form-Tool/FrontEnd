@@ -3,6 +3,7 @@ import {Form} from '../../../../demo/domain/form';
 import {Router} from '@angular/router';
 import {FormService} from '../../../../demo/service/form.service';
 import {FavoriteService} from '../../../../demo/service/favorite.service';
+import {ConfirmationService, ConfirmEventType, MessageService} from 'primeng/api';
 
 @Component({
     selector: 'app-trash',
@@ -14,8 +15,11 @@ export class TrashComponent implements OnInit {
     cols: any[];
     favorites: Form[] = [];
     formId: number;
+    position: string;
 
-    constructor(private router: Router, private formService: FormService, private favoriteservice: FavoriteService) {
+    // tslint:disable-next-line:max-line-length
+    constructor(private router: Router, private formService: FormService, private favoriteservice: FavoriteService, private confirmationService: ConfirmationService, private messageService: MessageService
+                ) {
     }
 
     ngOnInit(): void {
@@ -25,7 +29,6 @@ export class TrashComponent implements OnInit {
         this.cols = [
             {field: 'id', header: 'ID'},
             {field: 'formName', header: 'FormName'},
-            {field: 'userId', header: 'UserID'},
             {field: 'createTimestamp', header: 'Create Time'},
             {field: 'updateTimestamp', header: 'Update Time'},
         ];
@@ -43,4 +46,26 @@ export class TrashComponent implements OnInit {
         });
     }
 
+    confirm2(index: number) {
+        this.confirmationService.confirm({
+            message: 'Do you want to delete this record?',
+            header: 'Delete Confirmation',
+            icon: 'pi pi-info-circle',
+            accept: () => {
+                this.messageService.add({severity: 'info', summary:'Confirmed', detail:'Record deleted'});
+                this.deleteForm(index);
+            },
+            reject: (type) => {
+                switch (type) {
+                    case ConfirmEventType.REJECT:
+                        this.messageService.add({severity:'error', summary:'Rejected', detail:'You have rejected'});
+                        break;
+                    case ConfirmEventType.CANCEL:
+                        this.messageService.add({severity:'warn', summary:'Cancelled', detail:'You have cancelled'});
+                        break;
+                }
+            }
+        });
+
+    }
 }

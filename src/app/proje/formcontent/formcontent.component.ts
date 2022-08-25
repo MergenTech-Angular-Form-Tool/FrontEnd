@@ -1,17 +1,16 @@
 import {Component, ComponentFactoryResolver, OnInit} from '@angular/core';
 import {FormService} from '../../demo/service/form.service';
-import {Form} from "../../demo/domain/form";
-import {CheckboxService} from "../../demo/service/elementservice/checkbox.service";
-import {DatetimeService} from "../../demo/service/elementservice/datetime.service";
-import {DateService} from "../../demo/service/elementservice/date.service";
-import {DividerService} from "../../demo/service/elementservice/divider.service";
-import {FileuploadService} from "../../demo/service/elementservice/fileupload.service";
-import {MailService} from "../../demo/service/elementservice/mail.service";
-import {NumberService} from "../../demo/service/elementservice/number.service";
-import {PasswordService} from "../../demo/service/elementservice/password.service";
-import {TextfieldService} from "../../demo/service/elementservice/textfield.service";
-import {SharedDataService} from "../../demo/service/sharedataservice";
-import {ChangeDateService} from "../../demo/service/changedateservice";
+import {CheckboxService} from '../../demo/service/elementservice/checkbox.service';
+import {DatetimeService} from '../../demo/service/elementservice/datetime.service';
+import {DateService} from '../../demo/service/elementservice/date.service';
+import {DividerService} from '../../demo/service/elementservice/divider.service';
+import {FileuploadService} from '../../demo/service/elementservice/fileupload.service';
+import {MailService} from '../../demo/service/elementservice/mail.service';
+import {NumberService} from '../../demo/service/elementservice/number.service';
+import {PasswordService} from '../../demo/service/elementservice/password.service';
+import {TextfieldService} from '../../demo/service/elementservice/textfield.service';
+import {SharedDataService} from '../../demo/service/sharedataservice';
+import {ChangeDateService} from '../../demo/service/changedateservice';
 
 @Component({
     selector: 'app-formcontent',
@@ -24,9 +23,6 @@ export class FormcontentComponent implements OnInit {
     data: any;
     data2: any;
 
-    elementid: number;
-    elementHeader: string;
-
     constructor(private checkboxService: CheckboxService, private dateTimeService: DatetimeService,
                 private dateService: DateService, private dividerService: DividerService,
                 private fileuploadService: FileuploadService, private mailService: MailService,
@@ -36,10 +32,9 @@ export class FormcontentComponent implements OnInit {
                 private sharedDataService: SharedDataService, private resolver: ComponentFactoryResolver, private change: ChangeDateService) {
     }
 
-    ngOnInit(): void {
+    async ngOnInit() {
         this.data = this.sharedDataService.getData();
         this.data2 = this.sharedDataService.getData2();
-
 
 
         this.checkboxService.GetAll().subscribe(value => {
@@ -71,5 +66,7 @@ export class FormcontentComponent implements OnInit {
         this.textfielService.GetAll().subscribe(value => {
             this.arr.push(value);
         });
-    }
+
+   }
+
 }

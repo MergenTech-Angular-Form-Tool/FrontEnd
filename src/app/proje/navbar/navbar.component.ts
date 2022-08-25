@@ -22,11 +22,9 @@ export class NavbarComponent implements OnInit, AfterContentInit {
     }
 
     ngOnInit(): void {
-
     }
 
     ngAfterContentInit() {
-
         const token = localStorage.getItem('token');
         this.token = !(token === undefined || token === null);
         // this.token = true;

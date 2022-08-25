@@ -91,6 +91,7 @@ export class SecondaryNavComponent implements OnInit {
         };
 
         this.formService.formElements.push(this.formList);
+        this.formService.PostAdd(this.formService.formElements).subscribe(value => this.formService.formElements = value);
         console.log(this.formService.formElements);
         /*        this.formService.PostAdd(this.formList).subscribe((response: any) => {
                     console.log(response);

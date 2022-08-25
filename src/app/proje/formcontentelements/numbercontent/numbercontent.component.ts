@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {NumberService} from "../../../demo/service/elementservice/number.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
@@ -8,7 +8,7 @@ import {SharedDataService} from "../../../demo/service/sharedataservice";
   templateUrl: './numbercontent.component.html',
   styleUrls: ['./numbercontent.component.scss']
 })
-export class NumbercontentComponent implements OnInit {
+export class NumbercontentComponent implements OnInit, AfterContentChecked {
     id: number;
     val: number;
     header: string;
@@ -17,7 +17,9 @@ export class NumbercontentComponent implements OnInit {
     numberList: any[] = [];
     data: any;
 
-  constructor(private numberService: NumberService, private httpService: HttpClient, private sharedDataService: SharedDataService) { }
+    constructor(private numberService: NumberService, private httpService: HttpClient,
+                private sharedDataService: SharedDataService, private ref: ChangeDetectorRef) {
+    }
 
     async ngOnInit() {
 
@@ -26,6 +28,10 @@ export class NumbercontentComponent implements OnInit {
         await this.numberService.GetAll().subscribe(value => {
             return this.numberList.push(value);
         });
+    }
+
+    ngAfterContentChecked() {
+        this.ref.detectChanges();
     }
 
     show(element: any) {

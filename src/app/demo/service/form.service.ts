@@ -24,8 +24,8 @@ export class FormService {
         return this.httpClient.get<Form[]>(this.url + 'api/form/getAll');
     }
 
-    PostAdd(form: Form) {
-        return this.httpClient.post(this.url + 'api/form', form);
+    PostAdd(form: any[]) {
+        return this.httpClient.post<any[]>(this.url + 'api/formwithelements', form);
     }
 
     updateForm(form: Form) {

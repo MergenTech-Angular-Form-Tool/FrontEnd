@@ -4,7 +4,7 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {PasswordService} from '../../../demo/service/elementservice/password.service';
 import {Passwordfield} from '../../../demo/domain/elements/passwordfield';
-import {FormService} from "../../../demo/service/form.service";
+import {FormService} from '../../../demo/service/form.service';
 
 @Component({
     selector: 'app-password',
@@ -14,7 +14,7 @@ import {FormService} from "../../../demo/service/form.service";
 export class PasswordComponent implements OnInit {
 
     id: number;
-    q: string;
+    question: string;
     placeholder: string;
     formId: number;
     passwordList: Passwordfield;
@@ -31,12 +31,12 @@ export class PasswordComponent implements OnInit {
 
         this.getElement.changeMessage({
             id: this.id,
-            q: this.q,
+            question: this.question,
             placeholder: this.placeholder
         });
         this.passwordList = {
             id: 2,
-            q: this.q,
+            question: this.question,
             formId: 5,
             placeholder: this.placeholder,
             sequenceNumberForLocation: 1,

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {CheckboxService} from '../../../demo/service/elementservice/checkbox.service';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {HttpClient} from '@angular/common/http';
@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
     templateUrl: './checkboxcontent.component.html',
     styleUrls: ['./checkboxcontent.component.scss']
 })
-export class CheckboxcontentComponent implements OnInit {
+export class CheckboxcontentComponent implements OnInit, AfterContentChecked {
     id: number;
     header: string;
     required: string;
@@ -16,15 +16,18 @@ export class CheckboxcontentComponent implements OnInit {
     checkboxList: any[] = [];
     data: any;
 
-    constructor(private checkboxService: CheckboxService, private httpService: HttpClient, private sharedDataService: SharedDataService) {
+    constructor(private checkboxService: CheckboxService, private httpService: HttpClient,
+                private sharedDataService: SharedDataService, private ref: ChangeDetectorRef) {
     }
     async ngOnInit() {
-
         this.data = await this.sharedDataService.getData();
-
         await this.checkboxService.GetAll().subscribe(value => {
             return this.checkboxList.push(value);
         });
+    }
+
+    ngAfterContentChecked() {
+        this.ref.detectChanges();
     }
 
 
