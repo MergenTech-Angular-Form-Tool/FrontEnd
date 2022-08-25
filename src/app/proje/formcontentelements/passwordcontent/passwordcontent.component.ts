@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {PasswordService} from "../../../demo/service/elementservice/password.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
@@ -8,15 +8,17 @@ import {SharedDataService} from "../../../demo/service/sharedataservice";
   templateUrl: './passwordcontent.component.html',
   styleUrls: ['./passwordcontent.component.scss']
 })
-export class PasswordcontentComponent implements OnInit {
+export class PasswordcontentComponent implements OnInit, AfterContentChecked {
     id: number;
-    q: string;
+    question: string;
     placeholder: string;
 
     passwordList: any[] = [];
     data: any;
 
-  constructor(private passwordService: PasswordService,  private httpService: HttpClient, private sharedDataService: SharedDataService) { }
+    constructor(private passwordService: PasswordService, private httpService: HttpClient,
+                private sharedDataService: SharedDataService, private ref: ChangeDetectorRef) {
+    }
 
     async ngOnInit() {
 
@@ -27,9 +29,13 @@ export class PasswordcontentComponent implements OnInit {
         });
     }
 
+    ngAfterContentChecked() {
+        this.ref.detectChanges();
+    }
+
     show(element: any) {
         this.id = element.id;
-        this.q = element.question;
+        this.question = element.question;
         this.placeholder = element.placeholder;
     }
 

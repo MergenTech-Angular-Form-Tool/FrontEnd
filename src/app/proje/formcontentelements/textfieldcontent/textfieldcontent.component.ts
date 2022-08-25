@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {TextfieldService} from "../../../demo/service/elementservice/textfield.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
@@ -8,7 +8,7 @@ import {SharedDataService} from "../../../demo/service/sharedataservice";
   templateUrl: './textfieldcontent.component.html',
   styleUrls: ['./textfieldcontent.component.scss']
 })
-export class TextfieldcontentComponent implements OnInit {
+export class TextfieldcontentComponent implements OnInit, AfterContentChecked {
     message: string;
     placeholder: string;
     header: string;
@@ -20,7 +20,9 @@ export class TextfieldcontentComponent implements OnInit {
     data: any;
 
 
-    constructor(private textfieldService: TextfieldService,  private httpService: HttpClient, private sharedDataService: SharedDataService) { }
+    constructor(private textfieldService: TextfieldService, private httpService: HttpClient,
+                private sharedDataService: SharedDataService, private ref: ChangeDetectorRef) {
+    }
 
     async ngOnInit() {
 
@@ -29,6 +31,10 @@ export class TextfieldcontentComponent implements OnInit {
         await this.textfieldService.GetAll().subscribe(value => {
             return this.textList.push(value);
         });
+    }
+
+    ngAfterContentChecked() {
+        this.ref.detectChanges();
     }
 
     show(element: any) {

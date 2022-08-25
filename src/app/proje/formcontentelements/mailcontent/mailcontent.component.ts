@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {MailService} from "../../../demo/service/elementservice/mail.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
@@ -8,7 +8,7 @@ import {SharedDataService} from "../../../demo/service/sharedataservice";
   templateUrl: './mailcontent.component.html',
   styleUrls: ['./mailcontent.component.scss']
 })
-export class MailcontentComponent implements OnInit {
+export class MailcontentComponent implements OnInit, AfterContentChecked {
     message: string;
     placeholder: string;
     header: string;
@@ -19,7 +19,9 @@ export class MailcontentComponent implements OnInit {
     mailList: any[] = [];
     data: any;
 
-  constructor(private mailService: MailService, private httpService: HttpClient, private sharedDataService: SharedDataService) { }
+    constructor(private mailService: MailService, private httpService: HttpClient,
+                private sharedDataService: SharedDataService, private ref: ChangeDetectorRef) {
+    }
 
     async ngOnInit() {
 
@@ -28,6 +30,10 @@ export class MailcontentComponent implements OnInit {
         await this.mailService.GetAll().subscribe(value => {
             return this.mailList.push(value);
         });
+    }
+
+    ngAfterContentChecked() {
+        this.ref.detectChanges();
     }
 
     show(element: any) {

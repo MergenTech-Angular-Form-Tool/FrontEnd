@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {Date} from "../../../demo/domain/elements/date";
 import {DatetimeService} from "../../../demo/service/elementservice/datetime.service";
 import {HttpClient} from "@angular/common/http";
@@ -9,7 +9,7 @@ import {SharedDataService} from "../../../demo/service/sharedataservice";
   templateUrl: './datetimecontent.component.html',
   styleUrls: ['./datetimecontent.component.scss']
 })
-export class DatetimecontentComponent implements OnInit {
+export class DatetimecontentComponent implements OnInit, AfterContentChecked{
     date: Date;
     id: number;
     header: string;
@@ -26,7 +26,9 @@ export class DatetimecontentComponent implements OnInit {
     datetimeList: any[] = [];
     data: any;
 
-  constructor(private datatimeService: DatetimeService, private httpService: HttpClient, private sharedDataService: SharedDataService) { }
+    constructor(private datatimeService: DatetimeService, private httpService: HttpClient,
+                private sharedDataService: SharedDataService, private ref: ChangeDetectorRef) {
+    }
 
     async ngOnInit() {
         this.data = await this.sharedDataService.getData();
@@ -34,6 +36,10 @@ export class DatetimecontentComponent implements OnInit {
         await this.datatimeService.GetAll().subscribe(value => {
             return this.datetimeList.push(value);
         });
+    }
+
+    ngAfterContentChecked() {
+        this.ref.detectChanges();
     }
     show(element: any) {
         this.id = element.id;

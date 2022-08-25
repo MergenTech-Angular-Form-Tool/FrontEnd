@@ -1,12 +1,8 @@
 <app-profilnav></app-profilnav>
 
-<div>
-
     <div class="wrapper">
         <!--Top menu -->
-
         <div class="sidebar">
-            <!--profile image & text-->
             <div class="button-place">
                 <a href="#/main" class="button button-58">{{'CREATE_FORM' | translate}}</a>
             </div>
@@ -18,11 +14,7 @@
                         <span class="item"><i class="bi bi-folder-fill icon"></i>{{'ALLFORMS' | translate}}</span>
                     </a>
                 </li>
-                <li>
-                    <a (click)="showComponent('Outlines')">
-                        <span class="item"><i class="bi bi-inboxes-fill icon"></i>{{'OUTLINES' | translate}}</span>
-                    </a>
-                </li>
+
                 <li>
                     <a (click)="showComponent('Favorites')">
                         <span class="item"><i class="bi bi-star-fill icon"></i>{{'FAVORITES' | translate}}</span>
@@ -48,8 +40,8 @@
         </div>
     </div>
 
+<!--Whichever menu item we click, that component content will come.-->
     <div class="grid-container">
-
         <div >
             <div [ngSwitch]="comp">
                 <app-allforms *ngSwitchCase="'Allforms'"></app-allforms>
@@ -60,6 +52,4 @@
                 <app-trash *ngSwitchCase="'Trash'"></app-trash>
             </div>
         </div>
-
     </div>
-</div>

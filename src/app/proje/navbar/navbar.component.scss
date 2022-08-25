@@ -5,7 +5,9 @@
     background-color: #f8fafc;
     overflow: auto;
     overflow-y: hidden;
+    overflow-x: hidden;
     z-index: 99;
+    height: 70px;
 }
 
 .topnav a {
@@ -13,17 +15,20 @@
     float: left;
     display: block;
     color: #000000;
-    height: 60px;
-    text-align: center;
-    padding: 14px 16px;
+    height: 40px;
+    text-align: left;
+    padding: 14px 16px 0px 0px;
     text-decoration: none;
     font-size: 17px;
+    margin-top: 5px;
 }
 
 .topnav a:hover {
-    background-color: lightblue;
-    color: black;
     opacity: 1.0;
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    color:black;
 }
 
 .topnav a.active {
@@ -54,36 +59,40 @@
     margin-left: 0;
     width: 150px;
     height: 75px;
-}
-
-.topnav a.img.navbarAvatar {
-    position: absolute;
-    right: 50px;
-    height: 640px;
-}
-
-.topnav a.navbarAvatar {
-    position: absolute;
-    right: 50px;
-    height: 640px;
-    width: 50px;
-    margin-top: 0;
-}
-
-.topnav a.navbarAvatar:hover {
-    animation: desecale 1s;
-    background-color: #f8fafc;
+    text-align: left;
+    float: left;
 }
 
 .topnav input[type=text] {
     float: right;
     padding: 6px;
     border: none;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-right: 16px;
     font-size: 17px;
 }
 
-.topnav .icon {
-    display: none;
+#form-name{
+    width:70px;
+    text-align: center;
+    margin-top: 14px;
+}
+
+#switcher{
+    float:right;
+    margin-left: 40px;
+    text-align: right;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+#profil{
+    text-align: center;
+    padding-left: 270px;
+    padding-top: 5px;
+    height: 5px;
+}
+
+#profil a:hover{
+    border-bottom-style: solid;
 }

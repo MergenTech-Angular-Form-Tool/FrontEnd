@@ -202,7 +202,6 @@ import {UserGuideComponent} from './proje/user-guide/user-guide.component';
 import { FavoritesComponent } from './proje/home-profile/profile-sidebar/favorites/favorites.component';
 import { ArchiveComponent } from './proje/home-profile/profile-sidebar/archive/archive.component';
 import {AllformsComponent} from './proje/home-profile/profile-sidebar/allforms/allforms.component';
-import {OutlinesComponent} from './proje/home-profile/profile-sidebar/outlines/outlines.component';
 import {ReportComponent} from './proje/home-profile/profile-sidebar/report/report.component';
 import {TrashComponent} from './proje/home-profile/profile-sidebar/trash/trash.component';
 import {CheckboxService} from './demo/service/elementservice/checkbox.service';
@@ -216,7 +215,7 @@ import { NumbercontentComponent } from './proje/formcontentelements/numberconten
 import { PasswordcontentComponent } from './proje/formcontentelements/passwordcontent/passwordcontent.component';
 import { RangecontentComponent } from './proje/formcontentelements/rangecontent/rangecontent.component';
 import { TextfieldcontentComponent } from './proje/formcontentelements/textfieldcontent/textfieldcontent.component';
-
+import {ConfirmationService} from 'primeng/api';
 
 FullCalendarModule.registerPlugins([
     dayGridPlugin,
@@ -415,7 +414,6 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         FavoritesComponent,
         ArchiveComponent,
         AllformsComponent,
-        OutlinesComponent,
         ReportComponent,
         TrashComponent,
         FormcontentComponent,
@@ -436,11 +434,10 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         PhotoService, ProductService, MenuService, AppMainComponent, ConfigService,
         MessageService, SharedDataService, CollapsedRightBarService, SaveService,
         GetElementDetailsService, FormNameService, MiddleElementsService, NoItemService,
-        ChangeDateService
+        ChangeDateService, ConfirmationService
     ],
     bootstrap: [AppComponent],
     exports: [
-        OutlinesComponent
     ]
 })
 export class AppModule {

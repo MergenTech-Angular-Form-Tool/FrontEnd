@@ -1,36 +1,29 @@
 import {Component, OnInit} from '@angular/core';
 import {FormService} from '../../../../demo/service/form.service';
 import {Form} from '../../../../demo/domain/form';
-import {Observable} from 'rxjs';
 import {FavoriteService} from '../../../../demo/service/favorite.service';
 import {Router} from '@angular/router';
-import {SharedDataService} from "../../../../demo/service/sharedataservice";
+import {SharedDataService} from '../../../../demo/service/sharedataservice';
 
 @Component({
     selector: 'app-allforms',
     templateUrl: './allforms.component.html',
     styleUrls: ['./allforms.component.scss']
 })
+
 export class AllformsComponent implements OnInit {
 
-    /*    id: number;
-        formName: string;
-        userId: number;*/
     form: Form[];
     cols: any[];
     favorites: Form[] = [];
     formId: number;
     favorite: boolean;
-    displayBasic: boolean;
     temp: number;
-    temp2:string;
+    temp2: string;
     formLength: number;
 
-    formNameForContent: string;
-    formidForContent: number;
 
-    // tslint:disable-next-line:ban-types
-
+    // tslint:disable-next-line:ban-types max-line-length
     constructor(private router: Router, private sharedDataService: SharedDataService, private formService: FormService, private favoriteservice: FavoriteService) {
     }
 
@@ -40,14 +33,11 @@ export class AllformsComponent implements OnInit {
             this.formLength = value.length;
         });
         this.cols = [
-            {field: 'id', header: 'ID'},
+            {field: 'id', header: 'ID}'},
             {field: 'formName', header: 'FormName'},
-            {field: 'userId', header: 'UserID'},
             {field: 'createTimestamp', header: 'Create Time'},
             {field: 'updateTimestamp', header: 'Update Time'},
-
         ];
-
     }
 
     addToFavorites(index: number) {

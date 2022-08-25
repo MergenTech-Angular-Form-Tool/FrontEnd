@@ -1,9 +1,8 @@
 <div class="topnav" id="myTopnav">
     <div class="container d-flex">
 
-        <div class="col-4 pt-0 pb-0">
+        <div class="col-4 pt-0 pb-0" >
             <a href='#/main' class="logo user-select-none"> <img src="assets/layout/images/navbarlogo.png" class="logo"></a>
-
         </div>
 
         <div class="col-4 d-flex justify-content-center pt-0 pb-0 align-items-center flex-column">
@@ -13,13 +12,14 @@
             </div>
         </div>
 
-        <div class="col-4 pt-0 pb-0">
-            <a href="#/login" *ngIf="!token">{{'LOGIN' | translate}}</a>
-            <a href="#/register" *ngIf="!token">{{'REGISTER' | translate}}</a>
-            <a href="#/home-profile" *ngIf="token">{{'PROFILE' | translate}}</a>
-            <a (click)="logout()" *ngIf="token">{{'LOGOUT' | translate}}</a>
+        <div id="profil">
+            <a href="#/home-profile">{{'PROFILE' | translate}}</a>
+        </div>
+
+        <div  id="switcher" >
             <app-lang-switcher></app-lang-switcher>
         </div>
 
     </div>
+
 </div>

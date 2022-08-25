@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {DividerService} from "../../../demo/service/elementservice/divider.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
@@ -8,7 +8,7 @@ import {SharedDataService} from "../../../demo/service/sharedataservice";
   templateUrl: './rangecontent.component.html',
   styleUrls: ['./rangecontent.component.scss']
 })
-export class RangecontentComponent implements OnInit {
+export class RangecontentComponent implements OnInit, AfterContentChecked {
     id: number;
     color: string;
     style: string;
@@ -19,7 +19,9 @@ export class RangecontentComponent implements OnInit {
     dividerList: any[] = [];
     data: any;
 
-  constructor(private dividerService: DividerService , private httpService: HttpClient, private sharedDataService: SharedDataService) { }
+    constructor(private dividerService: DividerService, private httpService: HttpClient,
+                private sharedDataService: SharedDataService, private ref: ChangeDetectorRef) {
+    }
 
     async ngOnInit() {
 
@@ -28,6 +30,10 @@ export class RangecontentComponent implements OnInit {
         await this.dividerService.GetAll().subscribe(value => {
             return this.dividerList.push(value);
         });
+    }
+
+    ngAfterContentChecked() {
+        this.ref.detectChanges();
     }
     show(element: any) {
         this.id = element.id;

@@ -1,4 +1,4 @@
-<p>trash works!</p>
+<h1>{{'TRASH' | translate}}</h1>
 
 <p-table [columns]="cols" [value]="form">
     <ng-template pTemplate="header" let-columns>
@@ -18,8 +18,8 @@
                 <button pButton pRipple type="button" label="Ayrıntı Gör" id="content"></button>
                 <button pButton pRipple type="button" (click)="restoreForm(rowIndex)" label="Geri Yükle"
                         class="p-button-success" id="backload"></button>
-                <button pButton pRipple type="button" (click)="deleteForm(rowIndex)" label="Sil" class="p-button-danger"
-                        id="remove"></button>
+                <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+                <p-button styleClass="p-button-danger" id="delete"(click)="confirm2(rowIndex)" icon="pi pi-times" label="Delete" ></p-button>
             </td>
         </tr>
     </ng-template>

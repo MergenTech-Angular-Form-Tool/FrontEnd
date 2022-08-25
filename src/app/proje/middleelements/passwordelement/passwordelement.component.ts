@@ -14,7 +14,7 @@ import {ChangeDateService} from '../../../demo/service/changedateservice';
 export class PasswordelementComponent implements OnInit {
 
     id: number;
-    q: string;
+    question: string;
     placeholder: string;
 
     constructor(private shared: SharedDataService, private collapsed: CollapsedRightBarService,
@@ -24,14 +24,14 @@ export class PasswordelementComponent implements OnInit {
         this.getElement.currentMessage.subscribe(message => {
             const temp = message as Passwordfield;
             if (temp.id === this.id) {
-                this.q = temp.q;
+                this.question = temp.question;
                 this.placeholder = temp.placeholder;
             }
         });
     }
 
     ngOnInit(): void {
-        this.q = 'HEADER';
+        this.question = 'HEADER';
         this.placeholder = 'PLACEHOLDER';
     }
 
