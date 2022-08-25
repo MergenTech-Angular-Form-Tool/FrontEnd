@@ -3,8 +3,17 @@
 <p-table [columns]="cols" [value]="form">
     <ng-template pTemplate="header" let-columns>
         <tr>
-            <th *ngFor="let col of columns">
-                {{col.header}}
+            <th>
+                {{'ID' | translate}}
+            </th>
+            <th>
+                {{'FormName' | translate}}
+            </th>
+            <th>
+                {{'CreateTime' | translate}}
+            </th>
+            <th>
+                {{'UpdateTime' | translate}}
             </th>
             <th></th>
         </tr>
@@ -15,7 +24,7 @@
                 {{rowData[col.field]}}
             </td>
             <td id="buttons">
-                <button pButton pRipple type="button-lg" label="Ayrıntı Gör" id="content"></button>
+                <button pButton pRipple type="button-lg"  id="content">  {{'DETAIL' | translate}} </button>
                 <button (click)="deleteFromFavorites(rowIndex)" title="Favorilerden çıkar" pButton pRipple type="button" icon="pi pi-star" class="p-button-rounded p-button-help" id="unfavorite" ></button>
             </td>
         </tr>

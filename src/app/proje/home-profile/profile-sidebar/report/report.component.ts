@@ -27,32 +27,32 @@ export class ReportComponent implements OnInit {
     }
 
     show() {
-        this.formLabels = [];
-        const showReport = document.getElementById('report');
-        if (showReport.style.display === 'none') {
-            showReport.style.display = 'block';
+        const showDiv = document.getElementById('report');
+        if (showDiv.style.display === 'none') {
+            showDiv.style.display = 'block';
+            this.formLabels = [];
+            document.getElementById('report').style.display = '';
+            this.formLength = this.form.length;
+            for (const form1 of this.form) {
+                this.formLabels.push(form1.formName);
+            }
+            this.basicData = {
+                labels: this.formLabels,
+                datasets: [
+                    {
+                        label: 'İletilen kişi',
+                        backgroundColor: '#42A5F5',
+                        data: [65, 59, 80, 30]
+                    },
+                    {
+                        label: 'Cevap veren kişi',
+                        backgroundColor: '#FFA726',
+                        data: [28, 48, 40, 15]
+                    }
+                ]
+            };
         } else {
-            showReport.style.display = 'none';
+            showDiv.style.display = 'none';
         }
-        this.formLength = this.form.length;
-        for (const form1 of this.form) {
-            this.formLabels.push(form1.formName);
-        }
-        this.basicData = {
-            labels: this.formLabels,
-            datasets: [
-                {
-                    label: 'İletilen kişi',
-                    backgroundColor: '#42A5F5',
-                    data: [65, 59, 80]
-                },
-                {
-                    label: 'Cevap veren kişi',
-                    backgroundColor: '#FFA726',
-                    data: [28, 48, 40]
-                }
-            ]
-        };
-        console.log(this.form);
     }
 }

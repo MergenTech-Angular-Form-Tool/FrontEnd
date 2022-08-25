@@ -83,7 +83,7 @@ export class ProfileComponent implements OnInit, AfterContentInit {
                 this.formGroup.get('email').setValue(res.data.email);
             },
             (err: any) => {
-                this.router.navigate(['/login']);
+                this.router.navigate(['/profile']);
             }
         );
 
