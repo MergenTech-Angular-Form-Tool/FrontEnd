@@ -15,7 +15,7 @@ export class SecondaryNavComponent implements OnInit {
     items: MenuItem[];
     formList: Form;
 
-    constructor(private formservice: FormService) {
+    constructor(private formService: FormService) {
     }
 
     ngOnInit(): void {
@@ -86,12 +86,15 @@ export class SecondaryNavComponent implements OnInit {
 
     addForm() {
         this.formList = {
-            formName : this.formservice.formName,
+            formName: this.formService.formName,
+            userId: 1
         };
-        console.log(this.formList);
-        this.formservice.PostAdd(this.formList).subscribe((response: any) => {
-            console.log(response);
-        });
+
+        this.formService.formElements.push(this.formList);
+        console.log(this.formService.formElements);
+        /*        this.formService.PostAdd(this.formList).subscribe((response: any) => {
+                    console.log(response);
+                });*/
     }
 
     showMobile() {

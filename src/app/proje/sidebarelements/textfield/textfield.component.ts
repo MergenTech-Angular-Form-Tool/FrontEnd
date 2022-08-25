@@ -5,6 +5,7 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {TextfieldService} from "../../../demo/service/elementservice/textfield.service";
 import {TextField} from "../../../demo/domain/elements/textField";
+import {FormService} from "../../../demo/service/form.service";
 
 @Component({
     selector: 'app-textfield',
@@ -26,7 +27,7 @@ export class TextfieldComponent implements OnInit {
     textfieldList: TextField;
 
     constructor(private save: SaveService, private share: SharedDataService, private getElement: GetElementDetailsService,
-                private date: ChangeDateService, private textfieldservice: TextfieldService) {
+                private date: ChangeDateService, private textfieldService: TextfieldService, private formService: FormService) {
     }
 
     ngOnInit(): void {
@@ -66,10 +67,12 @@ export class TextfieldComponent implements OnInit {
             question: this.question,
             elementName: 'textfield'
         };
+        this.formService.formElements.push(this.textfieldList);
+        console.log(this.formService.formElements);
 
-        this.textfieldservice.PostAdd(this.textfieldList).subscribe((response: any) => {
+/*        this.textfieldService.PostAdd(this.textfieldList).subscribe((response: any) => {
             console.log(response);
-        });
+        });*/
         this.date.set(Date.now());
     }
 

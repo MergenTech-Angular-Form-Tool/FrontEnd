@@ -4,6 +4,7 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {PasswordService} from '../../../demo/service/elementservice/password.service';
 import {Passwordfield} from '../../../demo/domain/elements/passwordfield';
+import {FormService} from "../../../demo/service/form.service";
 
 @Component({
     selector: 'app-password',
@@ -19,7 +20,7 @@ export class PasswordComponent implements OnInit {
     passwordList: Passwordfield;
 
     constructor(private share: SharedDataService, private getElement: GetElementDetailsService,
-                private date: ChangeDateService, private passwordService: PasswordService) {
+                private date: ChangeDateService, private passwordService: PasswordService, private formService: FormService) {
     }
 
     ngOnInit(): void {
@@ -38,12 +39,15 @@ export class PasswordComponent implements OnInit {
             q: this.q,
             formId: 5,
             placeholder: this.placeholder,
+            sequenceNumberForLocation: 1,
             elementName: 'password'
         };
+        this.formService.formElements.push(this.passwordList);
+        console.log(this.formService.formElements);
 
-        this.passwordService.PostAdd(this.passwordList).subscribe((response: any) => {
-            console.log(response);
-        });
+        /*        this.passwordService.PostAdd(this.passwordList).subscribe((response: any) => {
+                    console.log(response);
+                });*/
 
         this.date.set(Date.now());
     }
