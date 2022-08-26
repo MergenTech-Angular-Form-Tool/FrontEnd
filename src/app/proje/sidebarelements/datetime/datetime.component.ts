@@ -4,7 +4,7 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {DatetimeService} from '../../../demo/service/elementservice/datetime.service';
 import {Date} from '../../../demo/domain/elements/date';
-import {FormService} from "../../../demo/service/form.service";
+import {FormService} from '../../../demo/service/form.service';
 
 interface Date2 {
     format: string;
@@ -55,32 +55,27 @@ export class DatetimeComponent implements OnInit {
             selected: this.selected
         });
 
-        // this.datetimeList.push({
-        //     id: this.id,
-        //     header: this.question,
-        //     selected: this.selected
-        // });
-
-        // @ts-ignore
         this.datetimeList = {
             id: 1,
             header: this.question,
             selected: this.selected,
-            sequenceNumberForLocation: 4,
-            formId: 2,
+            sequenceNumberForLocation: this.formService.elementIndex,
             dateInputId: null,
             title: this.title,
             hide: this.hide,
             dateFormat: this.dateFormat,
             dateValue: this.dateValue,
+            formId: 14,
             elementName: 'datetime',
         };
-        this.formService.formElements.push(this.datetimeList);
-        console.log(this.formService.formElements);
 
-        /*        this.datetimeService.PostAdd(this.datetimeList).subscribe((response: any) => {
-                    console.log(response);
-                });*/
+        // this.formService.formElements.push(this.datetimeList);
+        // console.log(this.formService.formElements);
+        this.formService.elementIndex++;
+
+        this.datetimeService.PostAdd(this.datetimeList).subscribe((response: any) => {
+            console.log(response);
+        });
 
 
         this.date.set(Date.now());

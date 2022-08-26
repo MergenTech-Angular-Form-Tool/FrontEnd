@@ -90,12 +90,16 @@ export class SecondaryNavComponent implements OnInit {
             userId: 1
         };
 
-        this.formService.formElements.push(this.formList);
-        this.formService.PostAdd(this.formService.formElements).subscribe(value => this.formService.formElements = value);
+        this.formService.formElements.push(JSON.parse(JSON.stringify(this.formList)));
+        // this.formService.PostAdd(this.formService.formElements).subscribe(value => this.formService.formElements = value);
         console.log(this.formService.formElements);
-        /*        this.formService.PostAdd(this.formList).subscribe((response: any) => {
-                    console.log(response);
-                });*/
+        // this.formService.PostAdd(this.formList).subscribe((response: any) => {
+        //     console.log(response);
+        // });
+    }
+
+    saveToDb() {
+        this.formService.PostAdd(this.formService.formElements).subscribe(value => this.formService.formElements = value);
     }
 
     showMobile() {

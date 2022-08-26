@@ -35,19 +35,21 @@ export class PasswordComponent implements OnInit {
             placeholder: this.placeholder
         });
         this.passwordList = {
-            id: 2,
+            id: 1,
             question: this.question,
-            formId: 5,
             placeholder: this.placeholder,
-            sequenceNumberForLocation: 1,
+            sequenceNumberForLocation: this.formService.elementIndex,
+            formId: 14,
             elementName: 'password'
         };
-        this.formService.formElements.push(this.passwordList);
-        console.log(this.formService.formElements);
 
-        /*        this.passwordService.PostAdd(this.passwordList).subscribe((response: any) => {
-                    console.log(response);
-                });*/
+        // this.formService.formElements.push(this.passwordList);
+        // console.log(this.formService.formElements);
+        this.formService.elementIndex++;
+
+        this.passwordService.PostAdd(this.passwordList).subscribe((response: any) => {
+            console.log(response);
+        });
 
         this.date.set(Date.now());
     }

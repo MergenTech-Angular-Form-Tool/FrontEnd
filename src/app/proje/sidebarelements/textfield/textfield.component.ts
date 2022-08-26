@@ -3,9 +3,9 @@ import {SaveService} from '../../../demo/service/saveservice';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
-import {TextfieldService} from "../../../demo/service/elementservice/textfield.service";
-import {TextField} from "../../../demo/domain/elements/textField";
-import {FormService} from "../../../demo/service/form.service";
+import {TextfieldService} from '../../../demo/service/elementservice/textfield.service';
+import {TextField} from '../../../demo/domain/elements/textField';
+import {FormService} from '../../../demo/service/form.service';
 
 @Component({
     selector: 'app-textfield',
@@ -22,7 +22,7 @@ export class TextfieldComponent implements OnInit {
     placeholder: string;
     header: string;
     subtext: string;
-    change: string ;
+    change: string;
     message: string;
     textfieldList: TextField;
 
@@ -47,32 +47,28 @@ export class TextfieldComponent implements OnInit {
             change: this.change,
             question: this.question
         });
-        // this.textfieldList.push({
-        //     id: this.id,
-        //     header: this.question,
-        //     subtext: this.subtext,
-        //     placeholder: this.placeholder
-        // });
-        // console.log(this.textfieldList);
 
         this.textfieldList = {
             id: 1,
-            sequenceNumberForLocation: 2,
-            formId: 2,
+            sequenceNumberForLocation: this.formService.elementIndex,
             textInputId: null,
             header: this.header,
             subtext: this.subtext,
             placeholder: this.placeholder,
             change: this.change,
+            formId: 14,
             question: this.question,
             elementName: 'textfield'
         };
-        this.formService.formElements.push(this.textfieldList);
-        console.log(this.formService.formElements);
+
+        // this.formService.formElements.push(this.textfieldList);
+        // console.log(this.formService.formElements);
+        this.formService.elementIndex++;
 
         this.textfieldService.PostAdd(this.textfieldList).subscribe((response: any) => {
             console.log(response);
         });
+
         this.date.set(Date.now());
     }
 

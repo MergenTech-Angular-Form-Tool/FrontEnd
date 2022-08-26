@@ -5,7 +5,7 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {MailService} from '../../../demo/service/elementservice/mail.service';
 import {Mail} from '../../../demo/domain/elements/mail';
-import {FormService} from "../../../demo/service/form.service";
+import {FormService} from '../../../demo/service/form.service';
 
 @Component({
     selector: 'app-mail',
@@ -44,18 +44,9 @@ export class MailComponent implements OnInit {
             subtext: this.subtext,
             placeholder: this.placeholder
         });
-        // this.mailList.push({
-        //     id: this.id,
-        //     checked: this.checked,
-        //     detail: this.detail,
-        //     val2: this.val2,
-        //     header: this.question,
-        //     subtext: this.subtext,
-        // });
         this.mailList = {
             id: 1,
-            sequenceNumberForLocation: 4,
-            formId: 2,
+            sequenceNumberForLocation: this.formService.elementIndex,
             emailInputId: null,
             checked: this.checked,
             header: this.question,
@@ -63,15 +54,17 @@ export class MailComponent implements OnInit {
             detail: this.detail,
             placeholder: this.placeholder,
             question: this.question,
+            formId: 14,
             elementName: 'mail'
         };
 
-        this.formService.formElements.push(this.mailList);
-        console.log(this.formService.formElements);
-/*
+        // this.formService.formElements.push(this.mailList);
+        // console.log(this.formService.formElements);
+        this.formService.elementIndex++;
+
         this.mailService.PostAdd(this.mailList).subscribe((response: any) => {
             console.log(response);
-        });*/
+        });
 
         this.date.set(Date.now());
     }

@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {GetElementDetailsService} from '../../../demo/service/getElementDetailsService';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
-import {NumberService} from "../../../demo/service/elementservice/number.service";
-import {NumberObject} from "../../../demo/domain/elements/numberobject";
-import {FormService} from "../../../demo/service/form.service";
+import {NumberService} from '../../../demo/service/elementservice/number.service';
+import {NumberObject} from '../../../demo/domain/elements/numberobject';
+import {FormService} from '../../../demo/service/form.service';
 
 @Component({
     selector: 'app-number',
@@ -38,29 +38,25 @@ export class NumberComponent implements OnInit {
             defaultValue: this.defaultValue,
             isNegative: this.isNegative
         });
-        // this.numberList.push({
-        //     id: this.id,
-        //     header: this.header,
-        //     defaultValue: this.defaultValue,
-        //     isNegative: this.isNegative
-        // });
 
         this.numberList = {
             id: 1,
-            sequenceNumberForLocation: 4,
-            formId: 2,
+            sequenceNumberForLocation: this.formService.elementIndex,
             numberInputId: null,
             header: this.header,
             defaultValue: this.defaultValue,
             isNegative: this.isNegative,
+            formId: 14,
             elementName: 'number'
         };
-        this.formService.formElements.push(this.numberList);
-        console.log(this.formService.formElements);
 
-/*        this.numberService.PostAdd(this.numberList).subscribe((response: any) => {
+        // this.formService.formElements.push(this.numberList);
+        // console.log(this.formService.formElements);
+        this.formService.elementIndex++;
+
+        this.numberService.PostAdd(this.numberList).subscribe((response: any) => {
             console.log(response);
-        });*/
+        });
 
         this.date.set(Date.now());
     }
