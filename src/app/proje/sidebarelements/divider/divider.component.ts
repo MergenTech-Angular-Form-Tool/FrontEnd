@@ -3,9 +3,8 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
 import {SharedDataService} from '../../../demo/service/sharedataservice';
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {DividerService} from '../../../demo/service/elementservice/divider.service';
-// @ts-ignore
-import {Divider} from '../../domain/elements/divider';
-import {FormService} from "../../../demo/service/form.service";
+import {Divider} from '../../../demo/domain/elements/divider';
+import {FormService} from '../../../demo/service/form.service';
 
 @Component({
     selector: 'app-divider',
@@ -23,7 +22,7 @@ export class DividerComponent implements OnInit {
     sequenceNumberForLocation: number;
     formId: number;
     separatorId: null;
-    dividerList: Divider ;
+    dividerList: Divider;
 
     constructor(private getElement: GetElementDetailsService, private share: SharedDataService, private date: ChangeDateService,
                 private dividerService: DividerService, private formService: FormService) {
@@ -60,8 +59,7 @@ export class DividerComponent implements OnInit {
 
         this.dividerList = {
             id: 1,
-            sequenceNumberForLocation: 2,
-            formId: 2,
+            sequenceNumberForLocation: this.formService.elementIndex,
             separatorId: null,
             color: this.color,
             style: this.style,
@@ -69,15 +67,17 @@ export class DividerComponent implements OnInit {
             marginBot: this.marginBot,
             marginTop: this.marginTop,
             space: this.space,
+            formId: 14,
             elementName: 'range'
         };
 
-        this.formService.formElements.push(this.dividerList);
-        console.log(this.formService.formElements);
+        // this.formService.formElements.push(this.dividerList);
+        // console.log(this.formService.formElements);
+        this.formService.elementIndex++;
 
-        /*        this.dividerService.PostAdd(this.dividerList).subscribe((response: any) => {
-                    console.log(response);
-                });*/
+        this.dividerService.PostAdd(this.dividerList).subscribe((response: any) => {
+            console.log(response);
+        });
 
         this.date.set(Date.now());
     }

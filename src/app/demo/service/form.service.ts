@@ -16,7 +16,7 @@ export class FormService {
     userId?: number;
     favorite?: boolean;
     formElements: any[] = [];
-
+    elementIndex: number = 0;
     form: Form;
 
 

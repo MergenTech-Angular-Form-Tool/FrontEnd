@@ -4,7 +4,7 @@ import {GetElementDetailsService} from '../../../demo/service/getElementDetailsS
 import {ChangeDateService} from '../../../demo/service/changedateservice';
 import {FileUpload} from '../../../demo/domain/elements/fileUpload';
 import {FileuploadService} from '../../../demo/service/elementservice/fileupload.service';
-import {FormService} from "../../../demo/service/form.service";
+import {FormService} from '../../../demo/service/form.service';
 
 @Component({
     selector: 'app-file-upload',
@@ -33,25 +33,23 @@ export class FileUploadComponent implements OnInit {
             id: this.id,
             header: this.header
         });
-        //
-        // this.fileuploadList.push({
-        //     id: this.id,
-        //     header: this.header
-        // });
+
         this.fileuploadList = {
             id: 1,
-            sequenceNumberForLocation: 4,
-            formId: 2,
+            sequenceNumberForLocation: this.formService.elementIndex,
             fileInputId: null,
             header: this.header,
+            formId: 14,
             elementName: 'file'
         };
-        this.formService.formElements.push(this.fileuploadList);
-        console.log(this.formService.formElements);
 
-        /*        this.fileuploadService.PostAdd(this.fileuploadList).subscribe((response: any) => {
-                    console.log(response);
-                });*/
+        // this.formService.formElements.push(this.fileuploadList);
+        // console.log(this.formService.formElements);
+        this.formService.elementIndex++;
+
+        this.fileuploadService.PostAdd(this.fileuploadList).subscribe((response: any) => {
+            console.log(response);
+        });
 
 
         this.date.set(Date.now());
