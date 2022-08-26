@@ -2,6 +2,7 @@ import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angula
 import {TextfieldService} from "../../../demo/service/elementservice/textfield.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
+import {Form} from "../../../demo/domain/elements/allElements";
 
 @Component({
   selector: 'app-textfieldcontent',
@@ -15,8 +16,6 @@ export class TextfieldcontentComponent implements OnInit, AfterContentChecked {
     smalltext: string;
     change: boolean;
     id: number;
-
-    textList: any[] = [];
     data: any;
 
 
@@ -28,21 +27,28 @@ export class TextfieldcontentComponent implements OnInit, AfterContentChecked {
 
         this.data = await this.sharedDataService.getData();
 
-        await this.textfieldService.GetAll().subscribe(value => {
-            return this.textList.push(value);
-        });
+        let dataxx = '';
+
+
+        fetch('https://mergenform.herokuapp.com/api/formwithelements/get/' + this.data)
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(response) {
+                return response.json();
+            })
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(myJson) {
+                dataxx = myJson;
+                const parsedObject: Form = JSON.parse(JSON.stringify(dataxx));
+                document.getElementById('headertext').innerText = parsedObject.textInputDtos[0].question;
+                document.getElementById('header').innerText = parsedObject.textInputDtos[0].subtext;
+                parsedObject.textInputDtos[0].placeholder = this.placeholder;
+            });
     }
 
     ngAfterContentChecked() {
         this.ref.detectChanges();
     }
 
-    show(element: any) {
-        this.id = element.id;
-        this.header = element.question;
-        this.smalltext = element.subtext;
-        this.change = element.change;
-        this.placeholder = element.placeholder;
-    }
+
 
 }

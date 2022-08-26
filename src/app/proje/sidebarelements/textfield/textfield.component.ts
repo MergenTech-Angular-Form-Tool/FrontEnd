@@ -70,9 +70,9 @@ export class TextfieldComponent implements OnInit {
         this.formService.formElements.push(this.textfieldList);
         console.log(this.formService.formElements);
 
-/*        this.textfieldService.PostAdd(this.textfieldList).subscribe((response: any) => {
+        this.textfieldService.PostAdd(this.textfieldList).subscribe((response: any) => {
             console.log(response);
-        });*/
+        });
         this.date.set(Date.now());
     }
 

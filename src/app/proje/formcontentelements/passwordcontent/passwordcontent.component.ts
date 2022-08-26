@@ -2,6 +2,7 @@ import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angula
 import {PasswordService} from "../../../demo/service/elementservice/password.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
+import {Form} from "../../../demo/domain/elements/allElements";
 
 @Component({
   selector: 'app-passwordcontent',
@@ -12,8 +13,6 @@ export class PasswordcontentComponent implements OnInit, AfterContentChecked {
     id: number;
     question: string;
     placeholder: string;
-
-    passwordList: any[] = [];
     data: any;
 
     constructor(private passwordService: PasswordService, private httpService: HttpClient,
@@ -24,19 +23,26 @@ export class PasswordcontentComponent implements OnInit, AfterContentChecked {
 
         this.data = await this.sharedDataService.getData();
 
-        await this.passwordService.GetAll().subscribe(value => {
-            return this.passwordList.push(value);
-        });
+        let dataxx = '';
+
+
+        fetch('https://mergenform.herokuapp.com/api/formwithelements/get/' + this.data)
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(response) {
+                return response.json();
+            })
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(myJson) {
+                dataxx = myJson;
+                const parsedObject: Form = JSON.parse(JSON.stringify(dataxx));
+                document.getElementById('questionpass').innerText = parsedObject.passwordInputDtos[0].question;
+                this.placeholder =  parsedObject.passwordInputDtos[0].placeholder;
+            });
     }
 
     ngAfterContentChecked() {
         this.ref.detectChanges();
     }
 
-    show(element: any) {
-        this.id = element.id;
-        this.question = element.question;
-        this.placeholder = element.placeholder;
-    }
 
 }

@@ -2,6 +2,7 @@ import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angula
 import {NumberService} from "../../../demo/service/elementservice/number.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
+import {Form} from "../../../demo/domain/elements/allElements";
 
 @Component({
   selector: 'app-numbercontent',
@@ -25,20 +26,25 @@ export class NumbercontentComponent implements OnInit, AfterContentChecked {
 
         this.data = await this.sharedDataService.getData();
 
-        await this.numberService.GetAll().subscribe(value => {
-            return this.numberList.push(value);
-        });
+        let dataxx = '';
+
+
+        fetch('https://mergenform.herokuapp.com/api/formwithelements/get/' + this.data)
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(response) {
+                return response.json();
+            })
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(myJson) {
+                dataxx = myJson;
+                const parsedObject: Form = JSON.parse(JSON.stringify(dataxx));
+                document.getElementById('headnumber').innerText = parsedObject.numberInputDtos[0].header;
+                parsedObject.numberInputDtos[0].defaultValue = this.val;
+            });
     }
 
     ngAfterContentChecked() {
         this.ref.detectChanges();
-    }
-
-    show(element: any) {
-        this.id = element.id;
-        this.header = element.header;
-        this.sequenceNumberForLocation = element.sequenceNumberForLocation;
-        this.val = element.defaultValue;
     }
 
 

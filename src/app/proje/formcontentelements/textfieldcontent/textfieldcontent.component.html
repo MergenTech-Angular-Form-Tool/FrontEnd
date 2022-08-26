@@ -1,17 +1,12 @@
-<div *ngFor="let element of textList">
-    <div *ngIf="element[0].formId === data">
-        {{show(element[0])}}
-    </div>
-</div>
 
 <div class="example-box my-1"  >
     <div class="d-flex flex-column handle-container" >
         <div class="handle" >
-            <label class="mb-3">{{ header | translate}}</label>
+            <label class="mb-3" id="headertext"></label>
             <div class="mb-2">
                 <input pInputText placeholder="{{ placeholder | translate }}" type="text" style="width: 500px;">
             </div>
-            <small>{{ smalltext | translate}}</small>
+            <small id="smalltext"></small>
         </div>
     </div>
 

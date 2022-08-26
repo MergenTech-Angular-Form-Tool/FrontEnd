@@ -1,14 +1,9 @@
 
-<div *ngFor="let element of dateList">
-    <div *ngIf="element[0].formId === data">
-        {{show(element[0])}}
-    </div>
-</div>
 <div class="example-box" >
     <div class="handle-container">
         <div class="handle">
             <div class="d-flex flex-column">
-                <label class="mb-3">{{ title | translate}}</label>
+                <label class="mb-3" id="titledate"></label>
                 <p-calendar inputStyleClass="width" dateFormat="{{selected}}" inputId="basic"></p-calendar>
             </div>
         </div>

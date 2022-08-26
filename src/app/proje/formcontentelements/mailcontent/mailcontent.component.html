@@ -1,18 +1,13 @@
-<div *ngFor="let element of mailList">
-    <div *ngIf="element[0].formId === data">
-        {{show(element[0])}}
-    </div>
-</div>
 
 <div class="Mailbox" >
     <div class="d-flex flex-column handle-container">
         <div class="handle">
-            <label class="mb-3">{{ header | translate}}</label>
+            <label class="mb-3" id="headermail"></label>
             <div class="p-inputgroup mb-2">
                 <input type="text" id="botLabel" [(ngModel)]="placeholder" pInputText style="width: 453px;"/>
                 <span class="p-inputgroup-addon">.com</span>
             </div>
-            <small i18n>{{ smalltext | translate}}</small>
+            <small i18n id="smalltextmail">{{ smalltext | translate}}</small>
         </div>
     </div>
 </div>
