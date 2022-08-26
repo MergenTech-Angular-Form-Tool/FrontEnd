@@ -35,4 +35,7 @@ export class FormService {
     removeForm(id: number) {
         return this.httpClient.delete(this.url + 'api/form/remove/' + id);
     }
+    getFormByID(id: number){
+        return this.httpClient.get<any[]>(this.url + 'api/formwithelements/get/' + id);
+    }
 }

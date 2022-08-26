@@ -3,6 +3,7 @@ import {Date} from "../../../demo/domain/elements/date";
 import {DatetimeService} from "../../../demo/service/elementservice/datetime.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
+import {Form} from "../../../demo/domain/elements/allElements";
 
 @Component({
   selector: 'app-datetimecontent',
@@ -32,25 +33,25 @@ export class DatetimecontentComponent implements OnInit, AfterContentChecked{
 
     async ngOnInit() {
         this.data = await this.sharedDataService.getData();
+        let dataxx = '';
 
-        await this.datatimeService.GetAll().subscribe(value => {
-            return this.datetimeList.push(value);
-        });
+
+        fetch('https://mergenform.herokuapp.com/api/formwithelements/get/' + this.data)
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(response) {
+                return response.json();
+            })
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(myJson) {
+                dataxx = myJson;
+                const parsedObject: Form = JSON.parse(JSON.stringify(dataxx));
+                document.getElementById('headerdatetime').innerText = parsedObject.dateTimeInputDtos[0].header;
+            });
     }
 
     ngAfterContentChecked() {
         this.ref.detectChanges();
     }
-    show(element: any) {
-        this.id = element.id;
-        this.header = element.question;
-        this.selected = element.selected;
-        this.sequenceNumberForLocation = element.sequenceNumberForLocation;
-        this.title = element.title;
-        this.hide = element.hide;
-        this.dateFormat = element.dateFormat;
-        this.dateValue = element.dateValue;
-        this.dateInputId = element.dateInputId;
-    }
+
 
 }

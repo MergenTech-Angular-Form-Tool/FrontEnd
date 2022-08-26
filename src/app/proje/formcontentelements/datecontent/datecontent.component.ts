@@ -2,6 +2,7 @@ import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angula
 import {DateService} from '../../../demo/service/elementservice/date.service';
 import {HttpClient} from '@angular/common/http';
 import {SharedDataService} from '../../../demo/service/sharedataservice';
+import {Form} from "../../../demo/domain/elements/allElements";
 
 @Component({
   selector: 'app-datecontent',
@@ -18,9 +19,6 @@ export class DatecontentComponent implements OnInit, AfterContentChecked {
     title: string;
     hide: string;
     dateFormat: string;
-    dateValue: string;
-
-    dateList: any[] = [];
     data: any;
 
     constructor(private dateService: DateService, private httpService: HttpClient,
@@ -30,24 +28,24 @@ export class DatecontentComponent implements OnInit, AfterContentChecked {
     async ngOnInit() {
         this.data = await this.sharedDataService.getData();
 
-        await this.dateService.GetAll().subscribe(value => {
-            return this.dateList.push(value);
-        });
+        let dataxx = '';
+
+
+        fetch('https://mergenform.herokuapp.com/api/formwithelements/get/' + this.data)
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(response) {
+                return response.json();
+            })
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(myJson) {
+                dataxx = myJson;
+                const parsedObject: Form = JSON.parse(JSON.stringify(dataxx));
+                document.getElementById('titledate').innerText = parsedObject.dateInputDtos[0].title;
+            });
     }
 
     ngAfterContentChecked() {
         this.ref.detectChanges();
-    }
-    show(element: any) {
-        this.id = element.id;
-        this.header = element.header;
-        this.selected = element.selected;
-        this.sequenceNumberForLocation = element.sequenceNumberForLocation;
-        this.title = element.title;
-        this.hide = element.hide;
-        this.dateFormat = element.dateFormat;
-        this.dateValue = element.dateValue;
-        this.dateInputId = element.dateInputId;
     }
 
 }

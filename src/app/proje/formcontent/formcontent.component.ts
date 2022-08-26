@@ -11,6 +11,7 @@ import {PasswordService} from '../../demo/service/elementservice/password.servic
 import {TextfieldService} from '../../demo/service/elementservice/textfield.service';
 import {SharedDataService} from '../../demo/service/sharedataservice';
 import {ChangeDateService} from '../../demo/service/changedateservice';
+import {Form} from "../../demo/domain/elements/allElements";
 
 @Component({
     selector: 'app-formcontent',
@@ -24,6 +25,7 @@ export class FormcontentComponent implements OnInit {
     data2: any;
     arr2: any[] = [];
 
+
     constructor(private checkboxService: CheckboxService, private dateTimeService: DatetimeService,
                 private dateService: DateService, private dividerService: DividerService,
                 private fileuploadService: FileuploadService, private mailService: MailService,
@@ -36,40 +38,54 @@ export class FormcontentComponent implements OnInit {
         this.data = this.sharedDataService.getData();
         this.data2 = this.sharedDataService.getData2();
 
+        let dataxx = '';
 
-        this.checkboxService.GetAll().subscribe(value => {
-            this.arr.push(value);
-        });
 
-        this.dateTimeService.GetAll().subscribe(value => {
-            this.arr.push(value);
-        });
-
-        this.dateService.GetAll().subscribe(value => {
-            this.arr.push(value);
-        });
-        this.dividerService.GetAll().subscribe(value => {
-            this.arr.push(value);
-        });
-        this.fileuploadService.GetAll().subscribe(value => {
-            this.arr.push(value);
-        });
-        this.mailService.GetAll().subscribe(value => {
-            this.arr.push(value);
-        });
-        this.numberService.GetAll().subscribe(value => {
-            this.arr.push(value);
-        });
-        this.passwordService.GetAll().subscribe(value => {
-            this.arr.push(value);
-        });
-        this.textfielService.GetAll().subscribe(value => {
-            this.arr.push(value);
-        });
-    }
-
-    addtoarr2(element){
-        this.arr2.push(element);
+        fetch('https://mergenform.herokuapp.com/api/formwithelements/get/' + this.data)
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(response) {
+                return response.json();
+            })
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(myJson) {
+                dataxx = myJson;
+                const parsedObject: Form = JSON.parse(JSON.stringify(dataxx));
+                document.getElementById('h1').innerText = parsedObject.formDto.formName;
+           });
+        // @ts-ignore
+        // this.formService.getFormByID(this.data).subscribe(value => {
+        //     this.arr2.push(value);
+        // } );
+        //
+        // this.checkboxService.GetAll().subscribe(value => {
+        //     this.arr.push(value);
+        // });
+        //
+        // this.dateTimeService.GetAll().subscribe(value => {
+        //     this.arr.push(value);
+        // });
+        //
+        // this.dateService.GetAll().subscribe(value => {
+        //     this.arr.push(value);
+        // });
+        // this.dividerService.GetAll().subscribe(value => {
+        //     this.arr.push(value);
+        // });
+        // this.fileuploadService.GetAll().subscribe(value => {
+        //     this.arr.push(value);
+        // });
+        // this.mailService.GetAll().subscribe(value => {
+        //     this.arr.push(value);
+        // });
+        // this.numberService.GetAll().subscribe(value => {
+        //     this.arr.push(value);
+        // });
+        // this.passwordService.GetAll().subscribe(value => {
+        //     this.arr.push(value);
+        // });
+        // this.textfielService.GetAll().subscribe(value => {
+        //     this.arr.push(value);
+        // });
     }
 
 }

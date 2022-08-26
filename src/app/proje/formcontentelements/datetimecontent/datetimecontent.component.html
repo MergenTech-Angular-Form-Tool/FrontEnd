@@ -1,15 +1,10 @@
-<div *ngFor="let element of datetimeList">
-    <div *ngIf="element[0].formId === data">
-        {{show(element[0])}}
-    </div>
-</div>
 
 <div class="example-box" >
 
     <div class="handle-container">
         <div class="handle">
             <div class="d-flex flex-column">
-                <label class="mb-3">{{ header | translate}}</label>
+                <label class="mb-3" id="headerdatetime"></label>
                 <p-calendar inputStyleClass="width" dateFormat="{{selected}}" [showTime]="true" [showSeconds]="true"
                             [hourFormat]="'12'"></p-calendar>
             </div>

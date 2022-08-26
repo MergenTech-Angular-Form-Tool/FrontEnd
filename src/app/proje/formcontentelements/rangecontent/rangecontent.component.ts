@@ -2,6 +2,7 @@ import {AfterContentChecked, ChangeDetectorRef, Component, OnInit} from '@angula
 import {DividerService} from "../../../demo/service/elementservice/divider.service";
 import {HttpClient} from "@angular/common/http";
 import {SharedDataService} from "../../../demo/service/sharedataservice";
+import {Form} from "../../../demo/domain/elements/allElements";
 
 @Component({
   selector: 'app-rangecontent',
@@ -26,23 +27,27 @@ export class RangecontentComponent implements OnInit, AfterContentChecked {
     async ngOnInit() {
 
         this.data = await this.sharedDataService.getData();
+        let dataxx = '';
 
-        await this.dividerService.GetAll().subscribe(value => {
-            return this.dividerList.push(value);
-        });
+
+        fetch('https://mergenform.herokuapp.com/api/formwithelements/get/' + this.data)
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(response) {
+                return response.json();
+            })
+            // tslint:disable-next-line:only-arrow-functions
+            .then(function(myJson) {
+                dataxx = myJson;
+                const parsedObject: Form = JSON.parse(JSON.stringify(dataxx));
+                this.height = parsedObject.separatorDtos[0].height;
+                parsedObject.separatorDtos[0].color = this.color;
+                this.space = parsedObject.separatorDtos[0].space;
+            });
     }
 
     ngAfterContentChecked() {
         this.ref.detectChanges();
     }
-    show(element: any) {
-        this.id = element.id;
-        this.color = element.color;
-        this.style = element.style;
-        this.height = element.height;
-        this.marginTop = element.marginTop;
-        this.marginBot = element.marginBot;
-        this.space = element.space;
-    }
+
 
 }
